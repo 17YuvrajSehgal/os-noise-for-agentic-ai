@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code or dataset, please cite the paper (and the Zenodo dataset once released)."
+title: "OS Noise for Agentic AI: A Kernel-Trace Study of How Container Resource Limits Slow Down and Break AI Coding Agents"
+abstract: >-
+  Code and metadata artifact for a kernel-trace (LTTng) study of how container
+  resource limits (CPU, cores, memory, disk I/O) affect the latency and
+  reliability of AI coding agents (Claude Code and Codex CLI). Four mechanism
+  studies plus an end-to-end test, with cgroup counters as ground truth.
+type: software
+authors:
+  - family-names: Sehgal
+    given-names: Yuvraj
+    affiliation: "Brock University"
+  - family-names: Ezzati-Jivan
+    given-names: Naser
+    affiliation: "Brock University"
+keywords:
+  - agentic AI
+  - LLM coding agents
+  - kernel tracing
+  - LTTng
+  - cgroups
+  - OS noise
+  - resource limits
+  - performance
+license: MIT
+date-released: 2026-10-15
