@@ -23,3 +23,5 @@ research-paper/*.pdf
 .DS_Store
 Thumbs.db
 *.swp
+
+.idea

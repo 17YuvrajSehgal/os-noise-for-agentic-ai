@@ -60,7 +60,7 @@ Full detail (every design decision, every gotcha) is in
 
 Ubuntu 24.04, 4 vCPUs, cgroup v2, no swap (so memory pressure OOMs rather
 than swaps). Our setup is one Google Cloud `n2-standard-4` (see
-`research-paper/paper2.tex`, Table 1). Then:
+`research-paper/paper.tex`, Table 1). Then:
 
 ```bash
 bash collection/vm_setup_agentic.sh     # installs LTTng 2.15 + smoke-tests tracing

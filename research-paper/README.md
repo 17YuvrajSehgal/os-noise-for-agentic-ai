@@ -1,6 +1,6 @@
 # Research paper — OS Noise for Agentic AI
 
-`paper2.tex` — the paper. Self-contained, builds with plain pdfLaTeX (only
+`paper.tex` — the paper. Self-contained, builds with plain pdfLaTeX (only
 standard packages: geometry, booktabs, amsmath, amssymb, amstext, graphicx,
 hyperref, caption, titlesec).
 
@@ -11,7 +11,7 @@ pdflatex paper2.tex && pdflatex paper2.tex   # twice, for refs
 ```
 
 Or `latexmk -pdf paper2.tex`. No TeX engine is installed on the dev box, so
-build on a machine with TeX Live / MiKTeX (or Overleaf: upload `paper2.tex`
+build on a machine with TeX Live / MiKTeX (or Overleaf: upload `paper.tex`
 and the `figures/` folder).
 
 ## Figures
