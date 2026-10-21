@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this code or dataset, please cite the paper (and the Zenodo dataset once released)."
+message: "If you use this code or dataset, please cite the paper and the Zenodo dataset (DOI 10.5281/zenodo.23523441)."
 title: "OS Noise for Agentic AI: A Kernel-Trace Study of How Container Resource Limits Slow Down and Break AI Coding Agents"
 abstract: >-
   Code and metadata artifact for a kernel-trace (LTTng) study of how container
@@ -25,3 +25,13 @@ keywords:
   - performance
 license: MIT
 date-released: 2026-10-15
+references:
+  - type: data
+    title: "OS Noise for Agentic AI: kernel traces of AI coding agents under container resource limits"
+    doi: 10.5281/zenodo.23523441
+    year: 2026
+    authors:
+      - family-names: Sehgal
+        given-names: Yuvraj
+      - family-names: Ezzati-Jivan
+        given-names: Naser

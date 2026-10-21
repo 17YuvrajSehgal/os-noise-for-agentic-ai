@@ -14,8 +14,17 @@ Two independent things you can reproduce:
 ### 1. Get the traces
 
 The per-run `meta/` ships in this repo; the kernel traces do not. Fetch them
-from Zenodo and unpack so each `trace.txt.gz` lands next to its `meta/` — see
-[`DATA.md`](DATA.md) for the exact layout and the one-liner.
+from Zenodo ([10.5281/zenodo.23523441](https://doi.org/10.5281/zenodo.23523441))
+and unpack at the repo root so each `trace.txt.gz` lands next to its `meta/`:
+
+```bash
+for i in $(seq -w 0 24); do
+  curl -L -O "https://zenodo.org/records/23523441/files/traces.tar.gz.part$i?download=1"
+done
+cat traces.tar.gz.part* > traces.tar.gz && tar xzf traces.tar.gz
+```
+
+See [`DATA.md`](DATA.md) for the full layout.
 
 ### 2. Analyze one run
 

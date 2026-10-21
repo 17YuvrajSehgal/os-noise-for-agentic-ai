@@ -49,11 +49,13 @@ cgroup counters.
 ├── DATA.md              ← what a run contains + how to get the traces (Zenodo)
 ├── CITATION.cff         ← how to cite
 ├── LICENSE              ← MIT (code); data is CC-BY-4.0 on Zenodo
-├── research-paper/      ← the paper (paper2.tex), figures, and the scripts
+├── research-paper/      ← the paper (paper.tex), figures, and the scripts
 │   │                      that turn runs into every table/figure number
-│   ├── paper2.tex
+│   ├── paper.tex
 │   ├── make_data.py  compare_agents.py  llm_wait.py  make_fig_*.py
 │   └── *-RESULT.md    ← prose write-up of each result
+├── provenance/          ← VM environment snapshot, campaign logs, manifests,
+│                          and the collection scripts exactly as executed
 └── latency/
     ├── 1_svc_cpu_cap/agentic-os-noise/
     │   ├── PLAN.md  RESULTS.md
@@ -75,12 +77,13 @@ numbers). Each has a README next to it.
 
 ## What ships here vs. on Zenodo
 
-| | here (this repo, ~12 MB) | Zenodo (~6 GB) |
+| | here (this repo, ~12 MB) | Zenodo (2.6 GB download, 6.5 GB unpacked) |
 |---|---|---|
 | all code (collect + analyze + paper) | ✓ | — |
 | the paper and figures | ✓ | — |
-| per-run **metadata**: cgroup counters (`cpu.stat`, `memory.*`, `io.stat`), `ground_truth.json`, clock anchors, agent log | ✓ | ✓ |
+| per-run **metadata**: cgroup counters (`cpu.stat`, `memory.*`, `io.stat`), `ground_truth.json`, clock anchors, agent log | ✓ | — |
 | per-run **kernel traces** (raw CTF + decoded `trace.txt.gz`) | — | ✓ |
+| **provenance**: VM environment snapshot, campaign logs, manifests | ✓ | ✓ |
 
 So you can inspect every run's ground truth offline. Re-deriving the paper's
 table numbers (which parse the traces) needs the Zenodo data — see
@@ -113,8 +116,19 @@ Zenodo and follow [`REPRODUCE.md`](REPRODUCE.md).
 
 ## Citing
 
-See [`CITATION.cff`](CITATION.cff). A `.bib` entry will be added with the
-Zenodo DOI once the dataset is released.
+See [`CITATION.cff`](CITATION.cff). The dataset has its own DOI:
+
+```bibtex
+@dataset{sehgal_osnoise_traces_2026,
+  author    = {Sehgal, Yuvraj and Ezzati-Jivan, Naser},
+  title     = {{OS Noise for Agentic AI: kernel traces of AI coding
+               agents under container resource limits}},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23523441},
+  url       = {https://doi.org/10.5281/zenodo.23523441}
+}
+```
 
 ## License
 

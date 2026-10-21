@@ -7,22 +7,21 @@ hyperref, caption, titlesec).
 ## Build
 
 ```bash
-pdflatex paper2.tex && pdflatex paper2.tex   # twice, for refs
+pdflatex paper.tex && pdflatex paper.tex   # twice, for refs
 ```
 
-Or `latexmk -pdf paper2.tex`. No TeX engine is installed on the dev box, so
-build on a machine with TeX Live / MiKTeX (or Overleaf: upload `paper.tex`
-and the `figures/` folder).
+Or `latexmk -pdf paper.tex`. Build on a machine with TeX Live / MiKTeX, or
+on Overleaf by uploading `paper.tex` and the `figures/` folder.
 
 ## Figures
 
-- The paper embeds `figures/fig_method.pdf` (trace-to-accounting method) and
-  `figures/fig_llmshare.pdf` (the LLM-wait share). `.png` copies are provided
-  for quick preview.
-- The other `fig_*` files (cpu, threads, memory, io, consistency) are
-  dropped from the current draft but kept here; the tables carry those
-  numbers. `make_figures.py`, `make_fig_llm.py`, `make_fig_consistency.py`
-  regenerate them (matplotlib, Okabe–Ito colorblind-safe palette).
+- The paper embeds one figure, `figures/fig_method.pdf` (the
+  trace-to-accounting method). A `.png` copy is provided for quick preview.
+- The other `fig_*` files (llmshare, cpu, threads, memory, io, consistency)
+  were dropped from the current draft to save space but are kept here as
+  supplementary views; the tables carry those numbers. `make_figures.py`,
+  `make_fig_llm.py`, and `make_fig_consistency.py` regenerate them
+  (matplotlib, Okabe–Ito colorblind-safe palette).
 
 ## Numbers (reproduce the tables)
 
