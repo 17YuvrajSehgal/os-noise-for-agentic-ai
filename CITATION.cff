@@ -10,10 +10,24 @@ type: software
 authors:
   - family-names: Sehgal
     given-names: Yuvraj
-    affiliation: "Brock University"
+    affiliation: "Department of Computer Science, Brock University, St. Catharines, Ontario, Canada"
+    email: ys19rk@brocku.ca
+    orcid: "https://orcid.org/0009-0002-1980-604X"
+  - family-names: Patel
+    given-names: Sneh
+    affiliation: "Department of Computer Science, Brock University, St. Catharines, Ontario, Canada"
+    email: sp18oo@brocku.ca
+    orcid: "https://orcid.org/0000-0002-1985-8715"
+  - family-names: Panahandeh
+    given-names: Mahsa
+    affiliation: "School of Electrical Engineering and Computer Science, University of Ottawa, Ottawa, Ontario, Canada"
+    email: mpanahan@uottawa.ca
+    orcid: "https://orcid.org/0000-0002-6369-8982"
   - family-names: Ezzati-Jivan
     given-names: Naser
-    affiliation: "Brock University"
+    affiliation: "Department of Computer Science, Brock University, St. Catharines, Ontario, Canada"
+    email: nezzatijivan@brocku.ca
+    orcid: "https://orcid.org/0000-0003-1435-6297"
 keywords:
   - agentic AI
   - LLM coding agents
@@ -33,5 +47,13 @@ references:
     authors:
       - family-names: Sehgal
         given-names: Yuvraj
+        orcid: "https://orcid.org/0009-0002-1980-604X"
+      - family-names: Patel
+        given-names: Sneh
+        orcid: "https://orcid.org/0000-0002-1985-8715"
+      - family-names: Panahandeh
+        given-names: Mahsa
+        orcid: "https://orcid.org/0000-0002-6369-8982"
       - family-names: Ezzati-Jivan
         given-names: Naser
+        orcid: "https://orcid.org/0000-0003-1435-6297"

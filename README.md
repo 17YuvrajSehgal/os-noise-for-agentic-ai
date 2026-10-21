@@ -3,8 +3,11 @@
 A kernel-trace study of how container resource limits slow down and break AI
 coding agents.
 
-Yuvraj Sehgal, Naser Ezzati-Jivan — Department of Computer Science, Brock
-University.
+Yuvraj Sehgal¹, Sneh Patel¹, Mahsa Panahandeh², Naser Ezzati-Jivan¹
+
+¹ Department of Computer Science, Brock University, St. Catharines, Ontario,
+Canada · ² School of Electrical Engineering and Computer Science, University
+of Ottawa, Ottawa, Ontario, Canada
 
 This repository is the **code and metadata artifact** for the paper. The full
 raw traces are released separately on Zenodo (see [`DATA.md`](DATA.md)).
@@ -120,7 +123,8 @@ See [`CITATION.cff`](CITATION.cff). The dataset has its own DOI:
 
 ```bibtex
 @dataset{sehgal_osnoise_traces_2026,
-  author    = {Sehgal, Yuvraj and Ezzati-Jivan, Naser},
+  author    = {Sehgal, Yuvraj and Patel, Sneh and
+               Panahandeh, Mahsa and Ezzati-Jivan, Naser},
   title     = {{OS Noise for Agentic AI: kernel traces of AI coding
                agents under container resource limits}},
   year      = {2026},
