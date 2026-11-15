@@ -440,66 +440,73 @@ Medians of 5 runs with 95\% bootstrap intervals.}
 \end{figure*}
 
 \begin{table}[t]
-\caption{Each limit at a glance (Opus, local slowdown against no limit).}
+\caption{Each limit at a glance (Opus, local slowdown against no limit).
+Breaking point: the loosest step at which local time grows by more than
+10\%. For the neighbour, the agent itself has no limit.}
 \label{tab:limits}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}llll@{}}
 \toprule
-Limit & Breaking point & Tightest level & Part that grows \\
+Limit & Breaking point & Tightest step & Part that grows \\
 \midrule
 CPU quota & 0.75 core (+35\%) & 0.25: x3.9 (wall x2.0) & tools, start-up \\
 Threads on 4 vCPUs & 4 workers (+24\%) & 16: x2.4 & tools (CPU wait) \\
 Disk read speed & 150\,MB/s (+43\%) & 20\,MB/s: x9.2 & tools \\
 Disk, coding task & 50\,MB/s (+26\%) & 5\,MB/s: x5.3 & start-up \\
-File memory, soft/hard & 1152 / 1024\,MB & x3.4 at once & tools (re-reads) \\
-Tool memory (512\,MB) & 640\,MB & tool killed, 5 of 5 & model (reaction) \\
+File memory, soft/hard & 1152 / 1024\,MB & x3.4 in one step & tools (re-reads) \\
+Tool memory (512\,MB) & 640\,MB & tool killed, 5 of 5 & model (explains kill) \\
 Whole-agent memory & 128\,MB & x15, then killed & start-up, reclaim \\
 Process count & 17 (+55\%) & $\leq$16: aborts in 3\,s & tools \\
 Network & none & 256\,kbit/s: wall +29\% & model only \\
-Busy neighbour & CPU: +86\% & memory: +62\% & tools, start-up \\
+Busy neighbour & CPU load: +86\% & memory load: +62\% & tools, start-up \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
-Table~\ref{tab:limits} summarizes every limit and Figure~\ref{fig:limits}
-shows six of them. Three shapes appear.
+We now apply one limit at a time and tighten it step by step.
+Table~\ref{tab:limits} summarizes every limit, and Figure~\ref{fig:limits}
+shows six of them. The limits follow three shapes.
 
 \emph{Smooth.} CPU quota, disk speed and extra threads raise the cost step
-by step, roughly in proportion to the cut. At 0.75 core the coding task's
-local time grows by 35\%; at 0.5 core by 84\%; at 0.25 core it is 3.9
-times longer. The extra time is in the tools (+13\,s at 0.25 core) and in
-start-up (+3.6\,s), and the trace shows the agent's processes waiting
-26\,s for the CPU quota. A disk limit acts the same way on a file read
-(x9.2 at 20\,MB/s). On the coding task it acts on start-up instead
-(+21\,s at 5\,MB/s), because the agent program itself is read from disk
-when it starts with a cold cache. Threads beyond the four cores add CPU
-waiting: 7.6\,s with 8 workers and 46\,s with 16.
+by step, roughly in proportion to the cut. At 0.75 core, the coding task's
+local time grows by 35\%; at 0.5 core it grows by 84\%; at 0.25 core it is
+3.9 times longer. The extra time is in the tools (13\,s more at 0.25 core)
+and in start-up (3.6\,s more). The trace shows that the agent's processes
+wait 26\,s for the CPU quota. A disk limit acts in the same way on a file
+read (x9.2 at 20\,MB/s). On the coding task, a disk limit slows start-up
+instead (21\,s more at 5\,MB/s). The reason is that the agent program
+itself is read from disk when it starts, because we empty the file cache
+before each run. More workers than the four vCPUs add waiting for a CPU:
+7.6\,s with 8 workers and 46\,s with 16.
 
-\emph{Cliff.} Memory limits do nothing until the working set no longer
-fits, and then the cost jumps at one step. A file read under a soft limit
-(\texttt{memory.high}) runs at full speed down to 1344\,MB and 3.4 times
-slower at 1152\,MB, where every pass reads the file from disk again. A
-hard limit (\texttt{memory.max}) gives the same cliff for file memory, at
-1024\,MB, and never kills: file pages can always be dropped. Process
-memory cannot be dropped without swap. A tool that needs 512\,MB runs at
+\emph{Cliff.} A memory limit has no effect while the data a task needs
+still fits. Once it no longer fits, the cost jumps in one step. A file read
+under a soft limit (\texttt{memory.high}) runs at full speed down to
+1344\,MB, and 3.4 times slower at 1152\,MB, where every pass reads the file
+from disk again. A hard limit (\texttt{memory.max}) gives the same cliff
+for file memory, at 1024\,MB, and never kills. File data in memory is only
+a copy of the disk, so the kernel can always drop it and read it again.
+A program's own memory has no such copy, and our VMs have no swap, so the
+kernel can only kill the program. A tool that needs 512\,MB runs at
 704\,MB and is killed at 640\,MB in all five runs. A limit on the whole
-agent costs 11\% at 192\,MB; at 128\,MB the run takes 15 times longer in
-reclaim and disk reads before it is killed, and below that the agent dies
-during start-up.
+agent costs 11\% at 192\,MB. At 128\,MB the run takes 15 times longer,
+spent on reclaim and disk reads, before it is killed. Below that, the
+agent dies during start-up.
 
-\emph{Crash.} The process limit has no cost down to 18 processes (apart from one aborted run each at 19 and 18). At 17
-the agent's attempts to start processes fail and the run is 55\% slower;
-at 16 and below the agent aborts within about three seconds.
+\emph{Crash.} The process limit has no cost down to 18 processes, apart
+from one aborted run each at 19 and 18. At 17, some of the agent's
+attempts to start a process fail, and the run is 55\% slower. At 16 and
+below, the agent aborts within about three seconds.
 
-Three cases do not fit these shapes. The
-network is the only limit that leaves local time flat: delay, loss and low
-bandwidth add 2 to 6\,s of model time and nothing on the machine. A busy
-neighbour, with no limit on the agent at all, raises local time by 86\%
-(CPU load) or 62\% (memory load) while wall time moves by 2 to 9\%. Two
-limits can also multiply: a soft memory limit and a disk limit each slow
-the file task to 34\,s, but together they take 117\,s, because the memory
-limit turns cached reads into disk reads that the disk limit then
-throttles.
+Three cases do not fit these shapes. The network is the only limit that
+leaves local time unchanged: delay, packet loss and low bandwidth add 2 to
+6\,s of model time and nothing on the machine. A busy neighbour raises the
+agent's local time by 86\% (CPU load) or 62\% (memory load), although the
+agent itself has no limit, while wall time changes by only 2 to 9\%.
+Finally, two limits can multiply. A soft memory limit alone and a disk
+limit alone each slow the file task to 34\,s, but together they take
+117\,s. The memory limit turns reads from memory into reads from disk,
+and the disk limit then slows these reads down.
 
 \subsection{The hidden-cost model}
 
@@ -512,44 +519,47 @@ settings (three models). The band shows $\pm$10\%.}
 \label{fig:hidden}
 \end{figure}
 
-In every panel of Figure~\ref{fig:limits} the wall slowdown is much
-smaller than the local slowdown. If a limit changes only the time on the
-machine and not the model's answer time, the wall slowdown follows from
-the local slowdown $s$ and the local share $f$ of an unlimited run:
+In every panel of Figure~\ref{fig:limits}, the wall slowdown is much
+smaller than the local slowdown. Assume that a limit changes only the time
+on the machine, and not the model's answer time. Let $f$ be the share of
+local time in a run with no limit, and $s$ the local slowdown. Then only
+the local part of the run grows, and the wall slowdown is
 \begin{equation}
 \text{wall slowdown} = 1 + f\,(s - 1).
 \label{eq:hidden}
 \end{equation}
-In our runs $f$ is between 0.20 and 0.45, so only a fifth to a half of any
-cost on the machine reaches the user. At 0.25 core, $f = 0.29$ and
-$s = 3.85$ give a predicted wall slowdown of 1.82; the measured value is
-2.01.
+In our runs, $f$ is between 0.20 and 0.45, so only a fifth to a half of
+any cost on the machine reaches the user. For example, at 0.25 core,
+$f = 0.29$ and $s = 3.85$ give a predicted wall slowdown of 1.82; the
+measured value is 2.01.
 
 Figure~\ref{fig:hidden} tests Equation~\ref{eq:hidden} on all 68 limited
-settings of Opus, Haiku and Fable. In the 45 settings where the median
-model time moved by less than 2\,s, the prediction is within 10\% in 44,
-with a median error of 3.3\%. Over all 68 settings it is within 10\% in 52.
-The misses are settings where the model side changed, and each has a known
-cause. Under a network limit the model's answers are slower, so wall time
-is 9 to 21\% above the prediction. With Haiku and Fable at 0.5 and 0.25
-core the agent takes extra turns (Section~\ref{sec:rq5}), and wall time is
-15 to 33\% above it. With a busy CPU neighbour the model happened to answer
-3\,s faster than in the baseline runs, and wall time is 12 to 18\% below
-the prediction.
+settings of Opus, Haiku and Fable. In 45 of them the median model time
+changed by less than 2\,s, so the assumption holds. In these 45, the
+prediction is within 10\% in 44, with a median error of 3.3\%. Over all
+68 settings, it is within 10\% in 52. The misses are the settings where
+the model side changed, and the model time shows how. Under a network
+limit, the model's answers are slower, so wall time is 9 to 21\% above the
+prediction. With Haiku and Fable at 0.5 and 0.25 core, the agent takes
+extra model turns (Section~\ref{sec:rq5}), and wall time is 15 to 33\%
+above the prediction. With a busy CPU neighbour, the model happened to
+answer 3\,s faster than in the runs with no limit, and wall time is 12 to
+18\% below the prediction.
 
-The model has two uses. It explains why wall-time benchmarks miss system
-costs: a cost on the machine is shrunk by $f$ before the user sees it, and
-then hidden in the model's noise. And its error is itself a measurement:
-when the measured wall slowdown is above the prediction, the difference
-is the share of the slowdown that came from the model side, either a
-slower service or an agent that does more work.
+The model has two uses. First, it explains why benchmarks that compare
+only wall time miss system costs: a cost on the machine shrinks by the
+factor $f$ before the user sees it, and then disappears in the noise of
+the model's answer time. Second, its error is a measurement in itself.
+When the measured wall slowdown is above the prediction, the difference is
+the part of the slowdown that came from the model side: a slower model
+service, or an agent that does more work.
 
 \textbf{Answer to RQ2.} Each limit has a breaking point and one of three
 shapes: smooth (CPU, disk, threads), cliff (memory) or crash (process
-count). The cost lands in the tools for most limits, in start-up for disk,
-and in model time only for the network. The model wait hides most of it:
-the user sees $1 + f(s-1)$ of a local slowdown $s$, with $f$ between 0.20
-and 0.45.
+count). For most limits the cost lands in the tools; for a disk limit on
+the coding task it lands in start-up, and for the network only in model
+time. The model wait hides most of the cost: of a local slowdown $s$, the
+user sees only $1 + f\,(s-1)$, with $f$ between 0.20 and 0.45.
 
 % ---------------------------------------------------------------------------
 \section{RQ3: Do Real Platform Settings Hurt Real Tasks?}\label{sec:rq3}
