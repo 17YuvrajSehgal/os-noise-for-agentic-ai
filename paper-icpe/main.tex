@@ -576,8 +576,75 @@ capacity estimate from one agent alone is far too high.
 \end{itemize}
 
 % ---------------------------------------------------------------------------
-\section{Results Across Machines and Agents}
-\todo{0.5 page: the 14 earlier claims, 9 confirmed, 5 refined; table}
+\section{Results Across Machines and Agents}\label{sec:cross}
+
+\begin{table}[t]
+\caption{The 14 claims of an earlier study~\cite{earlier2026}, recomputed
+on its data (old VM, Claude Code and Codex) and on our new data (new VM,
+Claude Code) with the same analysis.}
+\label{tab:cross}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}rlll@{}}
+\toprule
+\# & Earlier claim & New data & Verdict \\
+\midrule
+1 & Agent waits for model 84\% of the time & 69--79\% (Claude); Codex 88--91\% (old) & corrected \\
+2 & CPU cap lowers model share (53\% at 0.25 core) & 34\% (Opus); 41\% on old data & corrected \\
+3 & CPU cap does not change on-CPU work & holds for Opus; Haiku x2.9, Fable x1.8 & refined \\
+4 & Wait share follows $(W-C)/W$ & 0.48 vs 0.50; 0.73 vs 0.75 & holds \\
+5 & Stalls $\geq$1\,ms jump once $W > C$ & 31 $\to$ 2534 $\to$ 5316 & holds \\
+6 & Sub-agents do not compete for cores & 0.00 runnable per worker, 20 runs & holds \\
+7 & Soft limit: re-reads, x4.7, never killed & x4.5, 1.05\,M refaults, 0 kills & holds \\
+8 & Hard limit on file memory: no kill & no kill; cliff 1280--1024\,MB & holds \\
+9 & Process memory: killed at 640\,MB & killed at 640\,MB; fine at 704\,MB & holds \\
+10 & OOM killer takes the tool, never the agent & agent killed in 2 of 25 & corrected \\
+11 & Disk read time follows the cap & x1.2 to x12.2; same 1.2\,GB read & holds \\
+12 & Slow disk does not hurt the coding task & +30\% at 20\,MB/s (start-up) & refined \\
+13 & Trace vs \texttt{cpu.stat}: 2\% to 18\% & under 1.5\% (analysis bug fixed) & corrected \\
+14 & Every effect holds for Codex & old data only & kept \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+An earlier workshop study~\cite{earlier2026} measured four of our limits
+(CPU quota, threads, memory, disk) on one VM, with Claude Code and Codex.
+We recomputed each of its 14 claims with the same analysis on its own data
+and on our new runs from a second VM of the same type, with a newer agent
+version and kernel (Table~\ref{tab:cross}).
+
+Nine claims hold on both VMs, several with tighter edges because the new
+data has more runs and finer steps. The thread law holds on all three data
+sets: with $W$ CPU-bound workers on $C$ cores, the share of time spent
+waiting for a CPU is $(W-C)/W$ (0.48 against 0.50 with 8 workers, 0.73
+against 0.75 with 16). The memory cliffs hold, now located within one step
+(between 1344 and 1152\,MB for the soft limit, 704 and 640\,MB for process
+memory). Sub-agents again cause no competition for cores, now in 20 runs
+instead of 6.
+
+Five claims need correction or refinement. (1)~The 84\% model share
+counted every HTTPS exchange as model time; counted from model turns, it
+is about 75\% for Claude Code and 90\% for Codex. (2)~At 0.25 core the
+share falls to 41\%, not 53\%. (3)~A CPU cap leaves the agent's CPU work
+unchanged for Opus and Codex, but not for smaller models: Haiku uses 2.9
+times more CPU at 0.25 core, because it works longer (Section~\ref{sec:rq5}).
+(10)~The OOM killer usually takes the tool, but in 2 of 25 runs it took the
+agent itself. (12)~A slow disk does slow the coding task, through start-up.
+(13)~Trace and kernel counters agree within 1.5\%; the 18\% gap came from a
+bug in the earlier analysis script.
+
+Two machine differences explain the edges that moved. The new VM's disk
+reads at 287\,MB/s against 205\,MB/s, so a 200\,MB/s cap now has a small
+effect (x1.2) where it had none, and every read phase is shorter. The
+long tail of scheduling delays is larger on the new kernel: stalls of
+10\,ms or more number 421 (275 to 791) per run with 16 workers, against
+133 on the old VM. We therefore report such tails as machine-dependent.
+The Codex results rest on the old data only.
+
+\textbf{Summary.} Every mechanism and law of the earlier study holds on
+two VMs and, where tested, two agents. Where a threshold moved, the move
+has a likely cause: the faster disk, the newer kernel, or, for the
+file-memory edge, the smaller memory footprint of the newer agent version
+(not checked).
 
 % ---------------------------------------------------------------------------
 \section{Implications}\label{sec:implications}
