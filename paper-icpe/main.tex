@@ -179,23 +179,69 @@ results into guidance for platform and agent builders.
 
 % ---------------------------------------------------------------------------
 \section{Study Design}\label{sec:design}
-\todo{1.25 pages}
 
-\subsection{Setup}
-\begin{itemize}
-\item Two GCP VMs of the same type (n2-standard-4: 4 vCPU, 15\,GB, no
-  swap), Linux 7.0 \todo{exact kernels}, LTTng \todo{version}.
-\item Agents: Claude Code (2.1.296 old, 2.1.322 new; Opus, Haiku, Fable)
-  and Codex CLI 0.162.1 (old VM).
-\item Each agent in its own cgroup v2; limits: \texttt{cpu.max},
-  \texttt{memory.high}, \texttt{memory.max}, \texttt{io.max},
-  \texttt{pids.max}; network via netem; neighbours outside the group;
-  Docker for real tasks.
-\item Cold page cache before every run; random order with fixed seed;
-  5 repeats per cell (3 for density, 10 for overhead).
-\end{itemize}
+\subsection{Machines and agents}
+All runs use Google Cloud VMs of type n2-standard-4: 4 vCPUs (Intel
+Xeon, Cascade Lake, 2.8\,GHz), 15\,GB of memory, no swap, and a 400\,GB
+balanced persistent disk, running Ubuntu 24.04. The first VM (the
+\emph{old} data, 262 runs) ran Linux 7.0.0-1011 and 7.0.0-1014; the second
+(the \emph{new} data, 883 runs) ran Linux 7.0.0-1017. Both used LTTng
+2.15.1. All new runs use the same VM, created once and never resized.
 
-\subsection{Tasks and experiments}
+We study two agents that share no code. Claude Code~\cite{claudecode} is a
+JavaScript program; we ran version 2.1.296 on the old VM, with the
+agent's default model at the time, and 2.1.322 on the new one, with Opus
+by default and Haiku and Fable where stated. Codex CLI~\cite{codexcli} 0.162.1 is a Rust program and ran on the
+old VM only. Both agents run headless with a fixed prompt, a fresh session
+and their JSON event stream turned on.
+
+\subsection{Limits}
+Each agent and every process it starts run in their own cgroup~v2 group,
+created empty for each run so that its counters start at zero. A run
+applies one setting through the group's control files: \texttt{cpu.max}
+(CPU quota), \texttt{memory.high} (soft memory limit: the kernel reclaims
+memory but never kills), \texttt{memory.max} (hard limit: the kernel kills
+a process when it cannot reclaim), \texttt{io.max} (disk read speed) or
+\texttt{pids.max} (process count)~\cite{cgroupv2}. Network limits use
+\texttt{netem} on a network namespace around the agent, in both
+directions. A busy neighbour runs CPU, memory or disk load in a separate
+group on the same VM. For real tasks the agent runs in a Docker container
+whose group sits inside the agent's group, so the same limits apply.
+
+\subsection{Tasks}
+\emph{Small tasks} make each limit act on a known piece of work. Two are
+coding tasks the agent must solve: fix four bugs across three modules
+(\texttt{t2}), or implement functions from their docstrings until a test
+suite passes (\texttt{t3}). The others ask the agent to run a fixed
+workload: $W$ CPU workers in parallel (\texttt{t4}); $N$ sub-agents each
+running a worker (\texttt{t5}); a worker that reads a 1\,GB file several
+times (\texttt{t6}, file memory); a worker that allocates 512\,MB
+(\texttt{t7}, process memory); and a single 1\,GB read (\texttt{t8},
+disk). For RQ5, \texttt{t9} is \texttt{t3} with a test that does not print
+its own run time, and \texttt{t10} is a second coding task in both forms.
+Each repository is rebuilt byte for byte before a run, and a check
+confirms that the agent did not edit the test file.
+
+\emph{Real tasks} are ten issues from SWE-bench Verified~\cite{jimenez2024}
+in six Python projects. Six are rated ``under 15 minutes'' for a human
+(Django, Sympy, xarray, pytest, Flask, Requests); four are rated ``1 to 4
+hours'' or more (Django, Sympy, pytest, xarray). We build each project at
+its base commit with the pinned dependencies of the SWE-bench harness, and
+keep a task only if its failing tests fail before and pass after the
+reference fix. A run succeeds when the failing tests pass and the tests
+that passed before still pass. The real tasks run at the settings of
+Section~1: no limit; 2 CPUs and 8\,GB; 2 CPUs and 512\,MB; 1 CPU and
+512\,MB; and 0.25 CPU and 512\,MB. \todo{long-task settings and counts}
+
+\subsection{Protocol}
+Table~\ref{tab:data} lists the experiments. Each experiment sweeps one
+setting from loose to tight with five runs per level (three per level for
+the density experiment, ten for the tracing cost). The page cache is
+dropped before every run. Runs within an experiment are in random order
+with a fixed seed, so that changes in model speed over the day cannot line
+up with one level~\cite{mytkowicz2009}. A run is stopped after 15 minutes
+(20 for short and 30 for long real tasks).
+
 \begin{table}[t]
 \caption{The dataset: 1,145 runs, 1,130 with a full kernel trace.}
 \label{tab:data}
@@ -204,20 +250,20 @@ results into guidance for platform and agent builders.
 \toprule
 Experiment & Task & Levels & Runs \\
 \midrule
-CPU quota (3 models) & small coding & 1 to 0.25 core & 140 \\
-Threads, sub-agents & workers, helpers & 2 to 16 & 40 \\
-Memory (soft, hard, cliff) & file, anon. & 2\,GB to 512\,MB & 90 \\
-Disk read limit & read 1\,GB & 200 to 20\,MB/s & 30 \\
-Coding task: memory, disk & coding & 512 to 64\,MB; 50 to 5\,MB/s & 65 \\
-Network & coding & delay, loss, rate & 40 \\
-Process count & coding & 64 to 12 & 70 \\
-Neighbour, two limits & coding, mixed & 4 kinds & 45 \\
-Agents per machine & coding & 1 to 32 agents & 18 \\
-Printed run time & coding & 3 CPU levels & 120 \\
-Real tasks (SWE-bench) & 6 fixes & 5 platform settings & 180 \\
-Tracing cost & coding, Django & none, core, full & 45 \\
+CPU quota (3 models) & t2, t3 & 1 to 0.25 core & 140 \\
+Threads, sub-agents & t4, t5 & 2 to 16 & 40 \\
+Memory (soft, hard, process) & t6, t7 & 2\,GB to 512\,MB & 90 \\
+Disk read limit & t8 & 200 to 20\,MB/s & 30 \\
+Coding task: memory, disk & t3 & 512 to 64\,MB; 50 to 5\,MB/s & 65 \\
+Network & t3 & delay, loss, rate & 40 \\
+Process count & t3 & 64 to 12 & 70 \\
+Neighbour, two limits & t3, t6, t8 & 4 kinds & 45 \\
+Agents per machine & t3 & 1 to 32 agents & 18 \\
+Printed run time & t3, t9, t10 & 3 CPU levels, 2 models & 120 \\
+Real tasks & 6 fixes & 5 platform settings & 180 \\
+Tracing cost & t3, Django & none, core, full & 45 \\
 \midrule
-Old VM, Claude / Codex & workshop set & 7 experiments & 132 / 130 \\
+Old VM, Claude / Codex & t2--t8 & 7 experiments & 132 / 130 \\
 \midrule
 Total & & & 1,145 \\
 \bottomrule
@@ -225,19 +271,56 @@ Total & & & 1,145 \\
 \todo{add feedback\_extra, real\_long}
 \end{table}
 
-\subsection{Measurement}
-\begin{itemize}
-\item Full kernel trace (every tracepoint and system call), cgroup
-  counters before and after, 5\,Hz samples, the agent's JSON event log.
-\item Time split from the event log: start-up, model, tools, agent,
-  shutdown. Model turns from the log, not from network traffic.
-\item Local time = wall $-$ model. Why: model noise hides wall changes under
-  about 20\% with 5 runs; local time shows about 10\%.
-\item Statistics: ratio of medians with 95\% bootstrap interval (2000
-  resamples); exact rank-sum tests for 5 vs 5.
-\item Tracing overhead (45 runs, no trace vs core vs full): wall unchanged; full trace adds about 7\% CPU (+0.4\,s) on the coding task, none detectable on a real task; no events lost. All reported ratios compare traced cells.
-\item Trace vs \texttt{cpu.stat}: under 1.5\% median difference.
-\end{itemize}
+\subsection{What we record}
+Each run keeps four views. (1)~A kernel trace with LTTng: every
+tracepoint and every system call, with process, thread, parent and
+namespace on each event (the old runs used a narrower profile: system
+calls, scheduler, block, network, interrupt, power and memory reclaim).
+(2)~The agent's JSON event stream, each line stamped on arrival. (3)~Every
+cgroup counter (\texttt{cpu.stat}, \texttt{memory.*}, \texttt{io.stat},
+\texttt{pids.*}) before and after the run, and 5 samples per second during
+it. (4)~The versions of the kernel, tracer, agent and collector, and clock
+anchors that line up all views.
+
+\subsection{Splitting a run}
+From the event stream we split the wall time of each run into five parts.
+A \emph{model turn} runs from the event that hands work to the model (the
+start of the session or a tool result) to the model's last block of that
+answer. A \emph{tool call} runs from the model's request to the tool's
+result. Time before the first turn is \emph{start-up}; time when neither
+a turn nor a tool call is open is the agent's \emph{own work}. We take
+turns from the event stream rather than from network traffic, because a
+rule based on traffic miscounts on slow networks, with small models and
+with sub-agents.
+
+\emph{Local time} is the wall time minus the time a model turn is open.
+It is the part of a run that the machine controls. From the trace we also
+attribute each thread's time to running, waiting for a CPU (split into
+waiting for the CPU quota and for a busy core), and sleeping on disk,
+memory reclaim or another cause, following kernel wait
+analysis~\cite{giraldeau2016}.
+
+\subsection{Statistics}
+We compare each level with the same task and model with no limit. The
+slowdown is the ratio of median times, with a 95\% bootstrap interval
+(2,000 resamples). Medians are robust to the long tail of model
+times~\cite{maricq2018,hoefler2015}. A level is a \emph{breaking point}
+when it is the loosest level whose interval for local slowdown lies above
+1.10. For differences between two groups we use an exact one-sided
+rank-sum test. Local time matters here: the model's answer time varies by
+seconds from run to run, so with five runs a change in wall time below
+about 20\% cannot be told from noise, while local time shows changes of
+about 10\%.
+
+\subsection{Checks on the measurement}
+\emph{Tracing cost.} We ran the coding task ten times each with no trace,
+the core profile and the full profile, and a real task five times each.
+Wall time did not change. The full trace added about 7\% CPU time
+(+0.4\,s) on the coding task and no detectable cost on the real task, and
+no event was lost in any traced run. Since every ratio we report compares
+two traced settings, this cost mostly cancels. \emph{Trace against
+counters.} CPU time from the trace agrees with \texttt{cpu.stat} within
+1.5\% (median over 365 runs).
 
 % ---------------------------------------------------------------------------
 \section{RQ1: Where Does the Time Go?}\label{sec:rq1}
