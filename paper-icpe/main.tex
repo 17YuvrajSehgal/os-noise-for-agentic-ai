@@ -137,7 +137,7 @@ Total & & & 1,100 \\
   about 20\% with 5 runs; local time shows about 10\%.
 \item Statistics: ratio of medians with 95\% bootstrap interval (2000
   resamples); exact rank-sum tests for 5 vs 5.
-\item Tracing overhead: \todo{overhead campaign, 45 runs}.
+\item Tracing overhead (45 runs, no trace vs core vs full): wall unchanged; full trace adds about 7\% CPU (+0.4\,s) on the coding task, none detectable on a real task; no events lost. All reported ratios compare traced cells.
 \item Trace vs \texttt{cpu.stat}: under 1.5\% median difference.
 \end{itemize}
 

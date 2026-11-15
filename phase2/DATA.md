@@ -5,11 +5,11 @@ Counted from the run folders on 2026-11-14.
 - **Old (workshop, Phase 1):** 262 runs with full kernel traces, first VM
   (now deleted). 132 Claude Code (2.1.296), 130 Codex (0.162.1).
   Analyzed in `phase1/results/analyze_all.jsonl`.
-- **New (Phase 2):** 838 runs, all Claude Code (2.1.322), second VM. Same
+- **New (Phase 2):** 883 runs, all Claude Code (2.1.322), second VM. Same
   type (`n2-standard-4`, 4 CPUs, 15 GB) but a faster disk (287 MB/s
   against 205). Archives in
   `microservice-trace-dataset/agentic-runs-phase2/osn-export/`.
-- **Total: 1,100 traced runs.** 5 repeats per condition unless noted.
+- **Total: 1,145 runs** (1,130 with a kernel trace; the 15 "no trace" overhead runs have none by design). 5 repeats per condition unless noted.
 
 ## The small test tasks
 
@@ -40,7 +40,7 @@ The workshop's end-to-end coding-task runs under memory and disk limits
 have no traces, so they are not in the 262. How many there were is not
 known.
 
-## New data (838 runs, Claude only)
+## New data (883 runs, Claude only)
 
 | Experiment | Campaign | Task | Conditions | Runs |
 |---|---|---|---|---|
@@ -64,6 +64,8 @@ known.
 | Real tasks in a container | `real` | 6 real fixes | no limit; 2 CPU/8 GB; 2 CPU/512 MB; 1 CPU/512 MB | 120 |
 | Real tasks, no container | `real_host` | 6 real fixes | no limit | 30 |
 | Real tasks, smallest cloud size | `real_quarter` | 6 real fixes | 0.25 CPU / 512 MB | 30 |
+| Tracing cost | `overhead` | t3 | no trace, core, full (10 runs each) | 30 |
+| Tracing cost, real task | `overhead_real` | Django fix | no trace, core, full | 15 |
 
 Runs without a model in the table use Opus.
 
