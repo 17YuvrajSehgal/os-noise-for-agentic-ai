@@ -28,7 +28,7 @@
 AI coding agents spend most of their time waiting for the language model,
 so the machine they run on looks unimportant. We show that this view hides
 a large cost. We collected 1,145 runs of two coding agents with full kernel
-traces, under 20 kinds of system limits (CPU quota, memory, disk, network,
+traces, under ten kinds of system limits (CPU quota, memory, disk, network,
 process count, neighbours, many agents per machine) and on six real GitHub
 fixes at cloud platform settings. Three results stand out. First, the model
 wait hides the machine's cost: at a quarter of a CPU core, the agent's work
@@ -63,24 +63,103 @@ instead of its tools. Full kernel tracing adds no visible time and about
 
 % ---------------------------------------------------------------------------
 \section{Introduction}
-\todo{1 page}
+
+AI coding agents such as Claude Code~\cite{claudecode} and Codex
+CLI~\cite{codexcli} now edit code, run tests and install packages on their
+own. They do this inside containers, and the platforms that host them set
+the size of each container: a CI runner gives 2 CPUs and 8\,GB, an agent
+sandbox 2 CPUs and 512\,MB, a Cloud Run service 1 CPU and 512\,MB, and the
+smallest AWS Fargate task a quarter of a CPU and
+512\,MB~\cite{ghrunners,e2bsandbox,cloudrun,fargate}. The Linux kernel
+enforces these sizes with control groups (cgroups)~\cite{cgroupv2}. A
+platform engineer who picks a size, or packs many agents on one machine,
+needs to know what each choice costs.
+
+The common view is that it costs little. An agent spends most of its time
+waiting for the language model: about 75\% of a run for Claude Code and
+90\% for Codex in our measurements. If the machine is idle most of the
+time, a smaller machine should not matter. Agent benchmarks support this
+view without testing it: they report whether a task is solved and how long
+it took~\cite{jimenez2024,yang2024}, not what the system did. A recent
+characterization of agents in sandboxes~\cite{agentcgroup} measured how
+much CPU and memory agents use when nothing limits them. It did not apply
+limits, so it cannot say what a limit does to an agent.
+
+We show that the common view is wrong in a way that is easy to miss. The
+model wait does not make the machine's cost small; it hides it. The time
+the agent spends on the machine is a small part of each run, and the
+model's answer time varies by seconds from run to run. Together these mask
+any change in wall time below about 20\% with five runs per setting. At a
+quarter of a CPU core, the agent's work on the machine takes 3.9 times
+longer, but the user sees 2.0 times. With a busy neighbour on the same
+machine, the agent's work grows by 86\% while wall time moves by 2 to 9\%,
+inside the noise.
+
+To see this cost, we measured it directly. We ran Claude Code and Codex on
+two cloud VMs of the same type in more than twenty experiments covering
+ten kinds of system limits: CPU quota, soft and hard memory limits, disk and network speed,
+process count, extra threads, busy neighbours, two limits at once, and up
+to 32 agents on one machine. We also ran six real GitHub fixes from
+SWE-bench Verified~\cite{jimenez2024} at the platform settings above. In
+total we collected 1,145 runs, 1,130 of them with a full kernel trace
+(LTTng~\cite{desnoyers2006}), the agent's own event log, and cgroup
+counters. From the event log we split each run into start-up, model wait,
+tool time and the agent's own work. We then measure \emph{local time},
+the wall time minus the model wait, which is the part that the machine
+controls. The full trace costs about 7\% CPU and no visible wall time.
+
+We answer five research questions:
 \begin{itemize}
-\item Agents (Claude Code, Codex CLI) run tools inside containers with
-  cgroup limits set by platforms (CI runners, sandboxes, Cloud Run, Fargate).
-\item Common belief: model wait dominates (about 75\% for Claude Code, 90\%
-  for Codex), so the machine does not matter. Agent benchmarks measure only
-  wall time and success.
-\item Problem: the model wait is noisy and large, so it hides the machine's
-  cost. Wall-time benchmarks cannot see effects under about 20\%.
-\item Approach: kernel traces (LTTng) plus the agent's own event log; split
-  every run into start-up, model, tools, agent and system waits; measure
-  \emph{local time} (wall minus model).
-\item RQ1--RQ5 (anatomy, limits, real use, density, behaviour).
-\item Contributions: (1) dataset of 1,145 runs (1,130 traced); (2) hidden-cost
-  model; (3) map of 10 limits; (4) real tasks and density with a capacity
-  model; (5) behaviour and reliability; (6) results hold on two VMs and two
-  agents.
+\item \textbf{RQ1} (anatomy): where does an agent's time go when nothing limits it?
+\item \textbf{RQ2} (mechanisms): how does each limit change that picture?
+\item \textbf{RQ3} (realistic use): do real platform settings slow down real tasks?
+\item \textbf{RQ4} (density): how many agents can share one machine?
+\item \textbf{RQ5} (behaviour): does the agent change what it does because of the system?
 \end{itemize}
+
+Our main findings are:
+\begin{itemize}
+\item \textbf{A simple model predicts the hidden cost.} The wall slowdown
+  equals $1 + f\,(s-1)$, where $s$ is the local slowdown and $f$ the share
+  of local time in an unlimited run. With $f$ between 0.20 and 0.45, only a
+  fifth to a half of any cost on the machine reaches the user. The model
+  predicts the wall slowdown within 10\% in 44 of 45 settings where the
+  model's answer time did not change. Where it misses, the gap measures how
+  much of the slowdown came from the model side.
+\item \textbf{Each limit has a breaking point and one of three shapes.} CPU
+  quota, disk speed and extra threads slow the agent step by step; memory
+  limits do nothing and then double the time or kill a process at one step;
+  a process limit does nothing and then makes the agent abort within
+  seconds. The CPU quota starts to hurt at 0.75 core.
+\item \textbf{The breaking point predicts real use.} Real fixes at 1 CPU or
+  more show no clear slowdown. At the Fargate minimum of 0.25 CPU, every
+  task still succeeds but takes 1.76 times longer, and 2.5 times longer on
+  the machine. \todo{longer tasks}
+\item \textbf{CPU limits density before memory.} On 4 vCPUs, throughput
+  stops growing at about 16 agents, while each agent needs about 150\,MB.
+  This differs from an estimate based on peak memory~\cite{agentcgroup};
+  which resource runs out first depends on the memory per core and the task.
+\item \textbf{Limits change the agent itself.} A small model works longer
+  under a CPU limit when the test prints its own run time (11 against 7
+  model turns). A memory limit sometimes kills the agent instead of its
+  tool (2 of 25 runs), and a tight process limit makes the agent crash
+  (12 of 25 runs), both without a report to the user. \todo{update with feedback\_extra}
+\end{itemize}
+
+An earlier workshop study~\cite{earlier2026} reported first results on
+four of these limits with one VM. We redo all of its experiments on a
+second VM with a larger dataset: 9 of its 14 claims hold, and we correct
+or refine the other 5.
+
+This paper makes four contributions: (1)~a public dataset of 1,145 agent
+runs with kernel traces, event logs and counters, and the collector that
+produced it; (2)~the hidden-cost model and its check on 68 limited
+settings; (3)~a map of ten limits with their breaking points, tested on
+real tasks and at up to 32 agents per machine; and (4)~evidence that limits
+change the agent's behaviour and can crash it. Section~\ref{sec:design}
+describes the study design, Sections~\ref{sec:rq1}--\ref{sec:rq5} answer
+the research questions, and Section~\ref{sec:implications} turns the
+results into guidance for platform and agent builders.
 
 % ---------------------------------------------------------------------------
 \section{Background and Related Work}
@@ -93,11 +172,13 @@ instead of its tools. Full kernel tracing adds no visible time and about
 \item Kernel tracing and wait analysis~\cite{desnoyers2006,giraldeau2016,ezzati2018}.
 \item Agent evaluation on real repositories~\cite{jimenez2024,yang2024}:
   success rate, not system cost.
-\item Prior arXiv version of this study \todo{how to cite under double-blind: third person}
+\item A prior arXiv workshop version (cite in the third person, as
+  ``an earlier study [X] reported\ldots''); this paper redoes all its
+  experiments on a second VM and corrects five of its claims. \todo{add bib entry}
 \end{itemize}
 
 % ---------------------------------------------------------------------------
-\section{Study Design}
+\section{Study Design}\label{sec:design}
 \todo{1.25 pages}
 
 \subsection{Setup}
@@ -159,7 +240,7 @@ Total & & & 1,145 \\
 \end{itemize}
 
 % ---------------------------------------------------------------------------
-\section{RQ1: Where Does the Time Go?}
+\section{RQ1: Where Does the Time Go?}\label{sec:rq1}
 \todo{0.5 page, figure of the time split}
 \begin{itemize}
 \item Model wait is about two thirds of a run (Opus median 68\%), tools 20\%.
@@ -239,7 +320,7 @@ cells. Band: $\pm$10\%.}
 \end{itemize}
 
 % ---------------------------------------------------------------------------
-\section{RQ5: Does the Agent Change Its Behaviour?}
+\section{RQ5: Does the Agent Change Its Behaviour?}\label{sec:rq5}
 \todo{0.75 page; update with feedback\_extra}
 \begin{itemize}
 \item Printed run time: Haiku at 0.25 core does 11 vs 7 turns, wall 70 vs
@@ -255,7 +336,7 @@ cells. Band: $\pm$10\%.}
 \todo{0.5 page: the 14 earlier claims, 9 confirmed, 5 refined; table}
 
 % ---------------------------------------------------------------------------
-\section{Implications}
+\section{Implications}\label{sec:implications}
 \todo{0.5 page: guidance for platform and agent builders}
 \begin{itemize}
 \item Measure local time, not only wall time.
