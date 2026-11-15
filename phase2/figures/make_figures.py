@@ -143,27 +143,37 @@ def fig_density():
     """Agents sharing one 4 vCPU machine: time per agent and agents finished per minute."""
     by_run = defaultdict(list)
     n_of = {}
+    cpu = defaultdict(list)
     for r in rows('rq4/agents.csv'):
         by_run[r['run']].append(float(r['wall_s']))
         n_of[r['run']] = int(r['n_agents'])
+        cpu[int(r['n_agents'])].append(float(r['on_cpu_s']))
     per_n = defaultdict(lambda: ([], []))
     for run, walls in by_run.items():
         n = n_of[run]
         per_n[n][0].append(statistics.median(walls))
         per_n[n][1].append(60 * n / max(walls))
     ns = sorted(per_n)
-    fig, (a1, a2) = plt.subplots(1, 2, figsize=(3.3, 1.7))
+    # Operational bounds: X(N) <= min(N / R(1), vCPUs / D(N)), D = CPU seconds per agent
+    r1, d1 = statistics.median(per_n[1][0]), statistics.median(cpu[1])
+    dn = {n: statistics.median(cpu[n]) for n in ns}
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(3.3, 2.1))
     a1.plot(ns, [statistics.median(per_n[n][0]) for n in ns], color=C[0], marker='o')
     a1.set(ylabel='time per agent (s)', xlabel='agents')
-    a2.plot(ns, [statistics.median(per_n[n][1]) for n in ns], color=C[0], marker='o')
-    a2.set(ylabel='agents done per minute', xlabel='agents')
+    a2.plot(ns, [60 * n / r1 for n in ns], color=MUTED, lw=0.8, ls='--', label='no contention')
+    a2.plot(ns, [60 * 4 / d1] * len(ns), color=C[1], lw=0.8, ls='--', label='4 / CPU alone')
+    a2.plot(ns, [60 * 4 / dn[n] for n in ns], color=C[1], lw=1.0, marker='s', ms=2.5, label='4 / CPU at N')
+    a2.plot(ns, [statistics.median(per_n[n][1]) for n in ns], color=C[0], marker='o', label='measured')
+    a2.set(ylabel='agents done per minute', xlabel='agents', ylim=(0, 45))
     for a in (a1, a2):
         a.set_xscale('log', base=2)
         a.set_xticks(ns, [str(n) for n in ns])
         a.axvline(4, color=MUTED, lw=0.6, ls=':')
         a.minorticks_off()
     a1.text(4.3, a1.get_ylim()[1] * 0.92, '= vCPUs', color=MUTED, fontsize=5.5)
-    fig.tight_layout()
+    fig.tight_layout(rect=(0, 0, 1, 0.84))
+    fig.legend(*a2.get_legend_handles_labels(), loc='upper center', ncol=2, fontsize=5.5, handlelength=1.8,
+               columnspacing=1.0, title='agents done per minute (right):', title_fontsize=5.5)
     fig.savefig(OUT / 'fig_density.pdf')
 
 

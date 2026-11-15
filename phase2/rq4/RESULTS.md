@@ -85,3 +85,22 @@ What this means:
   stream (compare the trace's network receive times with the log times).
 - Optional extra data: spread-out arrivals (one new agent every few
   seconds) to see the steady-state capacity instead of the burst.
+
+## Capacity bound (added 2026-11-15, used in the paper)
+
+Operational bound (Denning and Buzen 1978): X(N) <= min(N / R1, C / D),
+R1 = time of one agent alone (21.4 s), C = 4 vCPUs, D = CPU seconds per
+agent (`on_cpu_s`). Plotted in `figures/fig_density.pdf`.
+
+| Agents | Measured (per min) | N / R1 | 4 / D(alone) | 4 / D(at N) |
+|---|---|---|---|---|
+| 4 | 8.9 | 11.2 | 40.7 | 28.8 |
+| 8 | 13.1 | 22.4 | 40.7 | 21.7 |
+| 16 | 16.3 | 44.9 | 40.7 | 20.6 |
+| 32 | 16.5 | 89.6 | 40.7 | 19.7 |
+
+- With the CPU of one agent alone the bound is 2.5 times the measured
+  plateau. With the CPU measured at each load, the plateau is 80 to 84%
+  of the bound. Plan capacity with the demand measured on a full machine.
+- CPU or memory first: memory runs out first when one agent's memory peak
+  is above RAM / (agents at the CPU limit) = 15 GB / 16 = 0.9 GB here.
