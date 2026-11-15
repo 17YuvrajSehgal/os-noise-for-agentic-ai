@@ -27,9 +27,9 @@
 \begin{abstract}
 AI coding agents spend most of their time waiting for the language model,
 so the machine they run on looks unimportant. We show that this view hides
-a large cost. We collected 1,145 runs of two coding agents with full kernel
+a large cost. We collected 1,225 runs of two coding agents with full kernel
 traces, under ten kinds of system limits (CPU quota, memory, disk, network,
-process count, neighbours, many agents per machine) and on six real GitHub
+process count, neighbours, many agents per machine) and on ten real GitHub
 fixes at cloud platform settings. Three results stand out. First, the model
 wait hides the machine's cost: at a quarter of a CPU core, the agent's work
 on the machine takes 3.9 times longer while the user sees 2.0 times. A
@@ -40,8 +40,8 @@ point and one of three shapes (smooth, cliff, crash); the CPU breaking point
 found on small tasks predicts which cloud settings slow real fixes.
 Third, limits change the agent itself: a small model does more work under a
 CPU limit, and memory and process limits can kill or crash the agent
-instead of its tools. Full kernel tracing adds no visible time and about
-7\% CPU. \todo{add long-task results}
+instead of its tools, often without any message to the user. Full kernel
+tracing adds no visible time and about 7\% CPU.
 \end{abstract}
 
 \begin{CCSXML}
@@ -99,9 +99,9 @@ To see this cost, we measured it directly. We ran Claude Code and Codex on
 two cloud VMs of the same type in more than twenty experiments covering
 ten kinds of system limits: CPU quota, soft and hard memory limits, disk and network speed,
 process count, extra threads, busy neighbours, two limits at once, and up
-to 32 agents on one machine. We also ran six real GitHub fixes from
+to 32 agents on one machine. We also ran ten real GitHub fixes from
 SWE-bench Verified~\cite{jimenez2024} at the platform settings above. In
-total we collected 1,145 runs, 1,130 of them with a full kernel trace
+total we collected 1,225 runs, 1,210 of them with a full kernel trace
 (LTTng~\cite{desnoyers2006}), the agent's own event log, and cgroup
 counters. From the event log we split each run into start-up, model wait,
 tool time and the agent's own work. We then measure \emph{local time},
@@ -134,16 +134,19 @@ Our main findings are:
 \item \textbf{The breaking point predicts real use.} Real fixes at 1 CPU or
   more show no clear slowdown. At the Fargate minimum of 0.25 CPU, every
   task still succeeds but takes 1.76 times longer, and 2.5 times longer on
-  the machine. \todo{longer tasks}
+  the machine; longer tasks slow down 2.1 times. The hidden-cost model
+  predicts the long tasks, collected after it was fitted, within 10\% in 7
+  of 8 cells.
 \item \textbf{CPU limits density before memory.} On 4 vCPUs, throughput
   stops growing at about 16 agents, while each agent needs about 150\,MB.
   This differs from an estimate based on peak memory~\cite{agentcgroup};
   which resource runs out first depends on the memory per core and the task.
 \item \textbf{Limits change the agent itself.} A small model works longer
-  under a CPU limit when the test prints its own run time (11 against 7
-  model turns). A memory limit sometimes kills the agent instead of its
-  tool (2 of 25 runs), and a tight process limit makes the agent crash
-  (12 of 25 runs), both without a report to the user. \todo{update with feedback\_extra}
+  under a CPU limit when the test prints its own run time (twice the wall
+  time, 15 runs per group). A memory limit sometimes kills the agent
+  instead of its tool (2 of 25 runs), a tight process limit makes the agent
+  crash (12 of 25 runs), and memory kills inside a test run reach the agent
+  as output that just stops. None of these is reported to the user.
 \end{itemize}
 
 An earlier workshop study~\cite{earlier2026} reported first results on
@@ -151,7 +154,7 @@ four of these limits with one VM. We redo all of its experiments on a
 second VM with a larger dataset: 9 of its 14 claims hold, and we correct
 or refine the other 5.
 
-This paper makes four contributions: (1)~a public dataset of 1,145 agent
+This paper makes four contributions: (1)~a public dataset of 1,225 agent
 runs with kernel traces, event logs and counters, and the collector that
 produced it; (2)~the hidden-cost model and its check on 68 limited
 settings; (3)~a map of ten limits with their breaking points, tested on
@@ -185,7 +188,7 @@ All runs use Google Cloud VMs of type n2-standard-4: 4 vCPUs (Intel
 Xeon, Cascade Lake, 2.8\,GHz), 15\,GB of memory, no swap, and a 400\,GB
 balanced persistent disk, running Ubuntu 24.04. The first VM (the
 \emph{old} data, 262 runs) ran Linux 7.0.0-1011 and 7.0.0-1014; the second
-(the \emph{new} data, 883 runs) ran Linux 7.0.0-1017. Both used LTTng
+(the \emph{new} data, 963 runs) ran Linux 7.0.0-1017. Both used LTTng
 2.15.1. All new runs use the same VM, created once and never resized.
 
 We study two agents that share no code. Claude Code~\cite{claudecode} is a
@@ -231,19 +234,21 @@ keep a task only if its failing tests fail before and pass after the
 reference fix. A run succeeds when the failing tests pass and the tests
 that passed before still pass. The real tasks run at the settings of
 Section~1: no limit; 2 CPUs and 8\,GB; 2 CPUs and 512\,MB; 1 CPU and
-512\,MB; and 0.25 CPU and 512\,MB. \todo{long-task settings and counts}
+512\,MB; and 0.25 CPU and 512\,MB. The four long tasks run with no limit
+and at the two 512\,MB settings with 1 and 0.25 CPU.
 
 \subsection{Protocol}
 Table~\ref{tab:data} lists the experiments. Each experiment sweeps one
 setting from loose to tight with five runs per level (three per level for
-the density experiment, ten for the tracing cost). The page cache is
+the density experiment, ten for the tracing cost, 15 for the main RQ5
+cells). The page cache is
 dropped before every run. Runs within an experiment are in random order
 with a fixed seed, so that changes in model speed over the day cannot line
 up with one level~\cite{mytkowicz2009}. A run is stopped after 15 minutes
 (20 for short and 30 for long real tasks).
 
 \begin{table}[t]
-\caption{The dataset: 1,145 runs, 1,130 with a full kernel trace.}
+\caption{The dataset: 1,225 runs, 1,210 with a full kernel trace.}
 \label{tab:data}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lll r@{}}
@@ -259,16 +264,16 @@ Network & t3 & delay, loss, rate & 40 \\
 Process count & t3 & 64 to 12 & 70 \\
 Neighbour, two limits & t3, t6, t8 & 4 kinds & 45 \\
 Agents per machine & t3 & 1 to 32 agents & 18 \\
-Printed run time & t3, t9, t10 & 3 CPU levels, 2 models & 120 \\
-Real tasks & 6 fixes & 5 platform settings & 180 \\
+Printed run time & t3, t9, t10 & 3 CPU levels, 2 models & 140 \\
+Real tasks, short & 6 fixes & 5 platform settings & 180 \\
+Real tasks, long & 4 fixes & 3 platform settings & 60 \\
 Tracing cost & t3, Django & none, core, full & 45 \\
 \midrule
 Old VM, Claude / Codex & t2--t8 & 7 experiments & 132 / 130 \\
 \midrule
-Total & & & 1,145 \\
+Total & & & 1,225 \\
 \bottomrule
 \end{tabular}}
-\todo{add feedback\_extra, real\_long}
 \end{table}
 
 \subsection{What we record}
@@ -306,8 +311,10 @@ slowdown is the ratio of median times, with a 95\% bootstrap interval
 (2,000 resamples). Medians are robust to the long tail of model
 times~\cite{maricq2018,hoefler2015}. A level is a \emph{breaking point}
 when it is the loosest level whose interval for local slowdown lies above
-1.10. For differences between two groups we use an exact one-sided
-rank-sum test. Local time matters here: the model's answer time varies by
+1.10. For differences between two groups we use a one-sided rank-sum
+test, exact when there are at most $10^5$ splits of the runs and with
+200,000 random splits otherwise, and a Holm correction where we run many
+tests. Local time matters here: the model's answer time varies by
 seconds from run to run, so with five runs a change in wall time below
 about 20\% cannot be told from noise, while local time shows changes of
 about 10\%.
@@ -488,15 +495,81 @@ and 0.45.
 
 % ---------------------------------------------------------------------------
 \section{RQ3: Do Real Platform Settings Hurt Real Tasks?}\label{sec:rq3}
-\todo{1 page, figure}
-\begin{itemize}
-\item Six SWE-bench Verified tasks in Docker; settings from platform docs.
-\item 1 CPU and up: no clear slowdown (same test command +2 to 9\% at 1 CPU).
-\item 0.25 CPU / 512\,MB (Fargate minimum): x1.76 wall, x2.53 local, same
-  test command x3.3; 30/30 solved. The RQ2 breaking point predicts this.
-\item 512\,MB is at the edge: Django reaches it in 9/10 runs, no kill.
-\item \todo{longer tasks (real\_long)}
-\end{itemize}
+
+\begin{table}[t]
+\caption{Real SWE-bench Verified tasks in Docker at platform settings.
+Slowdown against no limit (mean of per-task median ratios, 95\% bootstrap
+interval). Long tasks: mean over the three tasks that fit in 512\,MB;
+xarray is reported in the text.}
+\label{tab:real}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}l ccc ccc@{}}
+\toprule
+& \multicolumn{3}{c}{6 short tasks} & \multicolumn{3}{c}{4 long tasks} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+Setting (platform) & Solved & Wall & Local & Solved & Wall & Local \\
+\midrule
+No limit & 30/30 & 1.00 & 1.00 & 11/20 & 1.00 & 1.00 \\
+2 CPU, 8\,GB (CI runner) & 30/30 & 1.01 [0.89--1.16] & 0.99 [0.87--1.18] & -- & -- & -- \\
+2 CPU, 512\,MB (sandbox) & 30/30 & 1.02 [0.91--1.17] & 0.99 [0.89--1.18] & -- & -- & -- \\
+1 CPU, 512\,MB (Cloud Run) & 30/30 & 1.03 [0.93--1.76] & 1.06 [0.95--2.89] & 12/20 & 1.12 [0.76--1.42] & 1.28 [0.91--1.98] \\
+0.25 CPU, 512\,MB (Fargate) & 30/30 & \textbf{1.76} [1.50--2.02] & \textbf{2.53} [2.11--3.03] & 11/20 & \textbf{2.13} [1.35--2.41] & \textbf{4.86} [3.41--5.63] \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+We ran the ten real tasks in Docker at the platform settings of
+Section~\ref{sec:design}: the six short tasks (median 26\,s and 4 model
+turns with no limit) at all five settings, and the four long tasks (64\,s
+and 9 turns) with no limit, at 1 CPU and at 0.25 CPU. Table~\ref{tab:real}
+gives the results.
+
+\emph{1 CPU and more: no clear cost.} No setting at 1 CPU or above gives
+an interval for wall or local time that lies above 1. To remove the
+agent's choice of tests, we compared the same test command across
+settings: it takes the same time at 2 CPUs (0.98 of the no-limit time)
+and 2 to 9\% longer at 1 CPU. The container is held back by its quota for
+1.7\,s per run at 1 CPU, 5.4\,s on Django, whose test runner starts one
+worker per CPU.
+
+\emph{0.25 CPU: every task slows down.} At the Fargate minimum every
+short task is still solved, but takes 1.76 times longer, and its local
+time 2.53 times. The same test command takes 3.3 times longer. The extra
+22\,s per run are in the tools (+15\,s) and in start-up (+3.5\,s); model
+time does not change (15.2 against 15.4\,s). The long tasks spend more of
+their time on the machine, so more of the cost shows: local time grows
+4.9 times and wall time 2.1 times. This is what the breaking point of
+Section~\ref{sec:rq2} predicts: 1 CPU lies above the CPU breaking point of
+0.75 core, 0.25 CPU lies below it.
+
+\emph{The hidden-cost model on new data.} The long tasks were collected
+after the model of Section~\ref{sec:rq2} was fitted, so they test it. With
+$f$ measured on each task's no-limit runs (0.17 to 0.54), the model
+predicts the wall slowdown within 10\% in 7 of 8 cells (median error
+4.7\%). It misses by 14\% only for xarray at 1 CPU, where memory kills add
+model turns.
+
+\emph{Solved or not depends on the task, not the setting.} Django and
+Sympy are solved in all 30 of their long-task runs. pytest is solved in 4
+of 15 runs, about equally often with and without limits. xarray is never
+solved, even with no limit: all 902 tests that passed before still pass,
+but the agent's fix does not produce the behaviour that the 12 target
+tests expect.
+
+\emph{512\,MB is at the edge.} Five short tasks peak at 345 to 453\,MB.
+Django reaches the limit in 9 of 10 runs; the kernel reclaims file cache
+and the run finishes. xarray's test runs need about 810\,MB. Under the
+512\,MB limit every one of its runs has 4 to 9 memory kills (63 in total)
+and 77,000 to 109,000 reclaim events (medians), and takes 5.1 times longer at 1 CPU and
+12 times longer at 0.25 CPU. The agent does not learn why
+(Section~\ref{sec:rq5}).
+
+\textbf{Answer to RQ3.} Platform settings of 1 CPU or more do not slow
+these tasks visibly. The 0.25 CPU tier slows every task, 1.8 times for
+short and 2.1 times for long tasks, as the CPU breaking point predicts,
+and the hidden-cost model predicts the size. No setting changes whether a
+task is solved, but a 512\,MB limit turns a project with a heavy test suite
+into a run 5 to 12 times longer.
 
 % ---------------------------------------------------------------------------
 \section{RQ4: How Many Agents Fit on One Machine?}\label{sec:rq4}
@@ -565,15 +638,62 @@ capacity estimate from one agent alone is far too high.
 
 % ---------------------------------------------------------------------------
 \section{RQ5: Does the Agent Change Its Behaviour?}\label{sec:rq5}
-\todo{0.75 page; update with feedback\_extra}
+
+We looked for three changes in what the agent does: extra work caused by
+a slow result, reactions to system errors, and lighter tests on a slow
+machine.
+
+\emph{A printed slow time makes a small model work more.} The coding task
+\texttt{t3} prints its own run time; \texttt{t9} is the same task with
+that line removed. At 0.25 core we ran each 15 times with Haiku. When the
+time is printed, Haiku talks about speed in 15 of 15 runs and keeps
+optimizing after the tests already pass: 5 tool calls after the first
+pass against 0, 11 turns against 8, 4,238 output tokens against 2,503, and
+73\,s against 35\,s of wall time. All four differences hold after a Holm
+correction over the 20 tests we ran per model ($p \leq 0.04$). When the
+time is not printed, Haiku mentions speed in 1 of 15 runs and stops when
+the tests pass. With no limit, the printed time does not trigger extra
+work (0 calls after the pass), so the trigger is the slow number, not the
+print. At 0.5 core the effect is not significant. Opus shows no effect in
+any test (all Holm $p \geq 0.08$). This explains why Haiku used 2.9 times
+more CPU under a CPU limit in Section~\ref{sec:rq2}: that task prints its
+time. A slow machine thus costs a small model twice: once directly, and
+again through the work the slowness provokes.
+
+\emph{Errors that reach the agent are reported; errors that do not are
+not.} When a memory limit kills the tool, the agent sees the kill (exit
+code 137) and names the cause in its final message in 23 of 23 runs. It
+does not retry in a loop (0 to 2 tool calls after the error). Three cases
+leave the user with no explanation:
 \begin{itemize}
-\item Printed run time: Haiku at 0.25 core does 11 vs 7 turns, wall 70 vs
-  31\,s; Opus does no extra work.
-\item Memory kill: the agent reports the cause in 23/23; in 2/25 the agent
-  itself is killed, with no report.
-\item Process limit: the agent crashes itself in 12 of 25 runs at 19 and below.
-\item Real tasks at 0.25 CPU: same tests, no mention of slowness.
+\item \textbf{The kernel kills the agent instead of the tool} (2 of 25
+  runs at 576 and 512\,MB). The memory killer picks a process in the
+  group, and the agent itself is a candidate. The run ends without a
+  message.
+\item \textbf{A process limit crashes the agent.} Between 17 and 19
+  processes, process creation fails 1 to 6 times per run in the trace,
+  but the shell retries and the agent sees the error in only 3 of 15 runs.
+  The agent program needs threads of its own; when it cannot start one, it
+  aborts (3 of 15 runs at 17 to 19, 9 of 10 at 16 and 12).
+\item \textbf{Memory kills inside a test run are silent.} In the xarray
+  runs under 512\,MB (Section~\ref{sec:rq3}), the kernel kills test
+  workers, and the tool output simply stops partway (for example at
+  ``34\%''), with no error flag and no exit code. In 6 of 10 runs the
+  agent saw no error at all; in none did its final answer mention memory.
+  It reran the tests instead (10 turns against 4 with no limit).
 \end{itemize}
+
+\emph{The agent does not adapt its tests to a slow machine.} On the short
+real tasks at 0.25 CPU, Opus runs the same number of tests as with no
+limit, and none of the 60 runs mentions slowness, limits or time-outs.
+Without a printed time, the agent does not notice the slow machine.
+
+\textbf{Answer to RQ5.} Yes, in two ways. A small model reacts to a slow
+number by doing extra work that doubles the run; the larger model does
+not. And the system can remove the agent's view of a failure: a memory
+kill that hits the agent or a test worker, or a process limit that crashes
+the agent, leaves no message, while the same kill on a tool is explained
+correctly every time.
 
 % ---------------------------------------------------------------------------
 \section{Results Across Machines and Agents}\label{sec:cross}
