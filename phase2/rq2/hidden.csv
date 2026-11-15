@@ -1,0 +1,69 @@
+experiment,model,task,level,f,local,wall_obs,wall_pred,err,d_model_s
+cpu,opus-5-5,t2_medium,cpu_max=100000 100000,0.2,1.174,1.058,1.035,-0.021,-0.02
+cpu,opus-5-5,t2_medium,cpu_max=75000 100000,0.2,1.353,0.909,1.072,0.179,-3.57
+cpu,opus-5-5,t2_medium,cpu_max=50000 100000,0.2,1.952,1.115,1.194,0.071,-1.72
+cpu,opus-5-5,t2_medium,cpu_max=37500 100000,0.2,2.639,1.207,1.333,0.105,-2.54
+cpu,opus-5-5,t2_medium,cpu_max=25000 100000,0.2,3.85,1.47,1.58,0.075,-1.91
+cpu,opus-5-5,t3_implement,cpu_max=100000 100000,0.29,0.981,0.877,0.995,0.134,-2.47
+cpu,opus-5-5,t3_implement,cpu_max=75000 100000,0.29,1.355,1.029,1.102,0.071,-1.78
+cpu,opus-5-5,t3_implement,cpu_max=50000 100000,0.29,1.838,1.212,1.241,0.024,-0.01
+cpu,opus-5-5,t3_implement,cpu_max=37500 100000,0.29,2.623,1.535,1.466,-0.045,1.18
+cpu,opus-5-5,t3_implement,cpu_max=25000 100000,0.29,3.85,2.01,1.819,-0.095,4.85
+cpu_model2,fable-5-1,t2_medium,cpu_max=100000 100000,0.2,1.119,1.087,1.024,-0.058,1.02
+cpu_model2,fable-5-1,t2_medium,cpu_max=50000 100000,0.2,1.838,1.206,1.169,-0.031,0.66
+cpu_model2,fable-5-1,t2_medium,cpu_max=25000 100000,0.2,3.702,1.77,1.545,-0.127,3.62
+cpu_model2,fable-5-1,t3_implement,cpu_max=100000 100000,0.28,1.068,1.008,1.019,0.011,-0.39
+cpu_model2,fable-5-1,t3_implement,cpu_max=50000 100000,0.28,3.349,2.493,1.664,-0.332,15.29
+cpu_model2,fable-5-1,t3_implement,cpu_max=25000 100000,0.28,6.843,3.26,2.652,-0.186,10.5
+cpu_model2,haiku-5-5,t2_medium,cpu_max=100000 100000,0.23,1.519,1.281,1.12,-0.125,2.84
+cpu_model2,haiku-5-5,t2_medium,cpu_max=50000 100000,0.23,1.732,1.214,1.17,-0.037,1.36
+cpu_model2,haiku-5-5,t2_medium,cpu_max=25000 100000,0.23,3.767,1.67,1.641,-0.017,0.64
+cpu_model2,haiku-5-5,t3_implement,cpu_max=100000 100000,0.3,1.102,1.004,1.03,0.026,-1.11
+cpu_model2,haiku-5-5,t3_implement,cpu_max=50000 100000,0.3,2.004,1.322,1.299,-0.017,1.04
+cpu_model2,haiku-5-5,t3_implement,cpu_max=25000 100000,0.3,11.795,4.956,4.218,-0.149,16.26
+memory_soft,opus-5-5,t6_memtouch,memory_high=1536M,0.44,1.025,0.999,1.011,0.012,-0.33
+memory_soft,opus-5-5,t6_memtouch,memory_high=1344M,0.44,1.006,1.037,1.003,-0.033,0.43
+memory_soft,opus-5-5,t6_memtouch,memory_high=1152M,0.44,3.454,2.088,2.07,-0.009,0.28
+memory_soft,opus-5-5,t6_memtouch,memory_high=768M,0.44,3.467,2.182,2.075,-0.049,1.69
+memory_hard_file,opus-5-5,t6_memtouch,memory_max=1280M,0.45,1.004,0.985,1.002,0.017,-0.12
+memory_hard_file,opus-5-5,t6_memtouch,memory_max=1024M,0.45,3.401,2.118,2.069,-0.023,0.94
+memory_hard_file,opus-5-5,t6_memtouch,memory_max=768M,0.45,3.401,2.2,2.069,-0.059,2.21
+memory_cliff,opus-5-5,t7_memhog,memory_max=896M,0.25,0.96,1.164,0.99,-0.15,1.64
+memory_cliff,opus-5-5,t7_memhog,memory_max=768M,0.25,1.016,1.018,1.004,-0.014,0.05
+memory_cliff,opus-5-5,t7_memhog,memory_max=704M,0.25,1.08,1.249,1.02,-0.183,2.36
+e2e_memory,opus-5-5,t3_implement,memory_max=512M,0.3,0.953,0.903,0.986,0.092,-2.33
+e2e_memory,opus-5-5,t3_implement,memory_max=384M,0.3,0.935,1.018,0.98,-0.037,-0.03
+e2e_memory,opus-5-5,t3_implement,memory_max=320M,0.3,0.924,0.954,0.977,0.024,-1.32
+e2e_memory,opus-5-5,t3_implement,memory_max=256M,0.3,0.989,1.007,0.997,-0.01,-0.9
+e2e_memory,opus-5-5,t3_implement,memory_max=192M,0.3,1.106,1.113,1.032,-0.073,1.29
+disk,opus-5-5,t8_ioread,io_max={'rbps': 209715200},0.42,1.138,1.065,1.058,-0.007,0.15
+disk,opus-5-5,t8_ioread,io_max={'rbps': 157286400},0.42,1.432,1.19,1.181,-0.008,0.15
+disk,opus-5-5,t8_ioread,io_max={'rbps': 104857600},0.42,2.006,1.386,1.42,0.025,-0.54
+disk,opus-5-5,t8_ioread,io_max={'rbps': 52428800},0.42,3.769,2.261,2.157,-0.046,1.55
+disk,opus-5-5,t8_ioread,io_max={'rbps': 20971520},0.42,9.239,4.604,4.443,-0.035,2.37
+e2e_disk,opus-5-5,t3_implement,io_max={'rbps': 52428800},0.28,1.265,1.052,1.074,0.021,-0.79
+e2e_disk,opus-5-5,t3_implement,io_max={'rbps': 20971520},0.28,1.876,1.287,1.245,-0.033,1.42
+e2e_disk,opus-5-5,t3_implement,io_max={'rbps': 5242880},0.28,5.279,2.23,2.195,-0.016,0.53
+network,opus-5-5,t3_implement,"{""delay_ms"": 50}",0.28,0.977,1.012,0.994,-0.018,0.31
+network,opus-5-5,t3_implement,"{""delay_ms"": 100}",0.28,0.969,1.089,0.991,-0.09,2.1
+network,opus-5-5,t3_implement,"{""delay_ms"": 200}",0.28,1.12,1.135,1.034,-0.089,2.26
+network,opus-5-5,t3_implement,"{""loss_pct"": 1}",0.28,1.014,1.141,1.004,-0.12,2.65
+network,opus-5-5,t3_implement,"{""loss_pct"": 5}",0.28,0.915,1.17,0.976,-0.166,4.26
+network,opus-5-5,t3_implement,"{""rate_kbit"": 1000}",0.28,1.021,1.073,1.006,-0.063,1.86
+network,opus-5-5,t3_implement,"{""rate_kbit"": 256}",0.28,1.071,1.294,1.02,-0.212,5.79
+pids,opus-5-5,t3_implement,pids_max=64,0.29,1.014,1.04,1.004,-0.035,1.21
+pids,opus-5-5,t3_implement,pids_max=48,0.29,1.0,1.05,1.0,-0.048,0.92
+pids,opus-5-5,t3_implement,pids_max=32,0.29,0.98,1.066,0.994,-0.067,1.38
+pids,opus-5-5,t3_implement,pids_max=24,0.29,0.997,1.111,0.999,-0.101,2.01
+pids,opus-5-5,t3_implement,pids_max=23,0.29,0.903,1.016,0.972,-0.044,0.78
+pids,opus-5-5,t3_implement,pids_max=22,0.29,1.01,1.082,1.003,-0.073,1.53
+pids,opus-5-5,t3_implement,pids_max=21,0.29,0.963,0.969,0.989,0.021,-0.43
+pids,opus-5-5,t3_implement,pids_max=20,0.29,0.884,0.934,0.966,0.034,-0.7
+pids,opus-5-5,t3_implement,pids_max=17,0.29,1.548,1.235,1.16,-0.06,1.54
+threads,opus-5-5,t4_parallel,4 workers,0.24,1.244,1.042,1.059,0.016,0.24
+threads,opus-5-5,t4_parallel,8 workers,0.24,1.598,1.198,1.145,-0.044,0.95
+threads,opus-5-5,t4_parallel,16 workers,0.24,2.402,1.464,1.34,-0.085,1.64
+neighbour,opus-5-5,t3_implement,"{""kind"": ""cpu"", ""workers"": 4}",0.26,1.86,1.095,1.228,0.121,-2.87
+neighbour,opus-5-5,t3_implement,"{""kind"": ""cpu"", ""workers"": 8}",0.26,1.784,1.02,1.208,0.184,-2.97
+neighbour,opus-5-5,t3_implement,"{""kind"": ""io"", ""workers"": 2}",0.26,1.077,0.94,1.02,0.086,-2.05
+neighbour,opus-5-5,t3_implement,"{""kind"": ""vm"", ""workers"": 2}",0.26,1.622,1.084,1.165,0.075,-2.23

@@ -64,6 +64,30 @@ What this means:
   Haiku's model time on the implement task grows by 16 s (10 turns against
   4) and Fable's by 10 to 15 s, against 5 s for Opus. That is RQ5.
 
+## The hidden-cost model
+
+Script: `rq2/hidden.py` (writes `hidden.txt`, `hidden.csv`). Analyzed
+2026-11-14.
+
+    wall slowdown = 1 + f × (local slowdown − 1),   f = local / wall with no limit
+
+- f, the share of the time spent on the machine, is 0.20 to 0.45 here. So
+  only a fifth to a half of any cost on the machine reaches the user.
+- Tested on all 68 limited cells (Opus, Haiku, Fable; every limit).
+  - **Cells where the model time stayed the same (moved under 2 s): 44 of
+    45 within 10%, median error 3.3%.**
+  - All 68 cells: 52 within 10%, median error 4.9%.
+- The misses are the cells where the model time changed, and each one has
+  a known reason:
+  - Network: the model time itself grows (+2 to +6 s), wall is above the
+    prediction by 9 to 21%.
+  - Smaller models at 0.25 and 0.5 core: the agent does more turns (RQ5),
+    +10 to +16 s model time, wall above the prediction by 15 to 33%.
+  - Busy CPU neighbour: model time 3 s lower than baseline, wall below the
+    prediction by 12 to 18%. Model service noise; I'm not sure of a cause.
+- So the error of the model is itself a measurement: it tells how much of
+  the slowdown came from the model side instead of the machine.
+
 ## Limits of this analysis
 
 - 5 runs per level. Intervals are wide where the agent's behaviour varies

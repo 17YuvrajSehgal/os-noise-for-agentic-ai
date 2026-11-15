@@ -1,0 +1,22 @@
+{
+ "name": "real_long",
+ "reps": 5,
+ "seed": 43,
+ "_note": "RQ3 on longer tasks: four SWE-bench Verified tasks rated '1-4 hours' or '>4 hours' (the six in real.json are all '<15 min fix'), at the RQ3 settings no limit, 1 vCPU / 512 MiB (Cloud Run default) and 0.25 vCPU / 512 MiB (Fargate minimum). Task list is filled in after setup_task.py validates the candidates.",
+ "base": {
+  "agent": "claude",
+  "task": "swe.sh",
+  "runtime": "docker",
+  "trace": "full",
+  "cache": "cold",
+  "timeout_s": 1800
+ },
+ "grid": {
+  "task_arg": ["TBD"],
+  "limits": [
+   {},
+   {"cpu_max": "100000 100000", "memory_max": "512M"},
+   {"cpu_max": "25000 100000", "memory_max": "512M"}
+  ]
+ }
+}

@@ -13,7 +13,7 @@ simple model to predict it.
 Contributions:
 
 1. **Dataset:** 1,100 runs with full kernel traces, two agents, two
-   machines, 20 experiments. Public.
+   VMs of the same type, 20 experiments. Public.
 2. **Hidden cost and a model of it:** wall slowdown = 1 + local share ×
    (local slowdown − 1). It explains why a 3.9x cost on the machine shows
    as 2.0x to the user. Checked on every limit.
@@ -34,10 +34,15 @@ Contributions:
 | "A CPU cap slowing things is obvious" | The model in contribution 2, checked on all limits; lead with the hidden cost, not the slowdown | analysis only |
 | RQ5 rests on 5 runs, one cell | 10 more Haiku runs per cell (t3, t9 at 0.25 core, printed and quiet); correct for many tests | VM, ~1 h |
 | Real tasks are short (26 s median) | 4 longer SWE-bench tasks (more turns, bigger test suites) at no limit, 1 CPU, 0.25 CPU | VM, ~3 h, task setup |
-| One machine shape | Repeat the key curves on 8 vCPU: CPU quota (t3), threads, density | second VM, ~4 h + setup |
-| Density is only numbers | Capacity model: agents per machine = cores / CPU per agent; check it on 4 and 8 vCPU | analysis + the 8 vCPU runs |
+| One machine shape | Not repeated: every run stays on the same VM type (4 vCPU) so all data is comparable. Answer in threats to validity: two VMs of the same type, old and new, give the same laws | nothing |
+| Density is only numbers | Capacity model: agents per machine = cores / CPU per agent; check it on the 1 to 32 agent runs | analysis only |
 | Codex only in old data | Optional: new Codex runs on the main cells | your model choice and sign-in, by 11-16 |
 | The cause-finding method (RQ6) | Keep or cut | your supervisor's answer, by 11-17 |
+
+## Rule
+
+All collections run on the same VM (`agentic-noise-2`, n2-standard-4,
+us-east1-d). No second VM and no resizing (decided 2026-11-14).
 
 ## Day by day
 
@@ -52,8 +57,6 @@ Contributions:
 - Set up the ACM template in `paper-icpe/`, anonymized.
 
 **Sun 11-16**
-- Create the 8 vCPU VM (new VM, the old one stays). Run CPU, threads,
-  density there.
 - Last day to decide on Codex.
 - Figures done for RQ1 to RQ4.
 
@@ -65,7 +68,7 @@ Contributions:
 
 **Thu 11-20**
 - Full draft to the supervisor.
-- Stop both VMs (never delete).
+- Stop the VM (never delete).
 
 **Fri 11-21**
 - Apply the supervisor's comments. Language pass.
@@ -86,13 +89,12 @@ Contributions:
    (contribution 2).
 3. One small panel per limit: slowdown against level (RQ2).
 4. Real tasks at cloud settings (RQ3).
-5. Agents per machine: time and throughput, 4 and 8 vCPU (RQ4).
+5. Agents per machine: time and throughput, with the capacity model (RQ4).
 
 ## Cut list if time runs out (cut in this order)
 
 1. Codex new runs.
 2. RQ6 (one sentence in future work).
-3. The 8 vCPU repeat (move to threats to validity).
-4. The longer real tasks.
+3. The longer real tasks.
 
 Never cut: overhead runs, the hidden-cost model, figures, anonymization.

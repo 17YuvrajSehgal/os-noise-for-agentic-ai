@@ -33,3 +33,5 @@ zenodo-traces/
 # Large intermediate files, rebuilt by phase2/run_passes.py and phase1 scripts
 **/parsed_all.jsonl
 **/local_all.jsonl
+
+.venv/

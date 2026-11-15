@@ -1,0 +1,16 @@
+{
+ "name": "feedback_extra",
+ "reps": 10,
+ "seed": 41,
+ "_note": "RQ5: 10 more Haiku runs in the two cells that carry the printed-time effect (t3 prints its run time, t9 is the same task quiet), at 0.25 core. With the 5 runs of feedback.json this gives 15 per cell, enough for the test to survive a correction for multiple comparisons.",
+ "base": {
+  "agent": "claude",
+  "model": "claude-haiku-5-5",
+  "trace": "full",
+  "cache": "cold",
+  "limits": {"cpu_max": "25000 100000"}
+ },
+ "grid": {
+  "task": ["t3_implement.sh", "t9_implement_quiet.sh"]
+ }
+}
