@@ -167,7 +167,42 @@ def fig_density():
     fig.savefig(OUT / 'fig_density.pdf')
 
 
+def fig_split():
+    """RQ1: mean share of wall time per part, runs with no limit."""
+    runs = [r for r in rows('rq1/runs.csv') if r['unlimited'] == 'True']
+    groups = [('t2, Opus', 'claude-opus-5-5', 't2_medium', None),
+              ('t3, Opus', 'claude-opus-5-5', 't3_implement', None),
+              ('t3, Haiku', 'claude-haiku-5-5', 't3_implement', None),
+              ('t3, Fable', 'claude-fable-5-1', 't3_implement', None)]
+    for proj in ('django', 'sympy', 'pydata', 'pytest-dev', 'pallets', 'psf'):
+        label = {'pydata': 'xarray', 'pytest-dev': 'pytest', 'pallets': 'flask', 'psf': 'requests'}.get(proj, proj)
+        groups.append((f'{label} (real)', 'claude-opus-5-5', 'swe', proj))
+    parts = [('start-up', ['startup_s']), ('model', ['model_only_s', 'model_tool_s']),
+             ('tools', ['tool_only_s']), ('other', ['agent_only_s', 'shutdown_s'])]
+    f = lambda r, k: float(r[k] or 0)
+    fig, ax = plt.subplots(figsize=(3.3, 2.3))
+    for y, (label, model, task, proj) in enumerate(groups):
+        sel = [r for r in runs if r['model'] == model and r['task'] == task
+               and (proj is None or (r['runtime'] == 'docker' and r['task_arg'].startswith(proj + '__')))]
+        left = 0
+        for i, (name, ks) in enumerate(parts):
+            w = 100 * statistics.mean(sum(f(r, k) for k in ks) / f(r, 'wall_s') for r in sel)
+            ax.barh(y, w, left=left, color=C[i], edgecolor='white', linewidth=0.8, height=0.7,
+                    label=name if y == 0 else None)
+            left += w
+        ax.text(101, y, f'{statistics.median(f(r, "wall_s") for r in sel):.0f} s', va='center', fontsize=5.5, color=MUTED)
+    ax.set_yticks(range(len(groups)), [g[0] for g in groups])
+    ax.invert_yaxis()
+    ax.axhline(3.5, color=MUTED, lw=0.5)
+    ax.set(xlim=(0, 100), xlabel='share of wall time (%)')
+    ax.grid(axis='y', visible=False)
+    ax.legend(ncol=4, loc='lower center', bbox_to_anchor=(0.45, 1.0), handlelength=1, columnspacing=0.8)
+    fig.tight_layout()
+    fig.savefig(OUT / 'fig_split.pdf')
+
+
 if __name__ == '__main__':
+    fig_split()
     fig_hidden()
     fig_limits()
     fig_density()
