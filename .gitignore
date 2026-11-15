@@ -35,3 +35,7 @@ zenodo-traces/
 **/local_all.jsonl
 
 .venv/
+paper-icpe/main.pdf
+paper-icpe/build.log
+paper-icpe/*.log
+paper-icpe/*.fdb_latexmk

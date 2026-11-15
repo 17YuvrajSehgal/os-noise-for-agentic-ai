@@ -2,6 +2,8 @@
 % Build: tectonic main.tex   (or latexmk -pdf main.tex)
 % Skeleton written 2026-11-14. Numbers come from phase2/*/RESULTS.md; every
 % number must be re-checked against those files before submission.
+% Draft only: font expansion off until the ACM fonts (texlive-fonts-extra) are installed.
+\PassOptionsToPackage{expansion=false}{microtype}
 \documentclass[sigconf,review,anonymous]{acmart}
 \usepackage{booktabs}
 \usepackage{graphicx}
@@ -16,8 +18,8 @@
 
 \begin{document}
 
+% TODO title: decide with supervisor
 \title{The Hidden Cost of the Machine: How System Limits Slow Down AI Coding Agents}
-\todo{title: decide with supervisor}
 
 \author{Anonymous Author(s)}
 \affiliation{\institution{Anonymous Institution}\country{}}
@@ -25,7 +27,7 @@
 \begin{abstract}
 AI coding agents spend most of their time waiting for the language model,
 so the machine they run on looks unimportant. We show that this view hides
-a large cost. We collected 1,100 runs of two coding agents with full kernel
+a large cost. We collected 1,145 runs of two coding agents with full kernel
 traces, under 20 kinds of system limits (CPU quota, memory, disk, network,
 process count, neighbours, many agents per machine) and on six real GitHub
 fixes at cloud platform settings. Three results stand out. First, the model
@@ -40,6 +42,19 @@ Third, limits change the agent itself: a small model does more work under a
 CPU limit, and memory and process limits can kill or crash the agent
 instead of its tools. \todo{add overhead and long-task results}
 \end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+<concept><concept_id>10011007.10010940.10011003.10011002</concept_id>
+<concept_desc>Software and its engineering~Software performance</concept_desc>
+<concept_significance>500</concept_significance></concept>
+<concept><concept_id>10010147.10010178</concept_id>
+<concept_desc>Computing methodologies~Artificial intelligence</concept_desc>
+<concept_significance>300</concept_significance></concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Software and its engineering~Software performance}
+\ccsdesc[300]{Computing methodologies~Artificial intelligence}
 
 \keywords{AI coding agents, performance analysis, kernel tracing, cgroups, containers, LLM}
 
@@ -60,7 +75,7 @@ instead of its tools. \todo{add overhead and long-task results}
   every run into start-up, model, tools, agent and system waits; measure
   \emph{local time} (wall minus model).
 \item RQ1--RQ5 (anatomy, limits, real use, density, behaviour).
-\item Contributions: (1) dataset of 1,100 traced runs; (2) hidden-cost
+\item Contributions: (1) dataset of 1,145 runs (1,130 traced); (2) hidden-cost
   model; (3) map of 10 limits; (4) real tasks and density with a capacity
   model; (5) behaviour and reliability; (6) results hold on two VMs and two
   agents.
@@ -100,9 +115,9 @@ instead of its tools. \todo{add overhead and long-task results}
 
 \subsection{Tasks and experiments}
 \begin{table}[t]
-\caption{The dataset: 1,100 runs with full kernel traces.}
+\caption{The dataset: 1,145 runs, 1,130 with a full kernel trace.}
 \label{tab:data}
-\small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lll r@{}}
 \toprule
 Experiment & Task & Levels & Runs \\
@@ -118,13 +133,14 @@ Neighbour, two limits & coding, mixed & 4 kinds & 45 \\
 Agents per machine & coding & 1 to 32 agents & 18 \\
 Printed run time & coding & 3 CPU levels & 120 \\
 Real tasks (SWE-bench) & 6 fixes & 5 platform settings & 180 \\
+Tracing cost & coding, Django & none, core, full & 45 \\
 \midrule
 Old VM, Claude / Codex & workshop set & 7 experiments & 132 / 130 \\
 \midrule
-Total & & & 1,100 \\
+Total & & & 1,145 \\
 \bottomrule
-\end{tabular}
-\todo{add overhead, feedback\_extra, real\_long}
+\end{tabular}}
+\todo{add feedback\_extra, real\_long}
 \end{table}
 
 \subsection{Measurement}
@@ -156,6 +172,7 @@ Total & & & 1,100 \\
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig_limits.pdf}
+\Description{Six line charts of wall and local slowdown against limit level for CPU quota, disk read limit, soft memory limit, workers, disk limit on the coding task and process limit.}
 \caption{Slowdown against limit level, wall (what the user sees) and local
 (time on the machine). Medians of 5 runs, 95\% bootstrap intervals.}
 \label{fig:limits}
@@ -175,6 +192,7 @@ Total & & & 1,100 \\
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig_hidden.pdf}
+\Description{Scatter plot of measured against predicted wall slowdown; most points lie on the diagonal within a 10 percent band.}
 \caption{Measured against predicted wall slowdown for all 68 limited
 cells. Band: $\pm$10\%.}
 \label{fig:hidden}
@@ -209,6 +227,7 @@ cells. Band: $\pm$10\%.}
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig_density.pdf}
+\Description{Two line charts: time per agent rises from 21 to 105 seconds and agents finished per minute levels off at about 16 as agents go from 1 to 32.}
 \caption{1 to 32 agents on 4 vCPUs (3 runs each, 189 agents).}
 \label{fig:density}
 \end{figure}
