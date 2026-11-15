@@ -125,8 +125,9 @@ What this means:
 - **xarray is never solved, even with no limit.** The environment works (902
   of 902 existing tests pass after every run); all 12 target tests fail
   because the agent's fix (11 different patches, same idea) does not match
-  the behaviour the hidden tests expect. Not checked by running the
-  reference fix (VM stopped).
+  the behaviour the hidden tests expect. The task was validated at setup
+  (`collector/swe/setup_task.py`): the 12 tests fail at the base commit and
+  pass with the reference fix in the same environment.
 - **xarray needs more memory than the sandbox tier.** Its test runs peak at
   about 810 MB with no limit. Under 512 MB every limited run has 4 to 9 OOM
   kills (63 in total), about 90 thousand reclaim events, and runs 5 to 12
