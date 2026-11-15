@@ -389,36 +389,42 @@ with the kernel's own counter (\texttt{cpu.stat}) within 1.5\% (median over
 \includegraphics[width=\columnwidth]{fig_split.pdf}
 \Description{Horizontal stacked bars for four small coding tasks and six real tasks, showing the share of wall time in start-up, model, tools and other. Model is the largest part in all bars; tools are larger on real tasks.}
 \caption{Where the time goes with no limit: mean share of wall time per
-part (Claude Code; real tasks with Opus, in Docker). Median wall time on
-the right.}
+part (Claude Code; the six short real tasks with Opus, in Docker). Median
+wall time on the right.}
 \label{fig:split}
 \end{figure}
 
-Figure~\ref{fig:split} splits the 230 runs that had no limit. On the small
-coding tasks the agent waits for the model 71 to 79\% of the time with
-Opus, 67 to 76\% with Haiku and 75 to 80\% with Fable. Tools take 10 to
-21\%, start-up about 7 to 10\%, and the agent's own work between events about
-0.1\%. Without a limit the system adds almost no waiting: the agent's
-processes wait for a CPU for 0.1 to 0.3\,s per run.
+Before we apply any limit, we look at where an agent's time goes when
+nothing limits it. Figure~\ref{fig:split} splits the 230 runs that had no
+limit into the parts of Section~\ref{sec:design}.
 
-Real tasks move time from the model to the tools. On the six real fixes
-tools take 16 to 39\% of the time (xarray and Flask up to 39\%), because
-real test suites are heavier, and the model 42 to 75\%. Start-up is a fixed
-cost of 2.6\,s on the host and 3.8\,s in Docker: the container adds
-1.2\,s to every start, the most stable number in our data. The rest of a
-run is not clearly slower in a container.
+On the small coding tasks, the agent waits for the model for 71 to 79\% of
+the time with Opus, 67 to 76\% with Haiku and 75 to 80\% with Fable. Tools
+take 10 to 21\% of the time and start-up 7 to 10\%. The agent's own work
+between events takes about 0.1\%. With no limit, the system adds almost no
+waiting: the agent's processes wait for a CPU for only 0.1 to 0.3\,s per
+run.
 
-The largest source of spread is the agent's own choices. The slowest
-unlimited run (85\,s against 20 to 27\,s for the same task) is one where
-the agent ran the project's whole test suite. We therefore compare the
-\emph{same} test command across settings before we attribute a change in
-tool time to a limit (Section~\ref{sec:rq3}).
+Real tasks move time from the model to the tools, because real test
+suites do more work. On the six short real tasks, tools take 16 to 39\% of
+the time (the most on xarray and Flask) and the model 42 to 75\%. Start-up
+is a fixed cost: 2.6\,s without a container and 3.8\,s in Docker. The
+container therefore adds 1.2\,s to every start. The rest of a run is not
+clearly slower in a container.
 
-\textbf{Answer to RQ1.} With no limit, an agent waits for the model for
-about two thirds to four fifths of a run, and the machine is busy for only
-a fifth to a third. This is why the machine seems not to matter. It also
-means that any cost on the machine is diluted by the model wait, which
-the next section quantifies.
+The largest source of spread between runs is the agent's own choices. The
+slowest run with no limit took 85\,s, while other runs of the same task
+(Requests) took 20 to 27\,s. In that run the agent chose to run the
+project's whole test suite. For this reason, before we blame a limit for a
+change in tool time, we compare the \emph{same} test command across
+settings (Section~\ref{sec:rq3}).
+
+\textbf{Answer to RQ1.} With no limit, the agent waits for the model for
+67 to 80\% of a run on small tasks, and for 42 to 75\% on real tasks, which
+run heavier tests. The machine works for the rest. On small tasks this is
+only a fifth to a third of the run, which is why the machine seems not to
+matter. It also means that any cost on the machine is diluted by the model
+wait. The next section measures how much.
 
 % ---------------------------------------------------------------------------
 \section{RQ2: How Does Each Limit Change the Picture?}\label{sec:rq2}
