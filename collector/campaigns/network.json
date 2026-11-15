@@ -1,0 +1,40 @@
+{
+ "name": "network",
+ "reps": 5,
+ "seed": 21,
+ "base": {
+  "task": "t3_implement.sh",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "net": [
+   {},
+   {
+    "delay_ms": 50
+   },
+   {
+    "delay_ms": 100
+   },
+   {
+    "delay_ms": 200
+   },
+   {
+    "loss_pct": 1
+   },
+   {
+    "loss_pct": 5
+   },
+   {
+    "rate_kbit": 1000
+   },
+   {
+    "rate_kbit": 256
+   }
+  ]
+ }
+}

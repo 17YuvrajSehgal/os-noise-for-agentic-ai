@@ -1,0 +1,22 @@
+{
+ "name": "threads",
+ "reps": 5,
+ "seed": 13,
+ "base": {
+  "task": "t4_parallel.sh",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "task_arg": [
+   2,
+   4,
+   8,
+   16
+  ]
+ }
+}

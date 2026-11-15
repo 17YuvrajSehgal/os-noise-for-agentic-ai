@@ -1,0 +1,16 @@
+{
+ "name": "smoke",
+ "reps": 1,
+ "seed": 1,
+ "base": {
+  "task": "t3_implement.sh",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ]
+ }
+}

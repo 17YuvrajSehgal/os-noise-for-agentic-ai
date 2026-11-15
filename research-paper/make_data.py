@@ -3,12 +3,15 @@
 problems, for the paper's tables and PGFPlots figures. Prints a compact
 report; numbers are copied into paper.tex by hand (evidence-first).
 """
-import csv, json, statistics, sys
+import csv, json, os, statistics, sys
 from pathlib import Path
 
-LAT = Path(__file__).resolve().parents[1] / 'latency'
-sys.path.insert(0, str(LAT / '1_svc_cpu_cap/agentic-os-noise/analysis'))
+CODE = Path(__file__).resolve().parents[1] / 'latency'
+sys.path.insert(0, str(CODE / '1_svc_cpu_cap/agentic-os-noise/analysis'))
 from analyze_run import analyze
+# runs root: this repo's latency/ by default; set OSNOISE_RUNS to a folder
+# with the same layout that also holds the traces (see DATA.md).
+LAT = Path(os.environ.get('OSNOISE_RUNS', CODE))
 
 
 def stat(xs):

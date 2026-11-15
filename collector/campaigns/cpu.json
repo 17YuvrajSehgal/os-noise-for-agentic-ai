@@ -1,0 +1,27 @@
+{
+ "name": "cpu",
+ "reps": 5,
+ "seed": 12,
+ "base": {
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "task": [
+   "t2_medium.sh",
+   "t3_implement.sh"
+  ],
+  "limits.cpu_max": [
+   "max",
+   "100000 100000",
+   "75000 100000",
+   "50000 100000",
+   "37500 100000",
+   "25000 100000"
+  ]
+ }
+}

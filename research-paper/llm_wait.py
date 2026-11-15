@@ -16,7 +16,7 @@ Method (per run, from the kernel trace only):
 Reports model_wait / wall and model_wait / (wall - on_cpu). Validation:
 model_wait must be <= (wall - on_cpu) + small slack.
 """
-import gzip, json, re, sys
+import functools, gzip, json, re, sys
 from pathlib import Path
 
 TS = re.compile(r'^\[(\d\d):(\d\d):(\d\d)\.(\d{9})\]')
@@ -50,6 +50,7 @@ def union(intervals):
     return total
 
 
+@functools.lru_cache(maxsize=None)
 def measure(run_dir):
     run = Path(run_dir)
     api = {}                 # (pid, fd) -> True while an API socket is open

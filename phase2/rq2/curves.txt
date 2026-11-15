@@ -1,0 +1,159 @@
+== cpu  opus-5-5  t2_medium  (baseline: none, n=5, wall 18.4 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   18.4    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.9      0.1      0.0      4     3.7   1.00 [1.00-1.00]
+cpu_max=100000 100000               5    0   19.5    1.06 [0.73-1.42]     +0.2     -0.0     +0.4     -0.1      0.4      0.0      0.9      0.1      0.0      4     4.4   1.17 [0.81-1.52]
+cpu_max=75000 100000                5    0   16.7    0.91 [0.66-1.30]     +0.4     -3.6     +1.0     -0.1      2.1      0.0      0.9      0.0      0.0      3     5.1   1.35 [0.97-1.86]
+cpu_max=50000 100000                5    0   20.5    1.11 [0.73-1.96]     +1.2     -1.7     +2.3     -0.1      5.3      0.0      0.9      0.1      0.0      4     7.3   1.95 [1.32-2.68]
+cpu_max=37500 100000                5    0   22.2    1.21 [0.88-1.70]     +2.2     -2.5     +4.1     -0.0      8.5      0.0      0.9      0.0      0.0      3     9.9   2.64 [1.90-2.91]
+cpu_max=25000 100000                5    0   27.0    1.47 [1.07-2.12]     +3.7     -1.9     +7.2     -0.0     16.2      0.0      0.9      0.0      0.0      3    14.4   3.85 [2.76-5.39]
+breaking point (interval above 1.10): wall none in range; local cpu_max=50000 100000
+
+== cpu  opus-5-5  t3_implement  (baseline: none, n=5, wall 20.6 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   20.6    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.8      0.0      0.0      5     5.9   1.00 [1.00-1.00]
+cpu_max=100000 100000               5    0   18.1    0.88 [0.81-1.01]     +0.2     -2.5     -0.3     +0.0      0.3      0.0      0.9      0.0      0.0      4     5.8   0.98 [0.89-1.08]
+cpu_max=75000 100000                5    0   21.2    1.03 [0.96-1.34]     +0.5     -1.8     +1.5     +0.0      2.5      0.0      0.9      0.0      0.0      4     8.0   1.35 [1.23-1.45]
+cpu_max=50000 100000                5    0   25.0    1.21 [1.16-1.36]     +1.2     -0.0     +3.9     -0.0      7.1      0.0      0.9      0.0      0.0      4    10.9   1.84 [1.66-2.00]
+cpu_max=37500 100000                5    0   31.6    1.53 [1.34-2.00]     +2.5     +1.2     +7.1     -0.0     12.6      0.0      0.9      0.0      0.0      4    15.5   2.62 [2.39-2.88]
+cpu_max=25000 100000                5    0   41.4    2.01 [1.74-3.08]     +3.6     +4.8    +13.1     +0.1     26.4      0.0      0.8      0.0      0.0      5    22.8   3.85 [3.48-7.02]
+breaking point (interval above 1.10): wall cpu_max=50000 100000; local cpu_max=75000 100000
+
+== cpu_model2  fable-5-1  t2_medium  (baseline: none, n=5, wall 17.4 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   17.4    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.9      0.0      0.0      3     3.5   1.00 [1.00-1.00]
+cpu_max=100000 100000               5    0   19.0    1.09 [0.55-1.57]     +0.2     +1.0     +0.1     +0.1      0.3      0.0      1.0      0.0      0.0      4     3.9   1.12 [1.02-1.19]
+cpu_max=50000 100000                5    0   21.0    1.21 [0.61-1.40]     +1.1     +0.7     +1.8     +0.0      4.7      0.0      0.9      0.1      0.0      3     6.5   1.84 [1.68-1.95]
+cpu_max=25000 100000                5    0   30.9    1.77 [0.89-3.52]     +3.8     +3.6     +5.8     +0.1     14.1      0.0      0.9      0.0      0.0      3    13.0   3.70 [3.38-4.05]
+breaking point (interval above 1.10): wall none in range; local cpu_max=50000 100000
+
+== cpu_model2  fable-5-1  t3_implement  (baseline: none, n=5, wall 19.2 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   19.2    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.9      0.0      0.0      3     5.4   1.00 [1.00-1.00]
+cpu_max=100000 100000               5    0   19.3    1.01 [0.79-1.86]     +0.2     -0.4     +0.4     -0.0      0.4      0.0      0.8      0.0      0.0      3     5.8   1.07 [0.77-1.77]
+cpu_max=50000 100000                5    0   47.8    2.49 [1.61-3.26]     +1.2    +15.3    +11.6     -0.0     11.9      0.0      0.9      0.0      0.0      4    18.2   3.35 [2.14-5.20]
+cpu_max=25000 100000                5    0   62.5    3.26 [2.20-3.59]     +3.6    +10.5    +28.1     +0.0     35.5      0.0      0.8      0.0      0.0      4    37.1   6.84 [5.08-9.73]
+breaking point (interval above 1.10): wall cpu_max=50000 100000; local cpu_max=50000 100000
+
+== cpu_model2  haiku-5-5  t2_medium  (baseline: none, n=5, wall 14.8 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   14.8    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.9      0.0      0.0      5     3.4   1.00 [1.00-1.00]
+cpu_max=100000 100000               5    0   19.0    1.28 [0.89-1.73]     +0.2     +2.8     +1.7     -0.1      0.4      0.0      0.9      0.0      0.0      7     5.2   1.52 [1.03-1.85]
+cpu_max=50000 100000                5    0   18.0    1.21 [1.10-2.10]     +1.2     +1.4     +1.4     -0.1      4.4      0.0      0.9      0.0      0.0      5     5.9   1.73 [1.18-3.39]
+cpu_max=25000 100000                5    0   24.7    1.67 [1.47-2.64]     +4.2     +0.6     +5.6     -0.1     14.5      0.0      0.9      0.0      0.0      5    12.9   3.77 [2.54-5.88]
+breaking point (interval above 1.10): wall cpu_max=25000 100000; local cpu_max=50000 100000
+
+== cpu_model2  haiku-5-5  t3_implement  (baseline: none, n=5, wall 17.8 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   17.8    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.1      0.9      0.0      0.0      4     5.3   1.00 [1.00-1.00]
+cpu_max=100000 100000               5    0   17.9    1.00 [0.74-1.53]     +0.1     -1.1     +0.3     +0.0      0.4      0.0      0.9      0.0      0.0      4     5.9   1.10 [0.83-2.21]
+cpu_max=50000 100000                5    0   23.6    1.32 [0.99-3.58]     +1.1     +1.0     +4.4     +0.0      6.9      0.0      0.9      0.0      0.0      5    10.6   2.00 [1.51-5.25]
+cpu_max=25000 100000                5    0   88.3    4.96 [1.75-9.17]     +3.9    +16.3    +53.2     -0.1     67.7      0.0      0.9      0.0      0.0     10    62.6  11.79 [3.72-24.95]
+breaking point (interval above 1.10): wall cpu_max=25000 100000; local cpu_max=50000 100000
+
+== memory_soft  opus-5-5  t6_memtouch  (baseline: none, n=5, wall 15.5 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   15.5    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      4.5      0.0      0.0      4     6.8   1.00 [1.00-1.00]
+memory_high=1536M                   5    0   15.5    1.00 [0.84-1.06]     +0.1     -0.3     +0.0     +0.1      0.1      0.0      4.5      0.0      0.0      4     6.9   1.03 [0.99-1.05]
+memory_high=1344M                   5    0   16.1    1.04 [0.87-1.10]     +0.0     +0.4     -0.0     +0.0      0.1      0.0      4.5      0.0      0.0      4     6.8   1.01 [0.97-1.02]
+memory_high=1152M                   5    0   32.4    2.09 [1.76-2.22]     +0.0     +0.3    +16.6     -0.0      0.3      0.0     19.3      0.0      0.2      4    23.4   3.45 [3.35-3.46]
+memory_high=768M                    5    0   33.8    2.18 [1.84-2.32]     +0.1     +1.7    +16.6     -0.0      0.3      0.0     19.4      0.0      0.2      4    23.4   3.47 [3.36-3.49]
+breaking point (interval above 1.10): wall memory_high=1152M; local memory_high=1152M
+
+== memory_hard_file  opus-5-5  t6_memtouch  (baseline: memory_max=2G, n=5, wall 15.4 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+memory_max=2G                       5    0   15.4    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      4.5      0.0      0.0      4     6.9   1.00 [1.00-1.00]
+memory_max=1280M                    5    0   15.2    0.99 [0.86-1.21]     +0.0     -0.1     +0.0     +0.0      0.1      0.0      4.6      0.0      0.0      4     6.9   1.00 [0.98-1.03]
+memory_max=1024M                    5    0   32.7    2.12 [1.85-2.28]     +0.0     +0.9    +16.6     -0.1      0.3      0.0     19.3      0.0      0.3      4    23.4   3.40 [3.31-3.46]
+memory_max=768M                     5    0   34.0    2.20 [1.92-2.34]     -0.0     +2.2    +16.6     -0.0      0.3      0.0     19.2      0.0      0.3      4    23.4   3.40 [3.31-3.46]
+breaking point (interval above 1.10): wall memory_max=1024M; local memory_max=1024M
+
+== memory_cliff  opus-5-5  t7_memhog  (baseline: memory_max=1024M, n=5, wall 9.9 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+memory_max=1024M                    5    0    9.9    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.8      0.0      0.0      4     2.5   1.00 [1.00-1.00]
+memory_max=896M                     5    0   11.6    1.16 [1.02-1.26]     +0.0     +1.6     +0.0     +0.0      0.1      0.0      0.8      0.0      0.0      4     2.4   0.96 [0.92-1.05]
+memory_max=768M                     5    0   10.1    1.02 [0.85-1.16]     +0.1     +0.1     +0.0     +0.0      0.1      0.0      0.9      0.0      0.0      4     2.5   1.02 [0.95-1.11]
+memory_max=704M                     5    0   12.4    1.25 [1.01-1.45]     -0.0     +2.4     +0.2     +0.1      0.1      0.0      1.2      0.1      0.0      4     2.7   1.08 [1.03-1.17]
+memory_max=640M                     5    5   13.9    1.40 [1.19-1.85]     +0.0     +3.7     +0.3     +0.1      0.1      0.0      1.5      0.1      0.0      4     2.9   1.16 [1.10-1.26]
+memory_max=608M                     5    5   15.1    1.52 [1.23-1.71]     -0.0     +4.8     +0.4     +0.1      0.1      0.0      1.5      0.0      0.0      5     2.9   1.17 [1.07-1.27]
+memory_max=576M                     5    5   12.0    1.21 [0.73-1.41]     +0.0     +1.7     +0.3     +0.1      0.1      0.0      1.4      0.0      0.0      4     2.8   1.13 [0.79-1.26]
+memory_max=544M                     5    5   13.4    1.35 [1.08-1.89]     +0.0     +3.1     +0.3     +0.1      0.1      0.0      1.4      0.0      0.0      4     2.8   1.13 [1.06-1.24]
+memory_max=512M                     5    5   10.7    1.08 [0.65-1.61]     -0.0     +0.5     +0.2     +0.1      0.1      0.0      1.4      0.0      0.0      4     2.8   1.13 [0.80-1.21]
+breaking point (interval above 1.10): wall memory_max=640M; local memory_max=640M
+
+== e2e_memory  opus-5-5  t3_implement  (baseline: none, n=5, wall 20.5 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   20.5    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      1.0      0.0      0.0      5     6.2   1.00 [1.00-1.00]
+memory_max=512M                     5    0   18.5    0.90 [0.72-1.23]     -0.0     -2.3     -0.1     -0.1      0.1      0.0      0.9      0.0      0.0      4     5.9   0.95 [0.91-1.11]
+memory_max=384M                     5    0   20.9    1.02 [0.81-1.13]     +0.0     -0.0     -0.1     -0.1      0.1      0.0      0.9      0.0      0.0      5     5.8   0.94 [0.88-1.10]
+memory_max=320M                     5    0   19.5    0.95 [0.76-1.06]     -0.1     -1.3     -0.2     -0.1      0.1      0.0      0.9      0.0      0.0      4     5.7   0.92 [0.82-1.09]
+memory_max=256M                     5    0   20.6    1.01 [0.80-1.11]     +0.1     -0.9     +0.0     +0.0      0.1      0.1      1.2      0.0      0.0      4     6.1   0.99 [0.93-1.17]
+memory_max=192M                     5    0   22.8    1.11 [0.86-1.35]     +0.5     +1.3     +0.1     +0.2      0.1      0.1      2.1      0.1      0.1      5     6.8   1.11 [1.05-1.47]
+memory_max=128M                     5    5  178.1    8.70 [4.00-13.32]     +6.5    +42.3    +22.3    +59.6      3.1      0.1    189.0      3.1     17.8      2    92.3  14.98 [11.00-32.67]
+memory_max=96M                      5    5  295.1   14.41 [5.44-20.46]   +293.6    -14.9     -4.2     -0.4      5.8      0.0    491.5      4.5     33.8      0   295.1  47.90 [18.08-72.50]
+memory_max=64M                      5    5   78.2    3.82 [3.02-4.22]    +76.7    -14.9     -4.2     -0.4      1.2      0.0     70.5      2.0      8.9      0    78.2  12.69 [10.15-14.64]
+breaking point (interval above 1.10): wall memory_max=128M; local memory_max=128M
+
+== disk  opus-5-5  t8_ioread  (baseline: none, n=5, wall 14.9 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   14.9    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      4.5      0.0      0.0      4     6.2   1.00 [1.00-1.00]
+io_max={'rbps': 209715200}          5    0   15.9    1.07 [0.99-1.22]     +0.0     +0.2     +0.8     -0.0      0.1      0.0      1.9      3.6      0.0      4     7.1   1.14 [1.01-1.15]
+io_max={'rbps': 157286400}          5    0   17.8    1.19 [1.16-1.32]     +0.2     +0.2     +2.5     -0.0      0.1      0.0      1.9      5.4      0.0      4     8.9   1.43 [1.40-1.44]
+io_max={'rbps': 104857600}          5    0   20.7    1.39 [1.33-2.10]     +0.4     -0.5     +5.9     -0.0      0.1      0.0      2.0      9.0      0.0      4    12.5   2.01 [1.97-2.03]
+io_max={'rbps': 52428800}           5    0   33.7    2.26 [2.11-2.52]     +1.0     +1.6    +16.2     -0.0      0.1      0.0      2.0     20.0      0.0      5    23.5   3.77 [3.69-3.78]
+io_max={'rbps': 20971520}           5    0   68.6    4.60 [4.51-5.26]     +4.3     +2.4    +47.1     -0.0      0.1      0.1      2.3     54.9      0.0      5    57.6   9.24 [7.82-9.27]
+breaking point (interval above 1.10): wall io_max={'rbps': 157286400}; local io_max={'rbps': 157286400}
+
+== e2e_disk  opus-5-5  t3_implement  (baseline: none, n=5, wall 19.9 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   19.9    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.9      0.0      0.0      5     5.6   1.00 [1.00-1.00]
+io_max={'rbps': 52428800}           5    0   20.9    1.05 [0.89-1.15]     +1.0     -0.8     +0.5     +0.0      0.1      0.0      0.9      1.1      0.0      5     7.0   1.26 [1.17-1.34]
+io_max={'rbps': 20971520}           5    0   25.6    1.29 [1.08-1.44]     +4.3     +1.4     +0.7     -0.0      0.1      0.1      0.9      5.1      0.0      5    10.4   1.88 [1.68-1.97]
+io_max={'rbps': 5242880}            5    0   44.3    2.23 [1.88-2.38]    +21.4     +0.5     +2.4     +0.1      0.1      0.0      1.2     26.7      0.0      5    29.3   5.28 [4.96-5.55]
+breaking point (interval above 1.10): wall io_max={'rbps': 5242880}; local io_max={'rbps': 52428800}
+
+== network  opus-5-5  t3_implement  (baseline: none, n=5, wall 20.4 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   20.4    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.9      0.0      0.0      4     5.8   1.00 [1.00-1.00]
+{"delay_ms": 50}                    5    0   20.6    1.01 [0.87-1.26]     -0.1     +0.3     -0.5     +0.4      0.1      0.0      0.9      0.0      0.0      5     5.6   0.98 [0.91-1.07]
+{"delay_ms": 100}                   5    0   22.2    1.09 [0.83-1.33]     -0.1     +2.1     -0.5     +0.5      0.1      0.0      0.9      0.0      0.0      5     5.6   0.97 [0.91-1.11]
+{"delay_ms": 200}                   5    0   23.2    1.13 [1.03-1.40]     -0.0     +2.3     +0.0     +0.7      0.1      0.0      0.9      0.1      0.0      4     6.5   1.12 [1.05-1.22]
+{"loss_pct": 1}                     5    0   23.3    1.14 [0.83-1.36]     +0.0     +2.6     +0.1     +0.0      0.1      0.0      0.9      0.0      0.0      5     5.8   1.01 [0.89-1.11]
+{"loss_pct": 5}                     5    0   23.9    1.17 [1.00-1.40]     -0.1     +4.3     -0.5     -0.0      0.1      0.0      0.9      0.0      0.0      5     5.3   0.91 [0.85-1.11]
+{"rate_kbit": 1000}                 5    0   21.9    1.07 [0.98-1.28]     -0.1     +1.9     -0.0     +0.3      0.1      0.0      0.9      0.0      0.0      5     5.9   1.02 [0.92-1.13]
+{"rate_kbit": 256}                  5    0   26.4    1.29 [1.19-1.53]     -0.1     +5.8     +0.2     +0.4      0.1      0.0      0.9      0.0      0.0      5     6.2   1.07 [1.00-1.17]
+breaking point (interval above 1.10): wall {"rate_kbit": 256}; local none in range
+
+== pids  opus-5-5  t3_implement  (baseline: none, n=5, wall 20.1 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   20.1    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.9      0.0      0.0      4     5.9   1.00 [1.00-1.00]
+pids_max=64                         5    0   20.9    1.04 [0.81-1.25]     -0.0     +1.2     +0.0     +0.1      0.1      0.0      0.9      0.0      0.0      5     6.0   1.01 [0.87-1.13]
+pids_max=48                         5    0   21.1    1.05 [0.82-1.17]     +0.0     +0.9     +0.1     +0.0      0.1      0.0      0.9      0.0      0.0      5     5.9   1.00 [0.93-1.11]
+pids_max=32                         5    0   21.4    1.07 [0.79-1.19]     -0.0     +1.4     -0.2     +0.1      0.1      0.0      0.9      0.0      0.0      5     5.8   0.98 [0.85-1.13]
+pids_max=24                         5    0   22.3    1.11 [0.86-1.17]     +0.0     +2.0     -0.0     +0.0      0.1      0.0      1.0      0.1      0.0      4     5.9   1.00 [0.92-1.11]
+pids_max=23                         5    0   20.4    1.02 [0.79-1.07]     -0.1     +0.8     -0.6     +0.0      0.1      0.0      0.9      0.0      0.0      5     5.3   0.90 [0.84-1.01]
+pids_max=22                         5    0   21.7    1.08 [0.80-1.18]     -0.1     +1.5     +0.1     +0.0      0.1      0.0      1.0      0.0      0.0      5     5.9   1.01 [0.81-1.12]
+pids_max=21                         5    0   19.5    0.97 [0.75-1.10]     -0.1     -0.4     -0.3     +0.0      0.1      0.0      0.9      0.0      0.0      5     5.7   0.96 [0.82-1.06]
+pids_max=20                         5    0   18.8    0.93 [0.73-1.17]     -0.1     -0.7     -0.7     +0.0      0.1      0.1      0.9      0.0      0.0      4     5.2   0.88 [0.81-1.11]
+pids_max=19                         5    1   20.1    1.00 [0.12-1.06]     -0.1     +0.3     -0.6     +0.0      0.1      0.0      0.8      0.0      0.0      5     5.2   0.88 [0.42-1.03]
+pids_max=18                         5    1   19.5    0.97 [0.12-1.08]     -0.1     -0.5     -0.9     +0.0      0.1      0.0      0.9      0.0      0.0      4     4.9   0.84 [0.41-0.99]
+pids_max=17                         5    0   24.8    1.24 [0.94-1.31]     -0.1     +1.5     +3.2     +0.0      0.1      0.0      0.8      0.0      0.0      4     9.1   1.55 [1.42-1.80]
+pids_max=16                         5    4    3.5    0.17 [0.12-1.25]     +2.0    -14.3     -4.1     -0.3      0.0      0.0      0.7      0.0      0.0      0     3.5   0.59 [0.42-1.50]
+pids_max=12                         5    5    2.6    0.13 [0.10-0.17]     +1.1    -14.3     -4.1     -0.3      0.0      0.0      0.7      0.0      0.0      0     2.6   0.44 [0.40-0.59]
+breaking point (interval above 1.10): wall none in range; local pids_max=17
+
+== threads  opus-5-5  t4_parallel  (baseline: 2 workers, n=5, wall 10.5 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+2 workers                           5    0   10.5    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.8      0.0      0.0      4     2.5   1.00 [1.00-1.00]
+4 workers                           5    0   10.9    1.04 [0.87-1.16]     +0.0     +0.2     +0.6     +0.0      0.1      0.1      0.8      0.0      0.0      4     3.2   1.24 [1.10-1.31]
+8 workers                           5    0   12.6    1.20 [0.98-1.40]     -0.0     +1.0     +1.5     -0.0      0.1      7.6      0.8      0.0      0.0      4     4.1   1.60 [1.41-1.66]
+16 workers                          5    0   15.3    1.46 [1.16-1.63]     +0.0     +1.6     +3.5     +0.0      0.1     45.9      0.8      0.0      0.0      4     6.1   2.40 [2.12-2.48]
+breaking point (interval above 1.10): wall 16 workers; local 8 workers
+
+== neighbour  opus-5-5  t3_implement  (baseline: none, n=5, wall 22.7 s)
+level                               n fail   wall       slowdown [95%] +startup   +model    +tool   +other cpuQuota  cpuBusy     disk   dOther  reclaim  turns   local  local slowdown
+none                                5    0   22.7    1.00 [1.00-1.00]     +0.0     +0.0     +0.0     +0.0      0.1      0.0      0.9      0.0      0.0      5     6.0   1.00 [1.00-1.00]
+{"kind": "cpu", "workers": 4}       5    0   24.8    1.10 [0.99-1.36]     +0.9     -2.9     +4.3     +0.0      0.0      3.0      0.9      0.1      0.0      4    11.2   1.86 [1.80-2.13]
+{"kind": "cpu", "workers": 8}       5    0   23.1    1.02 [0.96-1.27]     +0.8     -3.0     +4.0     +0.0      0.0      2.8      0.9      0.1      0.0      4    10.7   1.78 [1.58-1.93]
+{"kind": "io", "workers": 2}        5    0   21.3    0.94 [0.85-1.16]     +0.0     -2.0     +0.5     +0.0      0.1      0.0      2.1      0.0      0.0      4     6.5   1.08 [1.04-1.13]
+{"kind": "vm", "workers": 2}        5    0   24.6    1.08 [0.97-1.34]     +0.3     -2.2     +3.5     +0.1      0.3      0.7      0.9      0.0      0.0      5     9.8   1.62 [1.47-1.78]
+breaking point (interval above 1.10): wall none in range; local {"kind": "cpu", "workers": 4}

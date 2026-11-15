@@ -1,0 +1,7 @@
+== subagents: 20 runs
+trace CPU vs cpu.stat (a1 or group): median gap 0.95%, worst 1.3%
+model turns, trace minus agent report: {4: 1, 5: 1, 9: 2, 12: 1, 13: 7, 19: 1, 20: 1, 21: 4, 22: 1, 23: 1}
+model time, trace / agent API time: median 0.47, range 0.35-0.62
+setting  n  ok       wall    startup      model       tool agent_only     on_cpu  throttled  wait_idle  wait_busy       d_io     d_noio  reclaim_n  reclaim_s     psi_io    psi_mem   oom_kill  verdicts
+4  10  10      17.30       1.56      15.36       0.01       0.04       5.02       0.00       0.09       0.04       0.86       0.05       0.00       0.00       0.54       0.00       0.00  {'nothing': 10}
+8  10  10      20.25       1.54      18.35       0.02       0.04       7.61       0.00       0.11       0.04       0.87       0.06       0.00       0.00       0.55       0.00       0.00  {'nothing': 10}

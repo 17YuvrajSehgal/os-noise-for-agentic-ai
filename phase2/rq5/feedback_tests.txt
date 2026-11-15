@@ -1,0 +1,10 @@
+haiku-5-5 printed vs not printed, t3/t9 at 25%    after: 8 vs 0 p=0.056  turns: 11 vs 7 p=0.012  out: 3883 vs 2139 p=0.028  wall: 70 vs 31 p=0.028
+haiku-5-5 printed vs not printed, t3/t9 at 50%    after: 2 vs 0 p=0.143  turns: 7 vs 8 p=0.770  out: 2833 vs 2745 p=0.365  wall: 40 vs 22 p=0.155
+haiku-5-5 25% vs no limit, t3 printed             after: 8 vs 0 p=0.028  turns: 11 vs 5 p=0.028  out: 3883 vs 1974 p=0.028  wall: 70 vs 14 p=0.008
+haiku-5-5 25% vs no limit, t9 not printed         after: 0 vs 0 p=0.222  turns: 7 vs 7 p=0.333  out: 2139 vs 2308 p=0.579  wall: 31 vs 16 p=0.004
+haiku-5-5 printed vs not printed, t10 at 25%      after: 0 vs 0 p=0.500  turns: 9 vs 7 p=0.147  out: 3758 vs 2822 p=0.345  wall: 35 vs 32 p=0.075
+opus-5-5  printed vs not printed, t3/t9 at 25%    after: 0 vs 0 p=1.000  turns: 4 vs 4 p=0.222  out: 1412 vs 1244 p=0.028  wall: 39 vs 37 p=0.048
+opus-5-5  printed vs not printed, t3/t9 at 50%    after: 0 vs 0 p=1.000  turns: 4 vs 4 p=0.321  out: 1385 vs 1346 p=0.210  wall: 27 vs 24 p=0.075
+opus-5-5  25% vs no limit, t3 printed             after: 0 vs 0 p=1.000  turns: 4 vs 5 p=0.976  out: 1412 vs 1530 p=0.579  wall: 39 vs 21 p=0.004
+opus-5-5  25% vs no limit, t9 not printed         after: 0 vs 0 p=1.000  turns: 4 vs 5 p=1.000  out: 1244 vs 1505 p=0.972  wall: 37 vs 20 p=0.004
+opus-5-5  printed vs not printed, t10 at 25%      after: 0 vs 0 p=1.000  turns: 4 vs 5 p=0.996  out: 1938 vs 2380 p=0.984  wall: 37 vs 44 p=0.952

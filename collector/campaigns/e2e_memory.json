@@ -1,0 +1,27 @@
+{
+ "name": "e2e_memory",
+ "reps": 5,
+ "seed": 19,
+ "base": {
+  "task": "t3_implement.sh",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "limits.memory_max": [
+   "max",
+   "512M",
+   "384M",
+   "320M",
+   "256M",
+   "192M",
+   "128M",
+   "96M",
+   "64M"
+  ]
+ }
+}

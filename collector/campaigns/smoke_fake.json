@@ -1,0 +1,22 @@
+{
+ "name": "smoke_fake",
+ "reps": 1,
+ "seed": 1,
+ "cooldown_s": 1,
+ "base": {
+  "agent": "fake",
+  "task": "t3_implement.sh",
+  "trace": "core",
+  "fake_cmd": "python3 -c \"print(sum(range(10**7)))\"; echo '{\"type\":\"result\"}'"
+ },
+ "grid": {
+  "agents": [
+   1,
+   2
+  ],
+  "limits.cpu_max": [
+   "max",
+   "50000 100000"
+  ]
+ }
+}

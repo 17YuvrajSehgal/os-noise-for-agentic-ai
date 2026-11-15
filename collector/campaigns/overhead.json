@@ -1,0 +1,20 @@
+{
+ "name": "overhead",
+ "reps": 5,
+ "seed": 11,
+ "base": {
+  "task": "t3_implement.sh",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "trace": [
+   "none",
+   "core",
+   "full"
+  ]
+ }
+}

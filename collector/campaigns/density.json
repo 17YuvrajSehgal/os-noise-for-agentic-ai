@@ -1,0 +1,24 @@
+{
+ "name": "density",
+ "reps": 3,
+ "seed": 23,
+ "base": {
+  "task": "t3_implement.sh",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "agents": [
+   1,
+   2,
+   4,
+   8,
+   16,
+   32
+  ]
+ }
+}

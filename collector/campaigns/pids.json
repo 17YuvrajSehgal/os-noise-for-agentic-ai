@@ -1,0 +1,25 @@
+{
+ "name": "pids",
+ "reps": 5,
+ "seed": 22,
+ "base": {
+  "task": "t3_implement.sh",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "limits.pids_max": [
+   "max",
+   64,
+   48,
+   32,
+   24,
+   16,
+   12
+  ]
+ }
+}

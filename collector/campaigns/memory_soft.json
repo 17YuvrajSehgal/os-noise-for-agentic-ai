@@ -1,0 +1,24 @@
+{
+ "name": "memory_soft",
+ "reps": 5,
+ "seed": 15,
+ "base": {
+  "task": "t6_memtouch.sh",
+  "task_arg": 1024,
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "limits.memory_high": [
+   "max",
+   "1536M",
+   "1344M",
+   "1152M",
+   "768M"
+  ]
+ }
+}

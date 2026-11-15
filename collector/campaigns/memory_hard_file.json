@@ -1,0 +1,23 @@
+{
+ "name": "memory_hard_file",
+ "reps": 5,
+ "seed": 16,
+ "base": {
+  "task": "t6_memtouch.sh",
+  "task_arg": 1024,
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "limits.memory_max": [
+   "2G",
+   "1280M",
+   "1024M",
+   "768M"
+  ]
+ }
+}

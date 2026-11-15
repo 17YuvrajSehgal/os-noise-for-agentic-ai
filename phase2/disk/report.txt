@@ -1,0 +1,11 @@
+== disk: 30 runs
+trace CPU vs cpu.stat (a1 or group): median gap 2.17%, worst 3.2%
+model turns, trace minus agent report: {0: 27, 4: 2, 6: 1}
+model time, trace / agent API time: median 0.99, range 0.97-1.00
+setting              n  ok       wall    startup      model       tool agent_only     on_cpu  throttled  wait_idle  wait_busy       d_io     d_noio  reclaim_n  reclaim_s     psi_io    psi_mem   oom_kill  verdicts
+None                 5   5      14.91       1.54       8.59       4.37       0.07       2.56       0.00       0.10       0.03       4.48       0.03       0.00       0.00       3.81       0.00       0.00  {'nothing': 5}
+{"rbps":104857600}   5   5      20.66       1.90       8.00      10.32       0.08       2.74       0.00       0.09       0.03       1.97       9.02       0.00       0.00      10.15       0.00       0.00  {'disk': 5}
+{"rbps":157286400}   5   5      17.75       1.71       8.71       6.91       0.09       2.55       0.00       0.08       0.03       1.95       5.37       0.00       0.00       6.62       0.00       0.00  {'disk': 5}
+{"rbps":209715200}   5   5      15.88       1.57       8.73       5.21       0.08       2.48       0.00       0.08       0.03       1.92       3.63       0.00       0.00       4.87       0.00       0.00  {'disk': 5}
+{"rbps":20971520}    5   5      68.64       5.81      10.91      51.44       0.14       3.23       0.00       0.13       0.06       2.35      54.93       0.00       0.00      54.28       0.00       0.00  {'disk': 5}
+{"rbps":52428800}    5   5      33.71       2.56      10.08      20.62       0.09       2.88       0.00       0.11       0.03       2.04      20.02       0.00       0.00      20.34       0.00       0.00  {'disk': 5}

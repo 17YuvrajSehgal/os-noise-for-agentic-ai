@@ -1,0 +1,9 @@
+== e2e_disk: 20 runs
+trace CPU vs cpu.stat (a1 or group): median gap 0.76%, worst 1.0%
+model turns, trace minus agent report: {0: 20}
+model time, trace / agent API time: median 0.99, range 0.97-1.00
+setting             n  ok       wall    startup      model       tool agent_only     on_cpu  throttled  wait_idle  wait_busy       d_io     d_noio  reclaim_n  reclaim_s     psi_io    psi_mem   oom_kill  verdicts
+None                5   5      19.87       1.53      14.33       3.60       0.12       5.84       0.00       0.07       0.03       0.92       0.05       0.00       0.00       0.63       0.00       0.00  {'nothing': 5}
+{"rbps":20971520}   5   5      25.58       5.79      15.80       4.31       0.11       6.37       0.00       0.08       0.05       0.94       5.14       0.00       0.00       4.69       0.00       0.00  {'disk': 5}
+{"rbps":52428800}   5   5      20.91       2.56      13.56       4.09       0.11       6.27       0.00       0.07       0.02       0.87       1.13       0.00       0.00       1.63       0.00       0.00  {'disk': 5}
+{"rbps":5242880}    5   5      44.31      23.06      14.77       5.75       0.40       6.25       0.00       0.09       0.04       1.17      26.68       0.00       0.00      22.81       0.00       0.00  {'disk': 5}

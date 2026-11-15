@@ -1,0 +1,1289 @@
+family,run,agent,task,cpu,mem_limit,io_limit,turn,new_conn,setup_s,upload_s,ttfb_s,stream_s,max_gap_s,out_bytes,in_bytes,n_reads,rate_bps
+1_svc_cpu_cap/agentic-os-noise/runs,t2_cap100_r1,claude,t2_medium.sh,1 core,,,1,1,1.7054,0.0,1.202,0.853,0.207,30602,2841,13,3331
+1_svc_cpu_cap/agentic-os-noise/runs,t2_cap100_r1,claude,t2_medium.sh,1 core,,,2,0,,0.0,0.963,7.316,1.213,4895,7135,58,975
+1_svc_cpu_cap/agentic-os-noise/runs,t2_cap100_r1,claude,t2_medium.sh,1 core,,,3,0,,0.0,3.78,0.016,0.013,3382,3221,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r1,claude,t2_medium.sh,1 core,,,1,1,1.7565,0.0,1.077,0.795,0.209,30602,2835,14,3565
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r1,claude,t2_medium.sh,1 core,,,2,0,,0.0,0.91,3.73,1.318,4895,4535,15,1216
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r1,claude,t2_medium.sh,1 core,,,3,0,,0.0,1.085,1.691,0.664,2717,3188,15,1886
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r1,claude,t2_medium.sh,1 core,,,4,0,,0.0,1.04,1.691,0.623,2986,3113,15,1841
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r1,claude,t2_medium.sh,1 core,,,5,0,,0.0,1.062,2.501,0.682,3006,4480,19,1792
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r1,claude,t2_medium.sh,1 core,,,6,0,,0.0,3.858,0.015,0.014,3056,3170,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r2,claude,t2_medium.sh,1 core,,,1,1,1.6675,0.0,1.191,0.824,0.209,30556,2850,14,3457
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r2,claude,t2_medium.sh,1 core,,,2,0,,0.0,1.056,4.286,1.34,4895,4751,16,1108
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r2,claude,t2_medium.sh,1 core,,,3,0,,0.0,1.039,1.732,0.65,2717,3150,15,1819
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r2,claude,t2_medium.sh,1 core,,,4,0,,0.0,1.126,1.631,0.578,2986,3136,16,1923
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r2,claude,t2_medium.sh,1 core,,,5,0,,0.0,1.107,2.45,0.715,3006,4273,14,1744
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r2,claude,t2_medium.sh,1 core,,,6,0,,0.0,1.631,0.728,0.124,3155,2974,12,4087
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r2,claude,t2_medium.sh,1 core,,,7,0,,0.0,4.07,0.02,0.016,2745,3205,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r3,claude,t2_medium.sh,1 core,,,1,1,1.755,0.0,1.114,0.836,0.207,30557,2828,14,3383
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r3,claude,t2_medium.sh,1 core,,,2,0,,0.0,1.057,4.882,1.361,4895,5391,25,1104
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r3,claude,t2_medium.sh,1 core,,,3,0,,0.0,1.039,1.635,0.616,2986,3239,17,1981
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r3,claude,t2_medium.sh,1 core,,,4,0,,0.0,0.984,2.193,0.579,3002,4165,14,1899
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r3,claude,t2_medium.sh,1 core,,,5,0,,0.0,1.807,2.1,0.425,2845,3896,24,1855
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r3,claude,t2_medium.sh,1 core,,,6,0,,0.0,4.901,0.022,0.012,2919,3526,4,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r4,claude,t2_medium.sh,1 core,,,1,1,1.7652,0.0,1.111,0.848,0.209,30740,2844,13,3353
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r4,claude,t2_medium.sh,1 core,,,2,0,,0.0,1.148,5.002,1.411,4895,5180,21,1036
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r4,claude,t2_medium.sh,1 core,,,3,0,,0.0,1.041,5.372,0.587,2987,4890,37,910
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r4,claude,t2_medium.sh,1 core,,,4,0,,0.0,1.118,4.921,4.32,3795,4947,5,1005
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r5,claude,t2_medium.sh,1 core,,,1,1,1.906,0.0,1.332,0.793,0.208,30552,2799,12,3530
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r5,claude,t2_medium.sh,1 core,,,2,0,,0.0,1.116,3.606,1.111,4895,4417,14,1225
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r5,claude,t2_medium.sh,1 core,,,3,0,,0.0,1.122,6.157,0.559,2717,5283,45,858
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap100_r5,claude,t2_medium.sh,1 core,,,4,0,,0.0,1.136,4.228,3.846,4008,4653,5,1100
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r1,claude,t2_medium.sh,0.25 core,,,1,1,4.5005,0.0,1.121,0.806,0.21,30757,2751,11,3414
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r1,claude,t2_medium.sh,0.25 core,,,2,0,,0.0,0.994,2.967,1.234,4895,4374,14,1474
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r1,claude,t2_medium.sh,0.25 core,,,3,0,,0.0,1.066,1.728,0.656,2718,3201,17,1852
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r1,claude,t2_medium.sh,0.25 core,,,4,0,,0.0,1.137,1.847,0.748,2986,3231,16,1750
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r1,claude,t2_medium.sh,0.25 core,,,5,0,,0.0,1.209,2.578,0.744,3005,4379,13,1699
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r1,claude,t2_medium.sh,0.25 core,,,6,0,,0.0,1.49,0.785,0.299,3155,2840,8,3619
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r1,claude,t2_medium.sh,0.25 core,,,7,0,,0.0,3.958,0.013,0.013,2745,3151,2,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r2,claude,t2_medium.sh,0.25 core,,,1,1,4.1026,0.0,1.171,0.803,0.209,30609,2793,13,3477
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r2,claude,t2_medium.sh,0.25 core,,,2,0,,0.0,1.057,5.733,1.209,4895,6895,55,1203
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r2,claude,t2_medium.sh,0.25 core,,,3,0,,0.0,3.421,0.015,0.013,4435,2970,4,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r3,claude,t2_medium.sh,0.25 core,,,1,1,4.202,0.0,1.799,0.805,0.21,30765,2801,12,3479
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r3,claude,t2_medium.sh,0.25 core,,,2,0,,0.0,1.064,4.798,1.143,4896,5036,22,1050
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r3,claude,t2_medium.sh,0.25 core,,,3,0,,0.0,1.094,5.281,0.559,2986,5032,40,953
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r3,claude,t2_medium.sh,0.25 core,,,4,0,,0.0,3.898,0.016,0.013,3796,3199,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r4,claude,t2_medium.sh,0.25 core,,,1,1,4.5995,0.0,1.096,0.803,0.211,30591,2756,11,3434
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r4,claude,t2_medium.sh,0.25 core,,,2,0,,0.0,1.015,10.052,2.242,4895,8113,72,807
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r4,claude,t2_medium.sh,0.25 core,,,3,0,,0.0,3.459,0.016,0.013,4225,3000,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r5,claude,t2_medium.sh,0.25 core,,,1,1,4.5124,0.0,1.169,0.802,0.163,30531,2802,13,3492
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r5,claude,t2_medium.sh,0.25 core,,,2,0,,0.0,1.096,8.827,1.152,4895,7896,77,895
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap25_r5,claude,t2_medium.sh,0.25 core,,,3,0,,0.0,1.077,3.745,3.145,4169,4418,6,1180
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r1,claude,t2_medium.sh,0.5 core,,,1,1,2.604,0.0,1.245,0.804,0.21,30571,2752,12,3423
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r1,claude,t2_medium.sh,0.5 core,,,2,0,,0.0,1.107,7.012,1.484,4895,7560,67,1078
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r1,claude,t2_medium.sh,0.5 core,,,3,0,,0.0,3.868,0.017,0.014,3232,3203,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r2,claude,t2_medium.sh,0.5 core,,,1,1,2.4251,0.0,1.06,0.808,0.211,30730,2745,11,3397
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r2,claude,t2_medium.sh,0.5 core,,,2,0,,0.0,1.03,3.214,1.36,4895,4617,19,1437
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r2,claude,t2_medium.sh,0.5 core,,,3,0,,0.0,1.427,5.372,0.513,2986,5402,51,1006
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r2,claude,t2_medium.sh,0.5 core,,,4,0,,0.0,3.391,0.016,0.016,3795,2973,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r3,claude,t2_medium.sh,0.5 core,,,1,1,2.519,0.0,1.108,0.802,0.207,30606,2756,12,3437
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r3,claude,t2_medium.sh,0.5 core,,,2,0,,0.0,1.031,5.959,1.335,4895,5494,29,922
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r3,claude,t2_medium.sh,0.5 core,,,3,0,,0.0,1.125,1.683,0.612,2876,3188,17,1894
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r3,claude,t2_medium.sh,0.5 core,,,4,0,,0.0,1.089,1.14,0.454,3006,3694,10,3241
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r3,claude,t2_medium.sh,0.5 core,,,5,0,,0.0,1.157,1.144,0.283,2843,2900,13,2534
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r3,claude,t2_medium.sh,0.5 core,,,6,0,,0.0,1.501,0.793,0.327,2869,2830,9,3569
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r3,claude,t2_medium.sh,0.5 core,,,7,0,,0.0,3.509,0.016,0.014,2745,3119,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r4,claude,t2_medium.sh,0.5 core,,,1,1,2.7961,0.0,1.521,0.807,0.21,30605,2798,12,3465
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r4,claude,t2_medium.sh,0.5 core,,,2,0,,0.0,0.979,5.236,1.127,4895,6135,42,1172
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r4,claude,t2_medium.sh,0.5 core,,,3,0,,0.0,1.17,3.095,2.623,3206,4255,5,1375
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r5,claude,t2_medium.sh,0.5 core,,,1,1,2.6956,0.0,1.259,0.806,0.211,30530,2753,11,3417
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r5,claude,t2_medium.sh,0.5 core,,,2,0,,0.0,1.156,5.325,1.69,4895,5145,19,966
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r5,claude,t2_medium.sh,0.5 core,,,3,0,,0.0,1.075,1.671,0.643,2986,3134,15,1876
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r5,claude,t2_medium.sh,0.5 core,,,4,0,,0.0,1.119,2.252,0.606,3002,4163,13,1849
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r5,claude,t2_medium.sh,0.5 core,,,5,0,,0.0,1.656,2.117,0.57,2845,3433,12,1621
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_cap50_r5,claude,t2_medium.sh,0.5 core,,,6,0,,0.0,4.343,0.018,0.017,2919,3285,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r1,claude,t2_medium.sh,unlimited,,,1,1,1.4993,0.0,1.118,0.788,0.158,30561,2796,12,3546
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r1,claude,t2_medium.sh,unlimited,,,2,0,,0.0,1.033,7.303,1.657,4895,7353,62,1007
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r1,claude,t2_medium.sh,unlimited,,,3,0,,0.0,3.31,0.017,0.013,4431,3043,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r2,claude,t2_medium.sh,unlimited,,,1,1,1.4044,0.0,1.051,0.804,0.204,30592,2801,12,3485
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r2,claude,t2_medium.sh,unlimited,,,2,0,,0.0,0.936,4.389,1.215,4895,5093,25,1160
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r2,claude,t2_medium.sh,unlimited,,,3,0,,0.0,1.412,1.682,0.617,2986,3226,18,1918
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r2,claude,t2_medium.sh,unlimited,,,4,0,,0.0,1.092,4.364,0.527,3002,5439,35,1246
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r2,claude,t2_medium.sh,unlimited,,,5,0,,0.0,4.208,0.015,0.015,3150,3243,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r3,claude,t2_medium.sh,unlimited,,,1,1,1.3786,0.0,1.223,0.807,0.209,30604,2798,12,3468
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r3,claude,t2_medium.sh,unlimited,,,2,0,,0.0,1.145,3.341,1.346,4895,4635,20,1387
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r3,claude,t2_medium.sh,unlimited,,,3,0,,0.0,1.085,1.682,0.608,2987,3285,18,1953
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r3,claude,t2_medium.sh,unlimited,,,4,0,,0.0,1.014,2.251,0.678,3002,4277,14,1900
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r3,claude,t2_medium.sh,unlimited,,,5,0,,0.0,1.79,2.113,0.447,2845,3843,22,1819
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r3,claude,t2_medium.sh,unlimited,,,6,0,,0.0,4.168,0.018,0.015,2919,3265,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r4,claude,t2_medium.sh,unlimited,,,1,1,1.5559,0.0,1.193,0.843,0.206,30601,2802,13,3322
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r4,claude,t2_medium.sh,unlimited,,,2,0,,0.0,1.079,5.822,1.116,4895,6477,49,1112
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r4,claude,t2_medium.sh,unlimited,,,3,0,,0.0,3.591,0.016,0.014,4129,3111,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r5,claude,t2_medium.sh,unlimited,,,1,1,1.4738,0.0,1.236,0.803,0.208,30587,2788,12,3472
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r5,claude,t2_medium.sh,unlimited,,,2,0,,0.0,1.135,3.915,1.492,4895,4671,18,1193
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r5,claude,t2_medium.sh,unlimited,,,3,0,,0.0,1.23,1.685,0.712,2986,3113,13,1847
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r5,claude,t2_medium.sh,unlimited,,,4,0,,0.0,1.265,2.361,0.722,3002,4136,12,1752
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r5,claude,t2_medium.sh,unlimited,,,5,0,,0.0,1.047,3.175,1.153,2845,4776,18,1504
+1_svc_cpu_cap/agentic-os-noise/runs,t2_medium_nocap_r5,claude,t2_medium.sh,unlimited,,,6,0,,0.0,4.317,0.017,0.014,2919,3251,4,
+1_svc_cpu_cap/agentic-os-noise/runs,t2_nocap_r1,claude,t2_medium.sh,unlimited,,,1,1,1.5342,0.0,1.025,0.802,0.16,30575,2799,13,3488
+1_svc_cpu_cap/agentic-os-noise/runs,t2_nocap_r1,claude,t2_medium.sh,unlimited,,,2,0,,0.0,1.027,6.603,0.668,4895,7880,83,1193
+1_svc_cpu_cap/agentic-os-noise/runs,t2_nocap_r1,claude,t2_medium.sh,unlimited,,,3,0,,0.0,3.451,0.024,0.013,3448,2976,4,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r1,claude,t3_implement.sh,1 core,,,1,1,1.6066,0.0,0.891,0.735,0.493,30597,2584,9,3517
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r1,claude,t3_implement.sh,1 core,,,2,0,,0.0,0.48,7.344,1.063,3875,8631,96,1175
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r1,claude,t3_implement.sh,1 core,,,3,0,,0.0,4.631,0.015,0.013,3659,3316,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r2,claude,t3_implement.sh,1 core,,,1,1,1.707,0.0,0.57,0.65,0.474,30532,2521,6,3879
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r2,claude,t3_implement.sh,1 core,,,2,0,,0.0,1.051,6.236,0.816,3875,7393,71,1185
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r2,claude,t3_implement.sh,1 core,,,3,0,,0.0,3.799,0.013,0.011,3175,3058,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r3,claude,t3_implement.sh,1 core,,,1,1,1.7456,0.0,0.535,0.742,0.486,30527,2594,7,3496
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r3,claude,t3_implement.sh,1 core,,,2,0,,0.0,0.563,6.297,0.594,3875,8073,88,1282
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r3,claude,t3_implement.sh,1 core,,,3,0,,0.0,4.18,0.017,0.011,3649,3243,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r4,claude,t3_implement.sh,1 core,,,1,1,1.8266,0.0,1.318,0.638,0.492,30619,2516,6,3947
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r4,claude,t3_implement.sh,1 core,,,2,0,,0.0,0.613,4.36,1.627,3875,4600,10,1055
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r4,claude,t3_implement.sh,1 core,,,3,0,,0.0,1.477,1.803,0.726,3090,3299,13,1829
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r4,claude,t3_implement.sh,1 core,,,4,0,,0.0,1.146,1.946,0.673,2937,3253,16,1671
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r4,claude,t3_implement.sh,1 core,,,5,0,,0.0,4.033,0.017,0.012,2851,3099,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r5,claude,t3_implement.sh,1 core,,,1,1,1.8779,0.0,0.818,0.745,0.513,30574,2610,7,3503
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r5,claude,t3_implement.sh,1 core,,,2,0,,0.0,1.095,6.613,0.953,4331,7310,65,1105
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap100_r5,claude,t3_implement.sh,1 core,,,3,0,,0.0,3.944,0.013,0.011,3648,3158,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r1,claude,t3_implement.sh,0.25 core,,,1,1,4.4945,0.0,1.145,0.785,0.462,30547,2599,7,3312
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r1,claude,t3_implement.sh,0.25 core,,,2,0,,0.0,0.919,6.259,0.779,3876,7452,72,1191
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r1,claude,t3_implement.sh,0.25 core,,,3,0,,0.0,4.315,0.013,0.01,3633,3172,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r2,claude,t3_implement.sh,0.25 core,,,1,1,4.205,0.0,0.811,0.74,0.492,30531,2594,7,3504
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r2,claude,t3_implement.sh,0.25 core,,,2,0,,0.0,1.083,7.803,1.437,3876,8208,80,1052
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r2,claude,t3_implement.sh,0.25 core,,,3,0,,0.0,4.213,0.016,0.01,4379,3135,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r3,claude,t3_implement.sh,0.25 core,,,1,1,4.3034,0.0,0.674,0.693,0.474,30552,2549,7,3680
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r3,claude,t3_implement.sh,0.25 core,,,2,0,,0.0,1.031,6.82,1.152,3876,7556,71,1108
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r3,claude,t3_implement.sh,0.25 core,,,3,0,,0.0,3.776,0.023,0.022,3654,3148,4,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r4,claude,t3_implement.sh,0.25 core,,,1,1,4.59,0.0,0.681,0.78,0.491,30532,2603,7,3335
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r4,claude,t3_implement.sh,0.25 core,,,2,0,,0.0,1.025,7.397,1.157,4332,7701,73,1041
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r4,claude,t3_implement.sh,0.25 core,,,3,0,,0.0,4.157,0.021,0.016,3592,3227,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r5,claude,t3_implement.sh,0.25 core,,,1,1,4.9991,0.0,0.569,0.816,0.51,30744,2643,9,3238
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r5,claude,t3_implement.sh,0.25 core,,,2,0,,0.0,1.026,6.422,0.768,4332,7048,56,1098
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap25_r5,claude,t3_implement.sh,0.25 core,,,3,0,,0.0,1.085,3.093,3.075,3659,4162,5,1346
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r1,claude,t3_implement.sh,0.5 core,,,1,1,2.5227,0.0,0.666,0.752,0.453,30559,2595,8,3450
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r1,claude,t3_implement.sh,0.5 core,,,2,0,,0.0,1.055,6.718,1.115,4332,7853,78,1169
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r1,claude,t3_implement.sh,0.5 core,,,3,0,,0.0,3.881,0.018,0.012,3657,3154,4,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r2,claude,t3_implement.sh,0.5 core,,,1,1,2.515,0.0,0.643,0.755,0.472,30709,2589,7,3428
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r2,claude,t3_implement.sh,0.5 core,,,2,0,,0.0,1.07,8.24,1.224,4332,8797,93,1068
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r2,claude,t3_implement.sh,0.5 core,,,3,0,,0.0,4.034,0.015,0.012,4071,3209,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r3,claude,t3_implement.sh,0.5 core,,,1,1,2.527,0.0,0.598,0.787,0.475,30578,2610,9,3317
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r3,claude,t3_implement.sh,0.5 core,,,2,0,,0.0,1.078,7.251,1.252,4332,7823,71,1079
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r3,claude,t3_implement.sh,0.5 core,,,3,0,,0.0,4.386,0.015,0.014,4072,3210,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r4,claude,t3_implement.sh,0.5 core,,,1,1,2.6072,0.0,0.592,0.769,0.505,30544,2597,7,3377
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r4,claude,t3_implement.sh,0.5 core,,,2,0,,0.0,0.464,7.222,1.251,4331,8141,84,1127
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r4,claude,t3_implement.sh,0.5 core,,,3,0,,0.0,4.22,0.019,0.015,3590,3245,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r5,claude,t3_implement.sh,0.5 core,,,1,1,2.5073,0.0,0.685,0.739,0.51,30592,2610,8,3534
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r5,claude,t3_implement.sh,0.5 core,,,2,0,,0.0,1.049,7.584,1.451,4332,7743,72,1021
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_cap50_r5,claude,t3_implement.sh,0.5 core,,,3,0,,0.0,3.979,0.016,0.014,4730,3191,4,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r1,claude,t3_implement.sh,unlimited,,,1,1,1.508,0.0,0.685,0.767,0.462,30584,2654,9,3462
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r1,claude,t3_implement.sh,unlimited,,,2,0,,0.0,0.956,6.229,0.982,4331,7249,69,1164
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r1,claude,t3_implement.sh,unlimited,,,3,0,,0.0,3.607,0.021,0.018,3175,3057,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r2,claude,t3_implement.sh,unlimited,,,1,1,1.4497,0.0,0.705,0.741,0.536,30541,2556,6,3449
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r2,claude,t3_implement.sh,unlimited,,,2,0,,0.0,1.131,7.26,1.097,3875,7953,77,1095
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r2,claude,t3_implement.sh,unlimited,,,3,0,,0.0,3.923,0.014,0.013,3654,3123,3,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r3,claude,t3_implement.sh,unlimited,,,1,1,1.476,0.0,0.557,0.792,0.473,30593,2603,8,3287
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r3,claude,t3_implement.sh,unlimited,,,2,0,,0.0,0.977,6.243,0.91,4331,7556,76,1210
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r3,claude,t3_implement.sh,unlimited,,,3,0,,0.0,0.996,3.133,3.118,3175,4154,4,1326
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r4,claude,t3_implement.sh,unlimited,,,1,1,1.4954,0.0,0.71,0.698,0.515,30688,2547,6,3647
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r4,claude,t3_implement.sh,unlimited,,,2,0,,0.0,1.022,8.107,1.606,3875,8252,83,1018
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r4,claude,t3_implement.sh,unlimited,,,3,0,,0.0,4.288,0.013,0.013,3661,3235,2,
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r5,claude,t3_implement.sh,unlimited,,,1,1,1.5892,0.0,0.639,0.695,0.504,30546,2542,6,3658
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r5,claude,t3_implement.sh,unlimited,,,2,0,,0.0,1.167,6.597,1.447,3875,7123,62,1080
+1_svc_cpu_cap/agentic-os-noise/runs,t3_implement_nocap_r5,claude,t3_implement.sh,unlimited,,,3,0,,0.0,4.49,0.026,0.026,3590,3200,3,
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,1,1,0.0267,0.0001,0.488,1.515,0.417,53964,23185,88,15300
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,2,1,0.0273,0.0,0.664,0.878,0.385,56557,13724,98,15627
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,3,1,0.0319,0.0,0.66,0.968,0.415,58270,15034,72,15523
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,4,1,0.0251,0.0,4.193,1.974,0.503,60448,18459,86,9352
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,5,1,0.0254,0.0,1.013,0.757,0.373,62947,11792,62,15585
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,6,1,0.0263,0.0,0.614,1.252,0.412,63772,19003,86,15183
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,7,1,0.0293,0.0,1.11,1.332,0.414,65953,11894,72,8928
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,8,1,0.027,0.0,0.487,1.057,0.41,66793,19335,118,18289
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,9,1,0.0257,0.0,0.604,0.859,0.375,68999,12013,78,13981
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,10,1,0.0255,0.0,0.891,2.569,0.417,69648,26325,132,10246
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,11,1,0.0259,0.0215,0.477,2.09,0.407,74455,21489,90,10280
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,12,1,0.025,0.0215,0.877,0.821,0.414,77513,11837,68,14422
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r1,codex,t2_medium.sh,1 core,,,13,1,0.0252,0.0216,0.963,2.121,0.42,78161,21877,80,10314
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,1,1,0.028,0.0001,0.584,1.487,0.411,53964,21197,114,14258
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,2,1,0.026,0.0,0.578,1.716,0.458,56329,14197,96,8272
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,3,1,0.0266,0.0,0.638,3.002,0.42,58941,22827,128,7604
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,4,1,0.0261,0.0,4.936,5.776,0.628,61825,10164,72,1760
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,5,1,0.0264,0.0,1.323,2.295,0.491,62566,29310,160,12772
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,6,1,0.0267,0.0,0.629,0.811,0.411,65256,10131,68,12495
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,7,1,0.0267,0.0001,0.523,1.734,0.416,66020,19492,86,11243
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,8,1,0.027,0.0,0.833,1.058,0.408,68371,10144,68,9589
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,9,1,0.0257,0.0,1.722,3.295,0.418,68921,14846,76,4505
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r2,codex,t2_medium.sh,1 core,,,10,1,0.0258,0.0221,1.409,1.743,0.471,72390,16839,84,9663
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,1,1,0.0273,0.0001,0.593,1.8,0.411,53964,23463,140,13036
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,2,1,0.0284,0.0001,0.488,3.229,0.419,56483,18835,104,5833
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,3,1,0.0273,0.0,0.601,2.893,0.414,59608,19085,98,6598
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,4,1,0.026,0.0,0.833,2.016,0.415,62707,26276,138,13031
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,5,1,0.027,0.0,1.84,6.409,0.421,65346,14542,112,2269
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,6,1,0.0261,0.0,0.506,1.507,0.403,66282,25893,162,17179
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,7,1,0.0378,0.0,1.664,1.394,0.415,68636,14279,100,10245
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,8,1,0.0272,0.0,1.577,2.815,0.428,69565,19536,102,6939
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,9,1,0.0263,0.0,0.71,1.477,0.41,72110,14195,90,9612
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,10,1,0.026,0.0222,0.542,3.696,0.418,72848,33144,154,8967
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,11,1,0.0255,0.0223,0.394,0.97,0.413,76992,14109,84,14545
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,12,1,0.0285,0.0219,0.567,5.189,0.424,77730,17754,98,3422
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r3,codex,t2_medium.sh,1 core,,,13,1,0.0263,0.0218,0.508,1.846,0.687,81590,22377,120,12119
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r4,codex,t2_medium.sh,1 core,,,1,1,0.0279,0.0001,0.566,1.778,0.417,53964,26566,142,14943
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r4,codex,t2_medium.sh,1 core,,,2,1,0.0266,0.0,0.519,1.431,0.415,57845,19597,98,13692
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r4,codex,t2_medium.sh,1 core,,,3,1,0.0257,0.0,0.68,1.824,0.413,60341,28266,128,15494
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r4,codex,t2_medium.sh,1 core,,,4,1,0.0258,0.0,0.615,1.758,0.415,63126,28273,122,16080
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r4,codex,t2_medium.sh,1 core,,,5,1,0.0263,0.0,0.782,1.935,0.413,65887,17054,90,8813
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r4,codex,t2_medium.sh,1 core,,,6,1,0.0252,0.0,0.617,3.353,0.446,70241,38133,196,11374
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r4,codex,t2_medium.sh,1 core,,,7,1,0.027,0.0227,0.486,2.345,0.416,75670,21391,96,9122
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r5,codex,t2_medium.sh,1 core,,,1,1,0.0309,0.0001,0.656,1.06,0.379,53964,23575,96,22239
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r5,codex,t2_medium.sh,1 core,,,2,1,0.0258,0.0,1.412,1.958,0.418,56344,14305,82,7306
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r5,codex,t2_medium.sh,1 core,,,3,1,0.0277,0.0,0.549,1.088,0.42,58973,14828,86,13630
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r5,codex,t2_medium.sh,1 core,,,4,1,0.029,0.0,0.562,1.391,0.407,61305,23786,158,17103
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r5,codex,t2_medium.sh,1 core,,,5,1,0.0256,0.0,2.331,3.845,0.423,64103,30173,188,7846
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r5,codex,t2_medium.sh,1 core,,,6,1,0.0344,0.0,0.504,2.587,0.427,67050,32393,136,12522
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r5,codex,t2_medium.sh,1 core,,,7,1,0.0256,0.0,0.421,3.579,0.421,70545,15428,88,4310
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap100_r5,codex,t2_medium.sh,1 core,,,8,1,0.0249,0.0219,0.723,1.15,0.409,73969,16851,82,14658
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,1,1,0.0889,0.0001,0.468,1.085,0.413,53964,21550,76,19855
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,2,1,0.0273,0.0001,0.527,0.965,0.411,56284,14777,112,15315
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,3,1,0.0248,0.0,0.908,3.376,0.419,58915,18598,100,5509
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,4,1,0.0551,0.0,0.904,1.303,0.404,61544,10981,66,8431
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,5,1,0.0258,0.0,0.626,3.496,0.419,62288,18745,96,5362
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,6,1,0.0359,0.0,0.749,1.34,0.404,64405,10871,56,8110
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,7,1,0.0793,0.0,0.738,2.039,0.416,65166,28064,120,13761
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,8,1,0.028,0.0,0.784,1.124,0.418,68046,10891,58,9688
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,9,1,0.0248,0.0,0.561,2.534,0.418,68615,21995,102,8680
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,10,1,0.0455,0.0,0.652,1.185,0.389,71908,10818,54,9126
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,11,1,0.0251,0.0216,0.834,1.679,0.414,72476,15730,62,9367
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r1,codex,t2_medium.sh,0.25 core,,,12,1,0.0267,0.022,0.72,1.334,0.418,76265,13892,74,10416
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,1,1,0.0257,0.0001,0.339,1.488,0.413,53964,23848,130,16032
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,2,1,0.0249,0.0,0.553,1.601,0.417,56358,19398,128,12116
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,3,1,0.0253,0.0,0.546,3.37,0.419,59430,20426,100,6060
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,4,1,0.0255,0.0,0.523,1.039,0.414,62963,10922,62,10512
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,5,1,0.026,0.0,0.544,1.632,0.414,63706,26410,106,16187
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,6,1,0.0267,0.0,0.542,1.623,0.412,66151,11059,70,6815
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,7,1,0.0287,0.0,0.437,2.037,0.511,66911,20126,100,9882
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,8,1,0.0654,0.0001,0.702,1.053,0.415,69680,10775,52,10233
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,9,1,0.026,0.0001,2.668,4.129,0.42,70247,30497,154,7386
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,10,1,0.0294,0.0216,0.515,0.922,0.402,73314,11143,76,12084
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r2,codex,t2_medium.sh,0.25 core,,,11,1,0.0257,0.0221,1.382,5.253,0.42,73882,21747,88,4140
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,1,1,0.093,0.0001,0.504,1.32,0.449,53964,18957,138,14366
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,2,1,0.0251,0.0,0.459,1.419,0.414,54843,22125,126,15587
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,3,1,0.0255,0.0,0.538,1.854,0.414,59401,16750,64,9035
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,4,1,0.0274,0.0,0.391,1.221,0.414,62580,25183,120,20633
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,5,1,0.026,0.0,0.682,2.081,0.414,64896,11650,62,5599
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,6,1,0.0795,0.0,0.643,1.356,0.409,65741,26787,108,19760
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,7,1,0.0254,0.0,0.72,1.154,0.414,68190,11726,68,10163
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,8,1,0.0284,0.0,0.635,1.571,0.406,69029,27399,104,17436
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,9,1,0.0308,0.0,0.713,0.939,0.429,71591,11735,68,12492
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,10,1,0.0259,0.0214,0.723,3.271,0.414,72238,36262,164,11084
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,11,1,0.0325,0.022,0.613,1.047,0.407,77388,11557,56,11038
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r3,codex,t2_medium.sh,0.25 core,,,12,1,0.0278,0.0222,0.589,1.38,0.413,78035,18186,92,13175
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r4,codex,t2_medium.sh,0.25 core,,,1,1,0.0262,0.0001,2.248,3.612,0.543,53964,21535,94,5963
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r4,codex,t2_medium.sh,0.25 core,,,2,1,0.0253,0.0,0.421,2.029,0.416,56310,13935,80,6868
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r4,codex,t2_medium.sh,0.25 core,,,3,1,0.0256,0.0,0.648,2.016,0.466,58921,20091,114,9966
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r4,codex,t2_medium.sh,0.25 core,,,4,1,0.0272,0.0,5.234,13.338,0.662,61535,28616,184,2145
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r4,codex,t2_medium.sh,0.25 core,,,5,1,0.0286,0.0,1.169,2.926,0.414,64428,20549,86,7023
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r4,codex,t2_medium.sh,0.25 core,,,6,1,0.0796,0.0001,0.455,3.294,0.417,66848,33851,172,10277
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r4,codex,t2_medium.sh,0.25 core,,,7,1,0.079,0.0,1.09,1.681,0.417,70738,14772,68,8788
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r4,codex,t2_medium.sh,0.25 core,,,8,1,0.0288,0.0224,0.946,2.453,0.414,74208,16351,90,6665
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,1,1,0.0268,0.0001,2.4,1.684,0.42,53964,22127,114,13138
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,2,1,0.0282,0.0,0.62,3.777,0.417,56465,14606,98,3867
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,3,1,0.0248,0.0,0.582,1.369,0.416,59096,15241,72,11134
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,4,1,0.0255,0.0,0.587,1.306,0.415,61444,17241,82,13206
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,5,1,0.0259,0.0,0.544,0.959,0.416,63525,11763,70,12263
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,6,1,0.0252,0.0,1.161,2.102,0.417,64348,18773,96,8929
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,7,1,0.0256,0.0,0.649,1.128,0.416,66495,11451,48,10153
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,8,1,0.0343,0.0,0.565,1.494,0.406,67334,27102,144,18145
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,9,1,0.0764,0.0,0.568,0.756,0.412,69950,11858,78,15691
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,10,1,0.0261,0.0,0.838,3.06,0.416,70597,25251,110,8251
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,11,1,0.0282,0.0227,0.6,0.839,0.416,75266,11751,72,14013
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,12,1,0.0802,0.0223,1.504,2.291,0.419,75912,15173,64,6624
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,13,1,0.0275,0.0215,3.865,3.048,0.42,79360,15197,58,4986
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,14,1,0.0264,0.022,0.59,1.349,0.415,81827,16644,64,12335
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap25_r5,codex,t2_medium.sh,0.25 core,,,15,1,0.0329,0.0215,0.653,1.001,0.414,84156,16712,74,16700
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r1,codex,t2_medium.sh,0.5 core,,,1,1,0.0251,0.0001,0.697,1.365,0.415,53964,22569,116,16537
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r1,codex,t2_medium.sh,0.5 core,,,2,1,0.0269,0.0,0.6,1.587,0.421,56484,19240,88,12121
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r1,codex,t2_medium.sh,0.5 core,,,3,1,0.0551,0.0,0.781,1.961,0.417,59737,20257,98,10331
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r1,codex,t2_medium.sh,0.5 core,,,4,1,0.0251,0.0,0.747,2.974,0.416,62460,28836,120,9697
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r1,codex,t2_medium.sh,0.5 core,,,5,1,0.0266,0.0,1.444,2.793,0.42,65377,21023,94,7528
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r1,codex,t2_medium.sh,0.5 core,,,6,1,0.0263,0.0,2.405,4.181,0.42,67847,35620,168,8520
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r1,codex,t2_medium.sh,0.5 core,,,7,1,0.03,0.0219,1.041,1.599,0.412,73185,16052,82,10041
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r1,codex,t2_medium.sh,0.5 core,,,8,1,0.0263,0.023,0.55,1.478,0.415,76949,15417,66,10430
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r1,codex,t2_medium.sh,0.5 core,,,9,1,0.0251,0.0214,0.961,2.006,0.418,79346,17144,88,8548
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,1,1,0.025,0.0001,0.471,1.592,0.415,53964,22209,104,13948
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,2,1,0.0263,0.0,2.743,1.21,0.419,56420,17348,72,14333
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,3,1,0.0251,0.0,0.848,2.839,0.419,60425,19649,88,6921
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,4,1,0.0257,0.0,8.511,10.187,0.427,63677,12985,114,1275
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,5,1,0.0252,0.0,0.561,2.719,0.415,64506,27317,136,10047
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,6,1,0.026,0.0001,0.478,1.056,0.413,67392,11956,72,11319
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,7,1,0.0262,0.0,0.714,1.711,0.416,68237,19142,94,11190
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,8,1,0.0268,0.0,10.05,8.67,0.425,70558,12328,98,1422
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,9,1,0.0374,0.0,0.705,2.449,0.415,71211,30440,142,12429
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,10,1,0.0254,0.0216,0.525,1.263,0.417,74247,11909,72,9431
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,11,1,0.0265,0.0215,0.565,1.347,0.411,74899,15562,78,11557
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r2,codex,t2_medium.sh,0.5 core,,,12,1,0.0252,0.0217,0.537,1.668,0.416,78459,17991,116,10788
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r3,codex,t2_medium.sh,0.5 core,,,1,1,0.0656,0.0001,0.703,5.063,0.423,53964,24418,118,4823
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r3,codex,t2_medium.sh,0.5 core,,,2,1,0.0259,0.0,0.831,5.233,0.421,56701,18826,114,3598
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r3,codex,t2_medium.sh,0.5 core,,,3,1,0.0249,0.0,0.696,3.254,0.415,60896,29269,178,8996
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r3,codex,t2_medium.sh,0.5 core,,,4,1,0.0546,0.0,0.504,5.076,0.42,63801,29412,166,5795
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r3,codex,t2_medium.sh,0.5 core,,,5,1,0.0256,0.0,0.971,1.777,0.378,66647,29446,138,16568
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r3,codex,t2_medium.sh,0.5 core,,,6,1,0.0256,0.0,0.867,4.611,0.548,69333,39947,186,8664
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r3,codex,t2_medium.sh,0.5 core,,,7,1,0.0255,0.0215,0.646,2.403,0.416,75329,23475,88,9768
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r3,codex,t2_medium.sh,0.5 core,,,8,1,0.0255,0.0215,0.476,2.244,0.414,79104,22765,84,10143
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r4,codex,t2_medium.sh,0.5 core,,,1,1,0.0288,0.0001,0.518,1.741,0.415,53964,27304,160,15683
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r4,codex,t2_medium.sh,0.5 core,,,2,1,0.0253,0.0,0.77,2.959,0.417,58444,21804,100,7369
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r4,codex,t2_medium.sh,0.5 core,,,3,1,0.0545,0.0,0.658,1.73,0.411,61617,21246,88,12284
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r4,codex,t2_medium.sh,0.5 core,,,4,1,0.0284,0.0,2.333,3.752,0.418,64185,30766,166,8201
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r4,codex,t2_medium.sh,0.5 core,,,5,1,0.049,0.0,0.583,2.247,0.412,67114,23814,118,10598
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r4,codex,t2_medium.sh,0.5 core,,,6,1,0.0282,0.0,0.698,1.637,0.416,70179,16855,76,10297
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r4,codex,t2_medium.sh,0.5 core,,,7,1,0.0256,0.0219,1.504,1.427,0.419,73984,17010,96,11918
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,1,1,0.0271,0.0001,0.477,1.65,0.416,53964,22397,92,13574
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,2,1,0.0263,0.0,0.587,0.963,0.433,56490,14641,102,15197
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,3,1,0.0254,0.0,1.006,3.576,0.421,59120,19091,78,5339
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,4,1,0.0256,0.0,1.027,0.86,0.422,62153,11921,82,13858
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,5,1,0.0259,0.0,0.776,1.482,0.418,62974,18625,82,12569
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,6,1,0.0257,0.0,0.475,0.662,0.304,65112,11569,58,17477
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,7,1,0.0251,0.0,1.006,2.096,0.418,65971,26678,128,12731
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,8,1,0.0255,0.0,0.779,0.999,0.407,68434,11907,82,11918
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,9,1,0.0321,0.0,1.146,3.093,0.427,69079,21532,118,6961
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,10,1,0.0256,0.0,1.618,1.208,0.421,72032,11862,78,9818
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,11,1,0.0249,0.0217,2.562,1.003,0.348,72677,15203,86,15157
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_cap50_r5,codex,t2_medium.sh,0.5 core,,,12,1,0.0272,0.0216,0.592,1.191,0.409,76036,16959,92,14234
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,1,1,0.0256,0.0001,0.735,1.036,0.42,53964,16813,70,16224
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,2,1,0.0337,0.0,0.55,1.365,0.432,54819,19389,92,14208
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,3,1,0.0249,0.0,0.57,1.559,0.417,58206,15874,80,10183
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,4,1,0.0252,0.0,1.861,2.242,0.42,61006,25302,132,11288
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,5,1,0.0259,0.0,0.548,0.933,0.412,63379,11629,76,12467
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,6,1,0.0253,0.0,0.637,2.209,0.427,64270,21995,144,9957
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,7,1,0.0272,0.0,0.741,1.08,0.416,67308,11506,66,10652
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,8,1,0.0258,0.0,4.678,24.927,0.492,68216,31180,252,1251
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,9,1,0.0268,0.0,0.577,0.958,0.378,70918,11193,50,11688
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,10,1,0.026,0.0,0.459,5.044,0.448,71624,30735,142,6093
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,11,1,0.0291,0.022,0.691,0.839,0.405,74998,11726,82,13973
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,12,1,0.028,0.0219,0.713,1.203,0.412,75706,15987,70,13284
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,13,1,0.0258,0.0218,0.834,1.406,0.414,79266,15367,82,10928
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,14,1,0.0264,0.0217,1.604,1.737,0.426,81682,16295,92,9381
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r1,codex,t2_medium.sh,unlimited,,,15,1,0.0253,0.0215,0.612,1.049,0.413,83949,16695,70,15909
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,1,1,0.0257,0.0001,0.723,1.57,0.492,53964,19895,140,12670
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,2,1,0.0252,0.0,0.695,1.545,0.414,54892,20834,120,13486
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,3,1,0.0253,0.0,0.422,1.073,0.418,58623,15439,82,14385
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,4,1,0.0251,0.0,1.168,2.755,0.416,61540,30868,178,11203
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,5,1,0.0254,0.0,1.049,2.186,0.586,64548,10802,50,4942
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,6,1,0.0263,0.0,0.423,1.409,0.416,65300,19064,68,13532
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,7,1,0.0272,0.0,0.558,1.1,0.415,67768,10962,60,9966
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,8,1,0.0255,0.0,0.913,2.739,0.417,68536,19823,102,7238
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,9,1,0.0249,0.0,0.703,2.074,0.417,71133,11272,82,5436
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,10,1,0.0259,0.0,0.493,3.535,0.422,71709,34207,174,9677
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,11,1,0.0265,0.0214,0.676,1.025,0.414,76252,12358,64,12058
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,12,1,0.0261,0.022,2.263,3.134,0.427,78277,17291,68,5518
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,13,1,0.0251,0.0214,0.993,1.308,0.413,81670,17207,88,13152
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r2,codex,t2_medium.sh,unlimited,,,14,1,0.0262,0.0221,4.716,2.008,0.346,84338,23292,122,11599
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,1,1,0.0252,0.0001,0.545,1.804,0.416,53964,22671,110,12566
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,2,1,0.0251,0.0,0.413,0.93,0.402,56562,13998,86,15054
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,3,1,0.0263,0.0,0.478,2.013,0.415,59173,20227,92,10046
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,4,1,0.025,0.0,0.606,1.647,0.413,61929,20679,80,12552
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,5,1,0.026,0.0,0.632,2.945,0.413,64485,32891,186,11167
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,6,1,0.0259,0.0,0.954,1.952,0.428,67857,22978,144,11770
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,7,1,0.0251,0.0,0.885,1.862,0.417,70633,15607,72,8383
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,8,1,0.0269,0.0225,0.725,1.972,0.415,74490,14520,48,7364
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,9,1,0.0334,0.0225,1.054,4.388,0.42,76937,16916,98,3855
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r3,codex,t2_medium.sh,unlimited,,,10,1,0.0255,0.0221,1.533,1.927,0.418,79684,21691,82,11255
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,1,1,0.0273,0.0001,3.5,4.891,0.434,53964,21644,88,4425
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,2,1,0.0279,0.0,0.501,2.716,0.458,56422,22098,138,8136
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,3,1,0.027,0.0,0.451,1.932,0.413,60891,18557,80,9603
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,4,1,0.0269,0.0,0.742,0.906,0.409,63667,11087,72,12244
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,5,1,0.0277,0.0,0.566,1.143,0.396,64412,19162,126,16769
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,6,1,0.0252,0.0,0.62,1.059,0.415,66551,10901,58,10294
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,7,1,0.0259,0.0,0.586,1.759,0.4,67312,27225,146,15475
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,8,1,0.026,0.0,6.344,1.245,0.42,69931,10928,64,8775
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,9,1,0.029,0.0,0.676,2.197,0.41,70499,24329,130,11076
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,10,1,0.025,0.0214,0.782,1.368,0.412,74887,11046,68,8075
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r4,codex,t2_medium.sh,unlimited,,,11,1,0.0257,0.022,0.678,1.325,0.416,75456,16878,88,12741
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,1,1,0.028,0.0001,0.649,1.695,0.414,53964,23283,106,13740
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,2,1,0.0262,0.0,0.899,0.925,0.345,56544,14223,74,15376
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,3,1,0.0272,0.0,0.953,2.723,0.415,59174,19317,98,7095
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,4,1,0.0252,0.0,0.546,0.895,0.397,62171,11530,54,12889
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,5,1,0.0249,0.0,0.611,1.232,0.413,62992,19117,96,15519
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,6,1,0.0254,0.0,0.896,1.76,0.793,65135,11810,74,6709
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,7,1,0.0266,0.0,0.922,1.807,0.413,65994,20464,124,11323
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,8,1,0.025,0.0,0.701,1.263,0.413,68468,11909,78,9431
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,9,1,0.0261,0.0,1.046,2.311,0.413,69114,31174,172,13492
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,10,1,0.0284,0.0235,0.874,1.453,0.415,72217,11552,56,7948
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t2_medium_nocap_r5,codex,t2_medium.sh,unlimited,,,11,1,0.0247,0.0213,1.445,2.252,0.419,72862,17961,88,7974
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,1,1,0.0267,0.0001,2.187,3.475,0.493,53929,18406,132,5297
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,2,1,0.0255,0.0,0.627,1.083,0.413,54799,11076,58,10225
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,3,1,0.0265,0.0,0.653,1.048,0.416,55874,13994,64,13357
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,4,1,0.0272,0.0,0.595,3.954,0.417,58486,27462,138,6945
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,5,1,0.0272,0.0,0.516,2.698,0.796,62326,11823,74,4382
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,6,1,0.0277,0.0,1.942,2.853,0.42,63240,33202,142,11636
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,7,1,0.0252,0.0,0.588,1.062,0.413,66658,11739,68,11050
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,8,1,0.0266,0.0,0.588,2.074,0.414,67613,25978,180,12526
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,9,1,0.0259,0.0,1.057,1.209,0.417,70373,11843,76,9793
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r1,codex,t3_implement.sh,1 core,,,10,1,0.0256,0.0,0.82,1.591,0.416,71021,19338,82,12153
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r2,codex,t3_implement.sh,1 core,,,1,1,0.0259,0.0001,0.816,1.538,0.417,53929,25000,108,16258
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r2,codex,t3_implement.sh,1 core,,,2,1,0.0262,0.0,0.786,1.501,0.414,56412,17613,80,11738
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r2,codex,t3_implement.sh,1 core,,,3,1,0.0255,0.0,0.557,2.685,0.416,59663,27407,134,10207
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r2,codex,t3_implement.sh,1 core,,,4,1,0.0262,0.0,0.565,2.735,0.413,63368,35052,164,12818
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r2,codex,t3_implement.sh,1 core,,,5,1,0.0282,0.0,2.166,2.744,0.415,67238,36560,238,13323
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r2,codex,t3_implement.sh,1 core,,,6,1,0.0282,0.0,0.77,1.161,0.415,70663,15900,66,13698
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r2,codex,t3_implement.sh,1 core,,,7,1,0.0254,0.0223,0.54,1.008,0.414,74746,13188,62,13084
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,1,1,0.0256,0.0001,0.605,2.027,0.414,53929,23692,88,11689
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,2,1,0.025,0.0,0.532,3.309,0.418,57480,26858,96,8118
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,3,1,0.0269,0.0,0.389,0.948,0.466,61605,11447,82,12079
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,4,1,0.0261,0.0,0.607,3.325,0.418,62500,26843,130,8072
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,5,1,0.0259,0.0001,0.57,0.83,0.403,66229,11382,78,13707
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,6,1,0.0256,0.0,0.462,2.239,0.417,67165,33740,152,15067
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,7,1,0.0287,0.0,0.737,1.215,0.41,70358,11064,58,9106
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,8,1,0.0259,0.0,0.618,1.244,0.415,70986,15193,68,12216
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,9,1,0.0257,0.0262,0.75,1.183,0.452,75362,14508,72,12268
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,10,1,0.027,0.0215,0.468,1.46,0.416,77618,17428,88,11933
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r3,codex,t3_implement.sh,1 core,,,11,1,0.0259,0.0223,0.625,1.344,0.415,79798,16168,80,12034
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r4,codex,t3_implement.sh,1 core,,,1,1,0.0394,0.0001,0.476,1.954,0.484,53929,22789,112,11664
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r4,codex,t3_implement.sh,1 core,,,2,1,0.0267,0.0,0.638,1.329,0.408,56574,11652,64,8765
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r4,codex,t3_implement.sh,1 core,,,3,1,0.026,0.0,0.534,3.195,0.419,58328,28134,150,8805
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r4,codex,t3_implement.sh,1 core,,,4,1,0.0255,0.0,0.577,2.8,0.428,62327,26258,128,9379
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r4,codex,t3_implement.sh,1 core,,,5,1,0.025,0.0,0.53,2.613,0.411,66030,33306,144,12747
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r4,codex,t3_implement.sh,1 core,,,6,1,0.027,0.0,9.46,7.317,0.498,69223,15123,88,2067
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r4,codex,t3_implement.sh,1 core,,,7,1,0.0252,0.022,0.797,1.38,0.622,73350,16065,72,11638
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r5,codex,t3_implement.sh,1 core,,,1,1,0.0251,0.0001,0.559,1.274,0.417,53929,20825,118,16340
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r5,codex,t3_implement.sh,1 core,,,2,1,0.0263,0.0,1.064,3.742,0.417,56013,27427,106,7329
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r5,codex,t3_implement.sh,1 core,,,3,1,0.0262,0.0,0.617,0.84,0.408,60086,11050,70,13156
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r5,codex,t3_implement.sh,1 core,,,4,1,0.029,0.0,0.513,3.215,0.416,60921,34447,204,10715
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r5,codex,t3_implement.sh,1 core,,,5,1,0.0263,0.0,0.723,0.852,0.416,64691,10956,64,12853
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r5,codex,t3_implement.sh,1 core,,,6,1,0.0262,0.0,5.174,2.302,0.421,65566,25090,124,10898
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r5,codex,t3_implement.sh,1 core,,,7,1,0.0261,0.0,1.034,0.528,0.215,68460,11003,66,20828
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap100_r5,codex,t3_implement.sh,1 core,,,8,1,0.0265,0.0,0.584,1.519,0.409,69029,20114,112,13244
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r1,codex,t3_implement.sh,0.25 core,,,1,1,0.0259,0.0001,0.615,1.558,0.41,53929,21203,96,13613
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r1,codex,t3_implement.sh,0.25 core,,,2,1,0.0255,0.0,0.622,1.028,0.417,56356,11156,64,10855
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r1,codex,t3_implement.sh,0.25 core,,,3,1,0.0264,0.0,0.959,6.697,0.42,58090,27726,138,4140
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r1,codex,t3_implement.sh,0.25 core,,,4,1,0.0249,0.0,0.762,3.383,0.418,62104,34569,138,10218
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r1,codex,t3_implement.sh,0.25 core,,,5,1,0.0266,0.0,0.487,2.537,0.419,66458,34568,152,13625
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r1,codex,t3_implement.sh,0.25 core,,,6,1,0.0308,0.0,0.829,1.969,0.558,69776,15190,78,7715
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r1,codex,t3_implement.sh,0.25 core,,,7,1,0.0257,0.0217,1.145,1.55,0.412,74303,15789,80,10184
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r2,codex,t3_implement.sh,0.25 core,,,1,1,0.0251,0.0001,0.498,1.18,0.41,53929,18552,86,15719
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r2,codex,t3_implement.sh,0.25 core,,,2,1,0.0275,0.0001,0.571,0.869,0.414,54818,11013,56,12668
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r2,codex,t3_implement.sh,0.25 core,,,3,1,0.026,0.0,0.737,4.207,0.423,56551,28476,112,6769
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r2,codex,t3_implement.sh,0.25 core,,,4,1,0.0257,0.0,0.67,4.997,0.612,61248,33496,152,6703
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r2,codex,t3_implement.sh,0.25 core,,,5,1,0.0257,0.0,0.534,2.472,0.414,64917,26670,114,10789
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r2,codex,t3_implement.sh,0.25 core,,,6,1,0.1023,0.0001,0.584,3.269,0.445,68227,27317,120,8357
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r2,codex,t3_implement.sh,0.25 core,,,7,1,0.0281,0.0,0.72,1.302,0.415,72140,13820,60,10611
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r2,codex,t3_implement.sh,0.25 core,,,8,1,0.0257,0.0215,0.519,1.105,0.421,76024,13755,86,12447
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r3,codex,t3_implement.sh,0.25 core,,,1,1,0.0254,0.0001,0.474,1.149,0.412,53929,20497,102,17832
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r3,codex,t3_implement.sh,0.25 core,,,2,1,0.0257,0.0,0.628,2.869,0.414,55977,26323,88,9176
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r3,codex,t3_implement.sh,0.25 core,,,3,1,0.0277,0.0,0.594,2.831,0.414,59786,27155,152,9591
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r3,codex,t3_implement.sh,0.25 core,,,4,1,0.0261,0.0,0.965,2.602,0.384,63760,33522,108,12883
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r3,codex,t3_implement.sh,0.25 core,,,5,1,0.099,0.0,0.628,2.538,0.415,67163,18461,98,7274
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r3,codex,t3_implement.sh,0.25 core,,,6,1,0.0264,0.0,0.478,1.67,0.409,70684,14800,58,8860
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r3,codex,t3_implement.sh,0.25 core,,,7,1,0.0567,0.0219,1.01,1.26,0.407,75162,16501,64,13094
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r4,codex,t3_implement.sh,0.25 core,,,1,1,0.0873,0.0001,0.599,1.98,0.418,53929,22484,122,11356
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r4,codex,t3_implement.sh,0.25 core,,,2,1,0.025,0.0,0.532,0.986,0.422,56375,12092,56,12266
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r4,codex,t3_implement.sh,0.25 core,,,3,1,0.0256,0.0,0.472,3.531,0.418,58138,26889,124,7615
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r4,codex,t3_implement.sh,0.25 core,,,4,1,0.0254,0.0,1.509,1.621,0.419,61964,19595,92,12089
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r4,codex,t3_implement.sh,0.25 core,,,5,1,0.0256,0.0,2.367,19.96,0.531,63129,28405,240,1423
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r4,codex,t3_implement.sh,0.25 core,,,6,1,0.0258,0.0,1.139,1.94,0.418,66300,19233,102,9915
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r4,codex,t3_implement.sh,0.25 core,,,7,1,0.0276,0.0,2.531,14.567,0.769,67492,25813,178,1772
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r4,codex,t3_implement.sh,0.25 core,,,8,1,0.0277,0.0,0.675,1.11,0.414,70320,18720,126,16869
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r4,codex,t3_implement.sh,0.25 core,,,9,1,0.0254,0.0,0.635,1.437,0.416,71173,19035,78,13242
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r5,codex,t3_implement.sh,0.25 core,,,1,1,0.0259,0.0001,0.567,1.532,0.414,53929,20515,88,13388
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r5,codex,t3_implement.sh,0.25 core,,,2,1,0.0272,0.0,0.471,0.928,0.414,56202,12987,66,13989
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r5,codex,t3_implement.sh,0.25 core,,,3,1,0.0254,0.0,0.473,3.564,0.419,57972,28036,126,7867
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r5,codex,t3_implement.sh,0.25 core,,,4,1,0.0256,0.0,0.608,3.573,0.793,62236,35637,162,9973
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r5,codex,t3_implement.sh,0.25 core,,,5,1,0.0252,0.0,0.546,2.752,0.413,66538,34833,172,12659
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r5,codex,t3_implement.sh,0.25 core,,,6,1,0.0984,0.0001,7.17,7.218,0.42,69917,20765,100,2877
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r5,codex,t3_implement.sh,0.25 core,,,7,1,0.0258,0.0216,1.483,4.68,0.524,74787,17305,78,3698
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap25_r5,codex,t3_implement.sh,0.25 core,,,8,1,0.0261,0.022,0.755,1.333,0.408,80449,14944,78,11211
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r1,codex,t3_implement.sh,0.5 core,,,1,1,0.0248,0.0001,0.325,1.419,0.412,53929,25742,140,18136
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r1,codex,t3_implement.sh,0.5 core,,,2,1,0.0265,0.0,1.067,3.111,0.605,57530,27126,106,8719
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r1,codex,t3_implement.sh,0.5 core,,,3,1,0.0288,0.0,1.246,4.338,0.421,61468,37466,190,8637
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r1,codex,t3_implement.sh,0.5 core,,,4,1,0.027,0.0001,0.582,2.97,0.42,66158,35928,156,12097
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r1,codex,t3_implement.sh,0.5 core,,,5,1,0.0557,0.0,0.776,1.889,0.418,69800,16488,86,8730
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r1,codex,t3_implement.sh,0.5 core,,,6,1,0.0261,0.0218,0.455,0.947,0.413,74072,13636,82,14403
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,1,1,0.0267,0.0001,0.497,1.439,0.602,53929,20189,80,14025
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,2,1,0.0281,0.0,0.773,0.856,0.415,56376,11372,78,13278
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,3,1,0.0266,0.0,0.631,3.619,0.68,58111,27143,124,7500
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,4,1,0.026,0.0,0.689,1.134,0.629,62019,11171,62,9852
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,5,1,0.0294,0.0,1.399,4.716,0.568,62914,23934,122,5075
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,6,1,0.0269,0.0,3.044,2.243,0.419,65906,11314,76,5045
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,7,1,0.0256,0.0,0.653,2.236,0.41,66841,25158,116,11251
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,8,1,0.0258,0.0,0.899,1.124,0.412,69800,11231,68,9992
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,9,1,0.0263,0.0,0.503,1.283,0.406,70429,14592,88,11377
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r2,codex,t3_implement.sh,0.5 core,,,10,1,0.0265,0.0218,0.554,1.439,0.415,74492,15720,76,10925
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,1,1,0.0341,0.0001,0.417,1.429,0.415,53929,22834,94,15981
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,2,1,0.0261,0.0,0.708,1.019,0.402,56380,12980,94,12733
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,3,1,0.0252,0.0,0.387,3.054,0.417,58165,26370,136,8634
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,4,1,0.0251,0.0,0.827,1.345,0.417,61509,12620,66,9386
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,5,1,0.0269,0.0,0.818,3.102,0.419,62455,33690,162,10860
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,6,1,0.0319,0.0,0.637,1.119,0.415,66049,12691,68,11345
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,7,1,0.0253,0.0,1.028,2.454,0.417,67037,24789,108,10102
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,8,1,0.0255,0.0,0.906,1.14,0.424,69807,12629,68,11076
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,9,1,0.0269,0.0,0.789,1.942,0.409,70487,16412,100,8452
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r3,codex,t3_implement.sh,0.5 core,,,10,1,0.0252,0.0217,0.614,1.009,0.418,74531,16360,88,16215
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r4,codex,t3_implement.sh,0.5 core,,,1,1,0.0256,0.0001,2.704,5.371,0.421,53929,21876,88,4073
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r4,codex,t3_implement.sh,0.5 core,,,2,1,0.0252,0.0,0.51,0.846,0.415,56372,11564,54,13665
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r4,codex,t3_implement.sh,0.5 core,,,3,1,0.0281,0.0,0.619,2.647,0.406,58126,27239,134,10290
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r4,codex,t3_implement.sh,0.5 core,,,4,1,0.0267,0.0,1.242,2.782,0.391,61940,27149,154,9759
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r4,codex,t3_implement.sh,0.5 core,,,5,1,0.0275,0.0,0.86,2.655,0.415,65912,34985,138,13176
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r4,codex,t3_implement.sh,0.5 core,,,6,1,0.0253,0.0,1.049,1.56,0.417,69455,16136,76,10345
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r4,codex,t3_implement.sh,0.5 core,,,7,1,0.0309,0.0222,1.266,2.926,0.421,75497,15672,66,5357
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r5,codex,t3_implement.sh,0.5 core,,,1,1,0.0279,0.0001,0.87,1.754,0.416,53929,19640,122,11195
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r5,codex,t3_implement.sh,0.5 core,,,2,1,0.0254,0.0,0.77,3.541,0.418,55964,28036,134,7917
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r5,codex,t3_implement.sh,0.5 core,,,3,1,0.0558,0.0001,0.557,3.612,0.423,60246,27924,132,7731
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r5,codex,t3_implement.sh,0.5 core,,,4,1,0.0289,0.0,0.944,3.089,0.628,64475,35549,188,11507
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r5,codex,t3_implement.sh,0.5 core,,,5,1,0.0536,0.0,0.615,1.506,0.414,67991,14415,78,9570
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_cap50_r5,codex,t3_implement.sh,0.5 core,,,6,1,0.0257,0.0215,1.983,1.389,0.42,72178,12240,66,8809
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r1,codex,t3_implement.sh,unlimited,,,1,1,0.0287,0.0001,0.502,1.116,0.411,53929,20998,132,18810
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r1,codex,t3_implement.sh,unlimited,,,2,1,0.0279,0.0,0.495,4.499,0.434,56031,30558,162,6791
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r1,codex,t3_implement.sh,unlimited,,,3,1,0.0262,0.0,0.51,2.85,0.416,60985,27659,154,9704
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r1,codex,t3_implement.sh,unlimited,,,4,1,0.0269,0.0,1.755,2.86,0.419,64917,27042,130,9456
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r1,codex,t3_implement.sh,unlimited,,,5,1,0.0253,0.0,0.98,2.217,0.42,68031,16658,82,7513
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r1,codex,t3_implement.sh,unlimited,,,6,1,0.0258,0.0222,0.488,1.246,0.444,72432,15222,88,12213
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r2,codex,t3_implement.sh,unlimited,,,1,1,0.0297,0.0001,0.679,1.652,0.413,53929,24646,140,14917
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r2,codex,t3_implement.sh,unlimited,,,2,1,0.0256,0.0,0.487,1.187,0.413,56373,18463,92,15559
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r2,codex,t3_implement.sh,unlimited,,,3,1,0.0254,0.0,0.708,4.701,0.42,58743,26924,122,5728
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r2,codex,t3_implement.sh,unlimited,,,4,1,0.0254,0.0001,0.635,1.384,0.41,62518,15079,70,10896
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r2,codex,t3_implement.sh,unlimited,,,5,1,0.025,0.0,0.993,3.699,0.418,64830,33633,162,9093
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r2,codex,t3_implement.sh,unlimited,,,6,1,0.025,0.0,0.995,0.998,0.415,68783,11935,74,11956
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r2,codex,t3_implement.sh,unlimited,,,7,1,0.0283,0.0,0.7,2.174,0.406,69743,33112,174,15230
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r2,codex,t3_implement.sh,unlimited,,,8,1,0.0258,0.0214,0.462,1.293,0.415,72826,15047,74,11641
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r2,codex,t3_implement.sh,unlimited,,,9,1,0.0259,0.0227,1.101,2.039,0.414,74847,19697,72,9659
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r3,codex,t3_implement.sh,unlimited,,,1,1,0.026,0.0001,2.58,1.508,0.407,53929,25184,96,16696
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r3,codex,t3_implement.sh,unlimited,,,2,1,0.0264,0.0,1.011,4.314,0.43,57522,28566,141,6621
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r3,codex,t3_implement.sh,unlimited,,,3,1,0.0269,0.0,0.505,0.893,0.419,61917,11890,60,13318
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r3,codex,t3_implement.sh,unlimited,,,4,1,0.0262,0.0,0.688,2.916,0.41,62796,25913,158,8887
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r3,codex,t3_implement.sh,unlimited,,,5,1,0.0264,0.0,0.826,1.46,0.417,66267,12087,72,8281
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r3,codex,t3_implement.sh,unlimited,,,6,1,0.0264,0.0,1.914,2.678,0.375,67188,28229,142,10541
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r3,codex,t3_implement.sh,unlimited,,,7,1,0.0275,0.0,0.52,1.688,0.42,70398,11961,62,7085
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r3,codex,t3_implement.sh,unlimited,,,8,1,0.0271,0.0,0.439,1.097,0.422,71012,15952,76,14548
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r3,codex,t3_implement.sh,unlimited,,,9,1,0.0253,0.0219,0.536,0.967,0.414,75052,12807,70,13240
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r4,codex,t3_implement.sh,unlimited,,,1,1,0.0259,0.0001,0.511,2.294,0.418,53929,18658,120,8134
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r4,codex,t3_implement.sh,unlimited,,,2,1,0.0254,0.0,0.451,1.24,0.413,54789,15627,88,12607
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r4,codex,t3_implement.sh,unlimited,,,3,1,0.0299,0.0,0.816,3.628,0.525,56798,28155,132,7760
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r4,codex,t3_implement.sh,unlimited,,,4,1,0.0252,0.0,1.474,4.418,0.42,60942,35031,198,7929
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r4,codex,t3_implement.sh,unlimited,,,5,1,0.0267,0.0,1.169,3.85,0.419,65012,34633,134,8996
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r4,codex,t3_implement.sh,unlimited,,,6,1,0.0261,0.0,1.047,2.199,0.416,68454,15772,78,7173
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r4,codex,t3_implement.sh,unlimited,,,7,1,0.0261,0.0216,5.196,5.131,0.425,72942,13382,94,2608
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,1,1,0.0256,0.0001,4.591,1.978,0.421,53929,24494,120,12384
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,2,1,0.0275,0.0,0.714,1.188,0.416,56462,12355,72,10396
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,3,1,0.0257,0.0,0.598,3.675,0.418,58235,27425,130,7464
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,4,1,0.0261,0.0,1.122,1.573,0.416,62214,12145,88,7719
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,5,1,0.0253,0.0,0.566,2.727,0.417,63135,32827,154,12037
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,6,1,0.0339,0.0,1.218,1.396,0.418,66476,11875,66,8504
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,7,1,0.0258,0.0,0.373,2.373,0.417,67439,34018,180,14336
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,8,1,0.0368,0.0,0.704,0.997,0.415,70831,11819,62,11849
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,9,1,0.0251,0.0,7.528,2.561,0.422,71487,15088,64,5892
+1_svc_cpu_cap/agentic-os-noise/runs_codex,t3_implement_nocap_r5,codex,t3_implement.sh,unlimited,,,10,1,0.0371,0.0214,0.614,1.118,0.407,75661,15852,74,14180
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r1,codex,t4_parallel.sh,unlimited,,,1,1,0.0266,0.0001,0.505,1.387,0.416,53871,22790,98,16429
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r1,codex,t4_parallel.sh,unlimited,,,2,1,0.0386,0.0,0.435,0.96,0.416,56240,15430,62,16078
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r1,codex,t4_parallel.sh,unlimited,,,3,1,0.0253,0.0,0.549,1.677,0.416,58547,16704,94,9958
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r1,codex,t4_parallel.sh,unlimited,,,4,1,0.0249,0.0,0.845,2.224,0.425,61192,25074,112,11274
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r1,codex,t4_parallel.sh,unlimited,,,5,1,0.0258,0.0,0.438,1.087,0.414,64476,9323,36,8573
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r2,codex,t4_parallel.sh,unlimited,,,1,1,0.0248,0.0001,0.682,1.189,0.415,53871,17377,82,14620
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r2,codex,t4_parallel.sh,unlimited,,,2,1,0.0378,0.0001,0.728,1.086,0.411,54803,14604,86,13452
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r2,codex,t4_parallel.sh,unlimited,,,3,1,0.0283,0.0,0.556,1.933,0.411,57199,21288,116,11012
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r2,codex,t4_parallel.sh,unlimited,,,4,1,0.0261,0.0,1.744,2.079,0.413,59539,9242,46,4446
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r3,codex,t4_parallel.sh,unlimited,,,1,1,0.0279,0.0001,1.132,2.051,0.415,53871,22296,72,10872
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r3,codex,t4_parallel.sh,unlimited,,,2,1,0.0325,0.0001,0.845,2.051,0.582,56184,15804,88,7707
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r3,codex,t4_parallel.sh,unlimited,,,3,1,0.0251,0.0,0.418,1.982,0.415,58491,20966,88,10580
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r3,codex,t4_parallel.sh,unlimited,,,4,1,0.0338,0.0,0.617,1.178,0.411,61414,9387,44,7969
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r4,codex,t4_parallel.sh,unlimited,,,1,1,0.0254,0.0001,0.601,1.413,0.412,53871,16689,80,11813
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r4,codex,t4_parallel.sh,unlimited,,,2,1,0.0279,0.0041,1.205,1.946,0.418,54794,14403,74,7401
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r4,codex,t4_parallel.sh,unlimited,,,3,1,0.025,0.0,0.449,1.982,0.414,57167,22135,84,11167
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r4,codex,t4_parallel.sh,unlimited,,,4,1,0.029,0.0,0.848,1.639,0.412,60163,21815,102,13313
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r4,codex,t4_parallel.sh,unlimited,,,5,1,0.026,0.0,0.453,0.864,0.414,62738,9467,62,10963
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r5,codex,t4_parallel.sh,unlimited,,,1,1,0.0258,0.0001,2.825,3.078,0.421,53871,17377,118,5645
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r5,codex,t4_parallel.sh,unlimited,,,2,1,0.0347,0.0,0.48,1.199,0.378,54790,14346,82,11963
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r5,codex,t4_parallel.sh,unlimited,,,3,1,0.0253,0.0001,3.585,7.82,0.424,57169,27804,148,3556
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w16_r5,codex,t4_parallel.sh,unlimited,,,4,1,0.0276,0.0,1.56,1.426,0.419,60039,9320,50,6534
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r1,codex,t4_parallel.sh,unlimited,,,1,1,0.0253,0.0001,0.809,3.228,0.419,53871,18402,118,5701
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r1,codex,t4_parallel.sh,unlimited,,,2,1,0.0281,0.0,0.507,1.114,0.413,54774,15156,56,13599
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r1,codex,t4_parallel.sh,unlimited,,,3,1,0.0277,0.0,0.866,1.413,0.415,56787,12127,58,8580
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r1,codex,t4_parallel.sh,unlimited,,,4,1,0.0268,0.0,0.817,1.395,0.412,57409,8303,32,5952
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r2,codex,t4_parallel.sh,unlimited,,,1,1,0.0266,0.0001,0.895,1.669,0.418,53871,16790,104,10059
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r2,codex,t4_parallel.sh,unlimited,,,2,1,0.0279,0.0,2.674,3.417,0.42,54831,15232,82,4458
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r2,codex,t4_parallel.sh,unlimited,,,3,1,0.0247,0.0,0.882,1.473,0.418,56871,12368,72,8396
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r2,codex,t4_parallel.sh,unlimited,,,4,1,0.0262,0.0,0.493,0.748,0.406,57493,8397,50,11224
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r3,codex,t4_parallel.sh,unlimited,,,1,1,0.0258,0.0001,0.568,2.189,0.459,53871,22260,154,10170
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r3,codex,t4_parallel.sh,unlimited,,,2,1,0.0247,0.0,0.607,1.252,0.415,56272,16887,86,13491
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r3,codex,t4_parallel.sh,unlimited,,,3,1,0.0251,0.0,2.348,3.628,0.503,58362,9572,56,2639
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r4,codex,t4_parallel.sh,unlimited,,,1,1,0.0262,0.0001,0.531,1.389,0.413,53871,22582,144,16260
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r4,codex,t4_parallel.sh,unlimited,,,2,1,0.026,0.0,1.469,0.959,0.421,56508,16172,90,16855
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r4,codex,t4_parallel.sh,unlimited,,,3,1,0.0271,0.0,0.435,0.794,0.412,58557,9308,38,11716
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r5,codex,t4_parallel.sh,unlimited,,,1,1,0.025,0.0001,0.481,1.018,0.414,53871,17227,90,16925
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r5,codex,t4_parallel.sh,unlimited,,,2,1,0.0256,0.0,0.989,2.011,0.415,54864,17836,86,8871
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w2_r5,codex,t4_parallel.sh,unlimited,,,3,1,0.0251,0.0,0.613,2.016,0.417,57049,9234,44,4579
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r1,codex,t4_parallel.sh,unlimited,,,1,1,0.0255,0.0001,0.634,1.921,0.417,53871,21796,114,11348
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r1,codex,t4_parallel.sh,unlimited,,,2,1,0.0267,0.0,1.416,1.229,0.171,56391,19198,78,15620
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r1,codex,t4_parallel.sh,unlimited,,,3,1,0.0278,0.0,2.013,6.076,0.421,59210,8726,60,1436
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r2,codex,t4_parallel.sh,unlimited,,,1,1,0.0271,0.0001,0.593,0.993,0.408,53871,17018,78,17134
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r2,codex,t4_parallel.sh,unlimited,,,2,1,0.0263,0.0,0.539,1.362,0.416,54901,15239,76,11193
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r2,codex,t4_parallel.sh,unlimited,,,3,1,0.0261,0.0,0.853,1.458,0.408,56999,12933,88,8872
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r2,codex,t4_parallel.sh,unlimited,,,4,1,0.0295,0.0,1.475,1.0,0.402,57666,9089,34,9093
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r3,codex,t4_parallel.sh,unlimited,,,1,1,0.0267,0.0001,0.504,1.424,0.412,53871,24082,126,16909
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r3,codex,t4_parallel.sh,unlimited,,,2,1,0.0253,0.0,0.963,1.115,0.412,56382,18096,98,16229
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r3,codex,t4_parallel.sh,unlimited,,,3,1,0.0252,0.0,1.38,2.751,0.419,58599,9403,56,3418
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r4,codex,t4_parallel.sh,unlimited,,,1,1,0.0253,0.0001,0.598,1.315,0.416,53871,21734,104,16532
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r4,codex,t4_parallel.sh,unlimited,,,2,1,0.0259,0.0,0.769,1.149,0.416,56394,17197,88,14972
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r4,codex,t4_parallel.sh,unlimited,,,3,1,0.0272,0.0,0.76,1.045,0.413,58694,9324,50,8922
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r5,codex,t4_parallel.sh,unlimited,,,1,1,0.0263,0.0001,2.281,0.996,0.42,53871,16977,82,17043
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r5,codex,t4_parallel.sh,unlimited,,,2,1,0.0287,0.0,0.578,1.043,0.409,54873,16108,88,15437
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w4_r5,codex,t4_parallel.sh,unlimited,,,3,1,0.0256,0.0,0.638,0.787,0.692,57066,9183,28,11676
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r1,codex,t4_parallel.sh,unlimited,,,1,1,0.0258,0.0001,0.982,1.812,0.416,53871,18246,84,10067
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r1,codex,t4_parallel.sh,unlimited,,,2,1,0.0316,0.0,1.92,1.191,0.42,54747,16282,68,13675
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r1,codex,t4_parallel.sh,unlimited,,,3,1,0.027,0.0,2.588,3.347,0.42,56956,22473,98,6714
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r1,codex,t4_parallel.sh,unlimited,,,4,1,0.0289,0.0,10.057,11.139,0.535,59697,9913,88,890
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r2,codex,t4_parallel.sh,unlimited,,,1,1,0.0269,0.0001,0.613,1.357,0.416,53871,18241,82,13440
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r2,codex,t4_parallel.sh,unlimited,,,2,1,0.0384,0.0,2.006,3.167,0.421,54747,15605,78,4927
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r2,codex,t4_parallel.sh,unlimited,,,3,1,0.0261,0.0,0.534,4.33,0.422,56901,23473,128,5421
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r2,codex,t4_parallel.sh,unlimited,,,4,1,0.026,0.0,0.772,0.827,0.405,59422,9395,44,11358
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r3,codex,t4_parallel.sh,unlimited,,,1,1,0.0253,0.0001,0.522,1.262,0.414,53871,18099,86,14341
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r3,codex,t4_parallel.sh,unlimited,,,2,1,0.0272,0.0,0.466,0.952,0.407,54740,17241,82,18109
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r3,codex,t4_parallel.sh,unlimited,,,3,1,0.026,0.0,0.923,1.894,0.41,57022,16346,76,8629
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r3,codex,t4_parallel.sh,unlimited,,,4,1,0.026,0.0,0.499,1.018,0.414,59143,13042,58,12809
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r4,codex,t4_parallel.sh,unlimited,,,1,1,0.0266,0.0001,0.522,1.465,0.401,53871,17096,124,11670
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r4,codex,t4_parallel.sh,unlimited,,,2,1,0.0271,0.0,0.554,1.664,0.4,54776,13938,50,8378
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r4,codex,t4_parallel.sh,unlimited,,,3,1,0.0264,0.0,1.103,1.805,0.412,57015,16846,78,9334
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r4,codex,t4_parallel.sh,unlimited,,,4,1,0.0264,0.0,0.815,1.73,0.413,59480,9535,54,5511
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r5,codex,t4_parallel.sh,unlimited,,,1,1,0.0258,0.0001,0.982,2.008,0.42,53871,18570,110,9247
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r5,codex,t4_parallel.sh,unlimited,,,2,1,0.0289,0.0,4.223,5.04,0.422,54746,15567,78,3089
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r5,codex,t4_parallel.sh,unlimited,,,3,1,0.0261,0.0,1.163,3.331,0.418,56911,15199,88,4563
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t4,t4_w8_r5,codex,t4_parallel.sh,unlimited,,,4,1,0.0259,0.0001,1.504,1.21,0.419,58975,8496,44,7021
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,1,1,0.0249,0.0001,0.581,2.457,0.42,54015,18525,72,7541
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,2,1,0.0261,0.0001,0.788,1.296,0.606,57229,6418,22,4953
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,3,1,0.0269,0.0,0.74,2.503,0.418,53244,17528,74,7002
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,4,1,0.0258,0.0,0.759,1.341,0.418,57885,6387,20,4763
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,5,1,0.0247,0.0,0.349,1.074,0.416,53244,15681,74,14605
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,6,1,0.0265,0.0,0.545,1.013,0.408,55732,9435,28,9312
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,7,1,0.0255,0.0,0.825,0.7,0.322,55587,11771,56,16805
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,8,1,0.0276,0.0,0.541,0.892,0.412,58540,6319,16,7088
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,9,1,0.025,0.0,0.535,1.161,0.414,53242,15733,76,13556
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,10,1,0.0261,0.0,3.337,3.032,0.425,57679,11528,64,3802
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,11,1,0.026,0.0,0.44,2.368,0.419,60018,5462,26,2307
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,12,1,0.0279,0.0,1.123,1.72,0.416,53242,23108,120,13436
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,13,1,0.0255,0.0,0.458,0.887,0.418,55429,11084,70,12491
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,14,1,0.0272,0.0,0.668,0.948,0.406,61793,6550,30,6912
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,15,1,0.0265,0.0,3.601,5.701,0.747,55738,15459,88,2712
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,16,1,0.0254,0.0,0.691,2.57,0.419,62482,9912,40,3856
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,17,1,0.0269,0.0,0.693,1.444,0.51,64592,15777,84,10925
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r1,codex,t5_subagents.sh,unlimited,,,18,1,0.0259,0.0,0.497,0.712,0.428,66792,9429,52,13243
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,1,1,0.0266,0.0001,0.964,6.473,0.497,54015,19339,94,2988
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,2,1,0.026,0.0,0.443,1.187,0.415,53320,15182,66,12786
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,3,1,0.03,0.0,0.678,1.015,0.415,57422,6587,20,6490
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,4,1,0.0263,0.0,4.564,1.452,0.421,58148,6685,26,4603
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,5,1,0.0251,0.0,1.242,1.522,0.419,53320,14120,64,9275
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,6,1,0.0374,0.0,0.619,0.804,0.416,55686,8623,38,10724
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,7,1,0.0256,0.0,5.326,3.11,0.42,55565,11328,62,3642
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,8,1,0.0259,0.0,1.449,1.971,0.493,59168,6691,26,3394
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,9,1,0.0258,0.0,2.135,1.92,0.421,53318,16266,90,8470
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,10,1,0.0267,0.0,0.497,1.37,0.413,53318,15812,88,11539
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,11,1,0.0268,0.0,0.921,1.506,0.417,59894,5719,20,3799
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,12,1,0.0253,0.0,3.373,2.147,0.432,55657,11896,52,5542
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,13,1,0.0261,0.0,0.459,0.9,0.417,55856,14644,74,16276
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,14,1,0.0252,0.0,0.762,0.662,0.417,62014,5256,14,7936
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,15,1,0.0264,0.0,1.976,0.847,0.422,63770,5399,20,6374
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,16,1,0.0274,0.0,0.629,1.982,0.684,65412,22271,108,11235
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r2,codex,t5_subagents.sh,unlimited,,,17,1,0.026,0.0,0.674,1.051,0.415,68204,9340,48,8891
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,1,1,0.0263,0.0001,0.54,2.334,0.417,54015,18984,58,8135
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,2,1,0.0271,0.0001,0.64,1.053,0.538,57559,6465,24,6137
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,3,1,0.0295,0.0,0.636,1.269,0.416,53256,15815,82,12459
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,4,1,0.0284,0.0,0.522,0.842,0.418,58220,6376,18,7574
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,5,1,0.0267,0.0,0.575,1.897,0.415,53256,16001,90,8434
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,6,1,0.0258,0.0,0.482,1.174,0.409,55622,9310,26,7928
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,7,1,0.0269,0.0,0.678,1.158,0.417,58882,6367,18,5498
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,8,1,0.0262,0.0,0.578,2.57,0.411,53254,15191,80,5910
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,9,1,0.0262,0.0,0.583,1.443,0.416,57525,10809,44,7492
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,10,1,0.0284,0.0,0.637,1.031,0.407,55643,14920,72,14469
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,11,1,0.0295,0.0,0.496,1.143,0.472,60052,5727,16,5012
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,12,1,0.0294,0.0,1.924,2.226,0.421,62430,5993,24,2693
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,13,1,0.0285,0.0,0.493,0.824,0.627,55534,11874,76,14401
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,14,1,0.0253,0.0,2.224,1.451,0.421,64769,6493,28,4474
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,15,1,0.0253,0.0001,0.645,1.187,0.416,65431,9860,36,8306
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,16,1,0.026,0.0,0.474,1.113,0.416,53254,14474,62,13006
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,17,1,0.0258,0.0,2.11,1.808,0.419,55524,11770,72,6509
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,18,1,0.0249,0.0,4.467,3.008,0.426,67561,16827,76,5594
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n4_r3,codex,t5_subagents.sh,unlimited,,,19,1,0.0262,0.0,0.787,1.966,0.409,69823,10729,72,5456
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r1,codex,t5_subagents.sh,unlimited,,,1,1,0.0302,0.0001,2.32,7.562,0.55,54015,48717,220,6443
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r1,codex,t5_subagents.sh,unlimited,,,2,1,0.0273,0.0001,0.948,1.255,0.417,63001,20239,104,16124
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r1,codex,t5_subagents.sh,unlimited,,,3,1,0.0249,0.0,0.628,0.908,0.514,65559,10044,48,11062
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,1,1,0.0253,0.0001,0.472,4.522,0.42,54015,22774,86,5036
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,2,1,0.0262,0.0,0.438,1.026,0.433,58785,6493,22,6327
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,3,1,0.0251,0.0,0.477,1.057,0.412,53268,14786,64,13990
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,4,1,0.0273,0.0,0.733,0.856,0.415,59464,6390,16,7463
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,5,1,0.0259,0.0,3.132,2.322,0.42,53268,15340,74,6607
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,6,1,0.0255,0.0,0.639,0.995,0.414,55460,11157,66,11217
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,7,1,0.0266,0.0,3.014,1.209,0.421,60143,6487,22,5367
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,8,1,0.0253,0.0,0.538,1.651,0.412,53266,15001,66,9086
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,9,1,0.0257,0.0,1.64,1.208,0.411,55546,14240,56,11791
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,10,1,0.0264,0.0,0.803,0.897,0.409,55462,10771,38,12011
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,11,1,0.0262,0.0,0.49,1.004,0.414,61138,5475,14,5453
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,12,1,0.0263,0.0,0.448,1.408,0.415,53266,15774,86,11203
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,13,1,0.026,0.0,0.662,0.969,0.422,63095,6402,18,6609
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,14,1,0.0248,0.0,0.995,5.533,0.419,55569,11475,88,2074
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,15,1,0.0259,0.0,0.895,1.029,0.417,64084,6387,16,6210
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,16,1,0.026,0.0,0.893,1.364,0.419,53266,14537,64,10656
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,17,1,0.027,0.0,1.731,1.248,0.413,64763,5318,18,4261
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,18,1,0.0283,0.0,0.647,2.05,0.412,53266,15392,84,7508
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,19,1,0.0257,0.0,0.749,0.918,0.419,55566,10868,44,11842
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,20,1,0.0281,0.0001,0.72,1.28,0.415,66527,5233,18,4087
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,21,1,0.0244,0.0,0.582,0.873,0.415,55630,8485,42,9719
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,22,1,0.0262,0.0,0.612,1.671,0.417,68465,6437,20,3853
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,23,1,0.0259,0.0,0.854,1.254,0.417,69145,10666,30,8506
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,24,1,0.0256,0.0,0.636,3.983,0.418,53266,14921,76,3746
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,25,1,0.0258,0.0,0.78,1.783,0.416,71665,9771,36,5481
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,26,1,0.027,0.0,0.455,1.305,0.418,53266,20028,86,15342
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,27,1,0.0255,0.0,0.527,1.395,0.414,55750,11052,46,7925
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,28,1,0.0256,0.0,0.969,1.153,0.414,55440,8430,38,7311
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,29,1,0.029,0.022,0.489,0.773,0.413,73717,5502,14,7114
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,30,1,0.0255,0.0216,0.753,1.243,0.416,75389,16650,66,13395
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r2,codex,t5_subagents.sh,unlimited,,,31,1,0.0258,0.0222,2.985,2.759,0.42,77614,9505,56,3445
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,1,1,0.0269,0.0001,0.72,2.865,0.418,54015,18532,78,6468
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,2,1,0.029,0.0,3.37,2.001,0.526,57183,6332,20,3164
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,3,1,0.0251,0.0,0.614,1.874,0.418,53236,13790,62,7358
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,4,1,0.0261,0.0,0.838,1.341,0.416,55369,11433,56,8525
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,5,1,0.0252,0.0,0.458,0.818,0.642,58155,6372,22,7791
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,6,1,0.0254,0.0,9.794,15.197,0.636,53234,15108,124,994
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,7,1,0.029,0.0,0.816,1.329,0.409,58797,6404,24,4819
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,8,1,0.0247,0.0,10.045,9.093,0.428,53234,15908,118,1749
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,9,1,0.0293,0.0,0.655,1.099,0.415,59440,6365,22,5791
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,10,1,0.0341,0.0,1.406,3.49,0.42,53234,16210,108,4645
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,11,1,0.0265,0.0,0.674,2.135,0.415,60095,11678,36,5471
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,12,1,0.0253,0.0,3.298,0.845,0.414,63122,6340,20,7501
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,13,1,0.0266,0.0,1.2,1.87,0.414,55539,9994,54,5343
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,14,1,0.0311,0.0,1.407,2.267,0.419,64066,9744,28,4298
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,15,1,0.0285,0.0,3.102,3.453,0.419,53234,15768,88,4566
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,16,1,0.0269,0.0,1.19,1.813,0.422,66198,6467,28,3566
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,17,1,0.0266,0.0,1.083,0.365,0.301,66853,6344,20,17379
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,18,1,0.0267,0.0,0.577,1.131,0.415,55376,11381,56,10063
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,19,1,0.0249,0.0,0.505,0.928,0.415,67508,5923,22,6386
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,20,1,0.0289,0.0,0.906,1.059,0.417,55399,10982,52,10366
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,21,1,0.0304,0.0,0.669,0.908,0.413,69251,5549,22,6111
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,22,1,0.0277,0.0,0.591,1.318,0.416,70308,9965,30,7559
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,23,1,0.0255,0.0,2.496,1.116,0.425,55341,9658,48,8652
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,24,1,0.0261,0.0224,1.229,2.133,0.418,72509,6432,26,3016
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,25,1,0.027,0.0,2.009,2.257,0.418,53234,15505,76,6870
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,26,1,0.0279,0.0,0.567,1.317,0.415,53234,20255,94,15376
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,27,1,0.0246,0.0215,0.825,1.18,0.417,73439,6377,22,5404
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,28,1,0.0276,0.0,0.653,1.027,0.416,55365,9729,52,9470
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,29,1,0.0247,0.0214,0.737,0.967,0.414,74081,5633,20,5827
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,30,1,0.0257,0.0,2.202,3.259,0.42,53234,20767,92,6372
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,31,1,0.0257,0.0,0.441,2.892,0.42,55573,11495,60,3974
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,32,1,0.0264,0.0217,1.276,1.255,0.413,75801,5639,24,4493
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,33,1,0.0286,0.0216,1.23,2.207,0.421,77523,9770,38,4427
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,34,1,0.0258,0.0,0.719,1.118,0.415,55733,11324,52,10130
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,35,1,0.0298,0.0216,1.111,3.204,0.415,79584,22735,142,7095
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t5,t5_n8_r3,codex,t5_subagents.sh,unlimited,,,36,1,0.0256,0.0217,2.983,2.776,0.42,82390,10491,54,3779
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r1,codex,t6_memtouch.sh,unlimited,high:1152M,,1,1,0.0254,0.0001,3.151,2.606,0.422,53859,17293,98,6636
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r1,codex,t6_memtouch.sh,unlimited,high:1152M,,2,1,0.0252,0.0,0.661,1.001,0.415,54786,14449,78,14428
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r1,codex,t6_memtouch.sh,unlimited,high:1152M,,3,1,0.025,0.0,0.607,1.21,0.424,56853,14498,78,11978
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r1,codex,t6_memtouch.sh,unlimited,high:1152M,,4,1,0.0262,0.0,0.679,0.983,0.416,58969,15043,76,15302
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r1,codex,t6_memtouch.sh,unlimited,high:1152M,,5,1,0.0288,0.0,0.976,0.954,0.411,60918,10483,48,10992
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r2,codex,t6_memtouch.sh,unlimited,high:1152M,,1,1,0.0275,0.0001,0.833,2.282,0.432,53859,17159,116,7520
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r2,codex,t6_memtouch.sh,unlimited,high:1152M,,2,1,0.0364,0.0,0.45,0.753,0.414,54783,14080,48,18689
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r2,codex,t6_memtouch.sh,unlimited,high:1152M,,3,1,0.0271,0.0,0.727,1.341,0.415,56896,14802,62,11036
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r2,codex,t6_memtouch.sh,unlimited,high:1152M,,4,1,0.0264,0.0,5.477,3.087,0.493,58843,11540,58,3739
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r3,codex,t6_memtouch.sh,unlimited,high:1152M,,1,1,0.0251,0.0001,0.436,1.392,0.413,53859,20941,100,15047
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r3,codex,t6_memtouch.sh,unlimited,high:1152M,,2,1,0.0253,0.0,0.626,0.915,0.41,56231,14197,60,15510
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r3,codex,t6_memtouch.sh,unlimited,high:1152M,,3,1,0.0295,0.0,0.849,0.896,0.407,58322,14911,62,16633
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r3,codex,t6_memtouch.sh,unlimited,high:1152M,,4,1,0.0253,0.0001,4.208,1.214,0.422,60291,10568,50,8703
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r4,codex,t6_memtouch.sh,unlimited,high:1152M,,1,1,0.0254,0.0001,9.823,24.763,0.536,53859,18325,208,740
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r4,codex,t6_memtouch.sh,unlimited,high:1152M,,2,1,0.0261,0.0,2.355,1.002,0.421,54762,13983,60,13958
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r4,codex,t6_memtouch.sh,unlimited,high:1152M,,3,1,0.0256,0.0,0.662,1.306,0.417,56788,14044,58,10751
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r4,codex,t6_memtouch.sh,unlimited,high:1152M,,4,1,0.0256,0.0001,1.723,2.518,0.621,58861,20198,96,8021
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r4,codex,t6_memtouch.sh,unlimited,high:1152M,,5,1,0.0267,0.0,1.205,2.704,0.416,61187,15347,94,5675
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r4,codex,t6_memtouch.sh,unlimited,high:1152M,,6,1,0.0265,0.0,0.502,0.775,0.415,63154,10489,52,13528
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r5,codex,t6_memtouch.sh,unlimited,high:1152M,,1,1,0.0256,0.0001,0.456,1.283,0.415,53859,17744,86,13831
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r5,codex,t6_memtouch.sh,unlimited,high:1152M,,2,1,0.0273,0.0,0.847,2.058,0.433,54719,15337,76,7451
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r5,codex,t6_memtouch.sh,unlimited,high:1152M,,3,1,0.0286,0.0,1.034,2.151,0.419,56784,15318,96,7122
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1152_r5,codex,t6_memtouch.sh,unlimited,high:1152M,,4,1,0.0271,0.0,4.189,5.412,0.427,58751,10205,68,1886
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r1,codex,t6_memtouch.sh,unlimited,high:1536M,,1,1,0.0273,0.0001,0.783,0.723,0.2,53859,17667,80,24436
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r1,codex,t6_memtouch.sh,unlimited,high:1536M,,2,1,0.0252,0.0,0.883,1.544,0.419,54749,11908,72,7710
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r1,codex,t6_memtouch.sh,unlimited,high:1536M,,3,1,0.0258,0.0,2.783,1.044,0.418,55348,10613,58,10162
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r2,codex,t6_memtouch.sh,unlimited,high:1536M,,1,1,0.0263,0.0001,0.878,1.336,0.415,53859,17071,96,12776
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r2,codex,t6_memtouch.sh,unlimited,high:1536M,,2,1,0.027,0.0,0.711,1.057,0.411,54788,14476,82,13698
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r2,codex,t6_memtouch.sh,unlimited,high:1536M,,3,1,0.0264,0.0,0.553,1.011,0.422,56876,15017,74,14849
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r2,codex,t6_memtouch.sh,unlimited,high:1536M,,4,1,0.0263,0.0,0.475,0.756,0.413,58824,10084,48,13345
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r3,codex,t6_memtouch.sh,unlimited,high:1536M,,1,1,0.0257,0.0001,0.439,1.16,0.413,53859,17395,130,14991
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r3,codex,t6_memtouch.sh,unlimited,high:1536M,,2,1,0.0329,0.0,0.687,1.193,0.451,54825,11757,60,9857
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r3,codex,t6_memtouch.sh,unlimited,high:1536M,,3,1,0.0283,0.0,0.718,1.083,0.409,55424,10615,56,9800
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r4,codex,t6_memtouch.sh,unlimited,high:1536M,,1,1,0.0257,0.0001,0.702,1.211,0.417,53859,17233,104,14225
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r4,codex,t6_memtouch.sh,unlimited,high:1536M,,2,1,0.0268,0.0,0.775,1.425,0.413,54786,14371,76,10084
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r4,codex,t6_memtouch.sh,unlimited,high:1536M,,3,1,0.0252,0.0,0.77,3.462,0.414,56925,15011,74,4336
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r4,codex,t6_memtouch.sh,unlimited,high:1536M,,4,1,0.0257,0.0,5.5,3.295,0.421,58871,10789,66,3275
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r5,codex,t6_memtouch.sh,unlimited,high:1536M,,1,1,0.0343,0.0001,2.688,1.71,0.422,53859,17224,122,10075
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r5,codex,t6_memtouch.sh,unlimited,high:1536M,,2,1,0.026,0.0,0.469,0.858,0.414,54824,11824,66,13785
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_1536_r5,codex,t6_memtouch.sh,unlimited,high:1536M,,3,1,0.0301,0.0,0.561,0.948,0.408,55423,10210,64,10767
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r1,codex,t6_memtouch.sh,unlimited,high:768M,,1,1,0.0253,0.0001,0.593,1.127,0.417,53859,16461,80,14600
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r1,codex,t6_memtouch.sh,unlimited,high:768M,,2,1,0.0262,0.0,4.763,5.284,0.425,54765,14457,92,2736
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r1,codex,t6_memtouch.sh,unlimited,high:768M,,3,1,0.0256,0.0,0.571,0.947,0.414,56793,14010,60,14799
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r1,codex,t6_memtouch.sh,unlimited,high:768M,,4,1,0.0264,0.0,0.77,1.003,0.417,58824,14148,70,14112
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r1,codex,t6_memtouch.sh,unlimited,high:768M,,5,1,0.0266,0.0,0.576,0.984,0.393,60898,15087,76,15332
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r1,codex,t6_memtouch.sh,unlimited,high:768M,,6,1,0.0261,0.0,1.316,2.646,0.419,62867,10658,64,4028
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r2,codex,t6_memtouch.sh,unlimited,high:768M,,1,1,0.026,0.0001,1.036,2.098,0.419,53859,18548,118,8841
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r2,codex,t6_memtouch.sh,unlimited,high:768M,,2,1,0.0258,0.0,0.802,0.927,0.397,54727,15640,68,16874
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r2,codex,t6_memtouch.sh,unlimited,high:768M,,3,1,0.0255,0.0,0.417,1.056,0.414,56832,14867,60,14075
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r2,codex,t6_memtouch.sh,unlimited,high:768M,,4,1,0.0263,0.0001,0.686,4.445,0.42,58801,11459,64,2578
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r3,codex,t6_memtouch.sh,unlimited,high:768M,,1,1,0.0267,0.0001,0.543,1.146,0.415,53859,16608,88,14497
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r3,codex,t6_memtouch.sh,unlimited,high:768M,,2,1,0.028,0.0001,1.047,2.064,0.462,54765,14204,74,6883
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r3,codex,t6_memtouch.sh,unlimited,high:768M,,3,1,0.0271,0.0,0.973,1.268,0.415,56840,14541,72,11466
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r3,codex,t6_memtouch.sh,unlimited,high:768M,,4,1,0.0296,0.0,0.873,1.099,0.41,58788,10101,46,9192
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r4,codex,t6_memtouch.sh,unlimited,high:768M,,1,1,0.0277,0.0001,0.974,1.6,0.418,53859,16717,84,10447
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r4,codex,t6_memtouch.sh,unlimited,high:768M,,2,1,0.0258,0.0,0.584,1.504,0.416,54781,14602,66,9707
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r4,codex,t6_memtouch.sh,unlimited,high:768M,,3,1,0.0254,0.0,1.052,1.924,0.416,56977,20355,98,10580
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r4,codex,t6_memtouch.sh,unlimited,high:768M,,4,1,0.0299,0.0,1.406,1.219,0.415,59319,15183,86,12455
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r4,codex,t6_memtouch.sh,unlimited,high:768M,,5,1,0.0274,0.0,0.733,1.557,0.416,61268,10746,56,6900
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r5,codex,t6_memtouch.sh,unlimited,high:768M,,1,1,0.027,0.0001,1.319,4.638,0.419,53859,21160,102,4563
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r5,codex,t6_memtouch.sh,unlimited,high:768M,,2,1,0.0329,0.0,0.569,1.325,0.639,56254,14186,62,10706
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r5,codex,t6_memtouch.sh,unlimited,high:768M,,3,1,0.0262,0.0,0.494,0.817,0.412,58297,14390,76,17622
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r5,codex,t6_memtouch.sh,unlimited,high:768M,,4,1,0.026,0.0,0.557,0.907,0.405,60388,14475,68,15962
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_768_r5,codex,t6_memtouch.sh,unlimited,high:768M,,5,1,0.0266,0.0,2.164,1.355,0.418,62336,10542,52,7779
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r1,codex,t6_memtouch.sh,unlimited,high:max,,1,1,0.0257,0.0001,0.709,1.34,0.463,53859,18244,110,13613
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r1,codex,t6_memtouch.sh,unlimited,high:max,,2,1,0.0263,0.0,0.537,1.374,0.417,54751,14963,70,10893
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r1,codex,t6_memtouch.sh,unlimited,high:max,,3,1,0.0266,0.0,6.309,2.507,0.421,56698,10192,52,4066
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r2,codex,t6_memtouch.sh,unlimited,high:max,,1,1,0.0254,0.0001,0.749,1.334,0.418,53859,19085,118,14308
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r2,codex,t6_memtouch.sh,unlimited,high:max,,2,1,0.0253,0.0,0.548,0.795,0.417,54803,14239,74,17915
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r2,codex,t6_memtouch.sh,unlimited,high:max,,3,1,0.0298,0.0,1.035,2.476,0.414,56897,15252,88,6161
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r2,codex,t6_memtouch.sh,unlimited,high:max,,4,1,0.0273,0.0,2.121,1.158,0.42,58863,11306,56,9765
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r3,codex,t6_memtouch.sh,unlimited,high:max,,1,1,0.0256,0.0001,1.408,1.147,0.421,53859,17134,88,14934
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r3,codex,t6_memtouch.sh,unlimited,high:max,,2,1,0.027,0.0,0.774,1.564,0.417,54777,14489,76,9261
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r3,codex,t6_memtouch.sh,unlimited,high:max,,3,1,0.0254,0.0,0.592,1.297,0.412,56977,15137,80,11672
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r3,codex,t6_memtouch.sh,unlimited,high:max,,4,1,0.0252,0.0,0.925,1.761,0.417,58945,10270,58,5831
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r4,codex,t6_memtouch.sh,unlimited,high:max,,1,1,0.0271,0.0001,3.43,9.426,0.426,53859,17435,130,1850
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r4,codex,t6_memtouch.sh,unlimited,high:max,,2,1,0.0267,0.0,1.298,2.495,0.423,54782,14484,80,5804
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r4,codex,t6_memtouch.sh,unlimited,high:max,,3,1,0.0277,0.0,6.587,5.158,0.577,56871,15282,92,2963
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r4,codex,t6_memtouch.sh,unlimited,high:max,,4,1,0.026,0.0,0.482,0.959,0.416,58838,10025,42,10457
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r5,codex,t6_memtouch.sh,unlimited,high:max,,1,1,0.0264,0.0001,0.815,9.84,0.777,53859,18949,156,1926
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r5,codex,t6_memtouch.sh,unlimited,high:max,,2,1,0.0261,0.0,2.273,2.071,0.418,54751,14536,72,7021
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6A_high_max_r5,codex,t6_memtouch.sh,unlimited,high:max,,3,1,0.0259,0.0,1.247,1.453,0.427,56698,10315,62,7098
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r1,codex,t6_memtouch.sh,unlimited,max:1024M,,1,1,0.0296,0.0001,1.634,4.349,0.64,53859,17809,80,4095
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r1,codex,t6_memtouch.sh,unlimited,max:1024M,,2,1,0.0273,0.0,2.243,1.31,0.803,54720,16587,102,12667
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r1,codex,t6_memtouch.sh,unlimited,max:1024M,,3,1,0.0268,0.0,0.572,1.046,0.405,56891,15305,88,14631
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r1,codex,t6_memtouch.sh,unlimited,max:1024M,,4,1,0.0264,0.0,0.47,0.804,0.411,58884,9667,46,12016
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r2,codex,t6_memtouch.sh,unlimited,max:1024M,,1,1,0.0268,0.0001,2.012,2.626,0.418,53859,19676,110,7492
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r2,codex,t6_memtouch.sh,unlimited,max:1024M,,2,1,0.0257,0.0,0.726,1.482,0.417,54798,16759,72,11310
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r2,codex,t6_memtouch.sh,unlimited,max:1024M,,3,1,0.0308,0.0,0.869,1.731,0.416,56938,15251,78,8810
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r2,codex,t6_memtouch.sh,unlimited,max:1024M,,4,1,0.0256,0.0,1.918,3.255,0.421,58910,10100,58,3102
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r3,codex,t6_memtouch.sh,unlimited,max:1024M,,1,1,0.0254,0.0001,2.244,1.381,0.422,53859,19855,98,14376
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r3,codex,t6_memtouch.sh,unlimited,max:1024M,,2,1,0.0258,0.0,0.827,1.092,0.417,56160,14023,58,12846
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r3,codex,t6_memtouch.sh,unlimited,max:1024M,,3,1,0.0258,0.0,1.046,1.123,0.419,58229,13969,58,12444
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r3,codex,t6_memtouch.sh,unlimited,max:1024M,,4,1,0.026,0.0,1.018,0.986,0.418,60303,14999,68,15207
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1024_r3,codex,t6_memtouch.sh,unlimited,max:1024M,,5,1,0.027,0.0,1.104,1.444,0.416,62294,10687,60,7402
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r1,codex,t6_memtouch.sh,unlimited,max:1280M,,1,1,0.0262,0.0001,1.692,1.847,0.418,53859,17192,96,9309
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r1,codex,t6_memtouch.sh,unlimited,max:1280M,,2,1,0.0262,0.0,0.918,2.009,0.409,54784,14250,70,7094
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r1,codex,t6_memtouch.sh,unlimited,max:1280M,,3,1,0.0282,0.0,1.068,1.25,0.411,56934,14577,72,11658
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r1,codex,t6_memtouch.sh,unlimited,max:1280M,,4,1,0.025,0.0,2.465,4.64,0.421,58884,9963,62,2147
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r2,codex,t6_memtouch.sh,unlimited,max:1280M,,1,1,0.0288,0.0001,0.78,1.65,0.467,53859,18585,134,11267
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r2,codex,t6_memtouch.sh,unlimited,max:1280M,,2,1,0.0289,0.0,1.078,1.597,0.417,54721,17528,86,10974
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r2,codex,t6_memtouch.sh,unlimited,max:1280M,,3,1,0.0271,0.0,0.493,1.196,0.72,57081,17027,88,14238
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r2,codex,t6_memtouch.sh,unlimited,max:1280M,,4,1,0.0259,0.0,0.512,1.045,0.414,59240,14355,56,13741
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r2,codex,t6_memtouch.sh,unlimited,max:1280M,,5,1,0.0259,0.0,0.953,1.348,0.415,61232,11663,64,8651
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r3,codex,t6_memtouch.sh,unlimited,max:1280M,,1,1,0.0259,0.0001,3.849,12.205,0.421,53859,16938,130,1388
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r3,codex,t6_memtouch.sh,unlimited,max:1280M,,2,1,0.0248,0.0,3.584,5.389,0.428,54769,14717,86,2731
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r3,codex,t6_memtouch.sh,unlimited,max:1280M,,3,1,0.0275,0.0,0.638,0.966,0.417,56815,14599,74,15115
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r3,codex,t6_memtouch.sh,unlimited,max:1280M,,4,1,0.027,0.0,10.049,9.577,0.495,58934,15694,110,1639
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_1280_r3,codex,t6_memtouch.sh,unlimited,max:1280M,,5,1,0.0271,0.0,0.842,1.037,0.404,60885,10582,56,10201
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r1,codex,t6_memtouch.sh,unlimited,max:2G,,1,1,0.0263,0.0001,0.621,1.408,0.414,53859,17056,108,12116
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r1,codex,t6_memtouch.sh,unlimited,max:2G,,2,1,0.0283,0.0,0.839,1.849,0.409,54825,11920,76,6448
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r1,codex,t6_memtouch.sh,unlimited,max:2G,,3,1,0.0251,0.0,0.675,1.168,0.429,55423,10631,56,9099
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r2,codex,t6_memtouch.sh,unlimited,max:2G,,1,1,0.0256,0.0001,0.603,1.288,0.416,53859,17193,104,13352
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r2,codex,t6_memtouch.sh,unlimited,max:2G,,2,1,0.0268,0.0,0.544,0.855,0.415,54836,12356,92,14456
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r2,codex,t6_memtouch.sh,unlimited,max:2G,,3,1,0.0291,0.0,0.643,1.41,0.416,55439,11589,58,8221
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r3,codex,t6_memtouch.sh,unlimited,max:2G,,1,1,0.0253,0.0001,0.988,1.337,0.418,53859,16674,68,12470
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r3,codex,t6_memtouch.sh,unlimited,max:2G,,2,1,0.0266,0.0001,0.997,1.364,0.416,54788,14512,82,10639
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r3,codex,t6_memtouch.sh,unlimited,max:2G,,3,1,0.0267,0.0,0.593,1.161,0.418,56876,14775,58,12723
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_2_r3,codex,t6_memtouch.sh,unlimited,max:2G,,4,1,0.0269,0.0,0.921,1.717,0.597,58824,10615,56,6182
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r1,codex,t6_memtouch.sh,unlimited,max:768M,,1,1,0.0262,0.0001,0.944,1.506,0.415,53859,16805,88,11156
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r1,codex,t6_memtouch.sh,unlimited,max:768M,,2,1,0.0256,0.0,0.699,1.095,0.418,54782,14426,72,13179
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r1,codex,t6_memtouch.sh,unlimited,max:768M,,3,1,0.0281,0.0,0.529,1.117,0.411,56849,14660,86,13130
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r1,codex,t6_memtouch.sh,unlimited,max:768M,,4,1,0.0263,0.0,0.766,1.143,0.416,58985,15213,86,13309
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r1,codex,t6_memtouch.sh,unlimited,max:768M,,5,1,0.0267,0.0,3.041,2.009,0.421,60935,10586,56,5269
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r2,codex,t6_memtouch.sh,unlimited,max:768M,,1,1,0.0257,0.0001,0.615,1.328,0.417,53859,17545,92,13214
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r2,codex,t6_memtouch.sh,unlimited,max:768M,,2,1,0.027,0.0,0.576,1.047,0.417,54801,14461,62,13814
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r2,codex,t6_memtouch.sh,unlimited,max:768M,,3,1,0.0246,0.0,0.819,1.265,0.418,56892,14722,80,11640
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r2,codex,t6_memtouch.sh,unlimited,max:768M,,4,1,0.0262,0.0,0.528,1.102,0.411,59031,15359,88,13936
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r2,codex,t6_memtouch.sh,unlimited,max:768M,,5,1,0.0254,0.0,0.53,0.907,0.414,61002,10404,42,11468
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r3,codex,t6_memtouch.sh,unlimited,max:768M,,1,1,0.027,0.0001,0.917,1.887,0.415,53859,19752,82,10469
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r3,codex,t6_memtouch.sh,unlimited,max:768M,,2,1,0.0265,0.0001,0.413,0.896,0.417,56227,14118,72,15756
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r3,codex,t6_memtouch.sh,unlimited,max:768M,,3,1,0.0261,0.0,0.818,1.229,0.461,58254,14266,76,11608
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r3,codex,t6_memtouch.sh,unlimited,max:768M,,4,1,0.0305,0.0,1.071,1.559,0.405,60306,13855,52,8888
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r3,codex,t6_memtouch.sh,unlimited,max:768M,,5,1,0.0288,0.0001,1.944,1.691,0.419,62314,14331,74,8474
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r3,codex,t6_memtouch.sh,unlimited,max:768M,,6,1,0.0266,0.0,0.767,1.225,0.415,64452,15092,80,12318
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t6,t6B_max_768_r3,codex,t6_memtouch.sh,unlimited,max:768M,,7,1,0.0257,0.0,1.147,1.726,0.605,66442,10664,60,6180
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max1024_r1,codex,t7_memhog.sh,unlimited,max:1024M,,1,1,0.0263,0.0001,0.807,1.415,0.42,53846,18559,110,13120
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max1024_r1,codex,t7_memhog.sh,unlimited,max:1024M,,2,1,0.0255,0.0,0.579,1.049,0.416,54818,17446,88,16625
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max1024_r1,codex,t7_memhog.sh,unlimited,max:1024M,,3,1,0.0248,0.0,0.624,0.992,0.381,56912,12255,58,12352
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max1024_r2,codex,t7_memhog.sh,unlimited,max:1024M,,1,1,0.0254,0.0001,0.976,1.966,0.419,53846,17185,96,8741
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max1024_r2,codex,t7_memhog.sh,unlimited,max:1024M,,2,1,0.026,0.0,0.644,1.778,0.463,54793,17647,92,9925
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max1024_r2,codex,t7_memhog.sh,unlimited,max:1024M,,3,1,0.0246,0.0,0.585,0.976,0.413,56957,11533,56,11812
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max1024_r3,codex,t7_memhog.sh,unlimited,max:1024M,,1,1,0.0285,0.0001,1.746,1.606,0.416,53846,19008,88,11835
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max1024_r3,codex,t7_memhog.sh,unlimited,max:1024M,,2,1,0.0269,0.0,0.865,2.354,0.414,54833,17232,76,7321
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max1024_r3,codex,t7_memhog.sh,unlimited,max:1024M,,3,1,0.0271,0.0,0.537,1.061,0.415,56932,12248,68,11539
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max640_r1,codex,t7_memhog.sh,unlimited,max:640M,,1,1,0.0268,0.0001,0.557,1.055,0.414,53846,17452,116,16543
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max640_r1,codex,t7_memhog.sh,unlimited,max:640M,,2,1,0.035,0.0,0.553,2.356,0.414,54794,17848,104,7574
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max640_r1,codex,t7_memhog.sh,unlimited,max:640M,,3,1,0.0289,0.0,0.994,1.441,0.418,56973,12159,64,8440
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max640_r2,codex,t7_memhog.sh,unlimited,max:640M,,1,1,0.0281,0.0001,0.517,1.095,0.401,53846,17173,94,15685
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max640_r2,codex,t7_memhog.sh,unlimited,max:640M,,2,1,0.0342,0.0,0.743,1.365,0.415,54795,17448,88,12786
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max640_r2,codex,t7_memhog.sh,unlimited,max:640M,,3,1,0.0283,0.0,2.9,2.071,0.421,56895,11822,76,5709
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max640_r3,codex,t7_memhog.sh,unlimited,max:640M,,1,1,0.0266,0.0001,0.642,2.003,0.42,53846,18552,148,9263
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max640_r3,codex,t7_memhog.sh,unlimited,max:640M,,2,1,0.0399,0.0,0.84,1.596,0.417,54796,17662,94,11069
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max640_r3,codex,t7_memhog.sh,unlimited,max:640M,,3,1,0.0259,0.0,0.423,0.918,0.416,56956,12852,58,13998
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max768_r1,codex,t7_memhog.sh,unlimited,max:768M,,1,1,0.0249,0.0001,6.114,2.991,0.421,53846,21580,96,7214
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max768_r1,codex,t7_memhog.sh,unlimited,max:768M,,2,1,0.0276,0.0,0.444,1.066,0.414,56305,17609,104,16523
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max768_r1,codex,t7_memhog.sh,unlimited,max:768M,,3,1,0.0265,0.0,0.739,0.932,0.41,58400,11540,56,12381
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max768_r2,codex,t7_memhog.sh,unlimited,max:768M,,1,1,0.0263,0.0001,2.124,1.215,0.415,53846,17836,84,14685
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max768_r2,codex,t7_memhog.sh,unlimited,max:768M,,2,1,0.0258,0.0,0.565,1.256,0.416,54801,17372,74,13830
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max768_r2,codex,t7_memhog.sh,unlimited,max:768M,,3,1,0.0262,0.0,4.064,2.321,0.423,56961,12227,70,5269
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max768_r3,codex,t7_memhog.sh,unlimited,max:768M,,1,1,0.0258,0.0001,0.476,1.046,0.412,53846,16615,82,15878
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max768_r3,codex,t7_memhog.sh,unlimited,max:768M,,2,1,0.027,0.0,1.686,6.007,0.419,54792,17885,110,2977
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max768_r3,codex,t7_memhog.sh,unlimited,max:768M,,3,1,0.0255,0.0,0.915,1.63,0.609,56885,12001,64,7364
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max896_r1,codex,t7_memhog.sh,unlimited,max:896M,,1,1,0.0266,0.0001,0.409,1.075,0.418,53846,19758,94,18376
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max896_r1,codex,t7_memhog.sh,unlimited,max:896M,,2,1,0.0262,0.0,0.397,1.133,0.416,54866,17326,80,15293
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max896_r1,codex,t7_memhog.sh,unlimited,max:896M,,3,1,0.0251,0.0,0.722,1.139,0.417,56966,12509,62,10978
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max896_r2,codex,t7_memhog.sh,unlimited,max:896M,,1,1,0.0267,0.0001,0.661,2.228,0.416,53846,17158,94,7700
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max896_r2,codex,t7_memhog.sh,unlimited,max:896M,,2,1,0.0278,0.0,0.38,1.152,0.412,54796,17602,94,15282
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max896_r2,codex,t7_memhog.sh,unlimited,max:896M,,3,1,0.0258,0.0,0.691,1.106,0.413,56955,12492,86,11295
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max896_r3,codex,t7_memhog.sh,unlimited,max:896M,,1,1,0.0266,0.0001,0.697,2.44,0.423,53846,21595,108,8850
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max896_r3,codex,t7_memhog.sh,unlimited,max:896M,,2,1,0.025,0.0,0.716,1.477,0.418,56336,17402,76,11782
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t7,t7_max896_r3,codex,t7_memhog.sh,unlimited,max:896M,,3,1,0.0271,0.0,1.586,8.482,0.42,58500,12786,104,1507
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r1,codex,t8_ioread.sh,unlimited,,rbps:104857600,1,1,0.0249,0.0001,1.186,1.922,0.418,53852,16304,106,8482
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r1,codex,t8_ioread.sh,unlimited,,rbps:104857600,2,1,0.0267,0.0,0.567,1.001,0.419,54750,14049,50,14029
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r1,codex,t8_ioread.sh,unlimited,,rbps:104857600,3,1,0.0285,0.0,1.142,2.53,0.417,56794,14179,58,5604
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r1,codex,t8_ioread.sh,unlimited,,rbps:104857600,4,1,0.0258,0.0,10.054,6.931,0.427,58869,14839,94,2141
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r1,codex,t8_ioread.sh,unlimited,,rbps:104857600,5,1,0.0251,0.0,0.909,0.839,0.418,60815,9696,42,11555
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r2,codex,t8_ioread.sh,unlimited,,rbps:104857600,1,1,0.0264,0.0001,0.808,1.004,0.419,53852,16694,94,16622
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r2,codex,t8_ioread.sh,unlimited,,rbps:104857600,2,1,0.0254,0.0,0.5,1.518,0.416,54766,14808,88,9752
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r2,codex,t8_ioread.sh,unlimited,,rbps:104857600,3,1,0.0262,0.0,2.471,3.301,0.419,56918,14467,78,4383
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r2,codex,t8_ioread.sh,unlimited,,rbps:104857600,4,1,0.026,0.0,0.837,1.186,0.417,58992,15012,78,12663
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r2,codex,t8_ioread.sh,unlimited,,rbps:104857600,5,1,0.0304,0.0,0.562,0.889,0.407,60938,10183,52,11456
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r3,codex,t8_ioread.sh,unlimited,,rbps:104857600,1,1,0.0328,0.0001,0.62,1.038,0.412,53852,16972,118,16348
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r3,codex,t8_ioread.sh,unlimited,,rbps:104857600,2,1,0.0254,0.0,4.265,1.292,0.426,54779,11804,70,9133
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r3,codex,t8_ioread.sh,unlimited,,rbps:104857600,3,1,0.0267,0.0,2.204,0.771,0.328,55487,9879,54,12814
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r4,codex,t8_ioread.sh,unlimited,,rbps:104857600,1,1,0.0273,0.0001,0.818,1.301,0.418,53852,16655,92,12801
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r4,codex,t8_ioread.sh,unlimited,,rbps:104857600,2,1,0.0254,0.0,0.881,1.614,0.424,54798,12058,82,7469
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r4,codex,t8_ioread.sh,unlimited,,rbps:104857600,3,1,0.0264,0.0,1.597,1.536,0.816,55396,9873,58,6426
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r5,codex,t8_ioread.sh,unlimited,,rbps:104857600,1,1,0.0267,0.0001,1.183,2.286,0.419,53852,16747,98,7327
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r5,codex,t8_ioread.sh,unlimited,,rbps:104857600,2,1,0.0267,0.0,0.604,0.824,0.414,54798,11961,64,14523
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_100M_r5,codex,t8_ioread.sh,unlimited,,rbps:104857600,3,1,0.0264,0.0,0.577,0.685,0.411,55524,10022,40,14632
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r1,codex,t8_ioread.sh,unlimited,,rbps:209715200,1,1,0.0256,0.0001,5.357,1.752,0.421,53852,17085,110,9753
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r1,codex,t8_ioread.sh,unlimited,,rbps:209715200,2,1,0.0254,0.0,1.644,1.039,0.418,54769,14276,56,13742
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r1,codex,t8_ioread.sh,unlimited,,rbps:209715200,3,1,0.0326,0.0,0.587,0.883,0.413,56887,14510,76,16431
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r1,codex,t8_ioread.sh,unlimited,,rbps:209715200,4,1,0.0295,0.0,0.548,0.831,0.409,58812,11182,44,13460
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r2,codex,t8_ioread.sh,unlimited,,rbps:209715200,1,1,0.0304,0.0001,0.715,0.875,0.396,53852,16642,90,19025
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r2,codex,t8_ioread.sh,unlimited,,rbps:209715200,2,1,0.0298,0.0,1.773,1.405,0.416,54795,11660,54,8298
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r2,codex,t8_ioread.sh,unlimited,,rbps:209715200,3,1,0.0255,0.0,2.003,2.222,0.415,55392,11007,70,4953
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r3,codex,t8_ioread.sh,unlimited,,rbps:209715200,1,1,0.025,0.0001,2.337,3.582,0.421,53852,16722,86,4668
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r3,codex,t8_ioread.sh,unlimited,,rbps:209715200,2,1,0.0262,0.0,1.174,1.483,0.418,54765,14644,74,9873
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r3,codex,t8_ioread.sh,unlimited,,rbps:209715200,3,1,0.0257,0.0,0.868,2.174,0.412,56885,15061,66,6927
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r3,codex,t8_ioread.sh,unlimited,,rbps:209715200,4,1,0.0252,0.0,1.072,1.112,0.417,58834,10534,50,9476
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r4,codex,t8_ioread.sh,unlimited,,rbps:209715200,1,1,0.0258,0.0001,0.584,1.104,0.417,53852,16545,88,14991
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r4,codex,t8_ioread.sh,unlimited,,rbps:209715200,2,1,0.025,0.0,0.511,0.873,0.415,54791,11855,60,13582
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r4,codex,t8_ioread.sh,unlimited,,rbps:209715200,3,1,0.0271,0.0,1.046,1.273,0.419,55391,10589,58,8320
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r5,codex,t8_ioread.sh,unlimited,,rbps:209715200,1,1,0.0263,0.0001,1.122,1.754,0.422,53852,16810,90,9584
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r5,codex,t8_ioread.sh,unlimited,,rbps:209715200,2,1,0.0267,0.0,1.087,0.694,0.348,54799,11733,62,16905
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_200M_r5,codex,t8_ioread.sh,unlimited,,rbps:209715200,3,1,0.0255,0.0,0.733,1.199,0.438,55396,9982,40,8322
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r1,codex,t8_ioread.sh,unlimited,,rbps:52428800,1,1,0.0269,0.0001,0.544,1.099,0.416,53852,16778,102,15273
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r1,codex,t8_ioread.sh,unlimited,,rbps:52428800,2,1,0.0247,0.0,0.593,1.154,0.413,54784,14817,60,12840
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r1,codex,t8_ioread.sh,unlimited,,rbps:52428800,3,1,0.0268,0.0,0.453,0.783,0.546,56729,11877,80,15159
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r2,codex,t8_ioread.sh,unlimited,,rbps:52428800,1,1,0.0318,0.0001,0.489,0.919,0.413,53852,16715,86,18194
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r2,codex,t8_ioread.sh,unlimited,,rbps:52428800,2,1,0.0287,0.0,0.521,0.842,0.418,54800,12054,82,14319
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r2,codex,t8_ioread.sh,unlimited,,rbps:52428800,3,1,0.0281,0.0,1.34,2.41,0.416,55398,10362,66,4300
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r3,codex,t8_ioread.sh,unlimited,,rbps:52428800,1,1,0.0275,0.0001,2.172,3.011,0.42,53852,18521,86,6151
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r3,codex,t8_ioread.sh,unlimited,,rbps:52428800,2,1,0.0278,0.0,0.513,0.961,0.421,54804,14753,56,15358
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r3,codex,t8_ioread.sh,unlimited,,rbps:52428800,3,1,0.0258,0.0,0.534,0.675,0.416,56751,10216,54,15124
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r4,codex,t8_ioread.sh,unlimited,,rbps:52428800,1,1,0.026,0.0001,0.403,1.082,0.418,53852,18986,118,17554
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r4,codex,t8_ioread.sh,unlimited,,rbps:52428800,2,1,0.0258,0.0,1.159,1.603,0.42,54805,14378,64,8969
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r4,codex,t8_ioread.sh,unlimited,,rbps:52428800,3,1,0.0262,0.0,0.6,0.975,0.418,56731,10690,48,10964
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r5,codex,t8_ioread.sh,unlimited,,rbps:52428800,1,1,0.0265,0.0001,0.611,1.45,0.417,53852,16682,84,11501
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r5,codex,t8_ioread.sh,unlimited,,rbps:52428800,2,1,0.0269,0.0001,5.654,6.785,0.421,54801,12311,98,1815
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_50M_r5,codex,t8_ioread.sh,unlimited,,rbps:52428800,3,1,0.0258,0.0,0.6,0.77,0.415,55400,10209,54,13256
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r1,codex,t8_ioread.sh,unlimited,high:max,,1,1,0.0246,0.0001,1.763,1.596,0.421,53852,16743,90,10492
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r1,codex,t8_ioread.sh,unlimited,high:max,,2,1,0.0252,0.0,1.232,1.252,0.422,54766,14360,58,11468
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r1,codex,t8_ioread.sh,unlimited,high:max,,3,1,0.0254,0.0,0.697,1.099,0.416,56861,15096,80,13735
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r1,codex,t8_ioread.sh,unlimited,high:max,,4,1,0.0252,0.0,1.341,1.221,0.42,58805,10126,48,8291
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r2,codex,t8_ioread.sh,unlimited,high:max,,1,1,0.0252,0.0001,1.176,2.258,0.419,53852,16780,90,7430
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r2,codex,t8_ioread.sh,unlimited,high:max,,2,1,0.0268,0.0,0.907,1.292,0.417,54792,14965,74,11582
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r2,codex,t8_ioread.sh,unlimited,high:max,,3,1,0.0296,0.0,1.71,1.48,0.415,56737,10629,64,7182
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r3,codex,t8_ioread.sh,unlimited,high:max,,1,1,0.026,0.0001,0.782,1.39,0.419,53852,19890,80,14310
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r3,codex,t8_ioread.sh,unlimited,high:max,,2,1,0.0265,0.0,0.527,1.383,0.414,56257,14328,56,10362
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r3,codex,t8_ioread.sh,unlimited,high:max,,3,1,0.0294,0.0,0.944,1.515,0.426,58205,10924,78,7211
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r4,codex,t8_ioread.sh,unlimited,high:max,,1,1,0.0255,0.0001,0.431,1.163,0.421,53852,18935,82,16283
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r4,codex,t8_ioread.sh,unlimited,high:max,,2,1,0.0251,0.0,0.765,2.576,0.429,56194,15103,78,5863
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r4,codex,t8_ioread.sh,unlimited,high:max,,3,1,0.0276,0.0,0.581,0.836,0.407,58160,10635,56,12726
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r5,codex,t8_ioread.sh,unlimited,high:max,,1,1,0.0262,0.0001,0.801,1.722,0.415,53852,16888,124,9806
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r5,codex,t8_ioread.sh,unlimited,high:max,,2,1,0.0253,0.0,0.529,1.284,0.416,54748,13817,48,10758
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r5,codex,t8_ioread.sh,unlimited,high:max,,3,1,0.0265,0.0,5.629,7.878,0.421,56803,14911,100,1893
+1_svc_cpu_cap/agentic-os-noise/runs_codex_t8,t8_unltd_r5,codex,t8_ioread.sh,unlimited,high:max,,4,1,0.0252,0.0,0.438,2.193,0.636,58727,10655,60,4859
+2_threads_vs_cores/runs,t4_w16_r1,claude,t4_parallel.sh,unlimited,,,1,1,1.5661,0.0,0.558,0.638,0.503,30605,2451,4,3840
+2_threads_vs_cores/runs,t4_w16_r1,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.607,1.06,0.532,2816,2688,7,2536
+2_threads_vs_cores/runs,t4_w16_r1,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.803,0.025,0.021,3236,2572,3,
+2_threads_vs_cores/runs,t4_w16_r2,claude,t4_parallel.sh,unlimited,,,1,1,1.443,0.0,0.727,0.69,0.48,30638,2543,6,3685
+2_threads_vs_cores/runs,t4_w16_r2,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.534,1.003,0.487,2816,2699,8,2690
+2_threads_vs_cores/runs,t4_w16_r2,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.681,0.014,0.012,3228,2541,3,
+2_threads_vs_cores/runs,t4_w16_r3,claude,t4_parallel.sh,unlimited,,,1,1,1.4934,0.0,0.493,0.641,0.506,30612,2502,6,3904
+2_threads_vs_cores/runs,t4_w16_r3,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.554,1.111,0.495,2816,2713,7,2442
+2_threads_vs_cores/runs,t4_w16_r3,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.482,0.013,0.012,3240,2549,3,
+2_threads_vs_cores/runs,t4_w16_r4,claude,t4_parallel.sh,unlimited,,,1,1,1.5042,0.0,0.563,0.639,0.487,30591,2454,6,3843
+2_threads_vs_cores/runs,t4_w16_r4,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.532,0.992,0.471,2816,2688,10,2711
+2_threads_vs_cores/runs,t4_w16_r4,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.854,0.012,0.011,3228,2647,3,
+2_threads_vs_cores/runs,t4_w16_r5,claude,t4_parallel.sh,unlimited,,,1,1,1.472,0.0,0.737,0.678,0.498,30626,2533,6,3733
+2_threads_vs_cores/runs,t4_w16_r5,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.615,1.111,0.494,2816,2733,8,2460
+2_threads_vs_cores/runs,t4_w16_r5,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.684,0.015,0.013,3236,2636,3,
+2_threads_vs_cores/runs,t4_w2_r1,claude,t4_parallel.sh,unlimited,,,1,1,1.5088,0.0,1.417,0.686,0.497,30621,2541,6,3701
+2_threads_vs_cores/runs,t4_w2_r1,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.59,0.901,0.499,2813,2680,9,2975
+2_threads_vs_cores/runs,t4_w2_r1,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.66,0.018,0.018,2808,2530,2,
+2_threads_vs_cores/runs,t4_w2_r2,claude,t4_parallel.sh,unlimited,,,1,1,1.4449,0.0,0.551,0.691,0.489,30585,2491,5,3603
+2_threads_vs_cores/runs,t4_w2_r2,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.609,0.952,0.486,2813,2687,8,2822
+2_threads_vs_cores/runs,t4_w2_r2,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.578,0.012,0.012,2808,2410,2,
+2_threads_vs_cores/runs,t4_w2_r3,claude,t4_parallel.sh,unlimited,,,1,1,1.4797,0.0,0.942,0.681,0.503,30582,2550,6,3743
+2_threads_vs_cores/runs,t4_w2_r3,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.595,0.988,0.51,2813,2681,8,2715
+2_threads_vs_cores/runs,t4_w2_r3,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.456,0.018,0.015,2808,2470,3,
+2_threads_vs_cores/runs,t4_w2_r4,claude,t4_parallel.sh,unlimited,,,1,1,2.6434,0.0,0.62,0.682,0.49,30683,2535,6,3718
+2_threads_vs_cores/runs,t4_w2_r4,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.59,1.072,0.492,4138,2683,8,2504
+2_threads_vs_cores/runs,t4_w2_r4,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.83,0.011,0.011,3678,2526,2,
+2_threads_vs_cores/runs,t4_w2_r5,claude,t4_parallel.sh,unlimited,,,1,1,0.6665,0.0,0.643,0.685,0.487,29075,2541,6,3710
+2_threads_vs_cores/runs,t4_w2_r5,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.654,0.948,0.498,4641,2664,8,2810
+2_threads_vs_cores/runs,t4_w2_r5,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,1.293,0.042,0.032,2800,2449,3,
+2_threads_vs_cores/runs,t4_w4_r1,claude,t4_parallel.sh,unlimited,,,1,1,1.4588,0.0,0.778,0.651,0.508,30607,2464,6,3784
+2_threads_vs_cores/runs,t4_w4_r1,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.518,0.955,0.495,2813,2687,8,2814
+2_threads_vs_cores/runs,t4_w4_r1,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,2.017,0.019,0.015,2927,2700,3,
+2_threads_vs_cores/runs,t4_w4_r2,claude,t4_parallel.sh,unlimited,,,1,1,1.4478,0.0,0.67,1.313,0.503,30565,2852,10,2172
+2_threads_vs_cores/runs,t4_w4_r2,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,1.941,0.016,0.013,3016,2680,4,
+2_threads_vs_cores/runs,t4_w4_r3,claude,t4_parallel.sh,unlimited,,,1,1,1.5581,0.0,0.659,0.687,0.488,30577,2498,5,3638
+2_threads_vs_cores/runs,t4_w4_r3,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.658,0.951,0.504,2813,2690,8,2828
+2_threads_vs_cores/runs,t4_w4_r3,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,2.066,0.012,0.012,2927,2632,2,
+2_threads_vs_cores/runs,t4_w4_r4,claude,t4_parallel.sh,unlimited,,,1,1,1.4312,0.0,0.642,0.679,0.488,30605,2541,6,3745
+2_threads_vs_cores/runs,t4_w4_r4,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.516,0.95,0.481,2813,2693,8,2835
+2_threads_vs_cores/runs,t4_w4_r4,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,2.059,0.019,0.011,2926,2665,3,
+2_threads_vs_cores/runs,t4_w4_r5,claude,t4_parallel.sh,unlimited,,,1,1,1.5808,0.0,0.719,0.684,0.493,30626,2547,6,3721
+2_threads_vs_cores/runs,t4_w4_r5,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.662,0.903,0.495,2813,2690,8,2980
+2_threads_vs_cores/runs,t4_w4_r5,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,2.072,0.014,0.014,2926,2634,2,
+2_threads_vs_cores/runs,t4_w8_r1,claude,t4_parallel.sh,unlimited,,,1,1,1.4491,0.0,0.616,0.636,0.488,30593,2509,5,3946
+2_threads_vs_cores/runs,t4_w8_r1,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.618,0.849,0.483,2813,2605,7,3068
+2_threads_vs_cores/runs,t4_w8_r1,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,2.682,0.016,0.014,2949,2856,3,
+2_threads_vs_cores/runs,t4_w8_r2,claude,t4_parallel.sh,unlimited,,,1,1,1.4301,0.0,0.597,0.688,0.494,30633,2501,5,3637
+2_threads_vs_cores/runs,t4_w8_r2,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.621,0.904,0.493,2813,2671,8,2954
+2_threads_vs_cores/runs,t4_w8_r2,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,3.143,0.022,0.017,2957,2952,3,
+2_threads_vs_cores/runs,t4_w8_r3,claude,t4_parallel.sh,unlimited,,,1,1,1.4413,0.0,1.019,0.655,0.496,30595,2492,5,3807
+2_threads_vs_cores/runs,t4_w8_r3,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.679,1.102,0.493,2813,2728,8,2475
+2_threads_vs_cores/runs,t4_w8_r3,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,2.933,0.015,0.012,2957,2922,3,
+2_threads_vs_cores/runs,t4_w8_r4,claude,t4_parallel.sh,unlimited,,,1,1,0.6439,0.0,0.79,1.063,0.469,29124,2664,8,2506
+2_threads_vs_cores/runs,t4_w8_r4,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,2.741,0.017,0.014,4753,2824,3,
+2_threads_vs_cores/runs,t4_w8_r5,claude,t4_parallel.sh,unlimited,,,1,1,1.511,0.0,0.561,0.648,0.513,30632,2491,6,3844
+2_threads_vs_cores/runs,t4_w8_r5,claude,t4_parallel.sh,unlimited,,,2,0,,0.0,0.562,1.103,0.502,2813,2734,8,2479
+2_threads_vs_cores/runs,t4_w8_r5,claude,t4_parallel.sh,unlimited,,,3,0,,0.0,2.718,0.018,0.014,2957,2820,3,
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,1,1,1.4526,0.0,0.728,5.319,0.5,30623,5548,59,1043
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,2,1,0.0236,0.0,0.661,0.891,0.54,22592,3070,8,3446
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,3,1,0.0236,0.0,0.742,0.793,0.507,22594,3070,7,3872
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,4,0,,0.0,1.724,0.017,0.014,4585,2580,3,
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,5,1,0.0245,0.0,0.572,0.793,0.543,22618,3074,7,3876
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,6,0,,0.0,1.482,0.017,0.013,4523,2511,5,
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,7,0,,0.0,0.788,0.803,0.507,22396,2615,8,3256
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,8,0,,0.0,1.438,0.016,0.011,4567,2500,5,
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,9,0,,0.0,1.609,0.018,0.015,4534,2491,4,
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,10,0,,0.0,0.63,0.889,0.558,3274,2571,6,2892
+2_threads_vs_cores/runs_partB,t5_n4_r1,claude,t5_subagents.sh,unlimited,,,11,0,,0.0,1.216,0.019,0.014,3021,2423,5,
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,1,1,1.4816,0.0,0.589,4.687,0.507,30631,5108,53,1090
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,2,1,0.0237,0.0,1.646,0.832,0.157,22564,3280,13,3942
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,3,1,0.0264,0.0,1.098,0.827,0.158,22602,3272,13,3955
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,4,1,0.0235,0.0,1.077,0.821,0.159,22600,3287,14,4003
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,5,0,,0.0,1.93,0.013,0.011,4529,2492,4,
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,6,0,,0.0,1.092,0.874,0.155,22495,2853,14,3266
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,7,0,,0.0,2.186,0.014,0.013,4573,2557,4,
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,8,0,,0.0,2.177,0.017,0.014,4586,2533,3,
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,9,0,,0.0,1.935,0.016,0.014,4568,2447,4,
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,10,0,,0.0,0.658,0.896,0.499,3224,2668,8,2978
+2_threads_vs_cores/runs_partB,t5_n4_r2,claude,t5_subagents.sh,unlimited,,,11,0,,0.0,1.498,0.012,0.012,2814,2341,3,
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,1,1,1.4824,0.0,0.529,4.536,0.49,30616,4904,46,1081
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,2,1,0.0238,0.0,1.553,0.621,0.187,22599,3066,8,4935
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,3,1,0.025,0.0,1.255,0.622,0.187,22584,3079,9,4953
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,4,1,0.0254,0.0,1.373,0.828,0.155,22595,3329,13,4019
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,5,0,,0.0,2.038,0.014,0.011,4544,2584,4,
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,6,0,,0.0,1.058,0.838,0.158,22540,2864,14,3416
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,7,0,,0.0,1.158,2.482,1.632,4569,3921,6,1579
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,8,0,,0.0,1.82,0.014,0.012,4554,2539,3,
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,9,0,,0.0,1.036,1.124,1.108,4559,3473,4,3090
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,10,0,,0.0,0.628,0.791,0.5,3343,2599,8,3286
+2_threads_vs_cores/runs_partB,t5_n4_r3,claude,t5_subagents.sh,unlimited,,,11,0,,0.0,2.094,0.018,0.016,2698,2717,3,
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,1,1,1.369,0.0,0.714,9.2,0.494,30699,7761,104,844
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,2,1,0.0265,0.0,1.411,0.826,0.156,22635,3276,13,3965
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,3,1,0.0248,0.0,1.378,0.833,0.157,22624,3285,13,3944
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,4,1,0.024,0.0,1.222,0.835,0.155,22625,3276,14,3922
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,5,0,,0.0,1.942,0.021,0.015,4517,2490,4,
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,6,1,0.0237,0.0,1.282,0.826,0.156,22585,3278,14,3969
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,7,0,,0.0,1.99,0.019,0.015,4575,2436,4,
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,8,0,,0.0,1.117,0.623,0.185,22541,2580,10,4141
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,9,1,0.0245,0.0,2.109,0.029,0.024,4591,3042,5,
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,10,0,,0.0,1.292,0.828,0.161,22353,2830,14,3416
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,11,0,,0.0,2.117,0.015,0.012,4549,2512,4,
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,12,0,,0.0,1.823,0.009,0.009,4541,2402,3,
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,13,0,,0.0,1.235,0.621,0.188,22531,2576,9,4148
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,14,0,,0.0,1.419,0.878,0.155,22409,2880,16,3281
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,15,0,,0.0,2.14,0.012,0.012,4522,2514,2,
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,16,0,,0.0,2.078,0.021,0.015,4520,2570,3,
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,17,0,,0.0,2.04,0.017,0.015,4564,2534,3,
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,18,0,,0.0,0.663,0.786,0.497,3681,2610,8,3320
+2_threads_vs_cores/runs_partB,t5_n8_r1,claude,t5_subagents.sh,unlimited,,,19,0,,0.0,0.984,0.014,0.014,2730,2343,3,
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,1,1,1.397,0.0,0.57,8.17,0.494,30638,6978,86,854
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,2,1,0.024,0.0,0.925,0.84,0.499,22556,3104,9,3697
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,3,1,0.0246,0.0,0.625,0.769,0.482,22576,3090,8,4019
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,4,1,0.0239,0.0,0.833,0.792,0.5,22583,3086,8,3896
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,5,0,,0.0,1.19,0.021,0.019,4590,2313,3,
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,6,0,,0.0,1.12,0.017,0.013,4576,2296,4,
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,7,1,0.0233,0.0,0.747,0.841,0.519,22603,3107,9,3697
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,8,0,,0.0,0.889,0.791,0.5,22498,2645,10,3343
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,9,0,,0.0,1.041,0.015,0.012,4557,2307,4,
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,10,0,,0.0,1.173,0.748,0.491,22358,2616,9,3497
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,11,0,,0.0,1.032,0.019,0.014,4565,2308,5,
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,12,0,,0.0,0.662,0.842,0.493,22530,2652,9,3148
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,13,0,,0.0,0.983,0.015,0.013,4582,2319,3,
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,14,0,,0.0,0.825,0.76,0.49,22478,2596,7,3416
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,15,0,,0.0,1.212,0.015,0.013,4574,2313,4,
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,16,0,,0.0,1.166,0.016,0.012,4564,2307,4,
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,17,0,,0.0,1.004,0.019,0.014,4545,2271,4,
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,18,0,,0.0,0.64,0.583,0.458,3375,2434,4,4175
+2_threads_vs_cores/runs_partB,t5_n8_r2,claude,t5_subagents.sh,unlimited,,,19,0,,0.0,0.86,0.015,0.01,2666,2309,3,
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,1,1,1.4143,0.0,0.74,9.061,0.494,30606,7669,101,846
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,2,1,0.0233,0.0,1.177,0.625,0.187,22626,3019,8,4832
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,3,1,0.0256,0.0,1.19,0.622,0.187,22632,3020,10,4857
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,4,0,,0.0,1.212,0.778,0.157,22523,2770,13,3559
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,5,1,0.0229,0.0,1.666,0.012,0.012,4603,2861,4,
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,6,0,,0.0,1.517,0.614,0.179,22400,2619,8,4267
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,7,1,0.0239,0.0,1.706,0.014,0.011,4631,2809,3,
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,8,0,,0.0,1.061,0.614,0.176,22534,2626,9,4280
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,9,0,,0.0,2.007,0.014,0.013,4585,2606,4,
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,10,0,,0.0,1.279,0.787,0.158,22539,2838,13,3608
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,11,0,,0.0,1.471,0.02,0.015,4540,2328,4,
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,12,0,,0.0,1.431,0.013,0.01,4514,2304,4,
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,13,1,0.0241,0.0,1.242,0.622,0.186,22591,3073,9,4937
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,14,0,,0.0,1.223,0.782,0.164,22547,2817,14,3604
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,15,0,,0.0,2.068,0.012,0.01,4555,2608,4,
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,16,0,,0.0,1.783,0.017,0.014,4557,2456,3,
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,17,0,,0.0,2.023,0.016,0.012,4560,2524,4,
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,18,0,,0.0,0.626,0.779,0.48,3565,2677,8,3437
+2_threads_vs_cores/runs_partB,t5_n8_r3,claude,t5_subagents.sh,unlimited,,,19,0,,0.0,1.091,0.015,0.015,2730,2381,3,
+3_memory_cap/runs/runs_t6,t6A_high_1152_r1,claude,t6_memtouch.sh,unlimited,high:1152M,,1,1,1.6886,0.0,1.337,1.187,0.343,30587,3027,16,2550
+3_memory_cap/runs/runs_t6,t6A_high_1152_r1,claude,t6_memtouch.sh,unlimited,high:1152M,,2,0,,0.0,1.784,0.013,0.012,2777,2419,4,
+3_memory_cap/runs/runs_t6,t6A_high_1152_r2,claude,t6_memtouch.sh,unlimited,high:1152M,,1,1,1.7597,0.0,1.068,1.187,0.359,30575,3047,16,2567
+3_memory_cap/runs/runs_t6,t6A_high_1152_r2,claude,t6_memtouch.sh,unlimited,high:1152M,,2,0,,0.0,1.642,0.013,0.013,2777,2437,4,
+3_memory_cap/runs/runs_t6,t6A_high_1152_r3,claude,t6_memtouch.sh,unlimited,high:1152M,,1,1,1.7224,0.0,0.556,0.626,0.497,30552,2547,5,4068
+3_memory_cap/runs/runs_t6,t6A_high_1152_r3,claude,t6_memtouch.sh,unlimited,high:1152M,,2,0,,0.0,1.102,0.668,0.157,2731,2734,12,4096
+3_memory_cap/runs/runs_t6,t6A_high_1152_r3,claude,t6_memtouch.sh,unlimited,high:1152M,,3,0,,0.0,1.094,0.945,0.27,3475,2802,12,2965
+3_memory_cap/runs/runs_t6,t6A_high_1152_r3,claude,t6_memtouch.sh,unlimited,high:1152M,,4,0,,0.0,1.954,0.015,0.012,2735,2508,4,
+3_memory_cap/runs/runs_t6,t6A_high_1152_r4,claude,t6_memtouch.sh,unlimited,high:1152M,,1,1,1.6881,0.0,1.304,1.162,0.406,30717,2955,14,2543
+3_memory_cap/runs/runs_t6,t6A_high_1152_r4,claude,t6_memtouch.sh,unlimited,high:1152M,,2,0,,0.0,1.727,0.012,0.012,2777,2448,4,
+3_memory_cap/runs/runs_t6,t6A_high_1152_r5,claude,t6_memtouch.sh,unlimited,high:1152M,,1,1,1.6668,0.0,0.648,1.098,0.509,30687,2772,9,2526
+3_memory_cap/runs/runs_t6,t6A_high_1152_r5,claude,t6_memtouch.sh,unlimited,high:1152M,,2,0,,0.0,1.042,0.019,0.016,2777,2441,3,
+3_memory_cap/runs/runs_t6,t6A_high_1536_r1,claude,t6_memtouch.sh,unlimited,high:1536M,,1,1,1.6688,0.0,1.545,1.055,0.253,30619,3033,15,2875
+3_memory_cap/runs/runs_t6,t6A_high_1536_r1,claude,t6_memtouch.sh,unlimited,high:1536M,,2,0,,0.0,1.685,0.011,0.011,2774,2438,2,
+3_memory_cap/runs/runs_t6,t6A_high_1536_r2,claude,t6_memtouch.sh,unlimited,high:1536M,,1,1,1.7664,0.0,0.661,1.118,0.494,30682,2768,8,2477
+3_memory_cap/runs/runs_t6,t6A_high_1536_r2,claude,t6_memtouch.sh,unlimited,high:1536M,,2,0,,0.0,1.051,0.013,0.013,2774,2419,2,
+3_memory_cap/runs/runs_t6,t6A_high_1536_r3,claude,t6_memtouch.sh,unlimited,high:1536M,,1,1,1.6202,0.0,1.035,1.145,0.295,30679,3028,15,2646
+3_memory_cap/runs/runs_t6,t6A_high_1536_r3,claude,t6_memtouch.sh,unlimited,high:1536M,,2,0,,0.0,1.762,0.012,0.011,2774,2462,3,
+3_memory_cap/runs/runs_t6,t6A_high_1536_r4,claude,t6_memtouch.sh,unlimited,high:1536M,,1,1,1.6499,0.0,1.062,1.164,0.513,30612,2778,8,2387
+3_memory_cap/runs/runs_t6,t6A_high_1536_r4,claude,t6_memtouch.sh,unlimited,high:1536M,,2,0,,0.0,1.091,0.032,0.031,2774,2405,3,
+3_memory_cap/runs/runs_t6,t6A_high_1536_r5,claude,t6_memtouch.sh,unlimited,high:1536M,,1,1,1.7717,0.0,0.768,1.162,0.504,30720,2772,8,2385
+3_memory_cap/runs/runs_t6,t6A_high_1536_r5,claude,t6_memtouch.sh,unlimited,high:1536M,,2,0,,0.0,1.103,0.013,0.013,2774,2408,3,
+3_memory_cap/runs/runs_t6,t6A_high_768_r1,claude,t6_memtouch.sh,unlimited,high:768M,,1,1,1.7047,0.0,1.73,0.687,0.108,30617,2814,12,4099
+3_memory_cap/runs/runs_t6,t6A_high_768_r1,claude,t6_memtouch.sh,unlimited,high:768M,,2,0,,0.0,1.093,0.679,0.196,2731,2695,9,3969
+3_memory_cap/runs/runs_t6,t6A_high_768_r1,claude,t6_memtouch.sh,unlimited,high:768M,,3,0,,0.0,1.135,0.969,0.313,4022,2822,11,2911
+3_memory_cap/runs/runs_t6,t6A_high_768_r1,claude,t6_memtouch.sh,unlimited,high:768M,,4,0,,0.0,1.986,0.0,0.0,2735,2438,1,
+3_memory_cap/runs/runs_t6,t6A_high_768_r2,claude,t6_memtouch.sh,unlimited,high:768M,,1,1,1.7021,0.0,0.673,0.644,0.49,30613,2582,6,4009
+3_memory_cap/runs/runs_t6,t6A_high_768_r2,claude,t6_memtouch.sh,unlimited,high:768M,,2,0,,0.0,0.689,0.689,0.54,2697,2594,6,3762
+3_memory_cap/runs/runs_t6,t6A_high_768_r2,claude,t6_memtouch.sh,unlimited,high:768M,,3,0,,0.0,1.196,0.893,0.2,4038,2799,13,3135
+3_memory_cap/runs/runs_t6,t6A_high_768_r2,claude,t6_memtouch.sh,unlimited,high:768M,,4,0,,0.0,1.768,0.017,0.011,2735,2474,4,
+3_memory_cap/runs/runs_t6,t6A_high_768_r3,claude,t6_memtouch.sh,unlimited,high:768M,,1,1,1.7395,0.0,1.196,0.667,0.156,30666,2723,10,4085
+3_memory_cap/runs/runs_t6,t6A_high_768_r3,claude,t6_memtouch.sh,unlimited,high:768M,,2,0,,0.0,1.053,0.665,0.158,2731,2742,12,4126
+3_memory_cap/runs/runs_t6,t6A_high_768_r3,claude,t6_memtouch.sh,unlimited,high:768M,,3,0,,0.0,1.153,0.943,0.159,3475,2903,13,3079
+3_memory_cap/runs/runs_t6,t6A_high_768_r3,claude,t6_memtouch.sh,unlimited,high:768M,,4,0,,0.0,1.851,0.014,0.012,2743,2528,4,
+3_memory_cap/runs/runs_t6,t6A_high_768_r4,claude,t6_memtouch.sh,unlimited,high:768M,,1,1,1.7606,0.0,0.56,1.108,0.504,30561,2747,9,2478
+3_memory_cap/runs/runs_t6,t6A_high_768_r4,claude,t6_memtouch.sh,unlimited,high:768M,,2,0,,0.0,1.373,0.015,0.014,2777,2493,3,
+3_memory_cap/runs/runs_t6,t6A_high_768_r5,claude,t6_memtouch.sh,unlimited,high:768M,,1,1,1.6528,0.0,1.059,0.653,0.5,30708,2554,6,3912
+3_memory_cap/runs/runs_t6,t6A_high_768_r5,claude,t6_memtouch.sh,unlimited,high:768M,,2,0,,0.0,0.487,0.647,0.526,2731,2526,4,3906
+3_memory_cap/runs/runs_t6,t6A_high_768_r5,claude,t6_memtouch.sh,unlimited,high:768M,,3,0,,0.0,1.041,0.901,0.163,3475,2854,13,3169
+3_memory_cap/runs/runs_t6,t6A_high_768_r5,claude,t6_memtouch.sh,unlimited,high:768M,,4,0,,0.0,2.004,0.015,0.013,2743,2513,4,
+3_memory_cap/runs/runs_t6,t6A_high_max_r1,claude,t6_memtouch.sh,unlimited,high:max,,1,1,1.6982,0.0,0.946,0.686,0.506,30604,2601,7,3791
+3_memory_cap/runs/runs_t6,t6A_high_max_r1,claude,t6_memtouch.sh,unlimited,high:max,,2,0,,0.0,0.6,0.636,0.497,2731,2559,6,4025
+3_memory_cap/runs/runs_t6,t6A_high_max_r1,claude,t6_memtouch.sh,unlimited,high:max,,3,0,,0.0,1.043,0.945,0.204,3475,2873,13,3039
+3_memory_cap/runs/runs_t6,t6A_high_max_r1,claude,t6_memtouch.sh,unlimited,high:max,,4,0,,0.0,1.773,0.0,0.0,2732,2421,2,
+3_memory_cap/runs/runs_t6,t6A_high_max_r2,claude,t6_memtouch.sh,unlimited,high:max,,1,1,1.6731,0.0,0.787,0.58,0.479,30575,2507,4,4321
+3_memory_cap/runs/runs_t6,t6A_high_max_r2,claude,t6_memtouch.sh,unlimited,high:max,,2,0,,0.0,0.624,0.72,0.521,2697,2647,8,3675
+3_memory_cap/runs/runs_t6,t6A_high_max_r2,claude,t6_memtouch.sh,unlimited,high:max,,3,0,,0.0,1.493,0.84,0.161,4038,2839,12,3381
+3_memory_cap/runs/runs_t6,t6A_high_max_r2,claude,t6_memtouch.sh,unlimited,high:max,,4,0,,0.0,1.981,0.016,0.013,2732,2512,3,
+3_memory_cap/runs/runs_t6,t6A_high_max_r3,claude,t6_memtouch.sh,unlimited,high:max,,1,1,1.7293,0.0,1.159,0.634,0.106,30619,2779,11,4382
+3_memory_cap/runs/runs_t6,t6A_high_max_r3,claude,t6_memtouch.sh,unlimited,high:max,,2,0,,0.0,1.201,0.624,0.158,2732,2721,10,4362
+3_memory_cap/runs/runs_t6,t6A_high_max_r3,claude,t6_memtouch.sh,unlimited,high:max,,3,0,,0.0,1.167,0.924,0.195,4022,2876,13,3113
+3_memory_cap/runs/runs_t6,t6A_high_max_r3,claude,t6_memtouch.sh,unlimited,high:max,,4,0,,0.0,1.921,0.016,0.014,2732,2482,3,
+3_memory_cap/runs/runs_t6,t6A_high_max_r4,claude,t6_memtouch.sh,unlimited,high:max,,1,1,1.6969,0.0,0.581,0.615,0.503,30614,2530,5,4113
+3_memory_cap/runs/runs_t6,t6A_high_max_r4,claude,t6_memtouch.sh,unlimited,high:max,,2,0,,0.0,0.622,0.794,0.501,2697,2660,8,3350
+3_memory_cap/runs/runs_t6,t6A_high_max_r4,claude,t6_memtouch.sh,unlimited,high:max,,3,0,,0.0,1.148,0.944,0.242,4082,2895,15,3066
+3_memory_cap/runs/runs_t6,t6A_high_max_r4,claude,t6_memtouch.sh,unlimited,high:max,,4,0,,0.0,2.296,0.018,0.012,2732,2520,4,
+3_memory_cap/runs/runs_t6,t6A_high_max_r5,claude,t6_memtouch.sh,unlimited,high:max,,1,1,1.7586,0.0,0.607,1.155,0.534,30579,2741,8,2373
+3_memory_cap/runs/runs_t6,t6A_high_max_r5,claude,t6_memtouch.sh,unlimited,high:max,,2,0,,0.0,1.162,0.011,0.011,2774,2416,2,
+3_memory_cap/runs/runs_t6,t6B_max_1024_r1,claude,t6_memtouch.sh,unlimited,max:1024M,,1,1,1.6305,0.0,0.59,0.59,0.458,30659,2535,5,4297
+3_memory_cap/runs/runs_t6,t6B_max_1024_r1,claude,t6_memtouch.sh,unlimited,max:1024M,,2,0,,0.0,0.559,0.741,0.511,2697,2655,7,3585
+3_memory_cap/runs/runs_t6,t6B_max_1024_r1,claude,t6_memtouch.sh,unlimited,max:1024M,,3,0,,0.0,1.083,0.893,0.176,4038,2831,13,3171
+3_memory_cap/runs/runs_t6,t6B_max_1024_r1,claude,t6_memtouch.sh,unlimited,max:1024M,,4,0,,0.0,1.829,0.017,0.012,2735,2538,3,
+3_memory_cap/runs/runs_t6,t6B_max_1024_r2,claude,t6_memtouch.sh,unlimited,max:1024M,,1,1,1.6512,0.0,1.026,0.715,0.16,30688,2747,11,3843
+3_memory_cap/runs/runs_t6,t6B_max_1024_r2,claude,t6_memtouch.sh,unlimited,max:1024M,,2,0,,0.0,1.111,0.817,0.183,2697,2835,13,3470
+3_memory_cap/runs/runs_t6,t6B_max_1024_r2,claude,t6_memtouch.sh,unlimited,max:1024M,,3,0,,0.0,1.331,1.672,0.654,4038,3820,9,2285
+3_memory_cap/runs/runs_t6,t6B_max_1024_r2,claude,t6_memtouch.sh,unlimited,max:1024M,,4,0,,0.0,2.076,0.025,0.013,2743,2511,4,
+3_memory_cap/runs/runs_t6,t6B_max_1024_r3,claude,t6_memtouch.sh,unlimited,max:1024M,,1,1,1.6515,0.0,0.637,1.159,0.494,30618,2790,8,2408
+3_memory_cap/runs/runs_t6,t6B_max_1024_r3,claude,t6_memtouch.sh,unlimited,max:1024M,,2,0,,0.0,1.38,0.013,0.012,2777,2435,3,
+3_memory_cap/runs/runs_t6,t6B_max_1280_r1,claude,t6_memtouch.sh,unlimited,max:1280M,,1,1,1.6465,0.0,0.782,1.111,0.513,30623,2754,8,2480
+3_memory_cap/runs/runs_t6,t6B_max_1280_r1,claude,t6_memtouch.sh,unlimited,max:1280M,,2,0,,0.0,1.07,0.011,0.011,2777,2425,2,
+3_memory_cap/runs/runs_t6,t6B_max_1280_r2,claude,t6_memtouch.sh,unlimited,max:1280M,,1,1,1.707,0.0,1.163,1.088,0.281,30571,2980,14,2740
+3_memory_cap/runs/runs_t6,t6B_max_1280_r2,claude,t6_memtouch.sh,unlimited,max:1280M,,2,0,,0.0,1.702,0.015,0.014,2777,2462,4,
+3_memory_cap/runs/runs_t6,t6B_max_1280_r3,claude,t6_memtouch.sh,unlimited,max:1280M,,1,1,1.6776,0.0,0.523,0.986,0.496,30579,2757,8,2797
+3_memory_cap/runs/runs_t6,t6B_max_1280_r3,claude,t6_memtouch.sh,unlimited,max:1280M,,2,0,,0.0,1.335,0.02,0.012,2777,2444,4,
+3_memory_cap/runs/runs_t6,t6B_max_2_r1,claude,t6_memtouch.sh,unlimited,max:2G,,1,1,1.6864,0.0,1.379,0.635,0.106,30734,2760,11,4346
+3_memory_cap/runs/runs_t6,t6B_max_2_r1,claude,t6_memtouch.sh,unlimited,max:2G,,2,0,,0.0,1.178,0.628,0.157,2731,2690,9,4281
+3_memory_cap/runs/runs_t6,t6B_max_2_r1,claude,t6_memtouch.sh,unlimited,max:2G,,3,0,,0.0,1.1,0.933,0.181,3475,2883,15,3092
+3_memory_cap/runs/runs_t6,t6B_max_2_r1,claude,t6_memtouch.sh,unlimited,max:2G,,4,0,,0.0,1.899,0.017,0.013,2732,2519,3,
+3_memory_cap/runs/runs_t6,t6B_max_2_r2,claude,t6_memtouch.sh,unlimited,max:2G,,1,1,1.6449,0.0,0.597,1.183,0.496,30678,2780,8,2350
+3_memory_cap/runs/runs_t6,t6B_max_2_r2,claude,t6_memtouch.sh,unlimited,max:2G,,2,0,,0.0,1.113,0.013,0.013,2774,2422,3,
+3_memory_cap/runs/runs_t6,t6B_max_2_r3,claude,t6_memtouch.sh,unlimited,max:2G,,1,1,1.6382,0.0,1.22,1.194,0.35,30569,3002,15,2514
+3_memory_cap/runs/runs_t6,t6B_max_2_r3,claude,t6_memtouch.sh,unlimited,max:2G,,2,0,,0.0,1.788,0.012,0.012,2774,2456,4,
+3_memory_cap/runs/runs_t6,t6B_max_768_r1,claude,t6_memtouch.sh,unlimited,max:768M,,1,1,1.7511,0.0,1.158,1.181,0.352,30572,3013,16,2551
+3_memory_cap/runs/runs_t6,t6B_max_768_r1,claude,t6_memtouch.sh,unlimited,max:768M,,2,0,,0.0,1.722,0.012,0.012,2777,2416,3,
+3_memory_cap/runs/runs_t6,t6B_max_768_r2,claude,t6_memtouch.sh,unlimited,max:768M,,1,1,1.7357,0.0,1.245,0.67,0.133,30599,2765,11,4126
+3_memory_cap/runs/runs_t6,t6B_max_768_r2,claude,t6_memtouch.sh,unlimited,max:768M,,2,0,,0.0,1.051,0.68,0.196,2731,2692,10,3958
+3_memory_cap/runs/runs_t6,t6B_max_768_r2,claude,t6_memtouch.sh,unlimited,max:768M,,3,0,,0.0,1.009,0.937,0.184,3475,2876,14,3070
+3_memory_cap/runs/runs_t6,t6B_max_768_r2,claude,t6_memtouch.sh,unlimited,max:768M,,4,0,,0.0,1.924,0.018,0.017,2735,2502,4,
+3_memory_cap/runs/runs_t6,t6B_max_768_r3,claude,t6_memtouch.sh,unlimited,max:768M,,1,1,1.6423,0.0,1.201,0.626,0.157,30605,2714,11,4336
+3_memory_cap/runs/runs_t6,t6B_max_768_r3,claude,t6_memtouch.sh,unlimited,max:768M,,2,0,,0.0,1.12,0.772,0.187,2698,2824,14,3660
+3_memory_cap/runs/runs_t6,t6B_max_768_r3,claude,t6_memtouch.sh,unlimited,max:768M,,3,0,,0.0,1.108,1.863,0.874,4038,3889,10,2088
+3_memory_cap/runs/runs_t6,t6B_max_768_r3,claude,t6_memtouch.sh,unlimited,max:768M,,4,0,,0.0,1.889,0.019,0.015,2743,2521,3,
+3_memory_cap/runs/runs_t7,t7_max1024_r1,claude,t7_memhog.sh,unlimited,max:1024M,,1,1,1.7104,0.0,1.265,0.666,0.168,30603,2694,10,4047
+3_memory_cap/runs/runs_t7,t7_max1024_r1,claude,t7_memhog.sh,unlimited,max:1024M,,2,0,,0.0,1.238,0.523,0.16,3182,2555,7,4884
+3_memory_cap/runs/runs_t7,t7_max1024_r1,claude,t7_memhog.sh,unlimited,max:1024M,,3,0,,0.0,1.104,1.541,0.554,3265,4027,16,2614
+3_memory_cap/runs/runs_t7,t7_max1024_r1,claude,t7_memhog.sh,unlimited,max:1024M,,4,0,,0.0,2.015,0.013,0.012,3088,2485,4,
+3_memory_cap/runs/runs_t7,t7_max1024_r2,claude,t7_memhog.sh,unlimited,max:1024M,,1,1,1.6653,0.0,1.154,1.262,0.527,30606,2840,10,2250
+3_memory_cap/runs/runs_t7,t7_max1024_r2,claude,t7_memhog.sh,unlimited,max:1024M,,2,0,,0.0,2.005,0.022,0.013,2955,2535,5,
+3_memory_cap/runs/runs_t7,t7_max1024_r3,claude,t7_memhog.sh,unlimited,max:1024M,,1,1,1.6554,0.0,0.54,1.196,0.529,30618,2790,9,2333
+3_memory_cap/runs/runs_t7,t7_max1024_r3,claude,t7_memhog.sh,unlimited,max:1024M,,2,0,,0.0,1.172,0.016,0.011,2949,2525,4,
+3_memory_cap/runs/runs_t7,t7_max640_r1,claude,t7_memhog.sh,unlimited,max:640M,,1,1,1.637,0.0,1.088,1.294,0.304,30654,3141,18,2428
+3_memory_cap/runs/runs_t7,t7_max640_r1,claude,t7_memhog.sh,unlimited,max:640M,,2,0,,0.0,1.057,2.614,2.146,2886,4077,6,1560
+3_memory_cap/runs/runs_t7,t7_max640_r2,claude,t7_memhog.sh,unlimited,max:640M,,1,1,1.7066,0.0,1.202,1.279,0.31,30557,3099,16,2423
+3_memory_cap/runs/runs_t7,t7_max640_r2,claude,t7_memhog.sh,unlimited,max:640M,,2,0,,0.0,1.046,1.719,0.787,2886,3907,12,2272
+3_memory_cap/runs/runs_t7,t7_max640_r2,claude,t7_memhog.sh,unlimited,max:640M,,3,0,,0.0,3.414,0.021,0.014,3475,3105,4,
+3_memory_cap/runs/runs_t7,t7_max640_r3,claude,t7_memhog.sh,unlimited,max:640M,,1,1,1.6019,0.0,1.151,1.245,0.25,30651,3088,17,2481
+3_memory_cap/runs/runs_t7,t7_max640_r3,claude,t7_memhog.sh,unlimited,max:640M,,2,0,,0.0,0.967,2.472,1.431,2886,4200,11,1699
+3_memory_cap/runs/runs_t7,t7_max640_r3,claude,t7_memhog.sh,unlimited,max:640M,,3,0,,0.0,3.319,0.016,0.013,3475,3114,3,
+3_memory_cap/runs/runs_t7,t7_max768_r1,claude,t7_memhog.sh,unlimited,max:768M,,1,1,1.6696,0.0,0.626,1.333,0.684,30565,2806,10,2106
+3_memory_cap/runs/runs_t7,t7_max768_r1,claude,t7_memhog.sh,unlimited,max:768M,,2,0,,0.0,1.258,0.018,0.014,2949,2573,3,
+3_memory_cap/runs/runs_t7,t7_max768_r2,claude,t7_memhog.sh,unlimited,max:768M,,1,1,1.6189,0.0,1.099,1.352,0.329,30624,3143,19,2325
+3_memory_cap/runs/runs_t7,t7_max768_r2,claude,t7_memhog.sh,unlimited,max:768M,,2,0,,0.0,1.832,0.018,0.011,2949,2493,3,
+3_memory_cap/runs/runs_t7,t7_max768_r3,claude,t7_memhog.sh,unlimited,max:768M,,1,1,1.762,0.0,0.789,1.267,0.526,30694,2788,9,2201
+3_memory_cap/runs/runs_t7,t7_max768_r3,claude,t7_memhog.sh,unlimited,max:768M,,2,0,,0.0,1.364,0.019,0.015,2949,2562,5,
+3_memory_cap/runs/runs_t7,t7_max896_r1,claude,t7_memhog.sh,unlimited,max:896M,,1,1,1.599,0.0,0.58,1.263,0.534,30608,2812,8,2227
+3_memory_cap/runs/runs_t7,t7_max896_r1,claude,t7_memhog.sh,unlimited,max:896M,,2,0,,0.0,1.276,0.017,0.013,2949,2539,3,
+3_memory_cap/runs/runs_t7,t7_max896_r2,claude,t7_memhog.sh,unlimited,max:896M,,1,1,1.6808,0.0,0.635,1.262,0.489,30597,2875,10,2279
+3_memory_cap/runs/runs_t7,t7_max896_r2,claude,t7_memhog.sh,unlimited,max:896M,,2,0,,0.0,1.393,0.013,0.013,2949,2574,4,
+3_memory_cap/runs/runs_t7,t7_max896_r3,claude,t7_memhog.sh,unlimited,max:896M,,1,1,1.6551,0.0,0.661,1.32,0.503,30568,2893,11,2191
+3_memory_cap/runs/runs_t7,t7_max896_r3,claude,t7_memhog.sh,unlimited,max:896M,,2,0,,0.0,1.907,0.016,0.014,2949,2547,4,
+4_io_cap/runs,t8_100M_r1,claude,t8_ioread.sh,unlimited,,rbps:104857600,1,1,1.6351,0.0,0.543,0.971,0.502,30606,2766,9,2849
+4_io_cap/runs,t8_100M_r1,claude,t8_ioread.sh,unlimited,,rbps:104857600,2,0,,0.0,1.482,0.015,0.012,2727,2536,4,
+4_io_cap/runs,t8_100M_r2,claude,t8_ioread.sh,unlimited,,rbps:104857600,1,1,1.7728,0.0,0.551,1.005,0.51,30581,2757,10,2742
+4_io_cap/runs,t8_100M_r2,claude,t8_ioread.sh,unlimited,,rbps:104857600,2,0,,0.0,1.57,0.022,0.013,2727,2593,3,
+4_io_cap/runs,t8_100M_r3,claude,t8_ioread.sh,unlimited,,rbps:104857600,1,1,1.9733,0.0,1.061,0.984,0.508,30716,2734,8,2779
+4_io_cap/runs,t8_100M_r3,claude,t8_ioread.sh,unlimited,,rbps:104857600,2,0,,0.0,1.256,0.017,0.015,2727,2518,3,
+4_io_cap/runs,t8_100M_r4,claude,t8_ioread.sh,unlimited,,rbps:104857600,1,1,1.7813,0.0,0.585,0.995,0.506,30609,2759,10,2772
+4_io_cap/runs,t8_100M_r4,claude,t8_ioread.sh,unlimited,,rbps:104857600,2,0,,0.0,1.297,0.015,0.015,2727,2457,3,
+4_io_cap/runs,t8_100M_r5,claude,t8_ioread.sh,unlimited,,rbps:104857600,1,1,1.6721,0.0,0.717,0.999,0.504,30681,2778,9,2780
+4_io_cap/runs,t8_100M_r5,claude,t8_ioread.sh,unlimited,,rbps:104857600,2,0,,0.0,1.441,0.019,0.014,2727,2535,4,
+4_io_cap/runs,t8_200M_r1,claude,t8_ioread.sh,unlimited,,rbps:209715200,1,1,1.7081,0.0,0.608,1.019,0.506,30616,2725,9,2675
+4_io_cap/runs,t8_200M_r1,claude,t8_ioread.sh,unlimited,,rbps:209715200,2,0,,0.0,1.292,0.014,0.014,2724,2489,3,
+4_io_cap/runs,t8_200M_r2,claude,t8_ioread.sh,unlimited,,rbps:209715200,1,1,1.6866,0.0,0.604,1.008,0.529,30604,2692,8,2672
+4_io_cap/runs,t8_200M_r2,claude,t8_ioread.sh,unlimited,,rbps:209715200,2,0,,0.0,1.655,0.018,0.013,2724,2556,4,
+4_io_cap/runs,t8_200M_r3,claude,t8_ioread.sh,unlimited,,rbps:209715200,1,1,1.73,0.0,1.196,0.982,0.492,30722,2773,10,2825
+4_io_cap/runs,t8_200M_r3,claude,t8_ioread.sh,unlimited,,rbps:209715200,2,0,,0.0,1.352,0.017,0.015,2724,2522,3,
+4_io_cap/runs,t8_200M_r4,claude,t8_ioread.sh,unlimited,,rbps:209715200,1,1,1.7163,0.0,1.005,0.972,0.521,30721,2760,9,2839
+4_io_cap/runs,t8_200M_r4,claude,t8_ioread.sh,unlimited,,rbps:209715200,2,0,,0.0,1.283,0.019,0.016,2724,2534,4,
+4_io_cap/runs,t8_200M_r5,claude,t8_ioread.sh,unlimited,,rbps:209715200,1,1,1.6689,0.0,0.906,0.924,0.522,30574,2728,9,2951
+4_io_cap/runs,t8_200M_r5,claude,t8_ioread.sh,unlimited,,rbps:209715200,2,0,,0.0,1.17,0.013,0.013,2724,2472,3,
+4_io_cap/runs,t8_50M_r1,claude,t8_ioread.sh,unlimited,,rbps:52428800,1,1,2.201,0.0,0.586,0.942,0.498,30595,2704,8,2872
+4_io_cap/runs,t8_50M_r1,claude,t8_ioread.sh,unlimited,,rbps:52428800,2,0,,0.0,1.299,0.017,0.015,2727,2465,3,
+4_io_cap/runs,t8_50M_r2,claude,t8_ioread.sh,unlimited,,rbps:52428800,1,1,1.8119,0.0,0.71,0.962,0.478,30608,2762,9,2871
+4_io_cap/runs,t8_50M_r2,claude,t8_ioread.sh,unlimited,,rbps:52428800,2,0,,0.0,1.482,0.016,0.014,2727,2580,3,
+4_io_cap/runs,t8_50M_r3,claude,t8_ioread.sh,unlimited,,rbps:52428800,1,1,1.7943,0.0,0.762,0.998,0.508,30576,2766,11,2770
+4_io_cap/runs,t8_50M_r3,claude,t8_ioread.sh,unlimited,,rbps:52428800,2,0,,0.0,1.532,0.018,0.013,2727,2572,4,
+4_io_cap/runs,t8_50M_r4,claude,t8_ioread.sh,unlimited,,rbps:52428800,1,1,1.9621,0.0,0.581,1.007,0.526,30593,2685,7,2665
+4_io_cap/runs,t8_50M_r4,claude,t8_ioread.sh,unlimited,,rbps:52428800,2,0,,0.0,1.599,0.014,0.011,2727,2591,4,
+4_io_cap/runs,t8_50M_r5,claude,t8_ioread.sh,unlimited,,rbps:52428800,1,1,1.8621,0.0,0.771,1.035,0.507,30585,2782,9,2689
+4_io_cap/runs,t8_50M_r5,claude,t8_ioread.sh,unlimited,,rbps:52428800,2,0,,0.0,1.601,0.015,0.014,2727,2579,4,
+4_io_cap/runs,t8_unltd_r1,claude,t8_ioread.sh,unlimited,high:max,,1,1,1.6572,0.0,0.645,0.983,0.506,30616,2764,9,2812
+4_io_cap/runs,t8_unltd_r1,claude,t8_ioread.sh,unlimited,high:max,,2,0,,0.0,1.336,0.023,0.015,2724,2537,4,
+4_io_cap/runs,t8_unltd_r2,claude,t8_ioread.sh,unlimited,high:max,,1,1,1.7623,0.0,0.667,0.956,0.505,30574,2724,9,2851
+4_io_cap/runs,t8_unltd_r2,claude,t8_ioread.sh,unlimited,high:max,,2,0,,0.0,1.403,0.015,0.01,2724,2547,3,
+4_io_cap/runs,t8_unltd_r3,claude,t8_ioread.sh,unlimited,high:max,,1,1,1.8192,0.0,1.454,0.903,0.497,30663,2719,8,3013
+4_io_cap/runs,t8_unltd_r3,claude,t8_ioread.sh,unlimited,high:max,,2,0,,0.0,1.341,0.019,0.013,2724,2479,5,
+4_io_cap/runs,t8_unltd_r4,claude,t8_ioread.sh,unlimited,high:max,,1,1,1.7943,0.0,0.693,0.975,0.514,30588,2730,9,2800
+4_io_cap/runs,t8_unltd_r4,claude,t8_ioread.sh,unlimited,high:max,,2,0,,0.0,1.556,0.014,0.012,2724,2530,4,
+4_io_cap/runs,t8_unltd_r5,claude,t8_ioread.sh,unlimited,high:max,,1,1,2.1405,0.0,0.719,0.983,0.504,30689,2761,9,2809
+4_io_cap/runs,t8_unltd_r5,claude,t8_ioread.sh,unlimited,high:max,,2,0,,0.0,1.198,0.014,0.014,2724,2462,3,
