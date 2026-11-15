@@ -103,3 +103,39 @@ What this means:
 
 - Split Django's memory peak into file cache and process memory.
 - Why tool CPU drops at 0.25 CPU (needs hardware counters).
+
+## Longer tasks (real_long, analyzed 2026-11-15)
+
+Four longer SWE-bench Verified tasks (django-15957, sympy-14248,
+pytest-10356, xarray-6992), Opus, Docker, 5 runs per task and setting, 60
+runs. `python rq3/table.py real_long` -> `rq3/table_real_long.txt`.
+
+| Task | No limit | 1 CPU / 512 MB | 0.25 CPU / 512 MB | Memory kills |
+|---|---|---|---|---|
+| django | 5/5, 51 s | 5/5, x1.21 [0.91-1.85] | 5/5, x2.02 [1.63-2.65] | 0 |
+| sympy | 5/5, 111 s | 5/5, x0.96 [0.49-1.60] | 5/5, x1.92 [0.99-2.20] | 0 |
+| pytest | 1/5, 67 s | 2/5, x1.18 | 1/5, x2.46 | 0 |
+| xarray | 0/5, 40 s | 0/5, x5.09 [0.76-7.96] | 0/5, x11.95 [1.77-15.90] | 63 (4 to 9 in every limited run) |
+
+What this means:
+
+- **Solve rate does not depend on the setting.** django and sympy are solved
+  in every run at every setting. pytest is solved about 1 in 4 times with or
+  without limits (agent difficulty).
+- **xarray is never solved, even with no limit.** The environment works (902
+  of 902 existing tests pass after every run); all 12 target tests fail
+  because the agent's fix (11 different patches, same idea) does not match
+  the behaviour the hidden tests expect. Not checked by running the
+  reference fix (VM stopped).
+- **xarray needs more memory than the sandbox tier.** Its test runs peak at
+  about 810 MB with no limit. Under 512 MB every limited run has 4 to 9 OOM
+  kills (63 in total), about 90 thousand reclaim events, and runs 5 to 12
+  times longer. Tool time goes from 17-31 s to 106-580 s.
+- **The kill is silent to the agent.** The test output just stops (for
+  example at "34%"); the tool result has no error flag and no "Killed" line.
+  In 6 of 10 limited runs the agent saw no error message at all; in none did
+  its final answer mention memory. It reran tests and kept going.
+- **The CPU result of the short tasks holds.** 0.25 CPU gives x1.9 to x2.5 on
+  the three tasks that fit in memory (short tasks: x1.76); 1 CPU gives no
+  clear slowdown.
+- Model cost: $20.15 for the 60 runs.

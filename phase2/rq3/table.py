@@ -2,7 +2,8 @@
 """RQ3: real coding tasks (SWE-bench Verified, Docker, Opus) at platform
 settings, each against the same task with no limit.
 
-  python rq3/table.py      (reads rq1/runs.csv and real*/counters.csv; writes rq3/table.txt)
+  python rq3/table.py [campaign ...]   (default real real_quarter -> rq3/table.txt;
+                                        others -> rq3/table_<first>.txt)
 
 Slowdown and local slowdown as in rq2/curves.py (median ratio, 95% bootstrap,
 2000 resamples, seed 7). "all tasks" = mean of the six per-task median ratios,
@@ -10,7 +11,7 @@ bootstrapped by resampling runs inside each task. Throttled = time the cgroup
 was held back by its CPU quota (cpu.stat); mem peak = memory.peak of the
 agent's cgroup, which includes file cache.
 """
-import csv, json, random, statistics as st
+import csv, json, random, statistics as st, sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -24,10 +25,11 @@ f = lambda r, k: float(r[k] or 0)
 local = lambda r: f(r, 'wall_s') - f(r, 'model_only_s') - f(r, 'model_tool_s')
 rng = random.Random(7)
 
-cnt = {r['run']: r for c in ('real', 'real_quarter') for r in csv.DictReader(open(P2 / c / 'counters.csv'))}
+CAMPS = sys.argv[1:] or ['real', 'real_quarter']
+cnt = {r['run']: r for c in CAMPS for r in csv.DictReader(open(P2 / c / 'counters.csv'))}
 g = defaultdict(list)
 for r in csv.DictReader(open(P2 / 'rq1' / 'runs.csv')):
-    if r['campaign'] in ('real', 'real_quarter'):
+    if r['campaign'] in CAMPS:
         lim = json.loads(r['limits']) if r['limits'] else {}
         name = next(n for n, l in SETTINGS if l == lim)
         g[(r['task_arg'].split('__')[1], name)].append({**r, **{k: cnt[r['run']][k] for k in
@@ -48,6 +50,8 @@ cols = f"{'task':<15}{'setting':<19}{'n':>3}{'ok':>4}{'wall':>7}{'slowdown [95%]
 out = [cols]
 for t in tasks + ['all tasks']:
     for name, _ in SETTINGS:
+        if not g[(tasks[0], name)]:
+            continue                            # setting not in these campaigns
         ts = tasks if t == 'all tasks' else [t]
         pairs = [(g[(x, name)], g[(x, 'none')]) for x in ts]
         v = [r for a, _ in pairs for r in a]
@@ -65,5 +69,5 @@ oom = sum(int(r['oom_kill'] or 0) for v in g.values() for r in v)
 at_limit = sorted((t, n, r['run'].rsplit('_', 1)[1]) for (t, n), v in g.items() if '512' in n
                   for r in v if f(r, 'mem_peak_mb') >= 511)
 out.append(f'memory kills: {oom}; runs whose memory reached the 512 MB limit: {len(at_limit)} {at_limit}')
-(HERE / 'table.txt').write_text('\n'.join(out) + '\n')
+(HERE / ('table.txt' if sys.argv[1:] in ([], ['real', 'real_quarter']) else f'table_{CAMPS[0]}.txt')).write_text('\n'.join(out) + '\n')
 print('\n'.join(out))

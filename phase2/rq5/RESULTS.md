@@ -114,3 +114,29 @@ Real tasks, no limit against 0.25 CPU (5 runs each):
   main test hold after correction. About 40 minutes on the VM.
 - Which process the memory kill picks, and why: the trace has the kill
   event with the victim.
+
+## More runs for the feedback test (feedback_extra, analyzed 2026-11-15)
+
+10 more Haiku runs each of t3 (test prints its time) and t9 (silent) at 0.25
+CPU, so these two cells have 15 runs. `python feedback_cells.py` (needs
+OSNOISE_RUNS). Test: one-sided rank-sum, exact when there are at most 1e5
+splits, else 200000 random splits (seed 7); Holm correction over the 20
+tests of one model.
+
+| Haiku at 0.25 CPU | printed (t3) | silent (t9) | p (Holm) |
+|---|---|---|---|
+| runs that talk about speed | 15/15 | 1/15 | |
+| tool calls after the first pass | 5 | 0 | 0.005 |
+| turns | 11 | 8 | 0.040 |
+| output tokens | 4238 | 2503 | 0.002 |
+| wall | 73 s | 35 s | <0.001 |
+
+- **The earlier result now holds after correction for many tests.** When the
+  slow time is printed, Haiku keeps working on speed after the task is
+  already done; when it is not printed, it stops.
+- With no limit, the printed time does not trigger this (t3: 0 extra tool
+  calls, 1 of 5 runs talk about speed). So it is the slow number, not the
+  print itself.
+- Opus: no effect in any test (all Holm p >= 0.08).
+- New from real_long (RQ3): OOM kills inside a test run are silent to the
+  agent; output stops without an error. See rq3/RESULTS.md.
