@@ -658,56 +658,62 @@ each load.}
 \label{fig:density}
 \end{figure}
 
-We started 1 to 32 Claude Code agents at the same moment on one VM, each
-on its own copy of the coding task \texttt{t3}, with no limits.
-All 189 agents solved their task: crowding makes agents slow, not wrong.
+RQ2 and RQ3 limit one agent at a time. A platform that runs many agents
+instead shares one machine among them, so each agent's neighbours become
+its limit. We started 1 to 32 Claude Code agents at the same moment on one
+VM, each on its own copy of the coding task \texttt{t3}, with no limits.
+All 189 agents solved their task. Crowding makes agents slow, not wrong.
 Figure~\ref{fig:density} shows the time per agent and the throughput,
-counted as agents finished per minute.
+which we count as agents finished per minute.
 
-Two agents run as fast as one (21 to 22\,s). At four agents, one per vCPU,
-the first cost appears: local time grows by 41\% but wall time only by
-14\%, the hidden cost of Section~\ref{sec:rq2} again. At eight agents wall
-time is 1.57 times longer. Throughput rises from 2.8 agents per minute
-with one agent to 16.3 with sixteen, and then stops: 32 agents finish at
-16.5 per minute, each just waits twice as long. The extra time is in the
-tools (4\,s alone, 71\,s at 32 agents) and in start-up (1.4\,s to 15\,s),
-where the agents wait for a CPU. Model time is flat up to 16 agents. The
-machine shares fairly: at 32 agents the median agent takes 105\,s, the
-90th percentile 112\,s and the slowest 123\,s. The cost per agent stays at
-\$0.14 to \$0.15.
+\emph{When the machine fills up.} Two agents run as fast as one (21 to
+22\,s). At four agents, one per vCPU, the first cost appears. Local time
+grows by 41\%, but wall time only by 14\%. This is the hidden cost of
+Section~\ref{sec:rq2} again. At eight agents, wall time is 1.57 times
+longer. Throughput rises from 2.8 agents per minute with one agent to 16.3
+with sixteen agents, and then stops. 32 agents finish at 16.5 per minute;
+each one only waits twice as long. The extra time is in the tools (4\,s
+alone, 71\,s at 32 agents) and in start-up (1.4\,s alone, 15\,s at 32
+agents), where the agents wait for a CPU. Model time stays the same up to
+16 agents and grows by 24\% at 32. The machine shares its time fairly: at
+32 agents, the median agent takes 105\,s, the 90th percentile 112\,s and
+the slowest 123\,s. The API cost per agent stays at \$0.14 to \$0.15.
 
 \emph{A capacity bound, and why the simple version fails.} Operational
-analysis~\cite{denning1978} bounds the throughput $X$ of $N$ agents by
-$X \leq \min(N/R_1,\ C/D)$, where $R_1$ is the time of one agent alone, $C$
-the number of CPUs and $D$ the CPU seconds each agent needs. With the
-values of a single agent ($R_1 = 21$\,s, $D = 5.9$\,s), the CPU bound is
-41 agents per minute, 2.5 times what we measured. The reason is that $D$
-does not stay fixed: the same task takes 5.9\,s of CPU alone, 8.3\,s with
-four agents and 11.6 to 12.2\,s from sixteen agents on. The 4 vCPUs are
-two cores with two hardware threads each, and they share caches, so a
-full machine does less work per CPU second. With $D$ measured at each
-load, the bound is 20.6 and 19.7 agents per minute at 16 and 32 agents,
-and the measured throughput reaches 80 to 84\% of it. For capacity
-planning, the CPU demand must be measured with the machine full; the
-demand of one agent alone overstates the capacity of this cloud VM about
-2.5 times.
+analysis~\cite{denning1978} gives an upper bound on the throughput $X$ of
+$N$ agents: $X \leq \min(N/R_1,\ C/D)$. Here $R_1$ is the time of one agent
+alone, $C$ the number of CPUs and $D$ the CPU seconds that each agent
+needs. The first term is the throughput if agents never wait for each
+other. The second is the throughput if the CPUs are busy all the time.
+With the values of a single agent ($R_1 = 21$\,s, $D = 5.9$\,s), the CPU
+bound is 41 agents per minute, 2.5 times what we measured. The reason is
+that $D$ does not stay fixed. The same task takes 5.9\,s of CPU alone,
+8.3\,s with four agents, and 11.6 to 12.2\,s with sixteen agents or more.
+The 4 vCPUs are two physical cores with two hardware threads each, and
+they share caches. A full machine therefore does less work per CPU second.
+With $D$ measured at each load, the bound is 20.6 agents per minute at 16
+agents and 19.7 at 32, and the measured throughput reaches 80 to 84\% of
+it. For capacity planning, the CPU demand must be measured with the
+machine full. On this cloud VM, the demand of one agent alone overstates
+the capacity about 2.5 times.
 
 \emph{CPU or memory?} Each extra agent adds about 150\,MB (0.3\,GB for one
-agent, 4.8\,GB for 32), so on this 15\,GB machine memory would last to
-about 90 agents, while CPU runs out at 16. A characterization of agents
-in larger sandboxes estimated the opposite, that memory limits density,
-from peaks of 2 to 4\,GB per agent~\cite{agentcgroup}. Both are consistent
-with one rule: memory runs out first when the memory peak of one agent is
-larger than the machine's memory divided by the number of agents at the
-CPU limit, here $15\,\text{GB}/16 \approx 0.9$\,GB. Our real tasks peak at
-345 to 585\,MB, below this line; projects with heavy test suites can be
-above it.
+agent, 4.8\,GB for 32). On this 15\,GB machine, memory would last to about
+100 agents, but the CPU is full at 16. A study of agents in larger
+sandboxes found the opposite, that memory limits how many agents fit,
+because each agent there peaked at 2 to 4\,GB~\cite{agentcgroup}. Both
+results follow one rule. Memory runs out first when the memory peak of one
+agent is larger than the machine's memory divided by the number of agents
+at the CPU limit. Here that line is $15\,\text{GB}/16 \approx 0.9$\,GB.
+Our real tasks peak at 345 to 811\,MB with no limit, below this line.
+xarray, at 811\,MB, is close to it, and projects with heavier test suites
+can be above it.
 
-\textbf{Answer to RQ4.} On 4 vCPUs, up to one agent per vCPU costs little
-that the user sees (+14\%); throughput stops growing at about four agents
-per vCPU (16.5 per minute). CPU, not memory, is the limit for these tasks,
-and the CPU each agent needs doubles when the machine is full, so a
-capacity estimate from one agent alone is far too high.
+\textbf{Answer to RQ4.} On 4 vCPUs, up to one agent per vCPU costs the user
+little (+14\% wall time). Throughput stops growing at about four agents per
+vCPU (16.5 agents per minute). For these tasks, CPU is the limit, not
+memory. The CPU time that each agent needs doubles when the machine is
+full. A capacity estimate from one agent alone is therefore far too high.
 
 % ---------------------------------------------------------------------------
 \section{RQ5: Does the Agent Change Its Behaviour?}\label{sec:rq5}
