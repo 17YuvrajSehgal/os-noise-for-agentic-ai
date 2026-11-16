@@ -785,8 +785,9 @@ explained correctly every time.
 
 \begin{table*}[t]
 \caption{The 14 claims of an earlier study~\cite{earlier2026}, recomputed
-on its data (old VM, Claude Code and Codex) and on our new data (new VM,
-Claude Code) with the same analysis.}
+with the same analysis on its data (old VM, Claude Code and Codex) and on
+our new data (new VM, Claude Code). Slowdowns in rows 7 and 11 are for the
+read phase of the file task.}
 \label{tab:cross}
 \small
 \begin{tabular}{@{}rlll@{}}
@@ -811,45 +812,61 @@ Claude Code) with the same analysis.}
 \end{tabular}
 \end{table*}
 
-An earlier workshop study~\cite{earlier2026} measured four of our limits
-(CPU quota, threads, memory, disk) on one VM, with Claude Code and Codex.
-We recomputed each of its 14 claims with the same analysis on its own data
-and on our new runs from a second VM of the same type, with a newer agent
-version and kernel (Table~\ref{tab:cross}).
+The results so far come from one VM and one agent family. To see which of
+them depend on the machine, we compare them with an earlier workshop
+study~\cite{earlier2026}. It measured four of our limits (CPU quota,
+threads, memory, disk) on one VM, with Claude Code and Codex. We
+recomputed each of its 14 claims with the same analysis on three data
+sets: its Claude Code runs, its Codex runs, and our new runs.
+Our runs come from a second VM of the same type, with a newer agent
+version and a newer kernel. Table~\ref{tab:cross} gives the result.
 
-Nine claims hold on both VMs, several with tighter edges because the new
-data has more runs and finer steps. The thread law holds on all three data
-sets: with $W$ CPU-bound workers on $C$ cores, the share of time spent
-waiting for a CPU is $(W-C)/W$ (0.48 against 0.50 with 8 workers, 0.73
-against 0.75 with 16). The memory cliffs hold, now located within one step
-(between 1344 and 1152\,MB for the soft limit, 704 and 640\,MB for process
-memory). Sub-agents again cause no competition for cores, now in 20 runs
-instead of 6.
+\emph{What holds.} Seven claims hold on both VMs (rows 4 to 9 and 11),
+several with sharper edges, because the new data has more runs and finer
+steps. The thread law holds on all three data sets. With $W$ CPU-bound
+workers on $C$ cores, the share of time spent waiting for a CPU is
+$(W-C)/W$: we measure 0.48 against 0.50 with 8 workers, and 0.73 against
+0.75 with 16. The memory cliffs hold, and we now locate each within one
+step: between 1344 and 1152\,MB for the soft limit, and between 704 and
+640\,MB for process memory. Sub-agents again do not compete for cores, now
+in 20 runs instead of 6.
 
-Five claims need correction or refinement. (1)~The 84\% model share
-counted every HTTPS exchange as model time; counted from model turns, it
-is about 75\% for Claude Code and 90\% for Codex. (2)~At 0.25 core the
-share falls to 41\%, not 53\%. (3)~A CPU cap leaves the agent's CPU work
-unchanged for Opus and Codex, but not for smaller models: Haiku uses 2.9
-times more CPU at 0.25 core, because it works longer (Section~\ref{sec:rq5}).
-(10)~The OOM killer usually takes the tool, but in 2 of 25 runs it took the
-agent itself. (12)~A slow disk does slow the coding task, through start-up.
-(13)~Trace and kernel counters agree within 1.5\%; the 18\% gap came from a
-bug in the earlier analysis script.
+\emph{What changes.} Six claims need a corrected number or a refinement.
+\begin{itemize}
+\item \textbf{Model share (1, 2).} The earlier 84\% counted every HTTPS
+  exchange as model time. Counted from model turns, it is about 75\% for
+  Claude Code and 90\% for Codex. (Our split in Section~\ref{sec:rq1}
+  uses the agent's own log; it agrees with the turn count within 1 to 4
+  points.) At 0.25 core, the share falls to 41\%, not 53\%.
+\item \textbf{CPU work under a cap (3).} A CPU cap leaves the agent's CPU
+  work unchanged for Opus and Codex, but not for smaller models. Haiku
+  uses 2.9 times more CPU at 0.25 core, because it does extra work
+  (Section~\ref{sec:rq5}).
+\item \textbf{Who the OOM killer takes (10).} It usually takes the tool,
+  but in 2 of 25 runs it took the agent itself.
+\item \textbf{Slow disk (12).} A slow disk does slow the coding task,
+  through start-up (Section~\ref{sec:rq2}).
+\item \textbf{Trace accuracy (13).} The trace and the kernel's CPU
+  counters agree within 1.5\%. The earlier gap of 18\% came from a bug in
+  the earlier analysis script.
+\end{itemize}
+The last claim (14), that every effect also holds for Codex, rests on the
+old data only, because we did not collect new Codex runs.
 
-Two machine differences explain the edges that moved. The new VM's disk
-reads at 287\,MB/s against 205\,MB/s, so a 200\,MB/s cap now has a small
-effect (x1.2) where it had none, and every read phase is shorter. The
-long tail of scheduling delays is larger on the new kernel: stalls of
-10\,ms or more number 421 (275 to 791) per run with 16 workers, against
-133 on the old VM. We therefore report such tails as machine-dependent.
-The Codex results rest on the old data only.
+\emph{Why some edges moved.} Two machine differences explain them. First,
+the new VM's disk reads at 287\,MB/s, against 205\,MB/s on the old one. A
+200\,MB/s cap therefore now has a small effect (x1.2) where it had none
+before, and every read phase is shorter. Second, the long tail of
+scheduling delays is larger on the new kernel. With 16 workers, a run has
+421 stalls of 10\,ms or more (275 to 791), against 133 on the old VM. We
+therefore treat such tails as dependent on the machine.
 
-\textbf{Summary.} Every mechanism and law of the earlier study holds on
-two VMs and, where tested, two agents. Where a threshold moved, the move
-has a likely cause: the faster disk, the newer kernel, or, for the
-file-memory edge, the smaller memory footprint of the newer agent version
-(not checked).
+\textbf{Summary.} The mechanisms of the earlier study hold on two VMs and,
+where tested, on two agents. What changes are some numbers, and one claim
+that was too strong (the OOM killer can take the agent). Where a threshold
+moved, the move has a likely cause: the faster disk, the newer kernel, or,
+for the file-memory edge, a smaller memory footprint of the newer agent
+version. We have not checked the last cause.
 
 % ---------------------------------------------------------------------------
 \section{Implications}\label{sec:implications}
