@@ -871,84 +871,101 @@ version. We have not checked the last cause.
 % ---------------------------------------------------------------------------
 \section{Implications}\label{sec:implications}
 
+Our results lead to concrete advice for three groups: those who measure
+agents, those who build the platforms that run them, and those who build
+the agents.
+
 \emph{For anyone who measures agents.} Report local time next to wall
 time. With five runs, a change in wall time below about 20\% is lost in
-the model's noise, while a cost on the machine of 50\% reaches the user as
-10 to 23\% ($f$ from 0.20 to 0.45). Benchmarks and A/B tests that compare
-only wall time will call such a setting free. The model
-$1 + f\,(s-1)$ turns one into the other; $f$ needs only a few runs with no
-limit.
+the noise of the model's answer time. A cost on the machine of 50\%
+reaches the user as only 10 to 23\% ($f$ from 0.20 to 0.45). Benchmarks
+and A/B tests that compare only wall time will therefore call such a
+setting free. The model $1 + f\,(s-1)$ converts one slowdown into the
+other, and $f$ needs only a few runs with no limit.
 
-\emph{For platform builders.} (1)~Give each agent at least one CPU. The
-CPU breaking point is 0.75 core; every tier above it showed no clear cost,
-and the 0.25 CPU tier doubled the run. (2)~Size memory from the project's
-test suite, not from the agent: the agent needs about 300\,MB, but
-one test suite needed 810\,MB, and 512\,MB then cost 5 to 12 times the
-time. (3)~Set the process limit to 32 or more: at 19 and below process
-creation fails, and at 16 and below the agent aborts. (4)~Keep the agent
-out of the memory killer's reach, for example by running its tools in a
-child cgroup with their own \texttt{memory.max}, or by lowering the
-agent's \texttt{oom\_score\_adj}; we did not test these, but in our runs
-the agent and its tools shared one group and the agent itself was killed
-in 2 of 25 runs. (5)~For packing agents on a machine, measure the CPU per
-agent with the machine full. On our VM it doubled, and the value of one
-agent alone overstated capacity 2.5 times.
+\emph{For platform builders.}
+\begin{enumerate}
+\item Give each agent at least one CPU. The CPU breaking point is
+  0.75 core. No size at or above 1 CPU showed a clear cost, while the
+  0.25 CPU size made runs 1.8 to 2.1 times longer.
+\item Size memory from the project's test suite, not from the agent. The
+  agent needs about 300\,MB, but one test suite needed 810\,MB. Under a
+  512\,MB limit, its runs then took 5 to 12 times longer.
+\item Set the process limit to 32 or more. At 20 processes and below,
+  attempts to start a process fail. At 19 and below, the agent can abort,
+  and at 16 and below it almost always does.
+\item Keep the agent out of reach of the out-of-memory killer. In our runs,
+  the agent and its tools shared one memory group, and the agent itself
+  was killed in 2 of 25 runs. Two possible fixes are to run the tools in a
+  child cgroup with their own \texttt{memory.max}, or to lower the agent's
+  \texttt{oom\_score\_adj}. We did not test these fixes.
+\item To pack agents on a machine, measure the CPU time per agent with the
+  machine full. On our VM it doubled, and the value from one agent alone
+  overstated the capacity 2.5 times.
+\end{enumerate}
 
-\emph{For agent builders.} (1)~Tell the agent when a tool was killed. A
-child process that ends by \texttt{SIGKILL}, or output that stops without
-an exit status, is a signal the agent program can see and the model cannot.
-(2)~Handle a failed thread start instead of aborting; the process limit
-crashed the agent in 12 of 25 runs. (3)~Small models act on numbers in
-tool output. A printed run time made Haiku spend twice the time on work
-nobody asked for; an instruction that run time is not a goal, or a larger
-model, avoids it.
+\emph{For agent builders.}
+\begin{enumerate}
+\item Tell the model when a tool was killed. A child process that ends by
+  \texttt{SIGKILL}, or output that stops without an exit status, is a
+  signal that the agent program can see but the model cannot.
+\item Handle a failed thread start instead of aborting. The process limit
+  crashed the agent in 12 of 25 runs at 19 processes or fewer.
+\item Expect small models to act on numbers in tool output. A printed run
+  time made Haiku spend twice the time on work that nobody asked for. An
+  instruction that run time is not a goal, or a larger model, may avoid
+  this. We did not test the instruction.
+\end{enumerate}
 
 % ---------------------------------------------------------------------------
 \section{Threats to Validity}
 
-\emph{Construct.} Local time is wall time minus the time a model turn is
-open, taken from the agent's event stream as each line arrives. Time when a
-tool runs while the model streams is counted as model time, so local time
-is a lower bound. Tracing costs about 7\% CPU on the coding task; it is
-present on both sides of every ratio, and wall time did not change.
+\emph{Construct.} Local time is wall time minus the time during which a
+model turn is open. We take it from the agent's event stream as each line
+arrives. When a tool runs while the model is still streaming, we count
+that time as model time, so local time is a lower bound. Tracing costs
+about 7\% CPU time on the coding task. This cost is present on both sides
+of every ratio, and wall time did not change with tracing.
 
-\emph{Internal.} The model service's speed changes over the day. We run
-the levels of an experiment in random order with a fixed seed, report
-local time, which does not contain the model wait, and check the
-hidden-cost model only on settings where model time stayed within 2\,s.
-The 0.25 CPU cells of the short real tasks were collected after the
-others, on the same VM with the same image and agent version; their model
-time did not change (15.2 against 15.4\,s). xarray was never solved, but
-not because of our setup: its target tests fail at the base commit and
-pass with the reference fix in the same environment, as for every task.
+\emph{Internal.} The speed of the model service changes over the day. We
+therefore run the levels of an experiment in random order with a fixed
+seed, and we report local time, which does not contain the model wait. We
+test the hidden-cost model only on settings where model time stayed
+within 2\,s. The short real tasks at 0.25 CPU were collected after the
+other sizes, on the same VM with the same image and agent version. Their
+model time did not change (15.2 against 15.4\,s). xarray was never solved,
+but not because of our setup. As for every task, its target tests fail at
+the base commit and pass with the reference fix in the same environment.
 
-\emph{External.} All runs use one VM type with 4 vCPUs (two cores with
-two hardware threads) in one cloud. Two VMs of this type agree on every
-mechanism, but thresholds moved with disk speed and kernel
-(Section~\ref{sec:cross}), so exact numbers will differ on other machines.
-The real tasks are ten Python issues from one benchmark. Most runs use one
-agent and one model; Codex ran on the old VM only, and agent versions
-change every few weeks. We expect the mechanisms (quota, reclaim, kills)
-to carry over, because the kernel enforces them, not the agent.
+\emph{External.} All runs use one VM type with 4 vCPUs (two cores with two
+hardware threads each) in one cloud. Two VMs of this type agree on the
+mechanisms, but some thresholds moved with disk speed and kernel version
+(Section~\ref{sec:cross}). Exact numbers will therefore differ on other
+machines. The real tasks are ten Python issues from one benchmark. Most
+runs use one agent (Claude Code) and one model (Opus). Codex ran on the old VM only, and
+agent versions change every few weeks. We expect the mechanisms (quota,
+reclaim, kills) to carry over, because the kernel enforces them, not the
+agent.
 
-\emph{Conclusion.} Most cells have five runs, so the intervals are wide
-and we name a breaking point only where the interval lies above 1.10. For the
-behaviour tests we use 15 runs per group and a Holm correction; the other
-tests are exploratory.
+\emph{Conclusion.} Most settings have five runs, so the intervals are
+wide. We therefore name a breaking point only where the whole interval
+lies above 1.10. For the behaviour tests, we use 15 runs per group and a
+Holm correction. The other tests are exploratory.
 
 % ---------------------------------------------------------------------------
 \section{Conclusion}
 
-An AI coding agent waits for its model most of the time, but that does not
-make the machine's cost small; it hides it. Across 1,225 traced runs, ten
-kinds of limits and ten real tasks, only a fraction $f$ of the cost on the
-machine reaches the user, and $1 + f\,(s-1)$ predicts the visible slowdown,
-also on tasks collected after the model was fitted. Each limit has a
-breaking point and one of three shapes; the CPU breaking point tells which
-cloud settings slow real fixes. Limits also change the agent: a small
-model does extra work when it sees a slow time, and the kernel can kill
-the agent or its tests without the agent knowing. Our dataset and
-collector let others repeat these measurements on new agents and machines.
+An AI coding agent waits for its model most of the time. This does not
+make the machine's cost small; it hides it. Across 1,225 runs, ten kinds
+of limits and ten real tasks, only a fraction $f$ of the cost on the
+machine reaches the user. The model $1 + f\,(s-1)$ predicts the slowdown
+that the user sees, also on tasks collected after we fitted it. Each limit
+has a breaking point and one of three shapes, and the CPU breaking point
+tells which platform sizes slow real fixes. Limits also change the agent.
+A small model does extra work when it sees a slow time, and the kernel can
+kill the agent or its tests without the agent knowing. Our dataset and
+collector let others repeat these measurements on new agents and
+machines.
 
 \section*{Data Availability}
 Traces, collector and analysis scripts: \todo{anonymous link}.
