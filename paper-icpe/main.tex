@@ -718,61 +718,67 @@ full. A capacity estimate from one agent alone is therefore far too high.
 % ---------------------------------------------------------------------------
 \section{RQ5: Does the Agent Change Its Behaviour?}\label{sec:rq5}
 
-We looked for three changes in what the agent does: extra work caused by
-a slow result, reactions to system errors, and lighter tests on a slow
-machine.
+RQ1 to RQ4 treat the agent as a fixed workload that the system slows down.
+But an agent reads what the system shows it, and can act on it. We looked
+for three such changes: extra work caused by a slow result, reactions to
+system errors, and lighter tests on a slow machine.
 
 \emph{A printed slow time makes a small model work more.} The coding task
-\texttt{t3} prints its own run time; \texttt{t9} is the same task with
-that line removed. At 0.25 core we ran each 15 times with Haiku. When the
-time is printed, Haiku talks about speed in 15 of 15 runs and keeps
-optimizing after the tests already pass: 5 tool calls after the first
-pass against 0, 11 turns against 8, 4,238 output tokens against 2,503, and
-73\,s against 35\,s of wall time. All four differences hold after a Holm
-correction over the 20 tests we ran per model ($p \leq 0.04$). When the
-time is not printed, Haiku mentions speed in 1 of 15 runs and stops when
-the tests pass. With no limit, the printed time does not trigger extra
-work (0 calls after the pass), so the trigger is the slow number, not the
-print. At 0.5 core the effect is not significant. Opus shows no effect in
-any test (all Holm $p \geq 0.08$). This explains why Haiku used 2.9 times
-more CPU under a CPU limit in Section~\ref{sec:rq2}: that task prints its
-time. A slow machine thus costs a small model twice: once directly, and
-again through the work the slowness provokes.
+\texttt{t3} prints its own run time. Task \texttt{t9} is the same task with
+that line removed. At 0.25 core, we ran each task 15 times with Haiku. When
+the time is printed, Haiku talks about speed in 15 of 15 runs and keeps
+trying to make the code faster after the tests already pass. Compared with
+the runs where the time is not printed, it makes 5 tool calls after the
+first pass against 0, takes 11 turns against 8, writes 4,238 output tokens
+against 2,503, and needs 73\,s against 35\,s of wall time. All four
+differences hold after a Holm correction over the 20 tests we ran per
+model ($p \leq 0.04$). When the time is not printed, Haiku mentions speed
+in 1 of 15 runs and stops when the tests pass. With no limit, the printed
+time does not cause extra work (0 tool calls after the pass). The cause is
+therefore the slow number, not the printed line itself. At 0.5 core, the
+effect is not significant. Opus does no extra work in any setting: 0 tool
+calls after the pass and 4 turns in every case. This explains why Haiku
+uses 2.9 times more CPU at 0.25 core (Section~\ref{sec:cross}) and takes
+extra turns in Section~\ref{sec:rq2}: that task prints its time. A slow
+machine thus costs a small model twice. It costs once directly, and again
+through the extra work that the slow number provokes.
 
 \emph{Errors that reach the agent are reported; errors that do not are
 not.} When a memory limit kills the tool, the agent sees the kill (exit
-code 137) and names the cause in its final message in 23 of 23 runs. It
-does not retry in a loop (0 to 2 tool calls after the error). Three cases
-leave the user with no explanation:
+code 137, which means the process was killed) and names the cause in its
+final message in 23 of 23 runs. It does not retry in a loop (0 to 2 tool
+calls after the error). Three cases leave the user with no explanation:
 \begin{itemize}
 \item \textbf{The kernel kills the agent instead of the tool} (2 of 25
-  runs at 576 and 512\,MB). The memory killer picks a process in the
-  group, and the agent itself is a candidate. The run ends without a
-  message.
+  runs, at 576 and 512\,MB). The kernel's out-of-memory killer picks one
+  process in the container, and the agent itself is a candidate. The run
+  then ends without a message.
 \item \textbf{A process limit crashes the agent.} Between 17 and 19
-  processes, process creation fails 1 to 6 times per run in the trace,
-  but the shell retries and the agent sees the error in only 3 of 15 runs.
-  The agent program needs threads of its own; when it cannot start one, it
-  aborts (3 of 15 runs at 17 to 19, 9 of 10 at 16 and 12).
+  processes, the trace shows 1 to 6 failed attempts to start a process
+  per run. The shell retries these attempts, so the agent sees an error
+  in only 3 of 15 runs. But the agent program also needs threads of its
+  own. When it cannot start one, it aborts: in 3 of 15 runs at 17 to 19
+  processes, and in 9 of 10 runs at 16 and 12.
 \item \textbf{Memory kills inside a test run are silent.} In the xarray
   runs under 512\,MB (Section~\ref{sec:rq3}), the kernel kills test
-  workers, and the tool output simply stops partway (for example at
-  ``34\%''), with no error flag and no exit code. In 6 of 10 runs the
-  agent saw no error at all; in none did its final answer mention memory.
-  It reran the tests instead (10 turns against 4 with no limit).
+  workers. The tool output simply stops partway (for example at
+  ``34\%''), with no error message and no exit code. In 6 of 10 runs, the
+  agent saw no error at all, and in none did its final answer mention
+  memory. Instead, it ran the tests again (10 turns against 4 with no
+  limit).
 \end{itemize}
 
 \emph{The agent does not adapt its tests to a slow machine.} On the short
 real tasks at 0.25 CPU, Opus runs the same number of tests as with no
-limit, and none of the 60 runs mentions slowness, limits or time-outs.
-Without a printed time, the agent does not notice the slow machine.
+limit. None of the 60 runs mentions slowness, limits or time-outs. When no
+time is printed, the agent does not notice that the machine is slow.
 
-\textbf{Answer to RQ5.} Yes, in two ways. A small model reacts to a slow
-number by doing extra work that doubles the run; the larger model does
-not. And the system can remove the agent's view of a failure: a memory
-kill that hits the agent or a test worker, or a process limit that crashes
-the agent, leaves no message, while the same kill on a tool is explained
-correctly every time.
+\textbf{Answer to RQ5.} Yes, in two ways. First, a small model reacts to a
+slow printed time by doing extra work, which doubles the run. The larger
+model does not. Second, the system can hide a failure from the agent. A
+memory kill that hits the agent or a test worker leaves no message, and so
+does a process limit that crashes the agent. The same kill on a tool is
+explained correctly every time.
 
 % ---------------------------------------------------------------------------
 \section{Results Across Machines and Agents}\label{sec:cross}
