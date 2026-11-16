@@ -2,7 +2,9 @@
 
 Analyzed 2026-11-13. Scripts: `split.py` (one row per single-agent run,
 `runs.csv`, 790 runs) and `table.py` (`table.txt`). Runs with no limit, no
-network change and no neighbour: 230.
+network change and no neighbour: 200 (checked 2026-11-15; the current
+`runs.csv` has 223, because it now also holds the 20 long real-task runs
+and 3 single-agent density runs).
 
 ```
 cd phase2

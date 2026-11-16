@@ -35,7 +35,7 @@ cd phase2 && python rq2/curves.py
 | Disk, coding task | none: the first step already costs | 50 MB/s (+26%) | 5 MB/s: start-up +21 s | start-up (the agent itself is read from disk) |
 | Network | all levels, in local time | none | 256 kbit/s: wall +29% | model time only |
 | Process count | 18 | 17 (+55%, failed process starts) | 16 and 12: abort in 3 s | tools |
-| More threads than cores | 2 workers | 4 workers (+24%) | 16 workers: x2.4 local | tools, CPU waiting |
+| More threads than cores | 2 workers | 8 workers (+60%; 4 workers +24%, interval [1.10-1.31] not above 1.10) | 16 workers: x2.4 local | tools, CPU waiting |
 | Busy neighbour (no limit on the agent) | an I/O neighbour (+8%) | CPU neighbour: +86% local | memory neighbour: +62% local | tools, start-up |
 
 What this means:
@@ -77,14 +77,19 @@ Script: `rq2/hidden.py` (writes `hidden.txt`, `hidden.csv`). Analyzed
   - **Cells where the model time stayed the same (moved under 2 s): 44 of
     45 within 10%, median error 3.3%.**
   - All 68 cells: 52 within 10%, median error 4.9%.
-- The misses are the cells where the model time changed, and each one has
-  a known reason:
-  - Network: the model time itself grows (+2 to +6 s), wall is above the
-    prediction by 9 to 21%.
-  - Smaller models at 0.25 and 0.5 core: the agent does more turns (RQ5),
-    +10 to +16 s model time, wall above the prediction by 15 to 33%.
-  - Busy CPU neighbour: model time 3 s lower than baseline, wall below the
-    prediction by 12 to 18%. Model service noise; I'm not sure of a cause.
+- 16 cells miss by more than 10%. In 15 of them the model time moved by
+  2 s or more, and the miss has the same sign: model slower, prediction
+  too low; model faster, prediction too high (`hidden.txt`).
+  - Network (1% and 5% loss, 256 kbit/s): model +2.6 to +5.8 s,
+    prediction 12 to 21% too low.
+  - Smaller models at tight caps (Fable t2 0.25, Fable t3 0.5 and 0.25,
+    Haiku t3 0.25): the agent does more turns (RQ5), model +3.6 to
+    +16.3 s, prediction 13 to 33% too low.
+  - Busy CPU neighbour and three Opus CPU cells (t2 0.75 and 0.375, t3
+    1 core): model 2.5 to 3.6 s faster, prediction 10 to 18% too high.
+    Model service noise; I'm not sure of a cause.
+  - Also model slower: Haiku t2 1 core, memory_cliff 704M, pids 24.
+  - The one miss with stable model time: memory_cliff 896M (15%).
 - So the error of the model is itself a measurement: it tells how much of
   the slowdown came from the model side instead of the machine.
 

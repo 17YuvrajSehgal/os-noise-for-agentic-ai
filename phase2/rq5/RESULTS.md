@@ -37,7 +37,8 @@ What this means:
   significant. On the second task (t10, the printed time is smaller) Haiku
   mentions speed in 5 of 5 runs at 25% but does not act (0 calls after the
   pass, turns 9 vs 7, p=0.15).
-- **Opus does not do this.** 0 extra calls and 4 turns in every cell. It
+- **Opus does not do this.** 0 extra calls in every cell; 4 turns at 0.25 and 0.5 core, 5 with no
+  limit. It
   writes slightly more at 25% with the time printed (1412 vs 1244 tokens,
   p=0.028, it mentions the time in 3 of 5 runs) but does no extra work.
 - RQ2's "smaller models work more under a CPU limit" (Haiku 10 turns vs 4

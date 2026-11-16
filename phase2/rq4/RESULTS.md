@@ -46,7 +46,9 @@ What this means:
   Past this point, more agents only add waiting.
 - **CPU is the limit, not memory.** Each extra agent adds about 150 MB
   (0.3 GB for one, 4.8 GB for 32). On this 15 GB machine memory would last
-  to roughly 90 agents; CPU runs out at 16.
+  to about 100 agents ((15000 - 305) / 146 MB); CPU runs out at 16.
+  xarray (RQ3) peaks at 811 MB with no limit (median), one run 972 MB:
+  above 15 GB / 16.
 - **Where the time goes:** tools (4 s to 71 s) and start-up (1.4 s to
   15 s). Model time is flat up to 16 agents and +24% at 32. Waiting for
   the model still hides some of the cost: at 4 agents the machine's part
@@ -100,7 +102,7 @@ agent (`on_cpu_s`). Plotted in `figures/fig_density.pdf`.
 | 32 | 16.5 | 89.6 | 40.7 | 19.7 |
 
 - With the CPU of one agent alone the bound is 2.5 times the measured
-  plateau. With the CPU measured at each load, the plateau is 80 to 84%
+  plateau. With the CPU measured at each load, the plateau is 79 to 84%
   of the bound. Plan capacity with the demand measured on a full machine.
 - CPU or memory first: memory runs out first when one agent's memory peak
   is above RAM / (agents at the CPU limit) = 15 GB / 16 = 0.9 GB here.

@@ -30,9 +30,9 @@ python rq3/commands.py    # -> rq3/commands.txt (same test command across settin
 | Setting (platform) | Solved | Wall, all tasks | Local, all tasks | Same test command | Throttled |
 |---|---|---|---|---|---|
 | No limit | 30/30 | 1.00 | 1.00 | 1.00 | 0 s |
-| 2 CPU / 8 GB (CI runners) | 30/30 | 1.01 [0.89-1.16] | 0.99 [0.87-1.18] | 0.98 | 0 s |
-| 2 CPU / 512 MB (agent sandbox) | 30/30 | 1.02 [0.91-1.17] | 0.99 [0.89-1.18] | 0.98 | 0 s |
-| 1 CPU / 512 MB (Cloud Run, Kubernetes example) | 30/30 | 1.03 [0.93-1.76] | 1.06 [0.95-2.89] | 1.04 (1.02 to 1.09) | 1.7 s (Django 5.4 s) |
+| 2 CPU / 8 GB (CI runners) | 30/30 | 1.01 [0.89-1.16] | 0.99 [0.88-1.19] | 0.98 | 0 s |
+| 2 CPU / 512 MB (agent sandbox) | 30/30 | 1.02 [0.92-1.16] | 0.99 [0.88-1.19] | 0.98 | 0 s |
+| 1 CPU / 512 MB (Cloud Run, Kubernetes example) | 30/30 | 1.03 [0.92-1.75] | 1.06 [0.96-2.88] | 1.04 (1.02 to 1.09) | 1.7 s (Django 5.4 s) |
 | 0.25 CPU / 512 MB (Fargate minimum) | 30/30 | **1.76 [1.50-2.02]** | **2.53 [2.11-3.03]** | **3.26 (2.94 to 3.57)** | 37 s |
 
 What this means:
@@ -74,8 +74,8 @@ What this means:
   below it, x1.8 wall, x2.5 local, and the model wait hides part of it
   (x2.5 on the machine shows as x1.8 to the user).
 - **512 MB is right at the edge.** Peak memory is 345 to 453 MB on five
-  tasks. Django reaches the 512 MB limit in 9 of 10 runs (585 MB with no
-  limit) and the kernel reclaims memory (474 reclaim events at 2 CPU /
+  tasks. Django reaches the 512 MB limit in 9 of 10 runs at 2 and 1 CPU,
+  10 of 15 with the 0.25 CPU runs (585 MB with no limit) and the kernel reclaims memory (474 reclaim events at 2 CPU /
   512 MB). It still finishes, because what is pushed out is mostly file
   cache. Django's larger test group took 1.5 times longer at 2 CPU / 512 MB
   than with no limit, but that rests on one baseline run. A slightly bigger
