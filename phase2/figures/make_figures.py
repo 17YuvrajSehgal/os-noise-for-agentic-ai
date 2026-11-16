@@ -193,7 +193,7 @@ def fig_split():
     fig, ax = plt.subplots(figsize=(3.3, 2.3))
     for y, (label, model, task, proj) in enumerate(groups):
         sel = [r for r in runs if r['model'] == model and r['task'] == task
-               and (proj is None or (r['runtime'] == 'docker' and r['task_arg'].startswith(proj + '__')))]
+               and (proj is None or (r['campaign'] == 'real' and r['task_arg'].startswith(proj + '__')))]
         left = 0
         for i, (name, ks) in enumerate(parts):
             w = 100 * statistics.mean(sum(f(r, k) for k in ks) / f(r, 'wall_s') for r in sel)
