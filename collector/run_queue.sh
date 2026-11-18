@@ -22,6 +22,11 @@ for c in "$@"; do
     [ -e "$HOME/osn-queue.stop" ] && { say "QUEUE STOPPED by ~/osn-queue.stop before $c"; exit 0; }
     free_gb=$(df --output=avail -BG "$HOME" | tail -1 | tr -dc 0-9)
     [ "$free_gb" -lt 30 ] && { say "QUEUE STOPPED: only ${free_gb} GB free before $c"; exit 1; }
+    # usage gate (set OSN_USAGE_MAX=1 to turn it off): stop before a campaign
+    # when the account's 5-hour or 7-day usage is already high
+    u=$(python3 usage.py --max "${OSN_USAGE_MAX:-0.85}"); urc=$?
+    say "$u"
+    [ $urc -ne 0 ] && { say "QUEUE STOPPED: usage too high or no answer before $c (switch account or wait)"; exit 1; }
     say "campaign $c start"
     python3 campaign.py "campaigns/$c.json" --agent "$AGENT" >> "$HOME/osn-campaign-$c.log" 2>&1
     rc=$?
