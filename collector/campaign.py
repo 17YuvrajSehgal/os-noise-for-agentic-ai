@@ -82,16 +82,23 @@ MAX_SILENT = 4      # stop after this many runs in a row with no model answer
 
 
 def model_answered(run_dir):
-    """Did any agent of this run get at least one message back from the model?"""
+    """Did any agent of this run get at least one message back from the model?
+    A usage-limit refusal ("You've hit your 5-hour limit") also arrives as an
+    assistant message, so a run whose result is that refusal does not count."""
+    answered = False
     for f in Path(run_dir).glob('a*/events.jsonl'):
         for line in open(f):
             try:
                 ev = json.loads(json.loads(line)['line'])
             except (ValueError, KeyError):
                 continue
-            if isinstance(ev, dict) and (ev.get('type') == 'assistant' or str(ev.get('type', '')).startswith('item')):
-                return True
-    return False
+            if not isinstance(ev, dict):
+                continue
+            if ev.get('type') == 'result' and 'hit your' in str(ev.get('result', '')) and 'limit' in str(ev.get('result', '')):
+                return False
+            if ev.get('type') == 'assistant' or str(ev.get('type', '')).startswith('item'):
+                answered = True
+    return answered
 
 
 if __name__ == '__main__':

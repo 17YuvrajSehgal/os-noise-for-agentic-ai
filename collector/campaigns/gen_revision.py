@@ -116,7 +116,20 @@ def core_set(m, vcpu, seed0):
     ]
 
 
+def pids_follow_up():
+    """Added 2026-11-18 after the first pass: the agent survived 16 processes on 2 vCPUs but crashed
+    at 24 on 8 vCPUs, so the crash level moves with the vCPU count. Find the edge on each machine."""
+    return {
+        'M1': [camp('m1_pids_lo', 208, 5, 'Process limit below 16 on 2 vCPUs (t3, Opus): where does the agent crash?',
+                    grid={'task': ['t3_implement.sh'], 'limits.pids_max': [14, 12, 10, 8]})],
+        'M2': [camp('m2_pids_hi', 308, 5, 'Process limit above 24 on 8 vCPUs (t3, Opus): where does the agent stop crashing?',
+                    grid={'task': ['t3_implement.sh'], 'limits.pids_max': [64, 48, 40, 32, 28]})],
+    }
+
+
 QUEUES = {'M0': m0(), 'M1': core_set('m1', 2, 200), 'M2': core_set('m2', 8, 300)}
+for _q, _c in pids_follow_up().items():
+    QUEUES[_q] += _c
 
 
 def count(c):
