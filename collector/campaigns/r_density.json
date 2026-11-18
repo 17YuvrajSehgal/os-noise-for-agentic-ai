@@ -1,0 +1,24 @@
+{
+ "name": "r_density",
+ "reps": 3,
+ "seed": 110,
+ "_note": "1 to 32 agents on t3 on the new disk (3 more groups per level; the old 3 were on the 400 GB disk).",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "agents": [
+   1,
+   2,
+   4,
+   8,
+   16,
+   32
+  ]
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "name": "r_cutout",
+ "reps": 10,
+ "seed": 103,
+ "_note": "RQ5: a test process killed by memory.max while its output is piped through tee, so the agent only sees output that stops (t12, 700 MB fixture). Opus and Haiku.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "cells": [
+  {
+   "task": "t12_silent_kill.sh",
+   "task_arg": 700,
+   "limits": {
+    "memory_max": "768M"
+   },
+   "model": "claude-opus-5-5"
+  },
+  {
+   "task": "t12_silent_kill.sh",
+   "task_arg": 700,
+   "limits": {
+    "memory_max": "768M"
+   },
+   "model": "claude-haiku-5-5"
+  },
+  {
+   "task": "t12_silent_kill.sh",
+   "task_arg": 700,
+   "limits": {},
+   "model": "claude-opus-5-5"
+  },
+  {
+   "task": "t12_silent_kill.sh",
+   "task_arg": 700,
+   "limits": {},
+   "model": "claude-haiku-5-5"
+  }
+ ]
+}

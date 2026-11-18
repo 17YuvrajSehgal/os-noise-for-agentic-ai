@@ -1,0 +1,62 @@
+{
+ "name": "m1_memory",
+ "reps": 5,
+ "seed": 203,
+ "_note": "Soft limit on file memory (t6) and hard limit on process memory (t7), m1.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "cells": [
+  {
+   "task": "t6_memtouch.sh",
+   "task_arg": 1024,
+   "limits": {
+    "memory_high": "max"
+   }
+  },
+  {
+   "task": "t6_memtouch.sh",
+   "task_arg": 1024,
+   "limits": {
+    "memory_high": "1344M"
+   }
+  },
+  {
+   "task": "t6_memtouch.sh",
+   "task_arg": 1024,
+   "limits": {
+    "memory_high": "1152M"
+   }
+  },
+  {
+   "task": "t6_memtouch.sh",
+   "task_arg": 1024,
+   "limits": {
+    "memory_high": "768M"
+   }
+  },
+  {
+   "task": "t7_memhog.sh",
+   "task_arg": 512,
+   "limits": {
+    "memory_max": "768M"
+   }
+  },
+  {
+   "task": "t7_memhog.sh",
+   "task_arg": 512,
+   "limits": {
+    "memory_max": "704M"
+   }
+  },
+  {
+   "task": "t7_memhog.sh",
+   "task_arg": 512,
+   "limits": {
+    "memory_max": "640M"
+   }
+  }
+ ]
+}

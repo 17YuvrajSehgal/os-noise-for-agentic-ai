@@ -1,0 +1,45 @@
+{
+ "name": "r_overhead",
+ "reps": 10,
+ "seed": 105,
+ "_note": "Tracing cost under limits: no trace against the full trace at 0.25 core and at memory.max 192M (t3, Opus).",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "cells": [
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   },
+   "trace": "none"
+  },
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   },
+   "trace": "full"
+  },
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "memory_max": "192M"
+   },
+   "trace": "none"
+  },
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "memory_max": "192M"
+   },
+   "trace": "full"
+  }
+ ]
+}

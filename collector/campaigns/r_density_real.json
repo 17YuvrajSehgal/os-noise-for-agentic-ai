@@ -1,0 +1,26 @@
+{
+ "name": "r_density_real",
+ "reps": 3,
+ "seed": 111,
+ "_note": "Density with a second, real task (Requests in Docker).",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold",
+  "task": "swe.sh",
+  "runtime": "docker",
+  "timeout_s": 1200
+ },
+ "grid": {
+  "task_arg": [
+   "psf__requests-5414"
+  ],
+  "agents": [
+   1,
+   2,
+   4,
+   8,
+   16
+  ]
+ }
+}

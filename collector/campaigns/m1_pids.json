@@ -1,0 +1,23 @@
+{
+ "name": "m1_pids",
+ "reps": 5,
+ "seed": 205,
+ "_note": "Process limit on t3, m1. Baseline: m1_cpu max.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "limits.pids_max": [
+   24,
+   20,
+   18,
+   17,
+   16
+  ]
+ }
+}

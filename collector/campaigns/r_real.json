@@ -1,0 +1,31 @@
+{
+ "name": "r_real",
+ "reps": 10,
+ "seed": 109,
+ "_note": "Six short SWE-bench Verified tasks in Docker, no limit and Fargate minimum (0.25 CPU / 512 MiB), 10 runs per cell on the new disk.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold",
+  "task": "swe.sh",
+  "runtime": "docker",
+  "timeout_s": 1200
+ },
+ "grid": {
+  "task_arg": [
+   "django__django-15930",
+   "sympy__sympy-24562",
+   "pydata__xarray-6461",
+   "pytest-dev__pytest-10081",
+   "pallets__flask-5014",
+   "psf__requests-5414"
+  ],
+  "limits": [
+   {},
+   {
+    "cpu_max": "25000 100000",
+    "memory_max": "512M"
+   }
+  ]
+ }
+}
