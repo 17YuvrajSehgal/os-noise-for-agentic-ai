@@ -1,0 +1,8 @@
+family,run,agent,turn,t_req,out_bytes,ttfb_s,stream_s,in_bytes,n_reads,gap_to_next_s
+m2_pids,m2_pids_t3_implement_24_r5,claude,1,1.55,29497,0.541,0.61,2553,5,0.081
+m2_pids,m2_pids_t3_implement_24_r5,claude,2,2.78,4795,0.548,0.507,2597,6,
+m2_pids,m2_pids_t3_implement_24_r4,claude,1,1.54,29453,0.472,0.61,2573,5,0.087
+m2_pids,m2_pids_t3_implement_24_r4,claude,2,2.71,4747,0.542,0.501,2610,7,
+m2_pids,m2_pids_t3_implement_24_r1,claude,1,1.53,29521,0.625,0.715,2523,5,
+m2_pids,m2_pids_t3_implement_24_r2,claude,1,1.47,29472,0.762,0.922,2522,5,
+m2_pids,m2_pids_t3_implement_24_r3,claude,1,1.53,29496,0.708,0.751,2574,5,

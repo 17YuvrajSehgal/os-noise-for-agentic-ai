@@ -1,0 +1,95 @@
+set,campaign,model,task,task_arg,runtime,limit,with_memory,role,n_base,n,failed,f,obs,replay,err_lo,err_hi,unchanged,quota,eq1_quota,eq1_measured,d_model_s
+M0 first pass,cpu,opus-5-5,t2_medium,,host,"{""cpu_max"": ""100000 100000""}",False,held-out,5,5,0,0.226,1.058,1.012,-0.285,0.38,1.0,1.0,1.0,1.048,0.2
+M0 first pass,cpu,opus-5-5,t2_medium,,host,"{""cpu_max"": ""25000 100000""}",False,held-out,5,5,0,0.226,1.47,1.453,-0.316,0.425,1.0,4.0,1.679,1.654,-1.8
+M0 first pass,cpu,opus-5-5,t2_medium,,host,"{""cpu_max"": ""37500 100000""}",False,held-out,5,5,0,0.226,1.207,1.244,-0.174,0.471,1.0,2.667,1.377,1.377,-2.4
+M0 first pass,cpu,opus-5-5,t2_medium,,host,"{""cpu_max"": ""50000 100000""}",False,held-out,5,5,0,0.226,1.114,1.141,-0.406,0.597,1.0,2.0,1.226,1.223,-1.6
+M0 first pass,cpu,opus-5-5,t2_medium,,host,"{""cpu_max"": ""75000 100000""}",False,held-out,5,5,0,0.226,0.908,1.048,-0.191,0.612,1.0,1.333,1.075,1.088,-3.2
+M0 first pass,cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""100000 100000""}",False,design,5,5,0,0.293,0.877,1.014,0.002,0.249,1.0,1.0,1.0,1.009,-2.8
+M0 first pass,cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""25000 100000""}",False,design,5,5,0,0.293,2.01,1.745,-0.434,0.005,1.0,4.0,1.88,1.847,4.6
+M0 first pass,cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""37500 100000""}",False,design,5,5,0,0.293,1.535,1.409,-0.296,0.05,1.0,2.667,1.489,1.478,1.2
+M0 first pass,cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""50000 100000""}",False,design,5,5,0,0.293,1.212,1.245,-0.092,0.082,1.0,2.0,1.293,1.251,-0.4
+M0 first pass,cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""75000 100000""}",False,design,5,5,0,0.293,1.029,1.087,-0.191,0.133,1.0,1.333,1.098,1.101,-1.6
+M0 first pass,cpu_model2,fable-5-1,t2_medium,,host,"{""cpu_max"": ""100000 100000""}",False,held-out,5,5,0,0.193,1.087,1.011,-0.354,0.842,1.0,1.0,1.0,1.031,0.8
+M0 first pass,cpu_model2,fable-5-1,t2_medium,,host,"{""cpu_max"": ""25000 100000""}",False,held-out,5,5,0,0.193,1.769,1.457,-0.586,0.397,1.0,4.0,1.578,1.524,3.8
+M0 first pass,cpu_model2,fable-5-1,t2_medium,,host,"{""cpu_max"": ""50000 100000""}",False,held-out,5,5,0,0.193,1.206,1.144,-0.177,0.776,1.0,2.0,1.193,1.18,0.4
+M0 first pass,cpu_model2,fable-5-1,t3_implement,,host,"{""cpu_max"": ""100000 100000""}",False,held-out,5,5,0,0.243,1.008,1.014,-0.454,0.274,1.0,1.0,1.0,1.012,-0.4
+M0 first pass,cpu_model2,fable-5-1,t3_implement,,host,"{""cpu_max"": ""25000 100000""}",False,held-out,5,5,0,0.243,3.26,1.699,-0.527,-0.227,1.0,4.0,1.728,2.396,10.8
+M0 first pass,cpu_model2,fable-5-1,t3_implement,,host,"{""cpu_max"": ""50000 100000""}",False,held-out,5,5,0,0.243,2.493,1.257,-0.614,-0.257,1.0,2.0,1.243,1.551,15.8
+M0 first pass,cpu_model2,haiku-5-5,t2_medium,,host,"{""cpu_max"": ""100000 100000""}",False,held-out,5,5,0,0.249,1.281,1.012,-0.413,0.141,1.0,1.0,1.0,1.113,3.4
+M0 first pass,cpu_model2,haiku-5-5,t2_medium,,host,"{""cpu_max"": ""25000 100000""}",False,held-out,5,5,0,0.249,1.67,1.484,-0.396,0.175,1.0,4.0,1.746,1.707,1.4
+M0 first pass,cpu_model2,haiku-5-5,t2_medium,,host,"{""cpu_max"": ""50000 100000""}",False,held-out,5,5,0,0.249,1.214,1.151,-0.451,0.168,1.0,2.0,1.249,1.209,1.6
+M0 first pass,cpu_model2,haiku-5-5,t3_implement,,host,"{""cpu_max"": ""100000 100000""}",False,held-out,5,5,0,0.317,1.004,1.021,-0.334,0.383,1.0,1.0,1.0,1.008,-1.0
+M0 first pass,cpu_model2,haiku-5-5,t3_implement,,host,"{""cpu_max"": ""25000 100000""}",False,held-out,5,5,0,0.317,4.956,1.872,-0.807,0.07,1.0,4.0,1.95,4.12,16.4
+M0 first pass,cpu_model2,haiku-5-5,t3_implement,,host,"{""cpu_max"": ""50000 100000""}",False,held-out,5,5,0,0.317,1.322,1.251,-0.615,0.266,1.0,2.0,1.317,1.271,1.2
+M0 first pass,disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 104857600}}",False,held-out,5,5,0,0.423,1.385,1.393,-0.336,0.044,1.0,1.0,1.0,1.428,-0.2
+M0 first pass,disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 157286400}}",False,held-out,5,5,0,0.423,1.19,1.164,-0.102,0.009,1.0,1.0,1.0,1.178,-0.0
+M0 first pass,disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 209715200}}",False,held-out,5,5,0,0.423,1.065,1.054,-0.139,0.062,1.0,1.0,1.0,1.048,-0.0
+M0 first pass,disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 20971520}}",False,held-out,5,5,0,0.423,4.602,4.248,-0.133,-0.063,1.0,1.0,1.0,4.41,2.6
+M0 first pass,disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 52428800}}",False,held-out,5,5,0,0.423,2.26,2.091,-0.125,-0.007,1.0,1.0,1.0,2.149,1.6
+M0 first pass,e2e_disk,opus-5-5,t3_implement,,host,"{""io_max"": {""rbps"": 20971520}}",False,held-out,5,5,0,0.286,1.287,1.09,-0.242,-0.008,1.0,1.0,1.0,1.218,1.6
+M0 first pass,e2e_disk,opus-5-5,t3_implement,,host,"{""io_max"": {""rbps"": 52428800}}",False,held-out,5,5,0,0.286,1.052,1.007,-0.127,0.136,1.0,1.0,1.0,1.065,-1.0
+M0 first pass,e2e_disk,opus-5-5,t3_implement,,host,"{""io_max"": {""rbps"": 5242880}}",False,held-out,5,5,0,0.286,2.23,1.596,-0.33,-0.212,1.0,1.0,1.0,2.162,0.6
+M0 first pass,real,opus-5-5,swe,django__django-15930,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.344,1.072,1.187,-0.17,0.297,1.0,1.0,1.0,1.039,2.2
+M0 first pass,real,opus-5-5,swe,django__django-15930,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.344,1.066,1.049,-0.209,0.266,1.0,1.0,1.0,1.033,2.2
+M0 first pass,real,opus-5-5,swe,django__django-15930,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""8G""}",True,held-out,5,5,0,0.344,1.008,1.049,-0.22,0.209,1.0,1.0,1.0,0.95,3.8
+M0 first pass,real,opus-5-5,swe,pallets__flask-5014,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.478,1.111,1.02,-0.463,0.469,1.0,1.0,1.0,1.066,0.6
+M0 first pass,real,opus-5-5,swe,pallets__flask-5014,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.478,1.076,1.0,-0.451,0.504,1.0,1.0,1.0,0.977,2.2
+M0 first pass,real,opus-5-5,swe,pallets__flask-5014,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""8G""}",True,held-out,5,5,0,0.478,1.031,1.0,-0.427,0.87,1.0,1.0,1.0,0.997,0.4
+M0 first pass,real,opus-5-5,swe,psf__requests-5414,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.405,0.872,1.014,-0.802,0.294,1.0,1.0,1.0,1.037,-3.4
+M0 first pass,real,opus-5-5,swe,psf__requests-5414,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.405,0.924,1.0,-0.079,0.251,1.0,1.0,1.0,0.995,-3.0
+M0 first pass,real,opus-5-5,swe,psf__requests-5414,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""8G""}",True,held-out,5,5,0,0.405,0.99,1.0,-0.181,0.276,1.0,1.0,1.0,1.045,-2.4
+M0 first pass,real,opus-5-5,swe,pydata__xarray-6461,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.578,1.082,1.037,-0.15,0.997,1.0,1.0,1.0,1.036,0.8
+M0 first pass,real,opus-5-5,swe,pydata__xarray-6461,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.578,1.117,1.003,-0.271,0.843,1.0,1.0,1.0,1.005,2.6
+M0 first pass,real,opus-5-5,swe,pydata__xarray-6461,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""8G""}",True,held-out,5,5,0,0.578,1.046,1.003,-0.101,0.968,1.0,1.0,1.0,1.008,1.6
+M0 first pass,real,opus-5-5,swe,pytest-dev__pytest-10081,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.471,0.914,1.008,-0.156,0.446,1.0,1.0,1.0,0.985,0.4
+M0 first pass,real,opus-5-5,swe,pytest-dev__pytest-10081,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.471,0.866,1.0,-0.096,0.514,1.0,1.0,1.0,0.979,-0.6
+M0 first pass,real,opus-5-5,swe,pytest-dev__pytest-10081,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""8G""}",True,held-out,5,5,0,0.471,0.9,1.0,-0.153,0.456,1.0,1.0,1.0,0.994,-0.2
+M0 first pass,real,opus-5-5,swe,sympy__sympy-24562,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.42,1.1,1.031,-0.206,0.147,1.0,1.0,1.0,1.037,1.6
+M0 first pass,real,opus-5-5,swe,sympy__sympy-24562,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.42,1.069,1.0,-0.219,0.114,1.0,1.0,1.0,1.006,1.6
+M0 first pass,real,opus-5-5,swe,sympy__sympy-24562,docker,"{""cpu_max"": ""200000 100000"", ""memory_max"": ""8G""}",True,held-out,5,5,0,0.42,1.104,1.0,-0.219,0.078,1.0,1.0,1.0,1.003,0.8
+M0 first pass,real_long,opus-5-5,swe,django__django-15957,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.179,1.208,1.059,-0.426,0.177,1.0,1.0,1.0,1.12,2.8
+M0 first pass,real_long,opus-5-5,swe,django__django-15957,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.179,2.02,1.792,-0.324,0.004,1.0,4.0,1.538,1.978,4.2
+M0 first pass,real_long,opus-5-5,swe,pydata__xarray-6992,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,5,0.614,5.092,1.083,-0.864,0.376,1.0,1.0,1.0,4.775,17.8
+M0 first pass,real_long,opus-5-5,swe,pydata__xarray-6992,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,5,0.614,11.95,2.763,-0.825,1.145,1.0,4.0,2.842,12.751,19.2
+M0 first pass,real_long,opus-5-5,swe,pytest-dev__pytest-10356,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,3,0.437,1.178,1.012,-0.337,4.547,1.0,1.0,1.0,1.083,5.0
+M0 first pass,real_long,opus-5-5,swe,pytest-dev__pytest-10356,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,4,0.437,2.464,2.242,-0.265,8.749,1.0,4.0,2.311,2.475,1.2
+M0 first pass,real_long,opus-5-5,swe,sympy__sympy-14248,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.267,0.96,1.014,-0.366,1.054,1.0,1.0,1.0,0.991,-5.0
+M0 first pass,real_long,opus-5-5,swe,sympy__sympy-14248,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.267,1.919,1.974,-0.232,1.612,1.0,4.0,1.801,1.724,0.6
+M0 revision,r_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""100000 100000""}",False,held-out,15,15,0,0.296,0.94,1.015,-0.027,0.171,1.0,1.0,1.0,1.0,-1.2
+M0 revision,r_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""25000 100000""}",False,held-out,15,15,0,0.296,1.836,1.798,-0.092,0.054,1.0,4.0,1.887,1.872,-0.6
+M0 revision,r_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""50000 100000""}",False,held-out,15,15,0,0.296,1.174,1.281,-0.028,0.154,1.0,2.0,1.296,1.273,-1.8
+M0 revision,r_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""75000 100000""}",False,held-out,15,15,0,0.296,1.071,1.101,-0.083,0.101,1.0,1.333,1.099,1.084,0.6
+M0 revision,r_feedback_ref,haiku-5-5,t3_implement,,host,"{""cpu_max"": ""25000 100000""}",False,held-out,10,10,0,0.309,4.368,1.708,-0.658,-0.504,1.0,4.0,1.927,4.266,8.6
+M0 revision,r_real,opus-5-5,swe,django__django-15930,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,10,10,0,0.213,2.096,1.949,-0.245,0.102,1.0,4.0,1.638,1.892,1.1
+M0 revision,r_real,opus-5-5,swe,pallets__flask-5014,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,10,10,0,0.434,1.553,2.109,-0.145,0.627,1.0,4.0,2.302,1.242,3.3
+M0 revision,r_real,opus-5-5,swe,psf__requests-5414,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,10,10,0,0.279,1.57,1.497,-0.194,0.122,1.0,4.0,1.836,1.7,0.3
+M0 revision,r_real,opus-5-5,swe,pydata__xarray-6461,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,10,10,0,0.409,2.087,2.061,-0.076,0.129,1.0,4.0,2.228,2.054,-0.0
+M0 revision,r_real,opus-5-5,swe,pytest-dev__pytest-10081,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,10,10,0,0.271,1.682,1.765,-0.228,0.158,1.0,4.0,1.813,1.774,-1.5
+M0 revision,r_real,opus-5-5,swe,sympy__sympy-24562,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,10,10,0,0.315,1.851,1.835,-0.134,0.055,1.0,4.0,1.945,2.012,-4.0
+M1,m1_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""100000 100000""}",False,held-out,10,10,0,0.321,1.129,1.011,-0.189,-0.044,1.0,1.0,1.0,1.016,2.1
+M1,m1_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""25000 100000""}",False,held-out,10,10,0,0.321,2.555,1.831,-0.392,-0.137,1.0,4.0,1.964,2.219,5.6
+M1,m1_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""50000 100000""}",False,held-out,10,10,0,0.321,1.325,1.277,-0.144,0.04,1.0,2.0,1.321,1.318,0.4
+M1,m1_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""75000 100000""}",False,held-out,10,10,0,0.321,1.102,1.093,-0.161,0.045,1.0,1.333,1.107,1.121,-0.2
+M1,m1_disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 157286400}}",False,held-out,5,5,0,0.512,1.209,1.07,-0.137,0.056,1.0,1.0,1.0,1.106,1.6
+M1,m1_disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 20971520}}",False,held-out,5,5,0,0.512,4.417,4.112,-0.101,-0.041,1.0,1.0,1.0,4.439,1.4
+M1,m1_disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 52428800}}",False,held-out,5,5,0,0.512,2.149,1.986,-0.132,-0.022,1.0,1.0,1.0,2.097,1.6
+M1,m1_real,opus-5-5,swe,django__django-15930,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.289,1.012,1.053,-0.24,0.167,1.0,1.0,1.0,1.037,-0.6
+M1,m1_real,opus-5-5,swe,django__django-15930,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.289,2.38,1.736,-0.534,0.133,1.0,4.0,1.866,2.401,0.4
+M1,m1_real,opus-5-5,swe,psf__requests-5414,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.303,0.847,1.009,-0.071,3.975,1.0,1.0,1.0,1.02,-3.4
+M1,m1_real,opus-5-5,swe,psf__requests-5414,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.303,1.537,1.522,-0.189,2.312,1.0,4.0,1.91,1.774,-3.0
+M1,m1_real,opus-5-5,swe,sympy__sympy-24562,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.359,1.014,1.033,-0.075,0.205,1.0,1.0,1.0,1.023,-0.6
+M1,m1_real,opus-5-5,swe,sympy__sympy-24562,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.359,2.165,1.953,-0.221,0.003,1.0,4.0,2.077,2.099,-0.2
+M2,m2_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""100000 100000""}",False,held-out,10,10,0,0.274,1.026,1.011,-0.071,0.077,1.0,1.0,1.0,1.013,0.2
+M2,m2_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""200000 100000""}",False,held-out,10,10,0,0.274,1.034,1.0,-0.116,0.06,1.0,1.0,1.0,0.999,0.7
+M2,m2_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""25000 100000""}",False,held-out,10,10,0,0.274,1.853,1.728,-0.333,-0.022,1.0,4.0,1.822,1.827,-0.0
+M2,m2_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""50000 100000""}",False,held-out,10,10,0,0.274,1.233,1.235,-0.122,0.034,1.0,2.0,1.274,1.268,-0.6
+M2,m2_cpu,opus-5-5,t3_implement,,host,"{""cpu_max"": ""75000 100000""}",False,held-out,10,10,0,0.274,1.119,1.079,-0.079,0.03,1.0,1.333,1.091,1.088,0.6
+M2,m2_disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 157286400}}",False,held-out,5,5,0,0.533,1.135,1.073,-0.238,-0.022,1.0,1.0,1.0,1.072,1.0
+M2,m2_disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 20971520}}",False,held-out,5,5,0,0.533,4.703,4.247,-0.142,-0.087,1.0,1.0,1.0,4.467,3.4
+M2,m2_disk,opus-5-5,t8_ioread,1024,host,"{""io_max"": {""rbps"": 52428800}}",False,held-out,5,5,0,0.533,2.211,2.025,-0.18,-0.046,1.0,1.0,1.0,2.074,2.0
+M2,m2_real,opus-5-5,swe,django__django-15930,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.285,1.373,1.102,-0.301,0.01,1.0,1.0,1.0,1.358,0.6
+M2,m2_real,opus-5-5,swe,django__django-15930,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.285,2.003,1.942,-0.4,0.099,1.0,4.0,1.854,2.023,1.2
+M2,m2_real,opus-5-5,swe,psf__requests-5414,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.337,0.957,1.013,-0.225,0.566,1.0,1.0,1.0,0.93,0.6
+M2,m2_real,opus-5-5,swe,psf__requests-5414,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.337,1.571,1.665,-0.091,0.391,1.0,4.0,2.01,1.576,-0.8
+M2,m2_real,opus-5-5,swe,sympy__sympy-24562,docker,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.354,1.049,1.037,-0.076,0.072,1.0,1.0,1.0,1.042,-0.2
+M2,m2_real,opus-5-5,swe,sympy__sympy-24562,docker,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",True,held-out,5,5,0,0.354,2.112,1.94,-0.183,-0.016,1.0,4.0,2.061,2.142,-0.2

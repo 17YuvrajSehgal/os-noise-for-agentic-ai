@@ -37,7 +37,7 @@ go)
         m0) vm=agentic-noise-2; q=$M0 ;; m1) vm=osn-m1; q=$M1 ;; m2) vm=osn-m2; q=$M2 ;;
         *) echo "go m0|m1|m2"; exit 1 ;;
     esac
-    ssh_ $vm "cd ~/collector && nohup bash run_queue.sh claude $q > /dev/null 2>&1 & echo started $2 on $vm" ;;
+    ssh_ $vm "cd ~/collector && setsid nohup bash run_queue.sh claude $q > /dev/null 2>&1 < /dev/null & echo started $2 on $vm" ;;
 usage)
     for vm in ${2:-$VMS}; do echo "== $vm"; ssh_ $vm 'cd ~/collector && python3 usage.py'; done ;;
 status)

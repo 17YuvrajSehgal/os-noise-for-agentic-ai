@@ -1,0 +1,895 @@
+campaign,run,limits,wall,local,hidden_s,work_cpu_s,hidden_cpu_s
+r_cpu,r_cpu_t3_implement_75000_r6,"{""cpu_max"": ""75000 100000""}",102.161,77.722,0.016,3.314,0.008
+r_cpu,r_cpu_t3_implement_75000_r14,"{""cpu_max"": ""75000 100000""}",22.51,6.948,0.012,3.282,0.01
+r_cpu,r_cpu_t3_implement_25000_r8,"{""cpu_max"": ""25000 100000""}",58.267,37.876,0.007,7.298,0.005
+r_cpu,r_cpu_t3_implement_25000_r15,"{""cpu_max"": ""25000 100000""}",41.24,24.199,0.01,3.927,0.009
+r_cpu,r_cpu_t3_implement_25000_r12,"{""cpu_max"": ""25000 100000""}",42.0,24.857,0.094,4.077,0.008
+r_cpu,r_cpu_t3_implement_25000_r10,"{""cpu_max"": ""25000 100000""}",40.356,25.403,0.096,4.076,0.007
+r_cpu,r_cpu_t3_implement_25000_r5,"{""cpu_max"": ""25000 100000""}",39.051,24.164,0.015,3.939,0.008
+r_cpu,r_cpu_t3_implement_max_r15,{},21.009,6.069,0.021,3.738,0.005
+r_cpu,r_cpu_t3_implement_25000_r7,"{""cpu_max"": ""25000 100000""}",40.029,25.601,0.09,4.19,0.005
+r_cpu,r_cpu_t3_implement_50000_r10,"{""cpu_max"": ""50000 100000""}",34.753,17.322,0.014,6.668,0.007
+r_cpu,r_cpu_t3_implement_25000_r11,"{""cpu_max"": ""25000 100000""}",38.864,23.85,0.091,3.888,0.005
+r_cpu,r_cpu_t3_implement_25000_r14,"{""cpu_max"": ""25000 100000""}",37.378,23.9,0.009,3.818,0.004
+r_cpu,r_cpu_t3_implement_25000_r4,"{""cpu_max"": ""25000 100000""}",38.578,24.057,0.009,3.904,0.008
+r_cpu,r_cpu_t3_implement_25000_r3,"{""cpu_max"": ""25000 100000""}",37.384,24.143,0.005,3.882,0.004
+r_cpu,r_cpu_t3_implement_25000_r9,"{""cpu_max"": ""25000 100000""}",36.727,23.361,0.009,3.841,0.007
+r_cpu,r_cpu_t3_implement_25000_r2,"{""cpu_max"": ""25000 100000""}",37.043,23.142,0.093,3.751,0.005
+r_cpu,r_cpu_t3_implement_25000_r1,"{""cpu_max"": ""25000 100000""}",37.25,23.7,0.092,3.891,0.006
+r_cpu,r_cpu_t3_implement_25000_r13,"{""cpu_max"": ""25000 100000""}",36.672,23.314,0.086,3.769,0.005
+r_cpu,r_cpu_t3_implement_25000_r6,"{""cpu_max"": ""25000 100000""}",36.227,23.399,0.09,3.813,0.006
+r_cpu,r_cpu_t3_implement_50000_r15,"{""cpu_max"": ""50000 100000""}",29.736,13.836,0.017,4.767,0.007
+r_cpu,r_cpu_t3_implement_max_r6,{},22.952,6.205,0.032,4.029,0.019
+r_cpu,r_cpu_t3_implement_max_r2,{},25.501,5.879,0.016,3.888,0.004
+r_cpu,r_cpu_t3_implement_max_r4,{},22.465,6.027,0.031,3.875,0.015
+r_cpu,r_cpu_t3_implement_75000_r8,"{""cpu_max"": ""75000 100000""}",25.394,8.975,0.047,4.759,0.01
+r_cpu,r_cpu_t3_implement_max_r9,{},23.12,6.481,0.017,4.382,0.011
+r_cpu,r_cpu_t3_implement_max_r10,{},22.534,6.051,0.02,3.959,0.014
+r_cpu,r_cpu_t3_implement_50000_r4,"{""cpu_max"": ""50000 100000""}",27.041,11.77,0.014,3.76,0.007
+r_cpu,r_cpu_t3_implement_75000_r10,"{""cpu_max"": ""75000 100000""}",25.186,9.217,0.043,4.733,0.006
+r_cpu,r_cpu_t3_implement_max_r12,{},21.079,6.818,0.029,4.717,0.023
+r_cpu,r_cpu_t3_implement_max_r13,{},20.869,5.962,0.03,3.903,0.014
+r_cpu,r_cpu_t3_implement_max_r7,{},21.581,6.756,0.018,4.77,0.005
+r_cpu,r_cpu_t3_implement_max_r5,{},20.857,5.907,0.015,3.868,0.005
+r_cpu,r_cpu_t3_implement_75000_r11,"{""cpu_max"": ""75000 100000""}",24.105,8.642,0.017,4.364,0.009
+r_cpu,r_cpu_t3_implement_50000_r5,"{""cpu_max"": ""50000 100000""}",25.818,11.796,0.013,3.867,0.008
+r_cpu,r_cpu_t3_implement_50000_r6,"{""cpu_max"": ""50000 100000""}",25.594,10.285,0.018,3.319,0.009
+r_cpu,r_cpu_t3_implement_50000_r13,"{""cpu_max"": ""50000 100000""}",24.674,12.486,0.01,3.798,0.007
+r_cpu,r_cpu_t3_implement_75000_r15,"{""cpu_max"": ""75000 100000""}",24.386,7.885,0.018,3.957,0.012
+r_cpu,r_cpu_t3_implement_max_r14,{},19.571,5.888,0.02,3.874,0.008
+r_cpu,r_cpu_t3_implement_75000_r3,"{""cpu_max"": ""75000 100000""}",22.536,7.102,0.018,3.292,0.007
+r_cpu,r_cpu_t3_implement_50000_r12,"{""cpu_max"": ""50000 100000""}",26.63,11.267,0.011,3.842,0.004
+r_cpu,r_cpu_t3_implement_75000_r13,"{""cpu_max"": ""75000 100000""}",21.802,7.787,0.01,3.876,0.006
+r_cpu,r_cpu_t3_implement_75000_r2,"{""cpu_max"": ""75000 100000""}",22.84,7.024,0.01,3.315,0.005
+r_cpu,r_cpu_t3_implement_75000_r1,"{""cpu_max"": ""75000 100000""}",22.461,6.841,0.016,3.33,0.014
+r_cpu,r_cpu_t3_implement_max_r3,{},18.911,5.886,0.024,3.886,0.01
+r_cpu,r_cpu_t3_implement_75000_r9,"{""cpu_max"": ""75000 100000""}",22.289,6.446,0.019,2.833,0.014
+r_cpu,r_cpu_t3_implement_100000_r6,"{""cpu_max"": ""100000 100000""}",21.906,6.148,0.015,3.823,0.007
+r_cpu,r_cpu_t3_implement_75000_r7,"{""cpu_max"": ""75000 100000""}",21.418,6.909,0.013,3.278,0.006
+r_cpu,r_cpu_t3_implement_100000_r8,"{""cpu_max"": ""100000 100000""}",21.618,5.927,0.017,3.545,0.011
+r_cpu,r_cpu_t3_implement_50000_r8,"{""cpu_max"": ""50000 100000""}",23.219,11.885,0.009,3.816,0.006
+r_cpu,r_cpu_t3_implement_100000_r7,"{""cpu_max"": ""100000 100000""}",20.741,5.435,0.018,3.235,0.008
+r_cpu,r_cpu_t3_implement_100000_r3,"{""cpu_max"": ""100000 100000""}",22.023,5.714,0.015,3.328,0.01
+r_cpu,r_cpu_t3_implement_50000_r7,"{""cpu_max"": ""50000 100000""}",23.439,11.768,0.012,3.817,0.005
+r_cpu,r_cpu_t3_implement_100000_r5,"{""cpu_max"": ""100000 100000""}",19.279,6.27,0.017,3.955,0.009
+r_cpu,r_cpu_t3_implement_50000_r11,"{""cpu_max"": ""50000 100000""}",23.656,11.481,0.015,3.797,0.006
+r_cpu,r_cpu_t3_implement_100000_r15,"{""cpu_max"": ""100000 100000""}",19.756,6.221,0.019,3.862,0.008
+r_cpu,r_cpu_t3_implement_50000_r1,"{""cpu_max"": ""50000 100000""}",24.146,10.664,0.011,3.68,0.004
+r_cpu,r_cpu_t3_implement_50000_r14,"{""cpu_max"": ""50000 100000""}",24.673,11.463,0.065,3.806,0.007
+r_cpu,r_cpu_t3_implement_100000_r14,"{""cpu_max"": ""100000 100000""}",19.638,6.262,0.015,3.935,0.011
+r_cpu,r_cpu_t3_implement_50000_r2,"{""cpu_max"": ""50000 100000""}",23.782,11.619,0.011,3.798,0.006
+r_cpu,r_cpu_t3_implement_100000_r13,"{""cpu_max"": ""100000 100000""}",19.82,5.632,0.019,3.261,0.01
+r_cpu,r_cpu_t3_implement_100000_r9,"{""cpu_max"": ""100000 100000""}",19.564,5.577,0.028,3.309,0.008
+r_cpu,r_cpu_t3_implement_50000_r9,"{""cpu_max"": ""50000 100000""}",24.33,11.863,0.007,3.819,0.006
+r_cpu,r_cpu_t3_implement_100000_r12,"{""cpu_max"": ""100000 100000""}",20.44,5.567,0.014,3.274,0.007
+r_cpu,r_cpu_t3_implement_max_r11,{},18.001,5.804,0.012,3.797,0.004
+r_cpu,r_cpu_t3_implement_max_r1,{},18.694,6.207,0.01,4.218,0.004
+r_cpu,r_cpu_t3_implement_75000_r4,"{""cpu_max"": ""75000 100000""}",20.4,8.303,0.017,3.829,0.009
+r_cpu,r_cpu_t3_implement_75000_r5,"{""cpu_max"": ""75000 100000""}",20.736,7.627,0.011,3.751,0.005
+r_cpu,r_cpu_t3_implement_50000_r3,"{""cpu_max"": ""50000 100000""}",23.228,11.757,0.069,3.943,0.004
+r_cpu,r_cpu_t3_implement_100000_r4,"{""cpu_max"": ""100000 100000""}",18.795,5.995,0.009,3.709,0.005
+r_cpu,r_cpu_t3_implement_100000_r11,"{""cpu_max"": ""100000 100000""}",19.819,6.584,0.013,3.775,0.011
+r_cpu,r_cpu_t3_implement_75000_r12,"{""cpu_max"": ""75000 100000""}",19.032,7.899,0.056,3.724,0.006
+r_cpu,r_cpu_t3_implement_100000_r1,"{""cpu_max"": ""100000 100000""}",18.288,6.015,0.01,3.709,0.007
+r_cpu,r_cpu_t3_implement_100000_r10,"{""cpu_max"": ""100000 100000""}",17.33,5.502,0.009,3.128,0.009
+r_cpu,r_cpu_t3_implement_100000_r2,"{""cpu_max"": ""100000 100000""}",18.062,6.077,0.009,3.802,0.005
+r_cpu,r_cpu_t3_implement_max_r8,{},16.209,5.413,0.013,3.535,0.006
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r1,"{""cpu_max"": ""25000 100000""}",111.302,58.313,0.011,12.283,0.006
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r15,"{""cpu_max"": ""25000 100000""}",102.83,50.894,0.016,10.273,0.005
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r5,"{""cpu_max"": ""25000 100000""}",115.873,51.83,0.008,10.752,0.007
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r7,"{""cpu_max"": ""25000 100000""}",95.18,52.968,0.008,11.075,0.005
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r11,"{""cpu_max"": ""25000 100000""}",51.824,37.461,0.702,7.334,0.143
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r12,"{""cpu_max"": ""25000 100000""}",59.287,37.954,0.0,5.615,0.0
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r6,"{""cpu_max"": ""25000 100000""}",85.013,49.577,0.0,10.32,0.0
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r13,"{""cpu_max"": ""25000 100000""}",74.959,39.105,0.009,7.765,0.0
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r15,"{""cpu_max"": ""25000 100000""}",66.983,28.88,0.011,4.943,0.004
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r11,"{""cpu_max"": ""25000 100000""}",72.841,37.192,0.01,7.279,0.0
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r3,"{""cpu_max"": ""25000 100000""}",62.065,38.578,0.006,7.013,0.001
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r7,"{""cpu_max"": ""25000 100000""}",44.66,29.777,0.015,5.42,0.006
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r4,"{""cpu_max"": ""25000 100000""}",64.359,37.083,0.005,7.191,0.005
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r10,"{""cpu_max"": ""25000 100000""}",60.844,36.113,0.008,6.875,0.0
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r2,"{""cpu_max"": ""25000 100000""}",61.729,35.143,0.004,6.722,0.004
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r9,"{""cpu_max"": ""25000 100000""}",59.724,36.124,0.008,6.921,0.0
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r14,"{""cpu_max"": ""25000 100000""}",57.027,35.39,0.003,6.799,0.0
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r10,"{""cpu_max"": ""25000 100000""}",42.459,23.065,0.087,3.621,0.005
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r3,"{""cpu_max"": ""25000 100000""}",49.044,36.769,0.713,7.182,0.151
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r5,"{""cpu_max"": ""25000 100000""}",39.873,23.063,0.005,3.643,0.004
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r4,"{""cpu_max"": ""25000 100000""}",49.515,36.848,0.714,7.26,0.156
+r_feedback,r_feedback_t3_implement__cpu_max25000_claude-fable-5-1_r8,"{""cpu_max"": ""25000 100000""}",51.559,27.225,0.003,4.835,0.0
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r14,"{""cpu_max"": ""25000 100000""}",39.983,22.258,0.007,2.95,0.001
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r8,"{""cpu_max"": ""25000 100000""}",41.682,20.845,0.003,3.334,0.003
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r10,"{""cpu_max"": ""25000 100000""}",35.47,20.638,0.012,3.403,0.0
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r1,"{""cpu_max"": ""25000 100000""}",38.343,23.046,0.0,3.726,0.0
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r7,"{""cpu_max"": ""25000 100000""}",37.375,23.737,0.003,3.993,0.0
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r6,"{""cpu_max"": ""25000 100000""}",38.239,23.255,0.0,3.921,0.0
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r12,"{""cpu_max"": ""25000 100000""}",37.309,22.428,0.0,3.619,0.0
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r11,"{""cpu_max"": ""25000 100000""}",34.36,19.869,0.003,3.132,0.001
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r2,"{""cpu_max"": ""25000 100000""}",36.266,22.626,0.0,3.68,0.0
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r12,"{""cpu_max"": ""25000 100000""}",36.688,23.774,0.006,4.184,0.0
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r7,"{""cpu_max"": ""25000 100000""}",32.653,21.048,0.008,3.346,0.005
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r12,"{""cpu_max"": ""25000 100000""}",32.834,19.896,0.017,3.277,0.003
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r11,"{""cpu_max"": ""25000 100000""}",36.789,23.66,0.0,3.938,0.0
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r6,{},25.344,5.008,0.041,3.079,0.007
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r5,"{""cpu_max"": ""25000 100000""}",32.64,18.382,0.01,2.872,0.004
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r9,"{""cpu_max"": ""25000 100000""}",36.031,22.248,0.003,3.614,0.0
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r8,"{""cpu_max"": ""25000 100000""}",36.077,22.272,0.005,3.708,0.0
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r3,"{""cpu_max"": ""25000 100000""}",35.247,21.726,0.001,3.601,0.0
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r6,"{""cpu_max"": ""25000 100000""}",31.359,19.714,0.006,3.131,0.004
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r9,"{""cpu_max"": ""25000 100000""}",30.887,19.719,0.018,3.071,0.01
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r14,"{""cpu_max"": ""25000 100000""}",35.448,19.821,0.003,3.074,0.0
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r6,"{""cpu_max"": ""25000 100000""}",31.072,19.349,0.005,3.045,0.002
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r1,"{""cpu_max"": ""25000 100000""}",33.336,22.162,0.002,3.747,0.002
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r10,"{""cpu_max"": ""25000 100000""}",31.701,19.951,0.006,3.243,0.004
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r2,"{""cpu_max"": ""25000 100000""}",30.317,19.9,0.001,3.245,0.0
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r2,"{""cpu_max"": ""25000 100000""}",33.391,23.578,0.0,4.038,0.0
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r8,"{""cpu_max"": ""25000 100000""}",28.512,19.116,0.009,3.047,0.003
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r3,"{""cpu_max"": ""25000 100000""}",29.183,14.356,0.004,1.84,0.003
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r9,"{""cpu_max"": ""25000 100000""}",31.453,21.351,0.0,3.532,0.0
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r11,{},18.531,4.965,0.03,3.155,0.005
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r13,"{""cpu_max"": ""25000 100000""}",28.884,14.417,0.003,1.816,0.0
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r4,"{""cpu_max"": ""25000 100000""}",29.881,17.562,0.0,2.605,0.0
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r10,{},18.365,5.026,0.022,2.992,0.011
+r_feedback,r_feedback_t9_implement_quiet__cpu_max25000_claude-fable-5-1_r4,"{""cpu_max"": ""25000 100000""}",27.819,14.067,0.0,1.766,0.0
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r3,{},19.806,4.318,0.027,2.355,0.007
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r5,"{""cpu_max"": ""25000 100000""}",29.34,19.308,0.0,2.987,0.0
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r5,{},19.123,4.986,0.02,3.122,0.006
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r14,"{""cpu_max"": ""25000 100000""}",26.785,18.29,0.009,2.749,0.0
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r1,"{""cpu_max"": ""25000 100000""}",26.718,18.216,0.0,2.782,0.0
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r15,"{""cpu_max"": ""25000 100000""}",26.695,17.973,0.0,2.665,0.0
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r13,"{""cpu_max"": ""25000 100000""}",25.961,17.506,0.0,2.671,0.0
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r8,{},16.747,4.718,0.019,2.816,0.01
+r_feedback,r_feedback_t11_implement_variants_instruct_cpu_max25000_claude-haiku-5-5_r15,"{""cpu_max"": ""25000 100000""}",26.166,17.961,0.006,2.667,0.005
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r2,{},18.516,5.599,0.005,3.691,0.0
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r15,{},17.73,4.341,0.016,2.579,0.007
+r_feedback,r_feedback_t11_implement_variants_const_fast_cpu_max25000_claude-haiku-5-5_r13,"{""cpu_max"": ""25000 100000""}",25.281,15.515,0.007,2.13,0.002
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r13,{},15.535,5.584,0.014,3.073,0.007
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r14,{},17.205,5.426,0.007,3.661,0.002
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r1,{},16.36,5.603,0.012,3.658,0.004
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r9,{},16.008,5.616,0.006,3.664,0.002
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r7,{},16.659,5.807,0.016,3.983,0.007
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r12,{},14.742,4.049,0.01,2.14,0.002
+r_feedback,r_feedback_t11_implement_variants_const_slow_cpu_maxmax_claude-haiku-5-5_r4,{},14.523,4.585,0.007,2.729,0.007
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r4,"{""cpu_max"": ""25000 100000""}",151.513,123.251,0.037,27.531,0.016
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r7,"{""cpu_max"": ""25000 100000""}",92.769,71.964,0.025,15.821,0.014
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r10,"{""cpu_max"": ""25000 100000""}",47.829,38.329,0.772,7.463,0.148
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r10,"{""cpu_max"": ""25000 100000""}",86.939,67.194,0.696,14.483,0.138
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r3,"{""cpu_max"": ""25000 100000""}",82.992,58.807,0.011,12.482,0.005
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r8,"{""cpu_max"": ""25000 100000""}",77.213,53.651,0.032,11.263,0.013
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r6,"{""cpu_max"": ""25000 100000""}",79.805,62.832,0.016,13.215,0.008
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r1,"{""cpu_max"": ""25000 100000""}",70.827,50.085,0.76,10.167,0.136
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r9,"{""cpu_max"": ""25000 100000""}",72.366,49.946,0.101,10.166,0.015
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r5,"{""cpu_max"": ""25000 100000""}",59.279,43.63,0.015,8.876,0.004
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_max25000_claude-haiku-5-5_r2,"{""cpu_max"": ""25000 100000""}",52.786,36.428,0.099,7.017,0.015
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r7,"{""cpu_max"": ""25000 100000""}",48.546,31.956,0.018,6.021,0.012
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r5,"{""cpu_max"": ""25000 100000""}",42.607,30.662,0.091,5.744,0.005
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r8,"{""cpu_max"": ""25000 100000""}",42.121,22.861,0.473,3.795,0.082
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r4,"{""cpu_max"": ""25000 100000""}",31.437,19.488,0.087,3.111,0.004
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r9,{},21.41,4.679,0.03,2.82,0.007
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r2,"{""cpu_max"": ""25000 100000""}",28.829,18.582,0.089,2.802,0.005
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r2,{},20.884,8.599,0.012,6.701,0.005
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r4,{},19.627,4.624,0.024,2.829,0.013
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r6,"{""cpu_max"": ""25000 100000""}",28.276,18.849,0.009,2.872,0.004
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r9,"{""cpu_max"": ""25000 100000""}",28.211,18.38,0.006,2.699,0.005
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r1,"{""cpu_max"": ""25000 100000""}",28.673,18.12,0.092,2.795,0.007
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r3,{},17.203,4.899,0.02,3.042,0.009
+r_feedback_ref,r_feedback_ref_t9_implement_quiet__cpu_max25000_claude-haiku-5-5_r3,"{""cpu_max"": ""25000 100000""}",28.855,21.48,0.006,3.533,0.005
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r7,{},17.649,4.586,0.022,2.809,0.013
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r1,{},18.54,7.235,0.24,5.618,0.15
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r8,{},16.836,4.587,0.032,2.778,0.011
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r6,{},18.298,6.769,0.237,5.148,0.145
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r5,{},15.489,4.851,0.012,2.902,0.009
+r_feedback_ref,r_feedback_ref_t3_implement__cpu_maxmax_claude-haiku-5-5_r10,{},14.661,4.449,0.01,2.544,0.005
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r6,"{""memory_max"": ""768M""}",20.618,5.186,0.018,1.227,0.007
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r7,"{""memory_max"": ""768M""}",28.658,4.083,0.016,1.039,0.006
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r3,"{""memory_max"": ""768M""}",32.286,5.133,0.019,1.84,0.005
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r7,"{""memory_max"": ""768M""}",26.958,6.135,0.008,2.437,0.005
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r1,"{""memory_max"": ""768M""}",29.026,5.62,0.026,2.232,0.012
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r8,"{""memory_max"": ""768M""}",19.817,5.381,0.006,2.512,0.005
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r9,"{""memory_max"": ""768M""}",25.372,4.39,0.012,1.254,0.005
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r8,"{""memory_max"": ""768M""}",27.583,3.666,0.015,0.904,0.009
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r4,"{""memory_max"": ""768M""}",28.382,3.529,0.015,0.824,0.005
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r9,"{""memory_max"": ""768M""}",27.4,3.512,0.012,0.866,0.005
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r10,"{""memory_max"": ""768M""}",24.235,3.412,0.012,0.812,0.007
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r5,"{""memory_max"": ""768M""}",22.992,3.489,0.012,0.838,0.006
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r2,"{""memory_max"": ""768M""}",21.241,3.428,0.007,0.807,0.006
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r5,"{""memory_max"": ""768M""}",12.542,3.247,0.006,1.085,0.005
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r4,"{""memory_max"": ""768M""}",10.544,3.382,0.006,0.776,0.005
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r10,"{""memory_max"": ""768M""}",8.503,2.614,0.007,0.761,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r4,{},15.058,4.112,0.015,0.469,0.006
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r2,{},11.393,2.541,0.008,0.488,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r3,{},11.951,2.328,0.017,0.477,0.009
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r8,{},11.955,2.378,0.011,0.484,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r6,{},11.192,2.437,0.01,0.466,0.004
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r3,"{""memory_max"": ""768M""}",7.669,2.058,0.011,0.49,0.009
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r6,"{""memory_max"": ""768M""}",7.695,2.038,0.007,0.454,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r10,{},11.148,2.298,0.011,0.468,0.004
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r1,"{""memory_max"": ""768M""}",7.43,1.978,0.006,0.454,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r1,{},11.372,2.366,0.012,0.472,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r7,{},11.004,2.272,0.011,0.474,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r9,{},10.989,2.369,0.011,0.474,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-opus-5-5_r5,{},11.079,2.416,0.009,0.484,0.008
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r10,{},9.671,2.382,0.013,0.442,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r5,{},8.879,2.243,0.021,0.436,0.009
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r3,{},8.742,2.425,0.011,0.434,0.008
+r_cutout,r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r2,"{""memory_max"": ""768M""}",6.264,2.043,0.006,0.444,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r8,{},8.535,2.42,0.02,0.44,0.01
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r6,{},8.196,2.233,0.011,0.429,0.004
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r7,{},7.911,2.319,0.011,0.442,0.005
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r4,{},7.744,2.234,0.012,0.428,0.01
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r1,{},7.247,2.242,0.01,0.438,0.006
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r2,{},7.785,2.299,0.014,0.435,0.008
+r_cutout,r_cutout_t12_silent_kill_700_on_claude-haiku-5-5_r9,{},7.437,2.411,0.01,0.439,0.005
+r_interact,r_interact_t3_implement__memory_max192M_r4,"{""memory_max"": ""192M""}",23.731,7.979,0.027,3.999,0.009
+r_interact,r_interact_t3_implement__memory_max192M_r5,"{""memory_max"": ""192M""}",22.705,7.805,0.027,3.968,0.009
+r_interact,r_interact_t3_implement__memory_max192M-pids_max20_r3,"{""memory_max"": ""192M"", ""pids_max"": 20}",22.493,7.589,0.021,4.001,0.007
+r_interact,r_interact_t3_implement__memory_max192M_r2,"{""memory_max"": ""192M""}",21.936,7.188,0.025,3.36,0.009
+r_interact,r_interact_t3_implement__memory_max192M_r3,"{""memory_max"": ""192M""}",21.547,7.638,0.022,4.069,0.008
+r_interact,r_interact_t3_implement__memory_max192M-pids_max20_r5,"{""memory_max"": ""192M"", ""pids_max"": 20}",21.966,7.491,0.022,3.858,0.008
+r_interact,r_interact_t3_implement__memory_max192M_r1,"{""memory_max"": ""192M""}",22.47,7.591,0.023,3.415,0.008
+r_interact,r_interact_t3_implement__memory_max192M-pids_max20_r1,"{""memory_max"": ""192M"", ""pids_max"": 20}",21.213,7.486,0.025,3.881,0.009
+r_interact,r_interact_t3_implement__memory_max192M-pids_max20_r4,"{""memory_max"": ""192M"", ""pids_max"": 20}",20.189,7.258,0.026,3.894,0.009
+r_interact,r_interact_t3_implement__memory_max192M-pids_max20_r2,"{""memory_max"": ""192M"", ""pids_max"": 20}",19.69,7.581,0.022,3.84,0.008
+r_interact,r_interact_t3_implement__io_maxrbps20971520_r5,"{""io_max"": {""rbps"": 20971520}}",26.662,11.176,0.019,3.939,0.014
+r_interact,r_interact_t3_implement__io_maxrbps20971520_r1,"{""io_max"": {""rbps"": 20971520}}",24.901,11.268,0.015,3.91,0.006
+r_interact,r_interact_t3_implement__cpu_max50000-io_maxrbps20971520_r4,"{""cpu_max"": ""50000 100000"", ""io_max"": {""rbps"": 20971520}}",30.099,15.375,0.01,3.749,0.005
+r_interact,r_interact_t3_implement__cpu_max50000-io_maxrbps20971520_r3,"{""cpu_max"": ""50000 100000"", ""io_max"": {""rbps"": 20971520}}",29.612,15.83,0.01,3.814,0.005
+r_interact,r_interact_t3_implement__cpu_max50000-io_maxrbps20971520_r5,"{""cpu_max"": ""50000 100000"", ""io_max"": {""rbps"": 20971520}}",28.366,15.425,0.013,3.809,0.009
+r_interact,r_interact_t3_implement__io_maxrbps20971520_r3,"{""io_max"": {""rbps"": 20971520}}",23.96,11.043,0.015,3.737,0.011
+r_interact,r_interact_t3_implement__cpu_max50000-io_maxrbps20971520_r1,"{""cpu_max"": ""50000 100000"", ""io_max"": {""rbps"": 20971520}}",27.745,15.4,0.009,3.71,0.007
+r_interact,r_interact_t3_implement__cpu_max50000-io_maxrbps20971520_r2,"{""cpu_max"": ""50000 100000"", ""io_max"": {""rbps"": 20971520}}",28.266,15.387,0.007,3.76,0.004
+r_interact,r_interact_t3_implement__io_maxrbps20971520_r4,"{""io_max"": {""rbps"": 20971520}}",22.938,11.005,0.015,3.717,0.004
+r_interact,r_interact_t3_implement__io_maxrbps20971520_r2,"{""io_max"": {""rbps"": 20971520}}",20.849,10.577,0.012,3.094,0.009
+r_mem,r_mem_t7_memhog_512_640M_r6,"{""memory_max"": ""640M""}",9.805,2.894,0.012,0.408,0.006
+r_mem,r_mem_t7_memhog_512_768M_r5,"{""memory_max"": ""768M""}",8.924,2.51,0.018,0.389,0.009
+r_mem,r_mem_t7_memhog_512_640M_r9,"{""memory_max"": ""640M""}",15.048,2.745,0.011,0.384,0.005
+r_mem,r_mem_t7_memhog_512_640M_r2,"{""memory_max"": ""640M""}",11.696,2.718,0.012,0.392,0.007
+r_mem,r_mem_t7_memhog_512_640M_r7,"{""memory_max"": ""640M""}",11.096,2.673,0.011,0.394,0.009
+r_mem,r_mem_t7_memhog_512_640M_r3,"{""memory_max"": ""640M""}",9.175,2.768,0.011,0.418,0.006
+r_mem,r_mem_t7_memhog_512_640M_r10,"{""memory_max"": ""640M""}",9.644,2.801,0.01,0.41,0.006
+r_mem,r_mem_t7_memhog_512_640M_r4,"{""memory_max"": ""640M""}",9.465,2.717,0.012,0.385,0.007
+r_mem,r_mem_t7_memhog_512_640M_r1,"{""memory_max"": ""640M""}",9.672,2.699,0.014,0.381,0.005
+r_mem,r_mem_t7_memhog_512_704M_r8,"{""memory_max"": ""704M""}",9.079,2.582,0.011,0.416,0.006
+r_mem,r_mem_t7_memhog_512_704M_r2,"{""memory_max"": ""704M""}",9.792,2.6,0.01,0.403,0.005
+r_mem,r_mem_t7_memhog_512_704M_r10,"{""memory_max"": ""704M""}",10.154,2.616,0.01,0.403,0.005
+r_mem,r_mem_t7_memhog_512_704M_r9,"{""memory_max"": ""704M""}",9.543,2.876,0.011,0.407,0.005
+r_mem,r_mem_t7_memhog_512_704M_r1,"{""memory_max"": ""704M""}",10.265,2.584,0.009,0.399,0.005
+r_mem,r_mem_t7_memhog_512_704M_r7,"{""memory_max"": ""704M""}",9.012,2.652,0.015,0.412,0.009
+r_mem,r_mem_t7_memhog_512_704M_r4,"{""memory_max"": ""704M""}",9.371,2.734,0.011,0.411,0.007
+r_mem,r_mem_t7_memhog_512_768M_r3,"{""memory_max"": ""768M""}",8.159,2.598,0.01,0.391,0.005
+r_mem,r_mem_t7_memhog_512_704M_r5,"{""memory_max"": ""704M""}",8.83,2.723,0.012,0.407,0.005
+r_mem,r_mem_t7_memhog_512_704M_r6,"{""memory_max"": ""704M""}",8.761,2.632,0.011,0.404,0.006
+r_mem,r_mem_t7_memhog_512_704M_r3,"{""memory_max"": ""704M""}",7.784,2.588,0.01,0.415,0.009
+r_mem,r_mem_t7_memhog_512_640M_r8,"{""memory_max"": ""640M""}",7.396,1.961,0.012,0.386,0.006
+r_mem,r_mem_t7_memhog_512_768M_r2,"{""memory_max"": ""768M""}",8.675,2.346,0.011,0.379,0.005
+r_mem,r_mem_t7_memhog_512_640M_r5,"{""memory_max"": ""640M""}",6.491,2.01,0.01,0.391,0.008
+r_mem,r_mem_t7_memhog_512_768M_r7,"{""memory_max"": ""768M""}",9.106,2.418,0.012,0.385,0.009
+r_mem,r_mem_t7_memhog_512_768M_r6,"{""memory_max"": ""768M""}",9.175,2.338,0.012,0.374,0.005
+r_mem,r_mem_t7_memhog_512_768M_r8,"{""memory_max"": ""768M""}",8.449,2.589,0.015,0.386,0.01
+r_mem,r_mem_t7_memhog_512_768M_r1,"{""memory_max"": ""768M""}",8.193,2.504,0.012,0.394,0.005
+r_mem,r_mem_t7_memhog_512_768M_r4,"{""memory_max"": ""768M""}",8.387,2.54,0.011,0.38,0.009
+r_mem,r_mem_t7_memhog_512_768M_r9,"{""memory_max"": ""768M""}",8.164,2.423,0.012,0.384,0.006
+r_mem,r_mem_t7_memhog_512_768M_r10,"{""memory_max"": ""768M""}",8.316,2.36,0.01,0.379,0.008
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r7,"{""memory_max"": ""192M""}",25.883,9.015,0.024,4.064,0.009
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r4,"{""memory_max"": ""192M""}",22.09,7.16,0.024,3.371,0.009
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r10,"{""memory_max"": ""192M""}",22.528,8.247,0.025,4.041,0.009
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r5,"{""memory_max"": ""192M""}",21.528,7.592,0.024,4.073,0.008
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r9,"{""memory_max"": ""192M""}",21.846,6.957,0.023,3.421,0.009
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r6,"{""memory_max"": ""192M""}",21.611,7.677,0.026,4.101,0.01
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r2,"{""memory_max"": ""192M""}",22.74,8.298,0.021,4.47,0.008
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r3,"{""memory_max"": ""192M""}",18.378,7.492,0.026,3.854,0.01
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r8,"{""memory_max"": ""192M""}",19.42,7.301,0.03,3.842,0.009
+r_overhead,r_overhead_t3_implement__memory_max192M_full_r1,"{""memory_max"": ""192M""}",19.452,7.848,0.025,3.823,0.009
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r3,"{""cpu_max"": ""25000 100000""}",52.871,36.32,0.012,6.627,0.007
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r1,"{""cpu_max"": ""25000 100000""}",42.811,24.685,0.006,3.986,0.005
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r8,"{""cpu_max"": ""25000 100000""}",37.438,24.093,0.009,3.316,0.006
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r6,"{""cpu_max"": ""25000 100000""}",38.259,23.472,0.01,3.848,0.005
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r7,"{""cpu_max"": ""25000 100000""}",37.314,23.796,0.095,3.867,0.005
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r4,"{""cpu_max"": ""25000 100000""}",37.816,23.639,0.011,3.853,0.007
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r9,"{""cpu_max"": ""25000 100000""}",37.583,24.14,0.006,3.873,0.005
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r5,"{""cpu_max"": ""25000 100000""}",37.263,23.855,0.091,3.883,0.007
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r10,"{""cpu_max"": ""25000 100000""}",35.763,22.788,0.087,3.728,0.005
+r_overhead,r_overhead_t3_implement__cpu_max25000_full_r2,"{""cpu_max"": ""25000 100000""}",33.205,21.099,0.013,3.251,0.005
+r_pids,r_pids_t3_implement_18_r3,"{""pids_max"": 18}",27.924,10.441,0.026,5.448,0.007
+r_pids,r_pids_t3_implement_20_r6,"{""pids_max"": 20}",22.544,5.4,0.022,3.266,0.013
+r_pids,r_pids_t3_implement_18_r1,"{""pids_max"": 18}",27.051,9.3,0.022,4.383,0.009
+r_pids,r_pids_t3_implement_24_r6,"{""pids_max"": 24}",31.492,6.579,0.018,4.332,0.007
+r_pids,r_pids_t3_implement_18_r4,"{""pids_max"": 18}",25.721,8.757,0.027,3.894,0.011
+r_pids,r_pids_t3_implement_17_r1,"{""pids_max"": 17}",27.23,9.973,0.022,3.977,0.008
+r_pids,r_pids_t3_implement_17_r2,"{""pids_max"": 17}",26.261,8.777,0.015,3.854,0.005
+r_pids,r_pids_t3_implement_17_r10,"{""pids_max"": 17}",25.072,8.772,0.015,3.887,0.005
+r_pids,r_pids_t3_implement_19_r4,"{""pids_max"": 19}",25.145,6.574,0.02,4.704,0.007
+r_pids,r_pids_t3_implement_19_r1,"{""pids_max"": 19}",24.086,6.631,0.017,4.723,0.008
+r_pids,r_pids_t3_implement_17_r4,"{""pids_max"": 17}",25.931,8.436,0.014,3.498,0.01
+r_pids,r_pids_t3_implement_17_r8,"{""pids_max"": 17}",25.746,8.431,0.023,3.463,0.014
+r_pids,r_pids_t3_implement_17_r5,"{""pids_max"": 17}",25.681,8.812,0.012,3.858,0.004
+r_pids,r_pids_t3_implement_17_r6,"{""pids_max"": 17}",23.665,9.744,0.02,3.873,0.007
+r_pids,r_pids_t3_implement_18_r7,"{""pids_max"": 18}",20.516,5.881,0.013,3.946,0.004
+r_pids,r_pids_t3_implement_19_r7,"{""pids_max"": 19}",22.566,5.893,0.015,3.883,0.009
+r_pids,r_pids_t3_implement_20_r9,"{""pids_max"": 20}",23.115,5.626,0.167,3.84,0.164
+r_pids,r_pids_t3_implement_19_r6,"{""pids_max"": 19}",23.056,5.972,0.015,3.902,0.009
+r_pids,r_pids_t3_implement_18_r2,"{""pids_max"": 18}",22.212,5.671,0.02,3.789,0.014
+r_pids,r_pids_t3_implement_18_r6,"{""pids_max"": 18}",20.151,5.621,0.02,3.776,0.016
+r_pids,r_pids_t3_implement_18_r5,"{""pids_max"": 18}",21.018,5.848,0.018,3.945,0.01
+r_pids,r_pids_t3_implement_24_r3,"{""pids_max"": 24}",22.334,5.826,0.018,3.837,0.011
+r_pids,r_pids_t3_implement_20_r2,"{""pids_max"": 20}",22.279,5.783,0.017,3.816,0.008
+r_pids,r_pids_t3_implement_18_r8,"{""pids_max"": 18}",20.341,5.663,0.017,3.466,0.01
+r_pids,r_pids_t3_implement_20_r3,"{""pids_max"": 20}",20.957,5.62,0.016,3.804,0.005
+r_pids,r_pids_t3_implement_20_r5,"{""pids_max"": 20}",20.907,5.234,0.016,3.295,0.007
+r_pids,r_pids_t3_implement_19_r9,"{""pids_max"": 19}",20.173,5.788,0.016,3.907,0.007
+r_pids,r_pids_t3_implement_24_r10,"{""pids_max"": 24}",21.686,5.514,0.014,3.465,0.007
+r_pids,r_pids_t3_implement_20_r7,"{""pids_max"": 20}",20.579,5.039,0.021,3.12,0.01
+r_pids,r_pids_t3_implement_20_r1,"{""pids_max"": 20}",20.983,5.208,0.014,3.283,0.007
+r_pids,r_pids_t3_implement_19_r2,"{""pids_max"": 19}",19.814,5.683,0.021,3.745,0.009
+r_pids,r_pids_t3_implement_24_r7,"{""pids_max"": 24}",19.956,5.812,0.016,3.822,0.006
+r_pids,r_pids_t3_implement_19_r5,"{""pids_max"": 19}",19.42,5.615,0.018,3.733,0.007
+r_pids,r_pids_t3_implement_18_r9,"{""pids_max"": 18}",20.123,5.808,0.009,3.758,0.005
+r_pids,r_pids_t3_implement_17_r9,"{""pids_max"": 17}",22.027,8.646,0.008,3.737,0.005
+r_pids,r_pids_t3_implement_24_r9,"{""pids_max"": 24}",20.257,5.218,0.02,3.318,0.014
+r_pids,r_pids_t3_implement_24_r5,"{""pids_max"": 24}",18.654,5.166,0.018,3.235,0.013
+r_pids,r_pids_t3_implement_19_r3,"{""pids_max"": 19}",18.835,5.701,0.02,3.77,0.008
+r_pids,r_pids_t3_implement_17_r7,"{""pids_max"": 17}",19.848,8.634,0.011,3.731,0.007
+r_pids,r_pids_t3_implement_19_r8,"{""pids_max"": 19}",19.542,5.593,0.014,3.744,0.006
+r_pids,r_pids_t3_implement_20_r8,"{""pids_max"": 20}",18.549,5.595,0.009,3.719,0.004
+r_pids,r_pids_t3_implement_20_r10,"{""pids_max"": 20}",18.818,5.484,0.012,3.666,0.007
+r_pids,r_pids_t3_implement_18_r10,"{""pids_max"": 18}",18.778,5.495,0.012,3.655,0.008
+r_pids,r_pids_t3_implement_24_r4,"{""pids_max"": 24}",18.231,5.835,0.01,3.784,0.007
+r_pids,r_pids_t3_implement_20_r4,"{""pids_max"": 20}",17.191,5.723,0.011,3.791,0.007
+r_pids,r_pids_t3_implement_19_r10,"{""pids_max"": 19}",17.097,5.352,0.023,3.108,0.008
+r_pids,r_pids_t3_implement_24_r8,"{""pids_max"": 24}",17.945,5.776,0.024,3.798,0.009
+r_pids,r_pids_t3_implement_24_r2,"{""pids_max"": 24}",17.371,5.635,0.019,3.707,0.007
+r_pids,r_pids_t3_implement_24_r1,"{""pids_max"": 24}",18.244,4.911,0.015,2.931,0.011
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r6,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",51.062,32.488,0.497,5.197,0.084
+r_real,r_real_pydata__xarray-6461_on_r9,{},24.857,13.579,0.016,11.947,0.003
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",95.739,65.295,2.702,6.607,0.448
+r_real,r_real_pydata__xarray-6461_on_r1,{},22.576,7.986,0.011,6.318,0.002
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",64.789,35.726,2.524,4.679,0.406
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",55.515,35.896,2.815,4.884,0.452
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r8,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",64.307,34.714,2.632,4.156,0.445
+r_real,r_real_django__django-15930_on_r5,{},36.066,7.252,2.003,4.676,0.456
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r6,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",61.867,40.748,2.625,4.092,0.423
+r_real,r_real_django__django-15930_on_r8,{},30.739,6.597,1.854,4.338,0.438
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r10,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",46.166,27.801,2.527,4.134,0.424
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r7,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",56.645,34.601,2.788,4.097,0.458
+r_real,r_real_pydata__xarray-6461_on_r7,{},20.596,7.233,0.006,5.003,0.002
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r9,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",51.351,25.538,2.908,3.664,0.5
+r_real,r_real_pydata__xarray-6461_on_r4,{},20.001,7.305,0.005,5.093,0.002
+r_real,r_real_pydata__xarray-6461_on_r10,{},18.003,6.929,0.006,4.853,0.004
+r_real,r_real_pydata__xarray-6461_on_r2,{},16.977,7.249,0.006,5.056,0.004
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",49.454,26.782,2.612,3.459,0.442
+r_real,r_real_pydata__xarray-6461_on_r6,{},17.024,7.132,0.006,4.991,0.003
+r_real,r_real_pydata__xarray-6461_on_r8,{},17.887,7.15,0.008,4.999,0.002
+r_real,r_real_pydata__xarray-6461_on_r5,{},16.357,7.183,0.008,4.953,0.002
+r_real,r_real_django__django-15930_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",48.004,31.366,2.807,3.671,0.445
+r_real,r_real_django__django-15930_on_r2,{},34.532,7.567,2.056,4.607,0.44
+r_real,r_real_pydata__xarray-6461_on_r3,{},15.41,7.181,0.006,5.044,0.002
+r_real,r_real_django__django-15930_on_r4,{},29.719,6.521,2.075,4.152,0.474
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r9,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",39.393,26.828,0.007,4.149,0.003
+r_real,r_real_django__django-15930_on_r7,{},24.235,8.453,1.763,4.942,0.404
+r_real,r_real_django__django-15930_on_r6,{},24.296,6.926,1.814,3.925,0.406
+r_real,r_real_django__django-15930_on_r10,{},25.932,6.768,2.023,4.033,0.456
+r_real,r_real_django__django-15930_on_r9,{},27.577,5.552,1.954,3.261,0.446
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r8,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",69.232,54.653,0.091,9.211,0.003
+r_real,r_real_django__django-15930_on_r3,{},23.886,5.579,1.946,3.37,0.446
+r_real,r_real_django__django-15930_on_r1,{},25.792,5.4,1.918,3.334,0.43
+r_real,r_real_sympy__sympy-24562_on_r10,{},28.73,7.592,0.331,5.053,0.101
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r10,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",63.246,40.348,0.018,7.411,0.004
+r_real,r_real_psf__requests-5414_on_r6,{},84.273,66.116,0.015,4.345,0.004
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",53.704,37.616,0.11,6.734,0.007
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r8,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",51.804,36.994,0.114,6.693,0.005
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",44.509,34.982,0.101,6.139,0.005
+r_real,r_real_pallets__flask-5014_on_r6,{},32.868,9.657,0.026,6.63,0.016
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r9,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",50.953,33.796,0.425,4.972,0.081
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",48.823,30.513,0.577,4.988,0.105
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r6,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",56.428,27.9,0.021,4.465,0.009
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r10,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",51.68,29.695,0.571,4.937,0.102
+r_real,r_real_pallets__flask-5014_on_r9,{},20.687,10.752,0.013,7.888,0.005
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",45.916,34.303,0.442,5.054,0.072
+r_real,r_real_pytest-dev__pytest-10081_on_r1,{},18.526,6.277,0.015,3.53,0.006
+r_real,r_real_sympy__sympy-24562_on_r5,{},20.556,7.855,0.028,4.785,0.023
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",43.801,31.574,0.537,5.076,0.094
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r7,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",43.525,31.031,0.529,5.016,0.085
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",42.964,31.089,0.585,5.041,0.092
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r8,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",42.158,29.198,0.092,4.162,0.004
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",42.754,29.717,0.516,4.847,0.084
+r_real,r_real_pallets__flask-5014_on_r5,{},21.684,9.471,0.031,6.47,0.011
+r_real,r_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r8,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",42.43,30.065,0.475,4.928,0.09
+r_real,r_real_pallets__flask-5014_on_r4,{},24.664,9.137,0.006,6.299,0.003
+r_real,r_real_pallets__flask-5014_on_r10,{},24.02,9.11,0.011,6.231,0.006
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",44.877,25.545,0.008,3.824,0.003
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r6,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",47.297,26.766,0.009,4.071,0.005
+r_real,r_real_pytest-dev__pytest-10081_on_r5,{},34.943,7.168,0.021,4.305,0.013
+r_real,r_real_pallets__flask-5014_on_r2,{},21.166,9.437,0.018,6.466,0.004
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r10,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",40.768,25.71,0.003,4.03,0.003
+r_real,r_real_pallets__flask-5014_on_r8,{},21.126,9.417,0.006,6.458,0.002
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",39.077,25.413,0.003,4.049,0.002
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",36.013,25.655,0.003,4.027,0.002
+r_real,r_real_pallets__flask-5014_on_r7,{},20.22,9.35,0.017,6.468,0.004
+r_real,r_real_pytest-dev__pytest-10081_on_r2,{},27.106,6.979,0.018,4.244,0.004
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",38.904,26.746,0.091,4.224,0.002
+r_real,r_real_pytest-dev__pytest-10081_on_r7,{},37.081,6.876,0.027,4.212,0.009
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r7,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",35.385,26.066,0.008,4.186,0.002
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",44.118,23.769,0.005,3.582,0.005
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",34.456,25.312,0.091,4.064,0.002
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r6,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",34.345,25.156,0.005,3.95,0.002
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r7,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",41.858,25.493,0.089,3.888,0.003
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",40.253,24.17,0.003,3.672,0.003
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",38.155,24.786,0.011,3.761,0.005
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r10,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",40.787,25.051,0.098,3.786,0.002
+r_real,r_real_pallets__flask-5014_on_r3,{},19.998,8.697,0.012,5.823,0.004
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",37.399,24.414,0.091,3.725,0.006
+r_real,r_real_pydata__xarray-6461_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",34.072,24.833,0.007,3.994,0.002
+r_real,r_real_sympy__sympy-24562_on_r7,{},28.708,7.192,0.208,4.768,0.065
+r_real,r_real_sympy__sympy-24562_on_r2,{},26.257,7.333,0.378,4.813,0.104
+r_real,r_real_pytest-dev__pytest-10081_on_r8,{},22.024,8.345,0.017,5.636,0.007
+r_real,r_real_sympy__sympy-24562_on_r4,{},24.15,7.477,0.302,4.932,0.096
+r_real,r_real_pytest-dev__pytest-10081_on_r6,{},27.349,7.005,0.021,4.197,0.004
+r_real,r_real_pytest-dev__pytest-10081_cpu_max25000-memory_max512M_r9,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",36.462,24.218,0.008,3.638,0.004
+r_real,r_real_sympy__sympy-24562_on_r6,{},24.323,7.83,0.012,4.804,0.003
+r_real,r_real_sympy__sympy-24562_on_r1,{},22.76,7.36,0.324,4.913,0.095
+r_real,r_real_sympy__sympy-24562_on_r3,{},24.84,7.195,0.32,4.795,0.099
+r_real,r_real_sympy__sympy-24562_on_r8,{},20.883,7.145,0.301,4.714,0.082
+r_real,r_real_sympy__sympy-24562_on_r9,{},18.835,7.166,0.424,4.746,0.108
+r_real,r_real_pytest-dev__pytest-10081_on_r4,{},29.155,6.355,0.019,3.638,0.007
+r_real,r_real_psf__requests-5414_on_r5,{},27.297,7.686,0.015,3.651,0.007
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r10,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",38.378,21.682,0.003,2.856,0.002
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",38.361,20.748,0.005,2.733,0.004
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r9,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",38.127,21.639,0.093,2.87,0.005
+r_real,r_real_pytest-dev__pytest-10081_on_r10,{},21.172,6.155,0.016,3.437,0.006
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r7,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",37.266,19.138,0.004,2.4,0.002
+r_real,r_real_pytest-dev__pytest-10081_on_r9,{},18.166,6.126,0.017,3.443,0.003
+r_real,r_real_pytest-dev__pytest-10081_on_r3,{},18.353,6.164,0.01,3.419,0.006
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",32.029,17.758,0.098,2.233,0.006
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",35.077,14.585,0.003,1.455,0.003
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",30.605,14.533,0.015,1.452,0.004
+r_real,r_real_psf__requests-5414_on_r3,{},22.975,6.675,0.02,3.041,0.006
+r_real,r_real_psf__requests-5414_on_r4,{},22.465,6.722,0.008,2.864,0.004
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r8,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",29.998,17.074,0.015,2.162,0.006
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",31.119,17.2,0.004,2.061,0.002
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",30.755,16.831,0.006,2.097,0.004
+r_real,r_real_psf__requests-5414_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",31.925,15.842,0.008,1.815,0.004
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r6,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",29.334,13.856,0.105,1.327,0.008
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r7,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",27.193,14.386,0.093,1.415,0.003
+r_real,r_real_psf__requests-5414_on_r10,{},18.728,5.581,0.015,2.715,0.003
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r9,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",24.838,13.778,0.007,1.369,0.002
+r_real,r_real_pallets__flask-5014_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",28.757,13.808,0.104,1.382,0.008
+r_real,r_real_psf__requests-5414_on_r8,{},23.299,5.288,0.008,2.502,0.003
+r_real,r_real_psf__requests-5414_on_r7,{},18.98,4.998,0.013,2.325,0.004
+r_real,r_real_psf__requests-5414_on_r2,{},21.668,4.986,0.012,2.117,0.008
+r_real,r_real_pallets__flask-5014_on_r1,{},18.314,4.274,0.013,1.409,0.008
+r_real,r_real_psf__requests-5414_on_r1,{},20.017,4.623,0.016,1.786,0.008
+r_real,r_real_psf__requests-5414_on_r9,{},17.684,4.555,0.009,1.813,0.003
+m1_cpu,m1_cpu_t3_implement_50000_r3,"{""cpu_max"": ""50000 100000""}",33.658,18.305,0.076,6.991,0.01
+m1_cpu,m1_cpu_t3_implement_25000_r5,"{""cpu_max"": ""25000 100000""}",64.058,40.816,0.101,7.629,0.006
+m1_cpu,m1_cpu_t3_implement_25000_r7,"{""cpu_max"": ""25000 100000""}",59.907,39.778,0.013,7.581,0.01
+m1_cpu,m1_cpu_t3_implement_25000_r8,"{""cpu_max"": ""25000 100000""}",55.405,37.597,0.096,7.01,0.008
+m1_cpu,m1_cpu_t3_implement_25000_r10,"{""cpu_max"": ""25000 100000""}",48.056,28.584,0.084,4.859,0.006
+m1_cpu,m1_cpu_t3_implement_25000_r2,"{""cpu_max"": ""25000 100000""}",48.363,29.601,0.011,5.086,0.008
+m1_cpu,m1_cpu_t3_implement_25000_r9,"{""cpu_max"": ""25000 100000""}",46.887,28.347,0.011,4.858,0.005
+m1_cpu,m1_cpu_t3_implement_25000_r6,"{""cpu_max"": ""25000 100000""}",41.906,26.601,0.007,4.353,0.005
+m1_cpu,m1_cpu_t3_implement_25000_r4,"{""cpu_max"": ""25000 100000""}",39.433,24.963,0.093,3.977,0.006
+m1_cpu,m1_cpu_t3_implement_25000_r3,"{""cpu_max"": ""25000 100000""}",38.417,24.849,0.086,4.018,0.005
+m1_cpu,m1_cpu_t3_implement_50000_r4,"{""cpu_max"": ""50000 100000""}",30.304,15.019,0.013,5.334,0.007
+m1_cpu,m1_cpu_t3_implement_100000_r7,"{""cpu_max"": ""100000 100000""}",21.878,6.389,0.02,3.946,0.007
+m1_cpu,m1_cpu_t3_implement_25000_r1,"{""cpu_max"": ""25000 100000""}",38.278,24.616,0.087,3.965,0.005
+m1_cpu,m1_cpu_t3_implement_75000_r3,"{""cpu_max"": ""75000 100000""}",25.701,8.278,0.052,4.004,0.012
+m1_cpu,m1_cpu_t3_implement_max_r5,{},26.411,7.107,0.014,4.863,0.005
+m1_cpu,m1_cpu_t3_implement_75000_r9,"{""cpu_max"": ""75000 100000""}",23.608,8.179,0.011,3.869,0.006
+m1_cpu,m1_cpu_t3_implement_50000_r9,"{""cpu_max"": ""50000 100000""}",26.04,11.49,0.009,3.528,0.006
+m1_cpu,m1_cpu_t3_implement_50000_r10,"{""cpu_max"": ""50000 100000""}",25.704,12.333,0.067,3.923,0.006
+m1_cpu,m1_cpu_t3_implement_100000_r8,"{""cpu_max"": ""100000 100000""}",21.718,7.021,0.012,4.39,0.006
+m1_cpu,m1_cpu_t3_implement_75000_r2,"{""cpu_max"": ""75000 100000""}",25.395,8.149,0.013,3.973,0.009
+m1_cpu,m1_cpu_t3_implement_50000_r8,"{""cpu_max"": ""50000 100000""}",23.126,10.124,0.01,3.038,0.005
+m1_cpu,m1_cpu_t3_implement_100000_r4,"{""cpu_max"": ""100000 100000""}",22.007,7.151,0.019,4.461,0.009
+m1_cpu,m1_cpu_t3_implement_100000_r10,"{""cpu_max"": ""100000 100000""}",23.3,6.53,0.009,3.985,0.006
+m1_cpu,m1_cpu_t3_implement_50000_r7,"{""cpu_max"": ""50000 100000""}",25.146,12.23,0.011,3.92,0.006
+m1_cpu,m1_cpu_t3_implement_75000_r8,"{""cpu_max"": ""75000 100000""}",20.905,8.405,0.05,3.845,0.006
+m1_cpu,m1_cpu_t3_implement_100000_r3,"{""cpu_max"": ""100000 100000""}",19.525,5.599,0.017,3.288,0.01
+m1_cpu,m1_cpu_t3_implement_50000_r1,"{""cpu_max"": ""50000 100000""}",24.097,12.479,0.069,3.925,0.006
+m1_cpu,m1_cpu_t3_implement_max_r7,{},19.784,5.996,0.013,3.94,0.007
+m1_cpu,m1_cpu_t3_implement_100000_r9,"{""cpu_max"": ""100000 100000""}",21.171,6.401,0.013,3.9,0.008
+m1_cpu,m1_cpu_t3_implement_100000_r5,"{""cpu_max"": ""100000 100000""}",20.737,6.381,0.019,3.942,0.007
+m1_cpu,m1_cpu_t3_implement_50000_r5,"{""cpu_max"": ""50000 100000""}",23.834,11.616,0.007,3.779,0.005
+m1_cpu,m1_cpu_t3_implement_75000_r7,"{""cpu_max"": ""75000 100000""}",20.458,8.133,0.006,3.768,0.005
+m1_cpu,m1_cpu_t3_implement_100000_r6,"{""cpu_max"": ""100000 100000""}",20.604,6.394,0.013,3.834,0.006
+m1_cpu,m1_cpu_t3_implement_75000_r6,"{""cpu_max"": ""75000 100000""}",19.953,8.157,0.009,3.857,0.005
+m1_cpu,m1_cpu_t3_implement_75000_r1,"{""cpu_max"": ""75000 100000""}",20.435,8.277,0.009,3.843,0.005
+m1_cpu,m1_cpu_t3_implement_75000_r4,"{""cpu_max"": ""75000 100000""}",20.508,8.288,0.01,3.844,0.005
+m1_cpu,m1_cpu_t3_implement_100000_r1,"{""cpu_max"": ""100000 100000""}",20.774,6.218,0.011,3.744,0.006
+m1_cpu,m1_cpu_t3_implement_75000_r10,"{""cpu_max"": ""75000 100000""}",20.244,8.091,0.009,3.81,0.007
+m1_cpu,m1_cpu_t3_implement_75000_r5,"{""cpu_max"": ""75000 100000""}",20.434,8.131,0.009,3.787,0.007
+m1_cpu,m1_cpu_t3_implement_max_r4,{},19.667,5.937,0.011,3.857,0.005
+m1_cpu,m1_cpu_t3_implement_max_r1,{},19.322,5.832,0.016,3.742,0.009
+m1_cpu,m1_cpu_t3_implement_50000_r6,"{""cpu_max"": ""50000 100000""}",20.98,10.702,0.011,3.205,0.006
+m1_cpu,m1_cpu_t3_implement_max_r10,{},18.387,5.804,0.011,3.772,0.007
+m1_cpu,m1_cpu_t3_implement_max_r9,{},18.779,6.004,0.012,3.83,0.005
+m1_cpu,m1_cpu_t3_implement_50000_r2,"{""cpu_max"": ""50000 100000""}",22.069,11.287,0.07,3.678,0.005
+m1_cpu,m1_cpu_t3_implement_max_r8,{},17.87,5.836,0.014,3.783,0.006
+m1_cpu,m1_cpu_t3_implement_max_r3,{},17.377,5.876,0.01,3.814,0.005
+m1_cpu,m1_cpu_t3_implement_max_r2,{},16.732,5.918,0.011,3.751,0.006
+m1_cpu,m1_cpu_t3_implement_100000_r2,"{""cpu_max"": ""100000 100000""}",17.072,5.855,0.012,3.273,0.007
+m1_cpu,m1_cpu_t3_implement_max_r6,{},16.312,5.306,0.011,3.197,0.005
+m1_disk,m1_disk_t8_ioread_1024_rbps20971520_r2,"{""io_max"": {""rbps"": 20971520}}",68.451,58.426,0.019,0.579,0.013
+m1_disk,m1_disk_t8_ioread_1024_rbps20971520_r5,"{""io_max"": {""rbps"": 20971520}}",69.013,58.691,0.015,0.555,0.008
+m1_disk,m1_disk_t8_ioread_1024_rbps20971520_r1,"{""io_max"": {""rbps"": 20971520}}",66.013,57.649,0.018,0.549,0.008
+m1_disk,m1_disk_t8_ioread_1024_rbps20971520_r3,"{""io_max"": {""rbps"": 20971520}}",66.797,58.557,0.016,0.586,0.005
+m1_disk,m1_disk_t8_ioread_1024_rbps20971520_r4,"{""io_max"": {""rbps"": 20971520}}",66.931,58.387,0.019,0.562,0.008
+m1_disk,m1_disk_t8_ioread_1024_rbps52428800_r1,"{""io_max"": {""rbps"": 52428800}}",34.687,23.694,0.017,0.595,0.011
+m1_disk,m1_disk_t8_ioread_1024_rbps52428800_r3,"{""io_max"": {""rbps"": 52428800}}",33.002,23.61,0.019,0.57,0.009
+m1_disk,m1_disk_t8_ioread_1024_rbps52428800_r5,"{""io_max"": {""rbps"": 52428800}}",32.565,23.587,0.02,0.521,0.005
+m1_disk,m1_disk_t8_ioread_1024_rbps52428800_r2,"{""io_max"": {""rbps"": 52428800}}",32.428,23.61,0.014,0.574,0.007
+m1_disk,m1_disk_t8_ioread_1024_rbps52428800_r4,"{""io_max"": {""rbps"": 52428800}}",32.463,23.579,0.017,0.574,0.007
+m1_disk,m1_disk_t8_ioread_1024_none_r5,{},16.937,7.666,0.011,0.606,0.005
+m1_disk,m1_disk_t8_ioread_1024_none_r2,{},14.781,7.681,0.016,0.523,0.008
+m1_disk,m1_disk_t8_ioread_1024_rbps157286400_r4,"{""io_max"": {""rbps"": 157286400}}",18.322,9.523,0.019,0.532,0.009
+m1_disk,m1_disk_t8_ioread_1024_none_r3,{},15.766,7.74,0.011,0.565,0.005
+m1_disk,m1_disk_t8_ioread_1024_none_r4,{},15.154,7.795,0.017,0.557,0.006
+m1_disk,m1_disk_t8_ioread_1024_rbps157286400_r5,"{""io_max"": {""rbps"": 157286400}}",18.349,9.038,0.017,0.53,0.008
+m1_disk,m1_disk_t8_ioread_1024_rbps157286400_r1,"{""io_max"": {""rbps"": 157286400}}",16.878,8.894,0.022,0.494,0.006
+m1_disk,m1_disk_t8_ioread_1024_rbps157286400_r2,"{""io_max"": {""rbps"": 157286400}}",18.363,8.892,0.01,0.56,0.005
+m1_disk,m1_disk_t8_ioread_1024_none_r1,{},14.741,7.77,0.013,0.561,0.006
+m1_disk,m1_disk_t8_ioread_1024_rbps157286400_r3,"{""io_max"": {""rbps"": 157286400}}",15.907,8.923,0.014,0.522,0.007
+m1_memory,m1_memory_t6_memtouch_1024_memory_high768M_r3,"{""memory_high"": ""768M""}",39.055,31.049,0.014,2.768,0.005
+m1_memory,m1_memory_t6_memtouch_1024_memory_high768M_r1,"{""memory_high"": ""768M""}",38.186,30.877,0.01,2.915,0.007
+m1_memory,m1_memory_t6_memtouch_1024_memory_high768M_r5,"{""memory_high"": ""768M""}",38.868,30.923,0.012,2.627,0.005
+m1_memory,m1_memory_t6_memtouch_1024_memory_high768M_r4,"{""memory_high"": ""768M""}",38.087,31.001,0.014,2.935,0.005
+m1_memory,m1_memory_t6_memtouch_1024_memory_high768M_r2,"{""memory_high"": ""768M""}",38.613,30.855,0.014,2.893,0.008
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1152M_r3,"{""memory_high"": ""1152M""}",37.652,30.931,0.013,2.782,0.008
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1152M_r2,"{""memory_high"": ""1152M""}",38.738,30.994,0.014,2.595,0.005
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1152M_r1,"{""memory_high"": ""1152M""}",38.125,31.042,0.014,2.816,0.006
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1152M_r5,"{""memory_high"": ""1152M""}",37.063,30.913,0.012,2.703,0.005
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1152M_r4,"{""memory_high"": ""1152M""}",37.091,31.019,0.009,2.805,0.005
+m1_memory,m1_memory_t6_memtouch_1024_memory_highmax_r5,{},17.626,8.863,0.012,1.173,0.006
+m1_memory,m1_memory_t6_memtouch_1024_memory_highmax_r4,{},16.547,8.243,0.015,1.149,0.007
+m1_memory,m1_memory_t6_memtouch_1024_memory_highmax_r3,{},15.485,8.349,0.016,1.072,0.005
+m1_memory,m1_memory_t6_memtouch_1024_memory_highmax_r1,{},15.521,8.356,0.018,1.13,0.005
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1344M_r5,"{""memory_high"": ""1344M""}",14.831,8.318,0.017,1.189,0.006
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1344M_r3,"{""memory_high"": ""1344M""}",15.385,8.316,0.016,1.121,0.005
+m1_memory,m1_memory_t6_memtouch_1024_memory_highmax_r2,{},14.998,8.367,0.018,1.164,0.007
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1344M_r1,"{""memory_high"": ""1344M""}",15.317,8.279,0.019,1.102,0.007
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1344M_r2,"{""memory_high"": ""1344M""}",14.799,8.258,0.014,1.179,0.008
+m1_memory,m1_memory_t6_memtouch_1024_memory_high1344M_r4,"{""memory_high"": ""1344M""}",15.082,8.426,0.016,1.096,0.008
+m1_memory,m1_memory_t7_memhog_512_memory_max640M_r3,"{""memory_max"": ""640M""}",10.608,3.008,0.015,0.401,0.006
+m1_memory,m1_memory_t7_memhog_512_memory_max640M_r4,"{""memory_max"": ""640M""}",12.29,2.891,0.012,0.397,0.005
+m1_memory,m1_memory_t7_memhog_512_memory_max640M_r5,"{""memory_max"": ""640M""}",10.662,2.768,0.013,0.387,0.006
+m1_memory,m1_memory_t7_memhog_512_memory_max640M_r1,"{""memory_max"": ""640M""}",10.519,2.752,0.015,0.377,0.005
+m1_memory,m1_memory_t7_memhog_512_memory_max704M_r1,"{""memory_max"": ""704M""}",10.936,2.746,0.011,0.418,0.005
+m1_memory,m1_memory_t7_memhog_512_memory_max704M_r3,"{""memory_max"": ""704M""}",10.112,2.679,0.013,0.412,0.006
+m1_memory,m1_memory_t7_memhog_512_memory_max704M_r5,"{""memory_max"": ""704M""}",10.061,2.65,0.012,0.405,0.006
+m1_memory,m1_memory_t7_memhog_512_memory_max704M_r2,"{""memory_max"": ""704M""}",9.961,2.788,0.015,0.408,0.006
+m1_memory,m1_memory_t7_memhog_512_memory_max704M_r4,"{""memory_max"": ""704M""}",9.451,2.692,0.012,0.409,0.005
+m1_memory,m1_memory_t7_memhog_512_memory_max768M_r3,"{""memory_max"": ""768M""}",10.0,2.569,0.014,0.397,0.006
+m1_memory,m1_memory_t7_memhog_512_memory_max768M_r2,"{""memory_max"": ""768M""}",9.414,2.561,0.012,0.394,0.008
+m1_memory,m1_memory_t7_memhog_512_memory_max768M_r1,"{""memory_max"": ""768M""}",9.817,2.652,0.014,0.397,0.006
+m1_memory,m1_memory_t7_memhog_512_memory_max640M_r2,"{""memory_max"": ""640M""}",7.112,2.07,0.012,0.386,0.005
+m1_memory,m1_memory_t7_memhog_512_memory_max768M_r4,"{""memory_max"": ""768M""}",9.071,2.522,0.013,0.394,0.005
+m1_memory,m1_memory_t7_memhog_512_memory_max768M_r5,"{""memory_max"": ""768M""}",8.907,2.545,0.014,0.392,0.005
+m1_pids,m1_pids_t3_implement_20_r4,"{""pids_max"": 20}",23.09,6.772,0.015,4.743,0.005
+m1_pids,m1_pids_t3_implement_17_r5,"{""pids_max"": 17}",24.131,6.959,0.011,4.834,0.007
+m1_pids,m1_pids_t3_implement_17_r2,"{""pids_max"": 17}",23.74,5.991,0.016,3.905,0.005
+m1_pids,m1_pids_t3_implement_16_r1,"{""pids_max"": 16}",23.465,5.543,0.014,3.399,0.006
+m1_pids,m1_pids_t3_implement_24_r4,"{""pids_max"": 24}",21.733,6.426,0.012,4.369,0.005
+m1_pids,m1_pids_t3_implement_24_r1,"{""pids_max"": 24}",20.93,5.997,0.016,3.969,0.005
+m1_pids,m1_pids_t3_implement_17_r1,"{""pids_max"": 17}",21.04,5.582,0.014,3.352,0.006
+m1_pids,m1_pids_t3_implement_16_r3,"{""pids_max"": 16}",20.912,5.472,0.011,3.317,0.005
+m1_pids,m1_pids_t3_implement_18_r3,"{""pids_max"": 18}",21.59,6.078,0.016,3.924,0.007
+m1_pids,m1_pids_t3_implement_20_r2,"{""pids_max"": 20}",21.674,5.459,0.013,3.32,0.006
+m1_pids,m1_pids_t3_implement_24_r5,"{""pids_max"": 24}",20.631,5.305,0.014,3.325,0.006
+m1_pids,m1_pids_t3_implement_18_r1,"{""pids_max"": 18}",20.173,6.072,0.012,3.985,0.008
+m1_pids,m1_pids_t3_implement_17_r3,"{""pids_max"": 17}",19.812,6.079,0.019,3.929,0.007
+m1_pids,m1_pids_t3_implement_18_r2,"{""pids_max"": 18}",20.006,5.819,0.012,3.717,0.005
+m1_pids,m1_pids_t3_implement_24_r2,"{""pids_max"": 24}",20.641,5.859,0.01,3.802,0.005
+m1_pids,m1_pids_t3_implement_16_r2,"{""pids_max"": 16}",19.531,6.016,0.013,3.772,0.007
+m1_pids,m1_pids_t3_implement_20_r1,"{""pids_max"": 20}",18.966,5.881,0.013,3.797,0.005
+m1_pids,m1_pids_t3_implement_17_r4,"{""pids_max"": 17}",18.073,5.833,0.011,3.784,0.005
+m1_pids,m1_pids_t3_implement_18_r4,"{""pids_max"": 18}",18.439,5.91,0.011,3.817,0.005
+m1_pids,m1_pids_t3_implement_20_r5,"{""pids_max"": 20}",19.034,5.37,0.011,3.201,0.006
+m1_pids,m1_pids_t3_implement_18_r5,"{""pids_max"": 18}",18.194,5.779,0.011,3.748,0.005
+m1_pids,m1_pids_t3_implement_16_r4,"{""pids_max"": 16}",17.588,5.887,0.009,3.762,0.005
+m1_pids,m1_pids_t3_implement_20_r3,"{""pids_max"": 20}",17.701,5.865,0.013,3.82,0.006
+m1_pids,m1_pids_t3_implement_24_r3,"{""pids_max"": 24}",17.328,5.896,0.007,3.837,0.005
+m1_pids,m1_pids_t3_implement_16_r5,"{""pids_max"": 16}",18.318,5.257,0.012,3.176,0.007
+m1_pids_lo,m1_pids_lo_t3_implement_14_r5,"{""pids_max"": 14}",20.771,6.01,0.015,3.868,0.005
+m1_pids_lo,m1_pids_lo_t3_implement_14_r4,"{""pids_max"": 14}",20.86,6.136,0.016,3.789,0.008
+m1_pids_lo,m1_pids_lo_t3_implement_14_r2,"{""pids_max"": 14}",19.071,5.895,0.011,3.807,0.006
+m1_pids_lo,m1_pids_lo_t3_implement_14_r3,"{""pids_max"": 14}",19.682,5.846,0.011,3.747,0.006
+m1_pids_lo,m1_pids_lo_t3_implement_14_r1,"{""pids_max"": 14}",18.135,5.777,0.012,3.779,0.005
+m1_pids_lo,m1_pids_lo_t3_implement_10_r2,"{""pids_max"": 10}",23.711,2.056,0.0,0.015,0.0
+m1_pids_lo,m1_pids_lo_t3_implement_10_r5,"{""pids_max"": 10}",23.011,2.033,0.0,0.015,0.0
+m1_pids_lo,m1_pids_lo_t3_implement_10_r4,"{""pids_max"": 10}",16.633,3.278,0.0,0.016,0.0
+m1_pids_lo,m1_pids_lo_t3_implement_10_r3,"{""pids_max"": 10}",16.597,4.868,0.0,0.015,0.0
+m1_pids_lo,m1_pids_lo_t3_implement_10_r1,"{""pids_max"": 10}",15.665,3.358,0.0,0.017,0.0
+m1_pids_lo,m1_pids_lo_t3_implement_8_r5,"{""pids_max"": 8}",2.572,2.572,0.0,0.0,0.0
+m1_pids_lo,m1_pids_lo_t3_implement_8_r2,"{""pids_max"": 8}",2.585,2.585,0.0,0.0,0.0
+m1_pids_lo,m1_pids_lo_t3_implement_8_r1,"{""pids_max"": 8}",2.576,2.576,0.0,0.0,0.0
+m1_pids_lo,m1_pids_lo_t3_implement_8_r3,"{""pids_max"": 8}",2.614,2.614,0.0,0.0,0.0
+m1_pids_lo,m1_pids_lo_t3_implement_8_r4,"{""pids_max"": 8}",2.607,2.607,0.0,0.0,0.0
+m1_real,m1_real_django__django-15930_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",95.379,74.27,2.619,6.798,0.488
+m1_real,m1_real_django__django-15930_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",80.351,62.6,2.413,5.973,0.44
+m1_real,m1_real_django__django-15930_cpu_max100000-memory_max512M_r3,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",32.327,10.469,1.584,5.226,0.339
+m1_real,m1_real_django__django-15930_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",60.924,40.704,2.618,4.366,0.401
+m1_real,m1_real_django__django-15930_cpu_max100000-memory_max512M_r2,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",32.057,15.811,1.53,5.329,0.333
+m1_real,m1_real_django__django-15930_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",50.099,31.566,2.809,3.904,0.477
+m1_real,m1_real_django__django-15930_cpu_max100000-memory_max512M_r1,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",25.304,8.076,1.473,3.712,0.348
+m1_real,m1_real_django__django-15930_on_r3,{},27.049,8.604,2.002,4.426,0.45
+m1_real,m1_real_django__django-15930_on_r5,{},23.342,6.699,2.222,3.74,0.472
+m1_real,m1_real_django__django-15930_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",39.781,22.948,2.219,3.023,0.423
+m1_real,m1_real_django__django-15930_on_r4,{},26.761,6.852,1.522,3.568,0.322
+m1_real,m1_real_django__django-15930_cpu_max100000-memory_max512M_r5,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",25.898,8.104,1.581,3.689,0.367
+m1_real,m1_real_django__django-15930_on_r2,{},22.616,7.41,1.321,3.662,0.302
+m1_real,m1_real_django__django-15930_cpu_max100000-memory_max512M_r4,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",23.088,7.226,1.658,2.961,0.352
+m1_real,m1_real_django__django-15930_on_r1,{},25.594,6.978,1.45,3.572,0.347
+m1_real,m1_real_psf__requests-5414_on_r4,{},90.399,67.513,0.019,5.342,0.007
+m1_real,m1_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",53.22,35.594,0.522,5.857,0.098
+m1_real,m1_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",45.266,33.353,0.617,5.314,0.119
+m1_real,m1_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",45.982,32.691,0.593,5.208,0.105
+m1_real,m1_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",44.621,32.007,0.612,5.147,0.09
+m1_real,m1_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",46.318,32.364,0.551,5.188,0.1
+m1_real,m1_real_sympy__sympy-24562_on_r4,{},23.417,8.071,0.429,5.245,0.114
+m1_real,m1_real_sympy__sympy-24562_on_r1,{},25.223,7.957,0.449,5.217,0.117
+m1_real,m1_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r3,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",23.717,8.699,0.568,5.012,0.122
+m1_real,m1_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r1,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",22.781,8.55,0.371,5.026,0.108
+m1_real,m1_real_sympy__sympy-24562_on_r2,{},21.216,7.723,0.402,4.986,0.097
+m1_real,m1_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r4,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",21.533,8.752,0.006,4.893,0.003
+m1_real,m1_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r5,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",21.324,8.544,0.419,5.044,0.101
+m1_real,m1_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r2,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",20.299,8.902,0.004,4.972,0.003
+m1_real,m1_real_sympy__sympy-24562_on_r3,{},21.235,7.583,0.397,4.895,0.098
+m1_real,m1_real_sympy__sympy-24562_on_r5,{},19.811,8.292,0.01,4.944,0.007
+m1_real,m1_real_psf__requests-5414_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",36.559,22.686,0.091,2.952,0.004
+m1_real,m1_real_psf__requests-5414_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",34.806,21.644,0.091,2.815,0.003
+m1_real,m1_real_psf__requests-5414_on_r5,{},23.536,7.047,0.009,2.925,0.004
+m1_real,m1_real_psf__requests-5414_cpu_max100000-memory_max512M_r5,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",20.13,7.364,0.007,3.04,0.005
+m1_real,m1_real_psf__requests-5414_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",33.058,18.748,0.095,2.226,0.003
+m1_real,m1_real_psf__requests-5414_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",30.404,19.04,0.003,2.347,0.002
+m1_real,m1_real_psf__requests-5414_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",29.918,18.608,0.006,2.258,0.003
+m1_real,m1_real_psf__requests-5414_cpu_max100000-memory_max512M_r4,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",20.049,5.918,0.01,2.599,0.004
+m1_real,m1_real_psf__requests-5414_on_r3,{},21.507,5.514,0.008,2.367,0.003
+m1_real,m1_real_psf__requests-5414_cpu_max100000-memory_max512M_r1,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",18.221,5.405,0.025,2.179,0.003
+m1_real,m1_real_psf__requests-5414_cpu_max100000-memory_max512M_r3,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",16.968,5.966,0.012,2.08,0.005
+m1_real,m1_real_psf__requests-5414_on_r1,{},18.501,4.87,0.009,1.828,0.005
+m1_real,m1_real_psf__requests-5414_on_r2,{},17.206,5.266,0.006,2.122,0.003
+m1_real,m1_real_psf__requests-5414_cpu_max100000-memory_max512M_r2,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",15.915,5.147,0.008,1.822,0.004
+m1_threads,m1_threads_t4_parallel_8_r1,{},15.18,6.173,0.014,8.173,0.006
+m1_threads,m1_threads_t4_parallel_8_r5,{},14.696,6.145,0.015,7.736,0.006
+m1_threads,m1_threads_t4_parallel_8_r4,{},14.887,6.199,0.018,7.972,0.006
+m1_threads,m1_threads_t4_parallel_8_r3,{},14.1,6.117,0.015,7.74,0.006
+m1_threads,m1_threads_t4_parallel_8_r2,{},14.235,5.981,0.013,7.696,0.005
+m1_threads,m1_threads_t4_parallel_4_r3,{},13.265,4.083,0.013,3.849,0.006
+m1_threads,m1_threads_t4_parallel_4_r2,{},13.567,4.259,0.014,3.97,0.008
+m1_threads,m1_threads_t4_parallel_4_r4,{},12.944,4.024,0.016,3.851,0.005
+m1_threads,m1_threads_t4_parallel_4_r5,{},11.519,4.208,0.017,3.914,0.009
+m1_threads,m1_threads_t4_parallel_4_r1,{},11.878,4.188,0.016,3.897,0.006
+m1_threads,m1_threads_t4_parallel_2_r3,{},11.74,3.297,0.018,2.122,0.007
+m1_threads,m1_threads_t4_parallel_2_r5,{},11.382,3.191,0.014,1.972,0.008
+m1_threads,m1_threads_t4_parallel_2_r4,{},10.645,3.102,0.014,1.93,0.007
+m1_threads,m1_threads_t4_parallel_2_r1,{},9.826,3.156,0.013,1.947,0.005
+m1_threads,m1_threads_t4_parallel_1_r5,{},10.281,2.588,0.017,0.558,0.009
+m1_threads,m1_threads_t4_parallel_1_r1,{},10.468,2.613,0.017,0.544,0.005
+m1_threads,m1_threads_t4_parallel_1_r2,{},10.039,2.577,0.012,0.527,0.005
+m1_threads,m1_threads_t4_parallel_1_r3,{},9.515,3.169,0.011,0.532,0.006
+m1_threads,m1_threads_t4_parallel_2_r2,{},8.399,3.101,0.009,2.017,0.006
+m1_threads,m1_threads_t4_parallel_1_r4,{},8.758,2.585,0.011,0.541,0.005
+m2_cpu,m2_cpu_t3_implement_max_r4,{},20.586,5.372,0.062,3.237,0.046
+m2_cpu,m2_cpu_t3_implement_25000_r7,"{""cpu_max"": ""25000 100000""}",60.9,37.38,0.142,7.352,0.023
+m2_cpu,m2_cpu_t3_implement_25000_r5,"{""cpu_max"": ""25000 100000""}",51.725,36.206,0.023,6.799,0.008
+m2_cpu,m2_cpu_t3_implement_25000_r3,"{""cpu_max"": ""25000 100000""}",52.194,35.669,0.089,6.943,0.005
+m2_cpu,m2_cpu_t3_implement_50000_r3,"{""cpu_max"": ""50000 100000""}",39.187,17.996,0.069,6.969,0.038
+m2_cpu,m2_cpu_t3_implement_25000_r6,"{""cpu_max"": ""25000 100000""}",37.086,22.67,0.091,3.694,0.005
+m2_cpu,m2_cpu_t3_implement_25000_r1,"{""cpu_max"": ""25000 100000""}",38.167,22.595,0.041,3.767,0.011
+m2_cpu,m2_cpu_t3_implement_25000_r4,"{""cpu_max"": ""25000 100000""}",35.72,22.424,0.126,3.705,0.018
+m2_cpu,m2_cpu_t3_implement_25000_r10,"{""cpu_max"": ""25000 100000""}",37.248,22.98,0.107,3.765,0.007
+m2_cpu,m2_cpu_t3_implement_25000_r9,"{""cpu_max"": ""25000 100000""}",35.926,22.555,0.11,3.688,0.017
+m2_cpu,m2_cpu_t3_implement_max_r9,{},21.402,5.77,0.05,3.77,0.032
+m2_cpu,m2_cpu_t3_implement_25000_r8,"{""cpu_max"": ""25000 100000""}",34.922,20.839,0.016,3.276,0.013
+m2_cpu,m2_cpu_t3_implement_max_r6,{},21.011,6.022,0.06,3.935,0.042
+m2_cpu,m2_cpu_t3_implement_max_r2,{},20.558,5.464,0.059,3.378,0.049
+m2_cpu,m2_cpu_t3_implement_max_r7,{},19.494,5.207,0.045,3.311,0.036
+m2_cpu,m2_cpu_t3_implement_max_r1,{},20.195,5.837,0.048,3.849,0.04
+m2_cpu,m2_cpu_t3_implement_max_r10,{},19.914,5.242,0.049,3.193,0.044
+m2_cpu,m2_cpu_t3_implement_max_r8,{},19.718,5.668,0.041,3.759,0.041
+m2_cpu,m2_cpu_t3_implement_50000_r4,"{""cpu_max"": ""50000 100000""}",28.01,11.925,0.04,3.844,0.019
+m2_cpu,m2_cpu_t3_implement_25000_r2,"{""cpu_max"": ""25000 100000""}",33.752,19.481,0.1,3.186,0.01
+m2_cpu,m2_cpu_t3_implement_50000_r8,"{""cpu_max"": ""50000 100000""}",28.775,12.618,0.039,4.296,0.021
+m2_cpu,m2_cpu_t3_implement_max_r3,{},19.399,5.59,0.054,3.658,0.041
+m2_cpu,m2_cpu_t3_implement_200000_r8,"{""cpu_max"": ""200000 100000""}",23.4,5.978,0.057,3.88,0.045
+m2_cpu,m2_cpu_t3_implement_max_r5,{},17.531,5.947,0.045,3.96,0.031
+m2_cpu,m2_cpu_t3_implement_200000_r2,"{""cpu_max"": ""200000 100000""}",22.565,5.378,0.049,3.357,0.042
+m2_cpu,m2_cpu_t3_implement_75000_r10,"{""cpu_max"": ""75000 100000""}",24.674,7.982,0.045,4.11,0.024
+m2_cpu,m2_cpu_t3_implement_75000_r7,"{""cpu_max"": ""75000 100000""}",25.052,7.637,0.057,3.807,0.038
+m2_cpu,m2_cpu_t3_implement_100000_r10,"{""cpu_max"": ""100000 100000""}",23.521,6.592,0.047,4.253,0.043
+m2_cpu,m2_cpu_t3_implement_75000_r8,"{""cpu_max"": ""75000 100000""}",22.213,7.393,0.096,3.436,0.051
+m2_cpu,m2_cpu_t3_implement_75000_r9,"{""cpu_max"": ""75000 100000""}",23.093,6.986,0.099,3.25,0.021
+m2_cpu,m2_cpu_t3_implement_200000_r6,"{""cpu_max"": ""200000 100000""}",21.949,6.24,0.051,4.259,0.042
+m2_cpu,m2_cpu_t3_implement_200000_r9,"{""cpu_max"": ""200000 100000""}",23.168,5.27,0.059,3.242,0.047
+m2_cpu,m2_cpu_t3_implement_75000_r6,"{""cpu_max"": ""75000 100000""}",22.789,7.469,0.052,3.764,0.036
+m2_cpu,m2_cpu_t3_implement_75000_r4,"{""cpu_max"": ""75000 100000""}",22.681,6.802,0.051,3.331,0.034
+m2_cpu,m2_cpu_t3_implement_50000_r2,"{""cpu_max"": ""50000 100000""}",24.605,11.038,0.084,3.683,0.029
+m2_cpu,m2_cpu_t3_implement_50000_r6,"{""cpu_max"": ""50000 100000""}",24.717,10.91,0.08,3.67,0.022
+m2_cpu,m2_cpu_t3_implement_100000_r2,"{""cpu_max"": ""100000 100000""}",20.908,5.616,0.054,3.371,0.045
+m2_cpu,m2_cpu_t3_implement_50000_r9,"{""cpu_max"": ""50000 100000""}",25.022,11.362,0.031,3.678,0.013
+m2_cpu,m2_cpu_t3_implement_100000_r6,"{""cpu_max"": ""100000 100000""}",21.91,6.072,0.058,3.814,0.036
+m2_cpu,m2_cpu_t3_implement_75000_r2,"{""cpu_max"": ""75000 100000""}",21.664,7.555,0.052,3.785,0.04
+m2_cpu,m2_cpu_t3_implement_50000_r7,"{""cpu_max"": ""50000 100000""}",24.734,10.957,0.008,3.651,0.005
+m2_cpu,m2_cpu_t3_implement_50000_r10,"{""cpu_max"": ""50000 100000""}",23.925,11.172,0.082,3.677,0.017
+m2_cpu,m2_cpu_t3_implement_100000_r9,"{""cpu_max"": ""100000 100000""}",21.457,5.944,0.045,3.845,0.042
+m2_cpu,m2_cpu_t3_implement_75000_r3,"{""cpu_max"": ""75000 100000""}",21.439,6.933,0.025,3.253,0.013
+m2_cpu,m2_cpu_t3_implement_200000_r5,"{""cpu_max"": ""200000 100000""}",20.398,5.939,0.061,3.875,0.053
+m2_cpu,m2_cpu_t3_implement_50000_r1,"{""cpu_max"": ""50000 100000""}",24.51,10.892,0.059,3.655,0.03
+m2_cpu,m2_cpu_t3_implement_50000_r5,"{""cpu_max"": ""50000 100000""}",23.785,11.263,0.075,3.702,0.016
+m2_cpu,m2_cpu_t3_implement_100000_r8,"{""cpu_max"": ""100000 100000""}",20.245,5.856,0.047,3.746,0.04
+m2_cpu,m2_cpu_t3_implement_200000_r1,"{""cpu_max"": ""200000 100000""}",21.068,5.132,0.062,3.166,0.047
+m2_cpu,m2_cpu_t3_implement_100000_r4,"{""cpu_max"": ""100000 100000""}",20.041,5.889,0.04,3.66,0.033
+m2_cpu,m2_cpu_t3_implement_75000_r5,"{""cpu_max"": ""75000 100000""}",20.598,7.852,0.032,3.702,0.023
+m2_cpu,m2_cpu_t3_implement_200000_r4,"{""cpu_max"": ""200000 100000""}",19.414,5.595,0.038,3.624,0.022
+m2_cpu,m2_cpu_t3_implement_100000_r5,"{""cpu_max"": ""100000 100000""}",18.884,5.955,0.036,3.743,0.031
+m2_cpu,m2_cpu_t3_implement_100000_r3,"{""cpu_max"": ""100000 100000""}",20.891,5.963,0.04,3.644,0.026
+m2_cpu,m2_cpu_t3_implement_200000_r7,"{""cpu_max"": ""200000 100000""}",20.414,5.569,0.038,3.657,0.032
+m2_cpu,m2_cpu_t3_implement_100000_r1,"{""cpu_max"": ""100000 100000""}",18.379,5.253,0.037,3.082,0.028
+m2_cpu,m2_cpu_t3_implement_200000_r3,"{""cpu_max"": ""200000 100000""}",17.902,5.64,0.04,3.67,0.035
+m2_cpu,m2_cpu_t3_implement_75000_r1,"{""cpu_max"": ""75000 100000""}",19.676,7.3,0.04,3.647,0.034
+m2_cpu,m2_cpu_t3_implement_100000_r7,"{""cpu_max"": ""100000 100000""}",17.714,5.99,0.038,3.695,0.029
+m2_cpu,m2_cpu_t3_implement_200000_r10,"{""cpu_max"": ""200000 100000""}",16.153,5.134,0.041,3.134,0.035
+m2_disk,m2_disk_t8_ioread_1024_rbps20971520_r5,"{""io_max"": {""rbps"": 20971520}}",68.244,58.304,0.049,0.481,0.042
+m2_disk,m2_disk_t8_ioread_1024_rbps20971520_r3,"{""io_max"": {""rbps"": 20971520}}",68.751,58.424,0.044,0.488,0.039
+m2_disk,m2_disk_t8_ioread_1024_rbps20971520_r2,"{""io_max"": {""rbps"": 20971520}}",68.482,58.373,0.041,0.463,0.035
+m2_disk,m2_disk_t8_ioread_1024_rbps20971520_r1,"{""io_max"": {""rbps"": 20971520}}",67.713,58.278,0.035,0.46,0.033
+m2_disk,m2_disk_t8_ioread_1024_rbps20971520_r4,"{""io_max"": {""rbps"": 20971520}}",71.01,56.839,1.696,0.457,0.071
+m2_disk,m2_disk_t8_ioread_1024_rbps52428800_r3,"{""io_max"": {""rbps"": 52428800}}",32.197,23.471,0.043,0.468,0.034
+m2_disk,m2_disk_t8_ioread_1024_rbps52428800_r5,"{""io_max"": {""rbps"": 52428800}}",34.969,22.413,1.173,0.412,0.069
+m2_disk,m2_disk_t8_ioread_1024_rbps52428800_r1,"{""io_max"": {""rbps"": 52428800}}",32.413,23.506,0.04,0.472,0.035
+m2_disk,m2_disk_t8_ioread_1024_rbps52428800_r4,"{""io_max"": {""rbps"": 52428800}}",31.408,23.518,0.042,0.463,0.034
+m2_disk,m2_disk_t8_ioread_1024_rbps52428800_r2,"{""io_max"": {""rbps"": 52428800}}",31.059,23.521,0.034,0.47,0.027
+m2_disk,m2_disk_t8_ioread_1024_rbps157286400_r4,"{""io_max"": {""rbps"": 157286400}}",19.56,7.839,0.98,0.404,0.094
+m2_disk,m2_disk_t8_ioread_1024_rbps157286400_r2,"{""io_max"": {""rbps"": 157286400}}",17.815,8.822,0.038,0.413,0.031
+m2_disk,m2_disk_t8_ioread_1024_none_r3,{},15.073,7.645,0.038,0.466,0.031
+m2_disk,m2_disk_t8_ioread_1024_none_r2,{},14.561,7.725,0.037,0.464,0.029
+m2_disk,m2_disk_t8_ioread_1024_none_r5,{},14.421,7.676,0.038,0.47,0.037
+m2_disk,m2_disk_t8_ioread_1024_none_r4,{},14.683,7.73,0.037,0.434,0.035
+m2_disk,m2_disk_t8_ioread_1024_rbps157286400_r1,"{""io_max"": {""rbps"": 157286400}}",16.524,9.056,0.031,0.448,0.027
+m2_disk,m2_disk_t8_ioread_1024_rbps157286400_r5,"{""io_max"": {""rbps"": 157286400}}",16.465,8.795,0.037,0.458,0.032
+m2_disk,m2_disk_t8_ioread_1024_rbps157286400_r3,"{""io_max"": {""rbps"": 157286400}}",16.01,8.795,0.039,0.446,0.034
+m2_disk,m2_disk_t8_ioread_1024_none_r1,{},11.48,7.636,0.017,0.438,0.009
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1152M_r1,"{""memory_high"": ""1152M""}",39.309,30.887,0.03,2.092,0.018
+m2_memory,m2_memory_t6_memtouch_1024_memory_high768M_r1,"{""memory_high"": ""768M""}",39.154,30.906,0.027,1.996,0.016
+m2_memory,m2_memory_t6_memtouch_1024_memory_high768M_r3,"{""memory_high"": ""768M""}",38.334,30.815,0.034,2.124,0.027
+m2_memory,m2_memory_t6_memtouch_1024_memory_high768M_r4,"{""memory_high"": ""768M""}",37.891,30.897,0.032,2.056,0.025
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1152M_r5,"{""memory_high"": ""1152M""}",37.738,30.895,0.027,2.093,0.016
+m2_memory,m2_memory_t6_memtouch_1024_memory_high768M_r2,"{""memory_high"": ""768M""}",36.834,30.811,0.027,2.098,0.025
+m2_memory,m2_memory_t6_memtouch_1024_memory_high768M_r5,"{""memory_high"": ""768M""}",37.034,30.839,0.028,2.052,0.021
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1152M_r4,"{""memory_high"": ""1152M""}",38.083,30.875,0.026,2.035,0.018
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1152M_r2,"{""memory_high"": ""1152M""}",38.654,30.999,0.027,2.022,0.022
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1152M_r3,"{""memory_high"": ""1152M""}",37.281,30.906,0.026,2.076,0.019
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1344M_r2,"{""memory_high"": ""1344M""}",15.671,8.778,0.036,0.757,0.033
+m2_memory,m2_memory_t6_memtouch_1024_memory_highmax_r3,{},15.861,7.964,0.046,0.742,0.037
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1344M_r3,"{""memory_high"": ""1344M""}",14.95,7.948,0.045,0.723,0.03
+m2_memory,m2_memory_t6_memtouch_1024_memory_highmax_r4,{},15.405,8.076,0.046,0.726,0.036
+m2_memory,m2_memory_t6_memtouch_1024_memory_highmax_r5,{},15.98,8.149,0.041,0.721,0.036
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1344M_r5,"{""memory_high"": ""1344M""}",15.261,8.042,0.038,0.767,0.036
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1344M_r1,"{""memory_high"": ""1344M""}",15.013,8.07,0.035,0.736,0.029
+m2_memory,m2_memory_t6_memtouch_1024_memory_highmax_r1,{},15.232,8.071,0.043,0.739,0.037
+m2_memory,m2_memory_t6_memtouch_1024_memory_highmax_r2,{},14.568,7.995,0.046,0.73,0.04
+m2_memory,m2_memory_t6_memtouch_1024_memory_high1344M_r4,"{""memory_high"": ""1344M""}",14.513,8.055,0.038,0.735,0.031
+m2_memory,m2_memory_t7_memhog_512_memory_max640M_r2,"{""memory_max"": ""640M""}",12.507,2.871,0.02,0.541,0.015
+m2_memory,m2_memory_t7_memhog_512_memory_max640M_r4,"{""memory_max"": ""640M""}",11.377,2.96,0.02,0.552,0.018
+m2_memory,m2_memory_t7_memhog_512_memory_max640M_r3,"{""memory_max"": ""640M""}",11.12,2.864,0.02,0.591,0.019
+m2_memory,m2_memory_t7_memhog_512_memory_max704M_r5,"{""memory_max"": ""704M""}",11.869,3.016,0.019,0.565,0.015
+m2_memory,m2_memory_t7_memhog_512_memory_max704M_r2,"{""memory_max"": ""704M""}",9.499,2.841,0.019,0.577,0.018
+m2_memory,m2_memory_t7_memhog_512_memory_max704M_r4,"{""memory_max"": ""704M""}",9.938,2.635,0.021,0.554,0.018
+m2_memory,m2_memory_t7_memhog_512_memory_max704M_r1,"{""memory_max"": ""704M""}",9.585,2.964,0.02,0.589,0.018
+m2_memory,m2_memory_t7_memhog_512_memory_max704M_r3,"{""memory_max"": ""704M""}",9.976,2.78,0.02,0.552,0.018
+m2_memory,m2_memory_t7_memhog_512_memory_max768M_r2,"{""memory_max"": ""768M""}",8.657,2.478,0.02,0.516,0.018
+m2_memory,m2_memory_t7_memhog_512_memory_max768M_r5,"{""memory_max"": ""768M""}",9.456,2.618,0.02,0.512,0.018
+m2_memory,m2_memory_t7_memhog_512_memory_max768M_r3,"{""memory_max"": ""768M""}",10.034,2.521,0.02,0.513,0.019
+m2_memory,m2_memory_t7_memhog_512_memory_max640M_r5,"{""memory_max"": ""640M""}",6.545,2.154,0.021,0.563,0.016
+m2_memory,m2_memory_t7_memhog_512_memory_max768M_r4,"{""memory_max"": ""768M""}",9.013,2.573,0.02,0.521,0.017
+m2_memory,m2_memory_t7_memhog_512_memory_max768M_r1,"{""memory_max"": ""768M""}",8.874,2.604,0.022,0.526,0.018
+m2_memory,m2_memory_t7_memhog_512_memory_max640M_r1,"{""memory_max"": ""640M""}",6.66,2.087,0.02,0.567,0.018
+m2_pids,m2_pids_t3_implement_20_r2,"{""pids_max"": 20}",2.601,2.601,0.0,0.026,0.0
+m2_pids,m2_pids_t3_implement_20_r4,"{""pids_max"": 20}",2.603,2.603,0.0,0.026,0.0
+m2_pids,m2_pids_t3_implement_20_r1,"{""pids_max"": 20}",2.584,2.584,0.0,0.025,0.0
+m2_pids,m2_pids_t3_implement_18_r2,"{""pids_max"": 18}",2.598,2.598,0.0,0.027,0.0
+m2_pids,m2_pids_t3_implement_20_r5,"{""pids_max"": 20}",2.605,2.605,0.0,0.027,0.0
+m2_pids,m2_pids_t3_implement_18_r5,"{""pids_max"": 18}",2.578,2.578,0.0,0.027,0.0
+m2_pids,m2_pids_t3_implement_17_r4,"{""pids_max"": 17}",2.567,2.567,0.0,0.024,0.0
+m2_pids,m2_pids_t3_implement_16_r3,"{""pids_max"": 16}",2.6,2.6,0.0,0.016,0.0
+m2_pids,m2_pids_t3_implement_18_r3,"{""pids_max"": 18}",2.588,2.588,0.0,0.027,0.0
+m2_pids,m2_pids_t3_implement_18_r1,"{""pids_max"": 18}",2.588,2.588,0.0,0.027,0.0
+m2_pids,m2_pids_t3_implement_16_r5,"{""pids_max"": 16}",2.599,2.599,0.0,0.017,0.0
+m2_pids,m2_pids_t3_implement_16_r2,"{""pids_max"": 16}",2.593,2.593,0.0,0.017,0.0
+m2_pids,m2_pids_t3_implement_16_r1,"{""pids_max"": 16}",2.602,2.602,0.0,0.018,0.0
+m2_pids,m2_pids_t3_implement_17_r2,"{""pids_max"": 17}",2.593,2.593,0.0,0.025,0.0
+m2_pids,m2_pids_t3_implement_18_r4,"{""pids_max"": 18}",2.635,2.635,0.0,0.028,0.0
+m2_pids,m2_pids_t3_implement_17_r1,"{""pids_max"": 17}",2.598,2.598,0.0,0.026,0.0
+m2_pids,m2_pids_t3_implement_17_r5,"{""pids_max"": 17}",2.588,2.588,0.0,0.024,0.0
+m2_pids,m2_pids_t3_implement_20_r3,"{""pids_max"": 20}",2.603,2.603,0.0,0.027,0.0
+m2_pids,m2_pids_t3_implement_17_r3,"{""pids_max"": 17}",2.615,2.615,0.0,0.026,0.0
+m2_pids,m2_pids_t3_implement_16_r4,"{""pids_max"": 16}",2.613,2.613,0.0,0.017,0.0
+m2_pids_hi,m2_pids_hi_t3_implement_40_r4,"{""pids_max"": 40}",24.335,5.419,0.057,3.311,0.048
+m2_pids_hi,m2_pids_hi_t3_implement_32_r4,"{""pids_max"": 32}",21.97,5.903,0.048,3.855,0.042
+m2_pids_hi,m2_pids_hi_t3_implement_48_r1,"{""pids_max"": 48}",23.26,5.972,0.058,3.912,0.044
+m2_pids_hi,m2_pids_hi_t3_implement_28_r1,"{""pids_max"": 28}",21.835,5.261,0.053,3.236,0.045
+m2_pids_hi,m2_pids_hi_t3_implement_28_r5,"{""pids_max"": 28}",20.646,5.921,0.046,3.872,0.044
+m2_pids_hi,m2_pids_hi_t3_implement_48_r5,"{""pids_max"": 48}",20.66,6.15,0.05,4.105,0.044
+m2_pids_hi,m2_pids_hi_t3_implement_64_r1,"{""pids_max"": 64}",20.619,5.98,0.059,3.841,0.053
+m2_pids_hi,m2_pids_hi_t3_implement_64_r3,"{""pids_max"": 64}",20.44,5.997,0.057,3.845,0.045
+m2_pids_hi,m2_pids_hi_t3_implement_28_r2,"{""pids_max"": 28}",20.081,5.671,0.049,3.823,0.041
+m2_pids_hi,m2_pids_hi_t3_implement_32_r2,"{""pids_max"": 32}",19.189,5.106,0.057,3.219,0.053
+m2_pids_hi,m2_pids_hi_t3_implement_48_r2,"{""pids_max"": 48}",18.616,4.968,0.06,2.869,0.049
+m2_pids_hi,m2_pids_hi_t3_implement_28_r4,"{""pids_max"": 28}",19.191,5.598,0.04,3.637,0.034
+m2_pids_hi,m2_pids_hi_t3_implement_32_r1,"{""pids_max"": 32}",18.565,5.685,0.037,3.675,0.032
+m2_pids_hi,m2_pids_hi_t3_implement_28_r3,"{""pids_max"": 28}",18.769,6.0,0.039,4.046,0.035
+m2_pids_hi,m2_pids_hi_t3_implement_40_r3,"{""pids_max"": 40}",18.198,5.418,0.051,3.266,0.049
+m2_pids_hi,m2_pids_hi_t3_implement_64_r4,"{""pids_max"": 64}",18.527,6.014,0.041,4.06,0.032
+m2_pids_hi,m2_pids_hi_t3_implement_48_r3,"{""pids_max"": 48}",18.586,5.806,0.044,3.676,0.041
+m2_pids_hi,m2_pids_hi_t3_implement_64_r5,"{""pids_max"": 64}",19.23,5.65,0.04,3.686,0.034
+m2_pids_hi,m2_pids_hi_t3_implement_48_r4,"{""pids_max"": 48}",18.275,5.654,0.04,3.694,0.026
+m2_pids_hi,m2_pids_hi_t3_implement_40_r2,"{""pids_max"": 40}",17.008,5.671,0.037,3.68,0.031
+m2_pids_hi,m2_pids_hi_t3_implement_32_r3,"{""pids_max"": 32}",17.611,5.549,0.037,3.64,0.031
+m2_pids_hi,m2_pids_hi_t3_implement_40_r5,"{""pids_max"": 40}",17.462,5.632,0.041,3.654,0.038
+m2_pids_hi,m2_pids_hi_t3_implement_64_r2,"{""pids_max"": 64}",17.287,5.736,0.039,3.641,0.032
+m2_pids_hi,m2_pids_hi_t3_implement_40_r1,"{""pids_max"": 40}",18.35,5.185,0.053,3.076,0.044
+m2_pids_hi,m2_pids_hi_t3_implement_32_r5,"{""pids_max"": 32}",16.614,5.647,0.038,3.637,0.024
+m2_real,m2_real_django__django-15930_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",86.09,65.718,3.111,7.338,0.616
+m2_real,m2_real_django__django-15930_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",74.212,53.834,3.362,5.991,0.629
+m2_real,m2_real_django__django-15930_cpu_max100000-memory_max512M_r3,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",39.818,20.04,1.986,7.487,0.529
+m2_real,m2_real_django__django-15930_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",52.733,33.384,2.872,5.113,0.626
+m2_real,m2_real_django__django-15930_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",53.225,33.069,3.346,5.128,0.628
+m2_real,m2_real_django__django-15930_cpu_max100000-memory_max512M_r1,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",37.11,18.888,1.99,7.114,0.538
+m2_real,m2_real_django__django-15930_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",52.075,31.881,2.861,4.562,0.61
+m2_real,m2_real_django__django-15930_cpu_max100000-memory_max512M_r5,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",28.994,11.351,1.822,4.711,0.506
+m2_real,m2_real_django__django-15930_cpu_max100000-memory_max512M_r2,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",36.492,16.563,1.875,6.223,0.533
+m2_real,m2_real_django__django-15930_on_r5,{},27.263,7.476,2.367,5.519,0.668
+m2_real,m2_real_django__django-15930_on_r2,{},26.577,7.49,2.428,5.193,0.64
+m2_real,m2_real_django__django-15930_cpu_max100000-memory_max512M_r4,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",30.259,9.35,2.327,4.558,0.621
+m2_real,m2_real_django__django-15930_on_r3,{},23.481,6.716,2.585,4.659,0.692
+m2_real,m2_real_django__django-15930_on_r4,{},28.104,6.792,2.619,4.721,0.685
+m2_real,m2_real_django__django-15930_on_r1,{},25.011,7.335,1.612,4.442,0.477
+m2_real,m2_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",49.79,33.712,0.681,5.292,0.121
+m2_real,m2_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",46.956,33.489,0.655,5.24,0.136
+m2_real,m2_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",44.304,30.823,0.587,4.969,0.122
+m2_real,m2_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",43.567,31.503,0.562,5.001,0.126
+m2_real,m2_real_sympy__sympy-24562_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",43.973,31.726,0.703,5.058,0.123
+m2_real,m2_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r2,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",22.668,8.763,0.534,5.322,0.14
+m2_real,m2_real_sympy__sympy-24562_on_r3,{},22.803,7.785,0.626,5.212,0.177
+m2_real,m2_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r4,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",21.998,8.046,0.546,4.738,0.151
+m2_real,m2_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r1,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",22.362,9.07,0.074,5.091,0.03
+m2_real,m2_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r5,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",21.545,8.143,0.533,4.818,0.147
+m2_real,m2_real_sympy__sympy-24562_cpu_max100000-memory_max512M_r3,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",20.852,8.226,0.55,4.832,0.161
+m2_real,m2_real_sympy__sympy-24562_on_r4,{},20.202,7.475,0.567,4.936,0.176
+m2_real,m2_real_sympy__sympy-24562_on_r1,{},21.038,7.289,0.513,4.772,0.159
+m2_real,m2_real_sympy__sympy-24562_on_r5,{},20.975,7.153,0.533,4.703,0.181
+m2_real,m2_real_sympy__sympy-24562_on_r2,{},19.556,7.249,0.666,4.74,0.18
+m2_real,m2_real_psf__requests-5414_on_r5,{},23.897,8.972,0.047,4.632,0.03
+m2_real,m2_real_psf__requests-5414_cpu_max100000-memory_max512M_r3,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",24.136,8.397,0.059,4.077,0.036
+m2_real,m2_real_psf__requests-5414_on_r3,{},25.672,7.477,0.059,3.553,0.039
+m2_real,m2_real_psf__requests-5414_cpu_max25000-memory_max512M_r1,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",31.54,20.269,0.011,2.22,0.01
+m2_real,m2_real_psf__requests-5414_cpu_max100000-memory_max512M_r1,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",22.642,7.465,0.078,3.531,0.062
+m2_real,m2_real_psf__requests-5414_cpu_max25000-memory_max512M_r2,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",30.517,18.021,0.058,2.205,0.026
+m2_real,m2_real_psf__requests-5414_cpu_max25000-memory_max512M_r4,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",29.99,18.826,0.109,2.228,0.004
+m2_real,m2_real_psf__requests-5414_cpu_max25000-memory_max512M_r3,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",30.357,18.759,0.123,2.276,0.017
+m2_real,m2_real_psf__requests-5414_cpu_max25000-memory_max512M_r5,"{""cpu_max"": ""25000 100000"", ""memory_max"": ""512M""}",29.13,16.664,0.025,1.928,0.016
+m2_real,m2_real_psf__requests-5414_on_r2,{},19.318,6.92,0.035,3.043,0.027
+m2_real,m2_real_psf__requests-5414_cpu_max100000-memory_max512M_r4,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",18.487,5.699,0.032,2.606,0.019
+m2_real,m2_real_psf__requests-5414_on_r1,{},17.49,5.796,0.039,2.103,0.022
+m2_real,m2_real_psf__requests-5414_on_r4,{},17.701,5.408,0.032,2.541,0.021
+m2_real,m2_real_psf__requests-5414_cpu_max100000-memory_max512M_r5,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",16.561,4.957,0.046,1.799,0.027
+m2_real,m2_real_psf__requests-5414_cpu_max100000-memory_max512M_r2,"{""cpu_max"": ""100000 100000"", ""memory_max"": ""512M""}",14.536,4.817,0.035,1.743,0.027
+m2_threads,m2_threads_t4_parallel_32_r4,{},15.998,5.228,0.057,24.576,0.058
+m2_threads,m2_threads_t4_parallel_32_r2,{},16.48,5.206,0.061,24.464,0.051
+m2_threads,m2_threads_t4_parallel_32_r5,{},15.155,5.195,0.055,24.253,0.051
+m2_threads,m2_threads_t4_parallel_32_r1,{},14.371,5.287,0.035,24.476,0.028
+m2_threads,m2_threads_t4_parallel_32_r3,{},13.993,5.114,0.033,24.78,0.025
+m2_threads,m2_threads_t4_parallel_16_r2,{},12.453,3.637,0.037,12.18,0.031
+m2_threads,m2_threads_t4_parallel_16_r3,{},11.741,3.701,0.035,12.034,0.025
+m2_threads,m2_threads_t4_parallel_16_r1,{},12.0,3.642,0.035,12.356,0.031
+m2_threads,m2_threads_t4_parallel_16_r5,{},12.004,3.531,0.035,12.169,0.03
+m2_threads,m2_threads_t4_parallel_16_r4,{},11.304,3.672,0.038,12.242,0.03
+m2_threads,m2_threads_t4_parallel_8_r1,{},10.948,2.836,0.035,6.044,0.027
+m2_threads,m2_threads_t4_parallel_8_r3,{},11.345,2.848,0.035,6.104,0.028
+m2_threads,m2_threads_t4_parallel_4_r3,{},12.992,2.616,0.035,1.905,0.027
+m2_threads,m2_threads_t4_parallel_8_r2,{},11.23,3.028,0.036,6.144,0.032
+m2_threads,m2_threads_t4_parallel_8_r4,{},10.563,2.77,0.034,6.034,0.02
+m2_threads,m2_threads_t4_parallel_8_r5,{},10.325,2.789,0.037,6.194,0.033
+m2_threads,m2_threads_t4_parallel_4_r1,{},10.293,2.672,0.037,1.977,0.034
+m2_threads,m2_threads_t4_parallel_4_r4,{},11.049,2.57,0.035,1.837,0.028
+m2_threads,m2_threads_t4_parallel_4_r5,{},10.742,2.45,0.034,1.889,0.031
+m2_threads,m2_threads_t4_parallel_4_r2,{},9.976,2.648,0.034,1.861,0.031

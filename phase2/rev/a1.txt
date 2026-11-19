@@ -1,0 +1,101 @@
+mode=model (how a slice that is both model and tool time is counted)
+
+design set (M0 first pass, t3, CPU): 5 cells
+  replay        median |err|   8.2% [2.7%-15.6%]  within 10%   3/5  max  15.6%
+  unchanged     median |err|  17.5% [2.8%-50.2%]  within 10%   1/5  max  50.2%
+  quota         median |err|  65.0% [14.0%-99.0%]  within 10%   0/5  max  99.0%
+  eq1_quota     median |err|   6.7% [3.0%-14.0%]  within 10%   4/5  max  14.0%
+  eq1_measured  median |err|   7.0% [3.2%-15.1%]  within 10%   4/5  max  15.1%
+
+all held-out cells: 89 cells
+  replay        median |err|   6.9% [5.2%-8.2%]  within 10%  61/89  max  78.7%
+  unchanged     median |err|  17.2% [11.4%-27.2%]  within 10%  30/89  max  91.6%
+  quota         median |err|  21.9% [15.5%-54.8%]  within 10%  29/89  max 172.1%
+  eq1_quota     median |err|   9.4% [6.7%-11.9%]  within 10%  47/89  max  80.4%
+  eq1_measured  median |err|   4.3% [3.1%-5.8%]  within 10%  71/89  max  37.8%
+
+held-out, M0 first pass: 51 cells
+  replay        median |err|   7.5% [5.2%-10.3%]  within 10%  31/51  max  78.7%
+  unchanged     median |err|  14.7% [9.4%-17.6%]  within 10%  21/51  max  91.6%
+  quota         median |err|  15.5% [9.4%-22.7%]  within 10%  21/51  max 172.1%
+  eq1_quota     median |err|   9.4% [6.7%-14.2%]  within 10%  27/51  max  80.4%
+  eq1_measured  median |err|   5.6% [3.6%-7.7%]  within 10%  38/51  max  37.8%
+
+held-out, M0 revision: 11 cells
+  replay        median |err|   4.9% [2.1%-9.1%]  within 10%   9/11  max  60.9%
+  unchanged     median |err|  40.5% [14.8%-52.1%]  within 10%   2/11  max  77.1%
+  quota         median |err|  91.7% [24.5%-137.8%]  within 10%   2/11  max 157.6%
+  eq1_quota     median |err|   7.8% [5.1%-21.9%]  within 10%   6/11  max  55.9%
+  eq1_measured  median |err|   6.4% [2.0%-8.7%]  within 10%  10/11  max  20.0%
+
+held-out, M1: 13 cells
+  replay        median |err|   7.6% [3.6%-11.5%]  within 10%   8/13  max  28.3%
+  unchanged     median |err|  24.5% [11.4%-53.8%]  within 10%   3/13  max  77.4%
+  quota         median |err|  50.9% [17.3%-68.1%]  within 10%   2/13  max 160.2%
+  eq1_quota     median |err|  17.3% [1.4%-23.1%]  within 10%   5/13  max  77.4%
+  eq1_measured  median |err|   2.5% [0.9%-10.0%]  within 10%   9/13  max  20.4%
+
+held-out, M2: 14 cells
+  replay        median |err|   5.7% [3.0%-7.4%]  within 10%  13/14  max  19.7%
+  unchanged     median |err|  23.0% [7.7%-48.1%]  within 10%   4/14  max  78.7%
+  quota         median |err|  41.0% [8.3%-89.4%]  within 10%   4/14  max 154.6%
+  eq1_quota     median |err|   4.6% [2.9%-27.2%]  within 10%   9/14  max  78.7%
+  eq1_measured  median |err|   2.1% [1.1%-3.4%]  within 10%  14/14  max   6.2%
+
+held-out, small tasks: 45 cells
+  replay        median |err|   6.7% [4.3%-8.0%]  within 10%  32/45  max  62.2%
+  unchanged     median |err|  18.9% [14.8%-32.0%]  within 10%  11/45  max  79.8%
+  quota         median |err|  27.8% [19.3%-55.2%]  within 10%  10/45  max 172.1%
+  eq1_quota     median |err|  10.8% [5.5%-17.3%]  within 10%  20/45  max  78.7%
+  eq1_measured  median |err|   3.4% [2.3%-5.4%]  within 10%  35/45  max  37.8%
+
+held-out, real tasks: 44 cells
+  replay        median |err|   7.0% [4.9%-9.8%]  within 10%  29/44  max  78.7%
+  unchanged     median |err|  14.9% [9.3%-35.6%]  within 10%  19/44  max  91.6%
+  quota         median |err|  14.9% [9.3%-66.5%]  within 10%  19/44  max 160.2%
+  eq1_quota     median |err|   8.0% [6.6%-11.1%]  within 10%  27/44  max  80.4%
+  eq1_measured  median |err|   5.6% [3.2%-7.5%]  within 10%  36/44  max  20.4%
+
+held-out, disk only: 14 cells
+  replay        median |err|   7.5% [4.3%-9.7%]  within 10%  11/14  max  28.4%
+  unchanged     median |err|  40.6% [16.0%-65.4%]  within 10%   2/14  max  78.7%
+  quota         median |err|  40.6% [16.6%-55.8%]  within 10%   2/14  max  78.7%
+  eq1_quota     median |err|  40.6% [16.6%-55.5%]  within 10%   2/14  max  78.7%
+  eq1_measured  median |err|   3.6% [1.6%-5.3%]  within 10%  14/14  max   8.5%
+
+held-out, CPU + memory platform sizes: 44 cells
+  replay        median |err|   7.0% [5.3%-9.8%]  within 10%  29/44  max  78.7%
+  unchanged     median |err|  14.9% [9.1%-35.3%]  within 10%  19/44  max  91.6%
+  quota         median |err|  14.9% [9.3%-67.3%]  within 10%  19/44  max 160.2%
+  eq1_quota     median |err|   8.0% [6.6%-11.1%]  within 10%  27/44  max  80.4%
+  eq1_measured  median |err|   5.6% [3.3%-7.7%]  within 10%  36/44  max  20.4%
+
+held-out, cells where every run solved the task: 85 cells
+  replay        median |err|   6.5% [4.9%-8.0%]  within 10%  60/85  max  62.2%
+  unchanged     median |err|  17.1% [10.6%-24.5%]  within 10%  30/85  max  79.8%
+  quota         median |err|  21.0% [14.7%-51.3%]  within 10%  29/85  max 172.1%
+  eq1_quota     median |err|   9.1% [6.5%-11.4%]  within 10%  46/85  max  78.7%
+  eq1_measured  median |err|   4.2% [3.1%-5.7%]  within 10%  67/85  max  37.8%
+
+held-out replay misses (> 10%): 28
+  model time moved >= 2 s: 19 (the miss has the same sign as the model-time change in 17)
+  failed runs (no model-time change): 0
+  neither: 9
+    M0 first pass cpu_model2 haiku-5-5  {"cpu_max": "25000 100000"} obs 1.67 replay 1.484
+    M0 first pass e2e_disk opus-5-5  {"io_max": {"rbps": 20971520}} obs 1.287 replay 1.09
+    M0 first pass e2e_disk opus-5-5  {"io_max": {"rbps": 5242880}} obs 2.23 replay 1.596
+    M0 first pass real opus-5-5 pytest-dev__pytest-10081 {"cpu_max": "100000 100000", "memory_max": "512M"} obs 0.914 replay 1.008
+    M0 first pass real opus-5-5 pytest-dev__pytest-10081 {"cpu_max": "200000 100000", "memory_max": "512M"} obs 0.866 replay 1.0
+    M0 first pass real opus-5-5 pytest-dev__pytest-10081 {"cpu_max": "200000 100000", "memory_max": "8G"} obs 0.9 replay 1.0
+    M1 m1_disk opus-5-5 1024 {"io_max": {"rbps": 157286400}} obs 1.209 replay 1.07
+    M1 m1_real opus-5-5 django__django-15930 {"cpu_max": "25000 100000", "memory_max": "512M"} obs 2.38 replay 1.736
+    M2 m2_real opus-5-5 django__django-15930 {"cpu_max": "100000 100000", "memory_max": "512M"} obs 1.373 replay 1.102
+
+held-out, model time stable (< 2 s) and every run solved: 57 cells
+  replay        median |err|   5.1% [4.1%-6.5%]  within 10%  48/57  max  28.4%
+  unchanged     median |err|  15.5% [9.4%-24.4%]  within 10%  23/57  max  77.4%
+  quota         median |err|  22.3% [10.0%-55.2%]  within 10%  21/57  max 172.1%
+  eq1_quota     median |err|   6.5% [4.6%-9.4%]  within 10%  38/57  max  77.4%
+  eq1_measured  median |err|   2.8% [2.0%-3.9%]  within 10%  53/57  max  13.0%
+
+paired, all held-out: replay closer than eq1_quota in 50 cells, farther in 30

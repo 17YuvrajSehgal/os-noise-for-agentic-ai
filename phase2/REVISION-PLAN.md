@@ -62,6 +62,12 @@ Paper due 2026-11-23 AoE. Abstract registration: see "Before anything".
 
 These answer most of the review and need no VM.
 
+Status 2026-11-19: all collections done (M0 538, M1 230, M2 251 runs, all
+verified on the PC). A1-A11 done on the run folders, results in
+`rev/RESULTS.md` (A4 also on the revision runs). Open: A5 dot-plot figure,
+A12 (paper rewrite). A8: only 3 pairs have both
+single limits measured, not 4.
+
 | # | Review point | Work |
 |---|---|---|
 | A1 | Model is an accounting identity | Present Eq. 1 as a decomposition. Add a real prediction: estimate `s` *before* running the limited task, from the unlimited run only (CPU seconds, parallelism, I/O bytes) and the limit (quota, rate). Predict wall slowdown, compare with measured. |

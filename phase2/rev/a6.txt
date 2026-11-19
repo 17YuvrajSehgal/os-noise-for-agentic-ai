@@ -1,0 +1,35 @@
+experiment       model      task           part                      5%                    10%                    20%  same?
+cpu              opus-5-5   t2_medium      wall    cpu_max=25000 100000                      -                      -  moves 1 level
+cpu              opus-5-5   t2_medium      local   cpu_max=50000 100000   cpu_max=50000 100000   cpu_max=50000 100000  same
+cpu              opus-5-5   t3_implement   wall    cpu_max=50000 100000   cpu_max=50000 100000   cpu_max=37500 100000  moves 1 level
+cpu              opus-5-5   t3_implement   local   cpu_max=75000 100000   cpu_max=75000 100000   cpu_max=75000 100000  same
+cpu_model2       fable-5-1  t2_medium      wall                       -                      -                      -  same
+cpu_model2       fable-5-1  t2_medium      local   cpu_max=50000 100000   cpu_max=50000 100000   cpu_max=50000 100000  same
+cpu_model2       fable-5-1  t3_implement   wall    cpu_max=50000 100000   cpu_max=50000 100000   cpu_max=50000 100000  same
+cpu_model2       fable-5-1  t3_implement   local   cpu_max=50000 100000   cpu_max=50000 100000   cpu_max=50000 100000  same
+cpu_model2       haiku-5-5  t2_medium      wall    cpu_max=50000 100000   cpu_max=25000 100000   cpu_max=25000 100000  moves 1 level
+cpu_model2       haiku-5-5  t2_medium      local   cpu_max=50000 100000   cpu_max=50000 100000   cpu_max=25000 100000  moves 1 level
+cpu_model2       haiku-5-5  t3_implement   wall    cpu_max=25000 100000   cpu_max=25000 100000   cpu_max=25000 100000  same
+cpu_model2       haiku-5-5  t3_implement   local   cpu_max=50000 100000   cpu_max=50000 100000   cpu_max=50000 100000  same
+memory_soft      opus-5-5   t6_memtouch    wall       memory_high=1152M      memory_high=1152M      memory_high=1152M  same
+memory_soft      opus-5-5   t6_memtouch    local      memory_high=1152M      memory_high=1152M      memory_high=1152M  same
+memory_hard_file opus-5-5   t6_memtouch    wall        memory_max=1024M       memory_max=1024M       memory_max=1024M  same
+memory_hard_file opus-5-5   t6_memtouch    local       memory_max=1024M       memory_max=1024M       memory_max=1024M  same
+memory_cliff     opus-5-5   t7_memhog      wall         memory_max=640M        memory_max=640M        memory_max=608M  moves 1 level
+memory_cliff     opus-5-5   t7_memhog      local        memory_max=640M        memory_max=640M                      -  moves 5 levels
+e2e_memory       opus-5-5   t3_implement   wall         memory_max=128M        memory_max=128M        memory_max=128M  same
+e2e_memory       opus-5-5   t3_implement   local        memory_max=192M        memory_max=128M        memory_max=128M  moves 1 level
+disk             opus-5-5   t8_ioread      wall  io_max={'rbps': 157286 io_max={'rbps': 157286 io_max={'rbps': 104857  moves 1 level
+disk             opus-5-5   t8_ioread      local io_max={'rbps': 157286 io_max={'rbps': 157286 io_max={'rbps': 157286  same
+e2e_disk         opus-5-5   t3_implement   wall  io_max={'rbps': 209715 io_max={'rbps': 524288 io_max={'rbps': 524288  moves 1 level
+e2e_disk         opus-5-5   t3_implement   local io_max={'rbps': 524288 io_max={'rbps': 524288 io_max={'rbps': 209715  moves 1 level
+network          opus-5-5   t3_implement   wall      {"rate_kbit": 256}     {"rate_kbit": 256}                      -  moves 1 level
+network          opus-5-5   t3_implement   local                      -                      -                      -  same
+pids             opus-5-5   t3_implement   wall                       -                      -                      -  same
+pids             opus-5-5   t3_implement   local            pids_max=17            pids_max=17            pids_max=17  same
+threads          opus-5-5   t4_parallel    wall              16 workers             16 workers                      -  moves 1 level
+threads          opus-5-5   t4_parallel    local              4 workers              8 workers              8 workers  moves 1 level
+neighbour        opus-5-5   t3_implement   wall                       -                      -                      -  same
+neighbour        opus-5-5   t3_implement   local {"kind": "cpu", "worke {"kind": "cpu", "worke {"kind": "cpu", "worke  same
+
+19 of 32 breaking points are the same at 5%, 10% and 20%; 12 move by one level; 1 move by more.

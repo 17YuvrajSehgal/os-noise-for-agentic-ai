@@ -1,0 +1,16 @@
+family,run,agent,task,cpu_max,mem_limit,io_limit,task_arg,wall_s,n_turns,n_exchanges,n_connects,startup_s,startup_agent_cpu,startup_tool_cpu,startup_ready,model_only_s,model_only_agent_cpu,model_only_tool_cpu,model_only_ready,model_tool_s,model_tool_agent_cpu,model_tool_tool_cpu,model_tool_ready,tool_only_s,tool_only_agent_cpu,tool_only_tool_cpu,tool_only_ready,agent_only_s,agent_only_agent_cpu,agent_only_tool_cpu,agent_only_ready,shutdown_s,shutdown_agent_cpu,shutdown_tool_cpu,shutdown_ready,model_pct,n_tool_procs,agent_cpu_s,tool_cpu_s,ttfb_med,turn_dur_med,out_kb_total,in_kb_total
+r_density_real,r_density_real_psf__requests-5414_16_r3,claude,swe.sh,max,,,psf__requests-5414,100.79,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_16_r1,claude,swe.sh,max,,,psf__requests-5414,49.67,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_16_r2,claude,swe.sh,max,,,psf__requests-5414,43.07,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_8_r1,claude,swe.sh,max,,,psf__requests-5414,39.71,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_8_r3,claude,swe.sh,max,,,psf__requests-5414,42.18,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_8_r2,claude,swe.sh,max,,,psf__requests-5414,29.83,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_4_r1,claude,swe.sh,max,,,psf__requests-5414,37.55,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_4_r3,claude,swe.sh,max,,,psf__requests-5414,31.14,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_4_r2,claude,swe.sh,max,,,psf__requests-5414,24.5,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_2_r3,claude,swe.sh,max,,,psf__requests-5414,32.23,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_2_r2,claude,swe.sh,max,,,psf__requests-5414,27.67,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_2_r1,claude,swe.sh,max,,,psf__requests-5414,18.63,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+r_density_real,r_density_real_psf__requests-5414_1_r1,claude,swe.sh,max,,,psf__requests-5414,23.16,4,32,12,2.03,1.239,0.056,0.074,16.53,0.509,0.0,0.023,0.05,0.018,0.012,0.002,4.02,0.33,2.784,0.032,0.19,0.256,0.004,0.004,0.35,0.103,0.0,0.003,71.6,69,2.46,2.86,1.79,4.09,42.1,16.4
+r_density_real,r_density_real_psf__requests-5414_1_r3,claude,swe.sh,max,,,psf__requests-5414,23.43,4,32,12,2.02,1.205,0.058,0.072,18.44,0.583,0.0,0.023,0.05,0.024,0.011,0.002,2.34,0.194,1.988,0.02,0.17,0.221,0.001,0.004,0.41,0.111,0.0,0.006,79.0,70,2.34,2.06,2.24,4.59,42.0,16.5
+r_density_real,r_density_real_psf__requests-5414_1_r2,claude,swe.sh,max,,,psf__requests-5414,21.87,4,33,13,2.01,1.185,0.052,0.073,17.2,0.49,0.0,0.023,0.04,0.02,0.012,0.002,2.08,0.275,1.745,0.062,0.2,0.263,0.004,0.005,0.34,0.103,0.0,0.002,78.9,63,2.34,1.81,1.9,4.32,41.7,16.0
