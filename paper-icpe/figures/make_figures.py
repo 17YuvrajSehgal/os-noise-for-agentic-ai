@@ -65,9 +65,9 @@ def fig_timeline():
         for kind, col in (('model', WAIT), ('local', C[1])):
             ax.broken_barh([(a, d) for a, d, k in segs[cond] if k == kind], (y - 0.3, 0.6), color=col, linewidth=0)
         wall = tot['model'] + tot['local']
-        note = f'{wall:.0f} s' if y == 0 else f'{wall:.0f} s  (x{wall / (base["model"] + base["local"]):.1f})'
+        note = f'{wall:.0f} s' if y == 0 else f'{wall:.0f} s  ({wall / (base["model"] + base["local"]):.1f}×)'
         ax.text(wall + 0.6, y, note, va='center', fontsize=6.5, color=INK)
-        sub = f'local {tot["local"]:.0f} s' if y == 0 else f'local {tot["local"]:.0f} s  (x{tot["local"] / base["local"]:.1f})'
+        sub = f'local {tot["local"]:.0f} s' if y == 0 else f'local {tot["local"]:.0f} s  ({tot["local"] / base["local"]:.1f}×)'
         ax.text(0, y + 0.42, f'model wait {tot["model"]:.0f} s,  {sub}', va='top', fontsize=5.5, color=MUTED)
     ax.set_yticks([0, 1], ['no limit', '0.25 core'])
     ax.set(xlim=(0, 50), ylim=(1.75, -0.45), xlabel='time in the run (s)')
