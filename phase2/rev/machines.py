@@ -10,7 +10,7 @@ Wilson intervals. Breaking point = loosest level whose interval lies above
 
   python rev/machines.py   -> rev/machines.txt, rev/machines.csv
 """
-import csv, json, sys
+import csv, json, statistics as st, sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -84,6 +84,7 @@ def keep(exp, r):
 
 
 rows, lines = [], []
+knees = []     # (experiment, machine, part, breaking point with medians, with means)
 for exp, task, sets, lev, tight in EXPS:
     lines.append(f'\n#### {exp}')
     for machine, root, camps in sets:
@@ -101,7 +102,7 @@ for exp, task, sets, lev, tight in EXPS:
         lines.append(f'\n== {machine} ({VCPU[machine]} vCPU)  baseline: {order[0]}  n={len(base)}  wall {med(bw):.1f} s')
         lines.append(f"{'level':40}{'n':>4}{'wall slowdown [95%]':>23}{'local slowdown [95%]':>23}{'delta':>7}"
                      f"{'solved [95%]':>21}{'abnormal exit [95%]':>24}")
-        knee = knee_l = None
+        knee = knee_l = knee_m = knee_lm = None
         for l in order:
             v = cells[l]
             w = [r['wall'] for r in v]
@@ -112,6 +113,13 @@ for exp, task, sets, lev, tight in EXPS:
                 knee = l
             if knee_l is None and llo > KNEE:
                 knee_l = l
+            # the same with means instead of medians (robustness check)
+            mw, (mlo, _) = st.mean(w) / st.mean(bw), ((1, 1) if v is base else boot_ratio(w, bw, stat=st.mean))
+            ml, (mllo, _) = st.mean(lw) / st.mean(bl), ((1, 1) if v is base else boot_ratio(lw, bl, stat=st.mean))
+            if knee_m is None and mlo > KNEE:
+                knee_m = l
+            if knee_lm is None and mllo > KNEE:
+                knee_lm = l
             d = 0.0 if v is base else cliffs_delta(w, bw)
             ok = sum(r['ok'] for r in v)
             bad = sum(r['exit'] not in ('0', '') for r in v)
@@ -122,10 +130,24 @@ for exp, task, sets, lev, tight in EXPS:
             rows.append(dict(experiment=exp, machine=machine, vcpu=VCPU[machine], level=l, n=len(v),
                              wall_slowdown=round(sw, 3), wall_lo=round(lo, 3), wall_hi=round(hi, 3),
                              local_slowdown=round(sl, 3), local_lo=round(llo, 3), local_hi=round(lhi, 3),
+                             wall_mean_ratio=round(mw, 3), local_mean_ratio=round(ml, 3),
+                             local_min=round(min(lw), 2), local_max=round(max(lw), 2),
                              cliffs_delta=round(d, 3), solved=ok, abnormal_exit=bad,
                              exit_codes=' '.join(sorted({r['exit'] for r in v if r['exit'] not in ('0', '')}))))
         lines.append(f'breaking point (interval above {KNEE:.2f}): wall {knee or "none"}; local {knee_l or "none"}')
+        lines.append(f'  with means instead of medians: wall {knee_m or "none"}; local {knee_lm or "none"}')
+        knees += [(exp, machine, 'wall', knee, knee_m), (exp, machine, 'local', knee_l, knee_lm)]
 
+same = [k for k in knees if k[3] == k[4]]
+lines.append('')
+lines.append(f'#### Means instead of medians: {len(same)} of {len(knees)} breaking points are the same; '
+             f'local: {sum(k[2] == "local" for k in same)} of {sum(k[2] == "local" for k in knees)}')
+for k in knees:
+    if k[3] != k[4]:
+        lines.append(f'  differs: {k[0]} / {k[1]} / {k[2]}: median {k[3] or "none"} -> mean {k[4] or "none"}')
+d = [abs(r['local_mean_ratio'] / r['local_slowdown'] - 1) for r in rows if r['local_slowdown'] > 0 and r['n'] and r['abnormal_exit'] == 0]
+lines.append(f'local slowdown, mean ratio against median ratio (cells with no aborted run): median difference '
+             f'{100 * st.median(d):.1f}%, 90th percentile {100 * sorted(d)[int(.9 * len(d))]:.1f}%')
 with open(HERE / 'machines.csv', 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]))
     w.writeheader(); w.writerows(rows)

@@ -1,0 +1,27 @@
+held-out cells by task: {'t2_medium': 11, 't3_implement': 23, 't8_ioread': 11, 'real': 44}
+all held-out: n=89  replay 0.069  naive Eq.1 0.094  replay closer in 50 of 80  sign test p=0.0165  mean gain 0.062 (sign-flip p=0.0001)
+without t3: n=66  replay 0.070  naive Eq.1 0.100  replay closer in 40 of 58  sign test p=0.0027  mean gain 0.082 (sign-flip p=0.0000)
+M0 first pass cpu done
+M0 first pass cpu_model2 done
+M0 first pass disk done
+M0 first pass e2e_disk done
+M0 first pass real done
+M0 first pass real_quarter done
+M0 first pass real_long done
+M0 revision r_cpu done
+M0 revision r_feedback_ref done
+M0 revision r_real done
+M0 revision r_interact done
+M1 m1_cpu done
+M1 m1_disk done
+M1 m1_real done
+M2 m2_cpu done
+M2 m2_disk done
+M2 m2_real done
+
+one unlimited run at a time: 89 held-out cells, 5 to 15 unlimited runs per cell
+  error of a typical single run (median over cells of the per-cell median): 0.097
+  cells where the typical single run is within 10%: 47 of 89
+  error of the worst single run of a cell, median over cells: 0.290; cells where even the worst run is within 10%: 6
+  spread of the predictions inside a cell ((max - min) / median), median over cells: 0.344
+  slowdown predicted by a single run (its replay / its own wall) against the measured slowdown: typical run 0.071, within 10% in 60 cells; worst run 0.106, within 10% in 40 cells

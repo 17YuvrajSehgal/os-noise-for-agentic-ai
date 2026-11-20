@@ -1,0 +1,9 @@
+model       task              limit        n  cost $ (median)  output tokens
+fable-5-1   t3                0.25 core   15           0.8876           4170
+fable-5-1   t9                0.25 core   15           0.7373           2140
+haiku-5-5   t11 const_fast    0.25 core   15           0.0108           5308
+haiku-5-5   t11 const_slow    no limit    15           0.0109           5338
+haiku-5-5   t11 instruct      0.25 core   15           0.0104           4562
+haiku-5-5   t3                0.25 core   10           0.0176           8562
+haiku-5-5   t3                no limit    10           0.0138           5246
+haiku-5-5   t9                0.25 core   10           0.0122           4126

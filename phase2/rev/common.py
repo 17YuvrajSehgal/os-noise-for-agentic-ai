@@ -59,10 +59,10 @@ def med(xs):
     return st.median(xs) if xs else None
 
 
-def boot_ratio(a, b, n=2000, seed=7):
-    """95% bootstrap interval of median(a) / median(b)."""
+def boot_ratio(a, b, n=2000, seed=7, stat=st.median):
+    """95% bootstrap interval of stat(a) / stat(b); stat is the median unless given."""
     rng = random.Random(seed)
-    rs = sorted(st.median(rng.choices(a, k=len(a))) / st.median(rng.choices(b, k=len(b))) for _ in range(n))
+    rs = sorted(stat(rng.choices(a, k=len(a))) / stat(rng.choices(b, k=len(b))) for _ in range(n))
     return rs[int(.025 * n)], rs[int(.975 * n)]
 
 

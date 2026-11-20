@@ -6,7 +6,7 @@ settings, each against the same task with no limit.
                                         others -> rq3/table_<first>.txt)
 
 Slowdown and local slowdown as in rq2/curves.py (median ratio, 95% bootstrap,
-2000 resamples, seed 7). "all tasks" = mean of the six per-task median ratios,
+2000 resamples, seed 7). "all tasks" = geometric mean of the six per-task median ratios,
 bootstrapped by resampling runs inside each task. Throttled = time the cgroup
 was held back by its CPU quota (cpu.stat); mem peak = memory.peak of the
 agent's cgroup, which includes file cache.
@@ -38,9 +38,9 @@ tasks = sorted({t for t, _ in g})
 
 
 def boot(fn, pairs, n=2000):
-    """pairs: list of (runs, base runs); returns the mean over pairs of median(fn) ratios, with a 95% interval."""
-    est = st.mean(st.median(map(fn, a)) / st.median(map(fn, b)) for a, b in pairs)
-    rs = sorted(st.mean(st.median(map(fn, rng.choices(a, k=len(a)))) / st.median(map(fn, rng.choices(b, k=len(b))))
+    """pairs: list of (runs, base runs); returns the geometric mean over pairs of median(fn) ratios (Hoefler 2015, rule 4), with a 95% interval."""
+    est = st.geometric_mean(st.median(map(fn, a)) / st.median(map(fn, b)) for a, b in pairs)
+    rs = sorted(st.geometric_mean(st.median(map(fn, rng.choices(a, k=len(a)))) / st.median(map(fn, rng.choices(b, k=len(b))))
                         for a, b in pairs) for _ in range(n))
     return est, rs[int(0.025 * n)], rs[int(0.975 * n)]
 

@@ -62,6 +62,10 @@ SPEC_DEFAULTS = {
     'sample_hz': 5,              # time-series sampler rate
     'timeout_s': 900,            # per agent
     'fake_cmd': 'sleep 1',       # command run when agent == fake (collector tests)
+    'tool_guard': None,          # keep the OOM killer away from the agent (host runtime, one agent):
+                                 #   oom_adj: every tool shell raises its own oom_score_adj to 1000
+                                 #   cgroup:  tool shells move to a child cgroup with tool_memory_max
+    'tool_memory_max': None,     # memory.max of the tools' cgroup when tool_guard == cgroup
 }
 
 # ---- trace profiles -------------------------------------------------------
@@ -175,6 +179,25 @@ class Collector:
                 dev = 'MAJ:MIN' if self.dry else self.block_device()
                 self.write_root(cg / 'io.max', dev + ' ' + ' '.join(
                     f'{k}={v}' for k, v in lim['io_max'].items()))
+        if self.spec['tool_guard'] == 'cgroup':
+            # agent and tools in two children of the leaf (a cgroup with children holds no
+            # processes itself); the leaf keeps the limits, the tools get their own memory.max
+            leaf = self.leaf(1)
+            self.write_root(leaf / 'cgroup.subtree_control', CONTROLLERS)
+            for d in (leaf / 'agent', leaf / 'tools'):
+                self.sh(['mkdir', '-p', d], sudo=True)
+            self.write_root(leaf / 'tools' / 'memory.max', str(self.spec['tool_memory_max']))
+            # a tool shell moves itself: it needs to write cgroup.procs here and in the parent
+            self.sh(['chown', f'{os.getuid()}:{os.getgid()}', leaf / 'cgroup.procs',
+                     leaf / 'agent' / 'cgroup.procs', leaf / 'tools' / 'cgroup.procs'], sudo=True)
+
+    def tool_guard(self):
+        """Lines for the file that every non-interactive bash sources (BASH_ENV), that is,
+        every shell the agent starts for a tool. The agent itself is not bash."""
+        log = shlex.quote(str(self.meta / 'tool_guard.log'))
+        act = ('echo 1000 > /proc/$$/oom_score_adj' if self.spec['tool_guard'] == 'oom_adj' else
+               f'echo $$ > {self.leaf(1)}/tools/cgroup.procs')
+        return f'{act} 2>/dev/null && echo $$ >> {log}\n'
 
     def remove_cgroups(self):
         # leaves first; a cgroup can only be removed when empty
@@ -391,8 +414,15 @@ class Collector:
                  '[ -f "$HOME/.codex-env" ] && { set -a; . "$HOME/.codex-env"; set +a; }']
         if self.spec['runtime'] == 'docker':
             return self.docker_launcher(lines, cmd)
+        if self.spec['tool_guard']:
+            guard = self.meta / 'tool_guard.sh'
+            if not self.dry:
+                guard.write_text(self.tool_guard())
+            lines += [f'export BASH_ENV={shlex.quote(str(guard))}']
         for i in range(1, self.n + 1):
             a, w, cg = self.out / f'a{i}', self.work / f'a{i}', self.leaf(i)
+            if self.spec['tool_guard'] == 'cgroup':
+                cg = cg / 'agent'
             lines += ['(',
                       '  pid=$BASHPID',      # $BASHPID, not $$: this subshell is what enters the cgroup
                       f'  echo $pid | sudo -n tee {cg}/cgroup.procs >/dev/null',
@@ -621,6 +651,12 @@ def fill_spec(raw):
         raise ValueError('runtime must be host or docker')
     if spec['runtime'] == 'docker' and spec['net'] is not None:
         raise ValueError('runtime docker uses docker networking; net impairment is host only')
+    if spec['tool_guard'] not in (None, 'oom_adj', 'cgroup'):
+        raise ValueError('tool_guard must be oom_adj or cgroup')
+    if spec['tool_guard'] and (spec['runtime'] != 'host' or spec['agents'] != 1):
+        raise ValueError('tool_guard needs the host runtime and one agent')
+    if spec['tool_guard'] == 'cgroup' and not spec['tool_memory_max']:
+        raise ValueError('tool_guard cgroup needs tool_memory_max')
     if any(c in spec['run'] for c in '/ \t'):
         raise ValueError('run name must not contain spaces or slashes')
     return spec

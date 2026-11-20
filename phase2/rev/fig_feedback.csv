@@ -1,0 +1,76 @@
+label,limit,after,wall
+time printed,0.25 core,4,70.828
+time printed,0.25 core,3,86.94
+time printed,0.25 core,2,52.787
+time printed,0.25 core,9,82.993
+time printed,0.25 core,5,151.514
+time printed,0.25 core,2,59.28
+time printed,0.25 core,3,79.806
+time printed,0.25 core,9,92.77
+time printed,0.25 core,4,77.214
+time printed,0.25 core,4,72.367
+no time printed,0.25 core,0,28.674
+no time printed,0.25 core,1,47.83
+no time printed,0.25 core,0,28.83
+no time printed,0.25 core,0,28.856
+no time printed,0.25 core,6,31.438
+no time printed,0.25 core,1,42.608
+no time printed,0.25 core,0,28.276
+no time printed,0.25 core,6,48.548
+no time printed,0.25 core,1,42.122
+no time printed,0.25 core,0,28.212
+fixed fast time printed,0.25 core,0,33.337
+fixed fast time printed,0.25 core,0,35.471
+fixed fast time printed,0.25 core,2,51.825
+fixed fast time printed,0.25 core,0,36.689
+fixed fast time printed,0.25 core,0,25.282
+fixed fast time printed,0.25 core,7,39.984
+fixed fast time printed,0.25 core,0,26.696
+fixed fast time printed,0.25 core,0,33.392
+fixed fast time printed,0.25 core,0,35.248
+fixed fast time printed,0.25 core,0,29.882
+fixed fast time printed,0.25 core,0,32.641
+fixed fast time printed,0.25 core,0,31.36
+fixed fast time printed,0.25 core,6,44.662
+fixed fast time printed,0.25 core,0,36.078
+fixed fast time printed,0.25 core,0,31.454
+"time printed + ""not a goal""",0.25 core,0,26.719
+"time printed + ""not a goal""",0.25 core,0,31.702
+"time printed + ""not a goal""",0.25 core,0,34.361
+"time printed + ""not a goal""",0.25 core,6,32.836
+"time printed + ""not a goal""",0.25 core,0,25.962
+"time printed + ""not a goal""",0.25 core,0,26.786
+"time printed + ""not a goal""",0.25 core,0,26.167
+"time printed + ""not a goal""",0.25 core,0,30.318
+"time printed + ""not a goal""",0.25 core,1,49.045
+"time printed + ""not a goal""",0.25 core,1,49.516
+"time printed + ""not a goal""",0.25 core,0,29.341
+"time printed + ""not a goal""",0.25 core,0,31.073
+"time printed + ""not a goal""",0.25 core,0,32.654
+"time printed + ""not a goal""",0.25 core,0,28.513
+"time printed + ""not a goal""",0.25 core,0,30.888
+time printed,no limit,1,18.541
+time printed,no limit,0,14.662
+time printed,no limit,1,20.885
+time printed,no limit,0,17.204
+time printed,no limit,0,19.628
+time printed,no limit,0,15.49
+time printed,no limit,1,18.299
+time printed,no limit,0,17.65
+time printed,no limit,0,16.837
+time printed,no limit,0,21.411
+fixed slow time printed,no limit,0,16.361
+fixed slow time printed,no limit,0,18.366
+fixed slow time printed,no limit,6,18.533
+fixed slow time printed,no limit,0,14.743
+fixed slow time printed,no limit,4,15.536
+fixed slow time printed,no limit,0,17.206
+fixed slow time printed,no limit,0,17.731
+fixed slow time printed,no limit,0,18.517
+fixed slow time printed,no limit,0,19.807
+fixed slow time printed,no limit,0,14.524
+fixed slow time printed,no limit,0,19.124
+fixed slow time printed,no limit,3,25.345
+fixed slow time printed,no limit,0,16.66
+fixed slow time printed,no limit,0,16.748
+fixed slow time printed,no limit,0,16.009

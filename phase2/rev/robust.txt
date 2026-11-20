@@ -1,0 +1,15 @@
+1. Replay, 89 held-out settings: absolute error of the predicted wall time
+method                        median    mean     p90     max  within 20%
+replay                         0.069   0.116   0.283   0.787          78
+Eq. 1 with s = 1/q             0.094   0.177   0.552   0.804          65
+wall unchanged                 0.172   0.277   0.609   0.916          49
+wall = 1/q                     0.219   0.466   1.210   1.721          43
+Eq. 1 with measured s          0.043   0.064   0.141   0.378          85
+replay where the model time changed by less than 2 s (58 settings): median 0.052  mean 0.064  p90 0.115  max 0.284
+
+2. Real tasks, set 1, six short tasks: geometric mean over tasks of the per-task ratio
+size                      wall, medians  wall, means  local, medians  local, means
+100000 100000 512M                 1.02         1.11            1.06          1.26
+200000 100000 512M                 1.02         0.99            0.99          0.98
+200000 100000 8G                   1.01         0.96            0.98          0.98
+25000 100000 512M                  1.74         1.67            2.51          2.41

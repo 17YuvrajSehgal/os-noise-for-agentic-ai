@@ -1,0 +1,19 @@
+cond,run,start,dur,kind
+no limit,r_cpu_t3_implement_max_r15,0.0,1.2,local
+no limit,r_cpu_t3_implement_max_r15,1.2,1.2,model
+no limit,r_cpu_t3_implement_max_r15,2.4,0.2,local
+no limit,r_cpu_t3_implement_max_r15,2.6,5.0,model
+no limit,r_cpu_t3_implement_max_r15,7.6,0.8,local
+no limit,r_cpu_t3_implement_max_r15,8.4,3.2,model
+no limit,r_cpu_t3_implement_max_r15,11.6,3.6,local
+no limit,r_cpu_t3_implement_max_r15,15.2,5.4,model
+no limit,r_cpu_t3_implement_max_r15,20.6,0.409,local
+0.25 core,r_cpu_t3_implement_25000_r4,0.0,5.0,local
+0.25 core,r_cpu_t3_implement_25000_r4,5.0,1.8,model
+0.25 core,r_cpu_t3_implement_25000_r4,6.8,0.4,local
+0.25 core,r_cpu_t3_implement_25000_r4,7.2,4.0,model
+0.25 core,r_cpu_t3_implement_25000_r4,11.2,1.4,local
+0.25 core,r_cpu_t3_implement_25000_r4,12.6,2.6,model
+0.25 core,r_cpu_t3_implement_25000_r4,15.2,16.4,local
+0.25 core,r_cpu_t3_implement_25000_r4,31.6,6.2,model
+0.25 core,r_cpu_t3_implement_25000_r4,37.8,0.778,local

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""RQ3, longer tasks (real_long): mean slowdown over the tasks that fit in
+"""RQ3, longer tasks (real_long): geometric-mean slowdown over the tasks that fit in
 512 MB, and the hidden-cost model of rq2/hidden.py checked on these new cells.
 
   python rq3/long.py      (reads rq1/runs.csv; writes rq3/long.txt)
 
-Same method as rq3/table.py (median ratios, mean over tasks, 95% bootstrap,
+Same method as rq3/table.py (median ratios, geometric mean over tasks, 95% bootstrap,
 2000 resamples, seed 7). Model: wall slowdown = 1 + f (s - 1), f = local/wall
 of the no-limit runs (medians), s = local slowdown.
 """
@@ -28,8 +28,8 @@ med = lambda fn, v: st.median(map(fn, v))
 
 
 def boot(fn, pairs, n=2000):
-    est = st.mean(med(fn, a) / med(fn, b) for a, b in pairs)
-    rs = sorted(st.mean(med(fn, rng.choices(a, k=len(a))) / med(fn, rng.choices(b, k=len(b))) for a, b in pairs)
+    est = st.geometric_mean(med(fn, a) / med(fn, b) for a, b in pairs)
+    rs = sorted(st.geometric_mean(med(fn, rng.choices(a, k=len(a))) / med(fn, rng.choices(b, k=len(b))) for a, b in pairs)
                 for _ in range(n))
     return f'{est:.2f} [{rs[int(0.025 * n)]:.2f}-{rs[int(0.975 * n)]:.2f}]'
 

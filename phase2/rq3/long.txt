@@ -1,5 +1,5 @@
-mean of 3 tasks that fit, 1 CPU / 512 MB     wall 1.12 [0.76-1.42]  local 1.28 [0.91-1.98]
-mean of 3 tasks that fit, 0.25 CPU / 512 MB  wall 2.13 [1.35-2.41]  local 4.86 [3.41-5.63]
+mean of 3 tasks that fit, 1 CPU / 512 MB     wall 1.11 [0.58-1.39]  local 1.25 [0.53-1.92]
+mean of 3 tasks that fit, 0.25 CPU / 512 MB  wall 2.12 [1.09-2.37]  local 4.72 [1.96-5.51]
 
 task          setting                 f      s   pred    obs    err
 django-15957  1 CPU / 512 MB       0.17   1.70   1.12   1.21  -7.4%

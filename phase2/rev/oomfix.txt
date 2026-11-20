@@ -1,0 +1,14 @@
+t12, 700 MB test, memory.max 768M
+fix      model        n   agent killed [95%]  solved  OOM kills  guarded shells  report names kill  reran w/o tee  wall s
+none     haiku-5-5   10     6/10 [0.31-0.83]   10/10        4             0             4/4             9/10     20.2
+none     opus-5-5    10     3/10 [0.11-0.60]   10/10        2             0             7/7             7/10     23.6
+oom_adj  haiku-5-5   10     0/10 [0.00-0.28]   10/10        5            11            10/10            8/10     27.0
+oom_adj  opus-5-5    10     0/10 [0.00-0.28]   10/10        2             8             9/10           10/10     28.5
+cgroup   haiku-5-5   10     0/10 [0.00-0.28]   10/10        2             8            10/10           10/10     19.0
+cgroup   opus-5-5    10     0/10 [0.00-0.28]   10/10        2             7            10/10            9/10     20.9
+
+none      agent killed in 9 of 20 runs [95% Wilson 0.26-0.66]
+oom_adj   agent killed in 0 of 20 runs [95% Wilson 0.00-0.16]
+cgroup    agent killed in 0 of 20 runs [95% Wilson 0.00-0.16]
+oom_adj: Fisher exact, one-sided, fewer agent kills than no fix: p=0.00061
+cgroup: Fisher exact, one-sided, fewer agent kills than no fix: p=0.00061
