@@ -1,0 +1,12 @@
+sympy-13878, Docker, M0 set 2
+size                            n  solved   wall s  model s  local s     f  turns  tools        wall x [95%]       local x [95%]
+no limit                        5    5/5        300       72      228  0.73     29     13    1.00 [1.00-1.00]    1.00 [1.00-1.00]
+                                 walls: 233 235 300 388 718
+1 CPU / 512M                    5    5/5        679      104      558  0.82     43     20    2.26 [0.95-3.71]    2.45 [0.94-4.39]
+                                 walls: 555 577 679 691 1115
+0.25 CPU / 512M                 5    5/5        878      131      768  0.88     56     25    2.92 [1.22-5.17]    3.37 [1.30-6.43]
+                                 walls: 821 849 878 1203 1427
+
+predictions from the runs with no limit (f = 0.73):
+  1 CPU: measured wall x2.26, local x2.45 | Eq.1 wall x1.00 (err -56%), local x1.00 (err -59%) | replay wall x1.02 (err -55%), local x1.02 (err -58%)
+  0.25 CPU: measured wall x2.92, local x3.37 | Eq.1 wall x3.20 (err +9%), local x4.00 (err +19%) | replay wall x3.32 (err +14%), local x4.05 (err +20%)

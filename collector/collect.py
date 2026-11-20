@@ -30,7 +30,7 @@ Output layout (one folder per run):
                             output), stderr, exit code, check output, patch
   SHA256SUMS
 """
-import argparse, hashlib, json, os, shlex, shutil, subprocess, sys, threading, time
+import argparse, hashlib, json, os, random, shlex, shutil, subprocess, sys, threading, time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -66,6 +66,8 @@ SPEC_DEFAULTS = {
                                  #   oom_adj: every tool shell raises its own oom_score_adj to 1000
                                  #   cgroup:  tool shells move to a child cgroup with tool_memory_max
     'tool_memory_max': None,     # memory.max of the tools' cgroup when tool_guard == cgroup
+    'stagger_s': 0,              # >0: agents 2..N start after a random delay in [0, stagger_s)
+                                 # (seeded by the run name; delays in meta/stagger.json); agent 1 at 0
 }
 
 # ---- trace profiles -------------------------------------------------------
@@ -190,6 +192,18 @@ class Collector:
             # a tool shell moves itself: it needs to write cgroup.procs here and in the parent
             self.sh(['chown', f'{os.getuid()}:{os.getgid()}', leaf / 'cgroup.procs',
                      leaf / 'agent' / 'cgroup.procs', leaf / 'tools' / 'cgroup.procs'], sudo=True)
+
+    def stagger_delays(self):
+        """Start delay of each agent (seconds). Agent 1 starts at once; the others at a random
+        moment in [0, stagger_s), seeded by the run name so a rerun repeats the same delays."""
+        s = self.spec['stagger_s']
+        if not s:
+            return [0.0] * self.n
+        rng = random.Random(self.spec['run'])
+        d = [0.0] + [round(rng.uniform(0, s), 3) for _ in range(self.n - 1)]
+        if not self.dry:
+            (self.meta / 'stagger.json').write_text(json.dumps(d))
+        return d
 
     def tool_guard(self):
         """Lines for the file that every non-interactive bash sources (BASH_ENV), that is,
@@ -419,15 +433,17 @@ class Collector:
             if not self.dry:
                 guard.write_text(self.tool_guard())
             lines += [f'export BASH_ENV={shlex.quote(str(guard))}']
+        delays = self.stagger_delays()
         for i in range(1, self.n + 1):
             a, w, cg = self.out / f'a{i}', self.work / f'a{i}', self.leaf(i)
             if self.spec['tool_guard'] == 'cgroup':
                 cg = cg / 'agent'
+            wait = f'sleep {delays[i - 1]:.3f} && ' if delays[i - 1] else ''
             lines += ['(',
                       '  pid=$BASHPID',      # $BASHPID, not $$: this subshell is what enters the cgroup
                       f'  echo $pid | sudo -n tee {cg}/cgroup.procs >/dev/null',
                       f'  echo $pid > {shlex.quote(str(a / "root.pid"))}',
-                      f'  cd {shlex.quote(str(w))} && exec {cmd}',
+                      f'  cd {shlex.quote(str(w))} && {wait}exec {cmd}',
                       f') > {shlex.quote(str(a / "out.fifo"))} 2> {shlex.quote(str(a / "agent.stderr"))} &',
                       f'pids[{i}]=$!']
         for i in range(1, self.n + 1):
@@ -651,6 +667,8 @@ def fill_spec(raw):
         raise ValueError('runtime must be host or docker')
     if spec['runtime'] == 'docker' and spec['net'] is not None:
         raise ValueError('runtime docker uses docker networking; net impairment is host only')
+    if spec['stagger_s'] and (spec['runtime'] != 'host' or spec['stagger_s'] < 0):
+        raise ValueError('stagger_s needs the host runtime and a positive value')
     if spec['tool_guard'] not in (None, 'oom_adj', 'cgroup'):
         raise ValueError('tool_guard must be oom_adj or cgroup')
     if spec['tool_guard'] and (spec['runtime'] != 'host' or spec['agents'] != 1):

@@ -1,0 +1,22 @@
+{
+ "name": "r_long",
+ "reps": 5,
+ "seed": 113,
+ "_note": "Review 2, point 6: long sessions. sympy-13878 is one of the three SWE-bench Verified tasks rated '>4 hours'; a no-limit pilot took 322 s and solved it (xarray-6992, also '>4 hours', is never solved; sphinx-7590 does not validate in our environment). RQ3 sizes: no limit, 1 vCPU / 512 MiB, 0.25 vCPU / 512 MiB. Tests f, the dilution and the replay on sessions of several minutes, and whether long tools hit time-outs.",
+ "base": {
+  "agent": "claude",
+  "task": "swe.sh",
+  "task_arg": "sympy__sympy-13878",
+  "runtime": "docker",
+  "trace": "full",
+  "cache": "cold",
+  "timeout_s": 2700
+ },
+ "grid": {
+  "limits": [
+   {},
+   {"cpu_max": "100000 100000", "memory_max": "512M"},
+   {"cpu_max": "25000 100000", "memory_max": "512M"}
+  ]
+ }
+}

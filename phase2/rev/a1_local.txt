@@ -1,0 +1,47 @@
+M0 first pass cpu done
+M0 first pass cpu_model2 done
+M0 first pass disk done
+M0 first pass e2e_disk done
+M0 first pass real done
+M0 first pass real_quarter done
+M0 first pass real_long done
+M0 revision r_cpu done
+M0 revision r_feedback_ref done
+M0 revision r_real done
+M0 revision r_interact done
+M1 m1_cpu done
+M1 m1_disk done
+M1 m1_real done
+M2 m2_cpu done
+M2 m2_disk done
+M2 m2_real done
+
+89 held-out settings, 35 groups of settings that share unlimited runs
+error of                            median    mean     p90  within 10%
+wall time, replay                    0.069   0.115   0.283     61/89
+wall time, whole-run max rule        0.080   0.125   0.291     56/89
+local time, replay                   0.071   0.145   0.403     54/89
+local time, whole-run max rule       0.118   0.173   0.508     38/89
+local time, s = 1/q                  0.087   0.215   0.682     47/89
+local slowdown, replay               0.071   0.145   0.403     54/89
+local time, replay, model stable     0.056   0.084   0.174     42/59
+
+paired: replay against an alternative, on local time (positive = replay closer)
+  vs whole-run max rule: settings closer 69 of 80, sign test two-sided p=0.0000; per group of shared runs: closer in 29 of 35 groups, two-sided p=0.0001; median gain 2.6 points
+  vs s = 1/q: settings closer 48 of 80, sign test two-sided p=0.0929; per group of shared runs: closer in 21 of 35 groups, two-sided p=0.3105; median gain 1.1 points
+
+by kind of limit
+  q<1  local          n= 38 median 0.116 mean 0.206 p90 0.674
+  q<1  local, s=1/q   n= 38 median 0.076 mean 0.195 p90 0.631
+  q<1  wall           n= 38 median 0.057 mean 0.146 p90 0.496
+  q<1  replay closer than s=1/q on local time in 13 of 38 (two-sided p=0.0730)
+  q>=1 local          n= 37 median 0.046 mean 0.104 p90 0.325
+  q>=1 local, s=1/q   n= 37 median 0.060 mean 0.119 p90 0.313
+  q>=1 wall           n= 37 median 0.069 mean 0.097 p90 0.191
+  q>=1 replay closer than s=1/q on local time in 21 of 28 (two-sided p=0.0125)
+  disk local          n= 14 median 0.047 mean 0.090 p90 0.272
+  disk local, s=1/q   n= 14 median 0.586 mean 0.523 p90 0.870
+  disk wall           n= 14 median 0.075 mean 0.083 p90 0.153
+  disk replay closer than s=1/q on local time in 14 of 14 (two-sided p=0.0001)
+
+wall time, replay vs Eq. 1 with s=1/q: settings 49 of 83 (two-sided p=0.1239); groups 19 of 35 (two-sided p=0.7359)

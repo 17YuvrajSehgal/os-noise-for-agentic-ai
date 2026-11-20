@@ -20,8 +20,9 @@ sys.path.insert(0, str(HERE))
 from common import FIRST, REV, wilson   # noqa: E402
 from predict import intervals           # noqa: E402
 
-SETS = [('M0 first pass', 4, FIRST, 'density'), ('M0 revision', 4, REV, 'r_density'), ('M1', 2, REV, 'm1_density'),
-        ('M2', 8, REV, 'm2_density'), ('M0 revision, Requests in Docker', 4, REV, 'r_density_real')]
+SETS = [('M0 first pass', 4, FIRST, ['density']), ('M0 revision', 4, REV, ['r_density', 'r_density_more']),
+        ('M1', 2, REV, ['m1_density']), ('M2', 8, REV, ['m2_density']),
+        ('M0 revision, Requests in Docker', 4, REV, ['r_density_real'])]
 
 
 def group(run):
@@ -46,9 +47,9 @@ def pct(xs, p):
 
 
 rows, lines = [], []
-for name, vcpu, root, camp in SETS:
+for name, vcpu, root, camps in SETS:
     by = defaultdict(list)
-    for run in sorted((root / camp).glob('*/result.json')):
+    for run in sorted(r for camp in camps for r in (root / camp).glob('*/result.json')):
         if json.loads((run.parent / 'spec.json').read_text()).get('trace') == 'none':
             continue
         n, walls, oks, cpu, peak = group(run.parent)
