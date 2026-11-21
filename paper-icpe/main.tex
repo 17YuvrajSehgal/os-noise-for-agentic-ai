@@ -11,6 +11,8 @@
 \usepackage{xcolor}
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 \newcommand{\uu}[1]{\,\textsf{#1}}
+\definecolor{findgreen}{RGB}{0,120,60}
+\newcommand{\best}[1]{\textbf{\textcolor{findgreen}{#1}}}   % a main finding in a table
 
 \setcopyright{none}
 \acmConference[ICPE '27]{ACM/SPEC International Conference on Performance Engineering}{2027}{}
@@ -604,7 +606,8 @@ part of a slowdown that comes from the model side.
 runs with no limit. 89 held-out settings (small and real tasks, three
 models, all four sets of runs). Absolute error of the wall time (median
 with 95\% bootstrap interval, mean, settings within 10\%) and of local
-time, the part that a limit changes (median, 90th percentile).}
+time, the part that a limit changes (median, 90th percentile). Our
+method is in bold green.}
 \label{tab:predict}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lrrrrr@{}}
@@ -613,7 +616,7 @@ time, the part that a limit changes (median, 90th percentile).}
 \cmidrule(lr){2-4}\cmidrule(l){5-6}
 Prediction & Median & Mean & $\leq$10\% & Median & 90th pct. \\
 \midrule
-\textbf{Replay of 0.2\,s slices} & \textbf{6.9\%} [5.2--8.2] & \textbf{11.6\%} & \textbf{61} & \textbf{7.1\%} & \textbf{40\%} \\
+\best{Replay of 0.2\,s slices} & \best{6.9\%} [5.2--8.2] & \best{11.6\%} & \best{61} & \best{7.1\%} & \best{40\%} \\
 Same rule on the whole local part & 8.0\% & 12.5\% & 56 & 11.8\% & 51\% \\
 Eq.~\ref{eq:hidden} with $s = \max(1, 1/q)$ & 9.4\% [6.7--11.9] & 17.7\% & 47 & 8.7\% & 68\% \\
 Wall unchanged & 17.2\% [11.4--27.2] & 27.7\% & 30 & -- & -- \\
@@ -696,7 +699,8 @@ is needed. Both hold as long as the agent does not change what it does.
 Slowdown against no limit: geometric mean of the per-task median ratios,
 with 95\% bootstrap intervals. For the long tasks, the slowdown is the
 geometric mean over the
-three tasks that fit in 512\,MB; xarray is reported in the text.}
+three tasks that fit in 512\,MB; xarray is reported in the text. The
+slowdowns whose interval lies above 1 are in bold green.}
 \label{tab:real}
 \small
 \begin{tabular}{@{}l ccc ccc@{}}
@@ -709,7 +713,7 @@ No limit & 30/30 & 1.00 & 1.00 & 11/20 & 1.00 & 1.00 \\
 2 CPU, 8\,GB (CI runner) & 30/30 & 1.01 [0.86--1.14] & 0.98 [0.84--1.13] & -- & -- & -- \\
 2 CPU, 512\,MB (sandbox) & 30/30 & 1.02 [0.90--1.14] & 0.99 [0.85--1.14] & -- & -- & -- \\
 1 CPU, 512\,MB (Cloud Run) & 30/30 & 1.02 [0.90--1.38] & 1.06 [0.92--1.59] & 12/20 & 1.11 [0.58--1.39] & 1.25 [0.53--1.92] \\
-0.25 CPU, 512\,MB (Fargate) & 30/30 & \textbf{1.74} [1.46--1.94] & \textbf{2.51} [2.00--2.87] & 11/20 & \textbf{2.12} [1.09--2.37] & \textbf{4.72} [1.96--5.51] \\
+0.25 CPU, 512\,MB (Fargate) & 30/30 & \best{1.74} [1.46--1.94] & \best{2.51} [2.00--2.87] & 11/20 & \best{2.12} [1.09--2.37] & \best{4.72} [1.96--5.51] \\
 \bottomrule
 \end{tabular}
 \end{table*}
