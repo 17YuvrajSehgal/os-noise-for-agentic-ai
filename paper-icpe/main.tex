@@ -323,8 +323,8 @@ step~\cite{maricq2018,hoefler2015}.
 
 \begin{table}[t]
 \caption{The dataset: 2,199 runs, 2,159 of them with a kernel trace (the
-tracing-cost experiments include 40 runs without one). For many agents,
-the count is groups of agents.}
+tracing-cost experiments include 40 runs without one). $C$ is the number
+of vCPUs. For many agents, the count is groups of agents.}
 \label{tab:data}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lll rrrr@{}}
@@ -346,7 +346,7 @@ Printed run time & t3, t9--t11 & 3 models & 140 & 105 & -- & -- \\
 Silent test kill, two fixes & t12 & 768\,MB, none & -- & 80 & -- & -- \\
 Real tasks, short & 6 or 3 tasks & 5 sizes; no container & 180 & 120 & 45 & 45 \\
 Real tasks, long & 4 or 1 tasks & 3 platform sizes & 60 & 15 & -- & -- \\
-Tracing cost & t3, Django & none, core, full & 45 & 50 & -- & -- \\
+Tracing cost & t3, Django & no trace, reduced, full & 45 & 50 & -- & -- \\
 \midrule
 Total & & & 963 & 623 & 230 & 251 \\
 \midrule
@@ -898,7 +898,8 @@ tool call, 64\,s against 37\,s). The trigger is therefore neither the
 slow machine alone nor the slow number alone.
 
 \emph{The agent reports the errors it can see, and only those.} When a
-memory limit kills the tool, the agent sees the kill (exit code 137). It
+memory limit kills the tool, the agent sees the kill (exit code 137,
+which means the process was killed). It
 names the cause in its final message in 23 of 23 runs, and it does not
 retry in a loop. This agrees with work showing that explicit reports
 reduce failures of state awareness~\cite{song2025}. Three cases leave
@@ -1071,8 +1072,8 @@ machine. Sandboxes such as Firecracker share CPU through the same host
 cgroups~\cite{agache2020}, so the CPU results should carry over. Memory
 and disk may not~\cite{anjali2020}.
 
-The workload is narrow in four ways. First, all runs use one closed
-source agent in two versions, and most use one model. We expect the
+The workload is narrow in four ways. First, all runs use one
+closed-source agent in two versions, and most use one model. We expect the
 mechanisms (quota, reclaim, kills) to carry over, because the kernel
 enforces them. The local share $f$ and the process-limit rule depend on
 the agent and must be measured again. Second, the real tasks are eleven
