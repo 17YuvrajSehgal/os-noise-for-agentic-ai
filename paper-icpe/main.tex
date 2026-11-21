@@ -230,6 +230,17 @@ separate cause of waiting.
 % ---------------------------------------------------------------------------
 \section{Study Design}\label{sec:design}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{ICPE-2027/figures/final.pdf}
+\Description{A diagram in four parts. Part 1: on a cloud VM, the agent and its tools run in one cgroup with limits on CPU, memory, disk and processes; a busy neighbour and other agents run next to it, and the remote model is reached over a network that can also be limited. Part 2: each run records a kernel trace, the agent's event log and the cgroup counters. Part 3: the event log splits a run into model wait and local time, and the trace gives the state of each thread. Part 4: the reported results are the breaking point, the slowdown, the prediction, the agents per machine and the agent's behaviour.}
+\caption{Overview of the study. Orange marks time on the machine, grey
+the wait for the model, pink a limit that we set, and green what we
+record. For real tasks, the agent runs in a Docker container inside its
+cgroup.}
+\label{fig:overview}
+\end{figure*}
+
 \subsection{Machines, agent and limits}
 All runs use Google Cloud VMs in one zone, with Ubuntu 24.04 and no
 swap. VM0 and M0 are of type n2-standard-4, with 4 virtual CPUs (vCPUs)
@@ -253,20 +264,18 @@ unless we state Haiku (\texttt{claude-haiku-5-5}) or Fable
 fixed prompt and a fresh session.
 
 The agent and every process it starts run in a fresh cgroup, a group of
-processes that the kernel limits and counts together. A run sets a limit
-by writing one of the cgroup's control files~\cite{cgroupv2}. The CPU
-quota (\texttt{cpu.max}) is the share of CPU time that the cgroup may
-use in each 100\,ms period, after which it stops until the next
-period~\cite{turner2010}. Above a soft memory limit
-(\texttt{memory.high}), the kernel takes memory back from the cgroup
-(reclaim) but never kills. At a hard memory limit (\texttt{memory.max}),
-the kernel kills a process when reclaim is not enough. Two more files
-limit the disk read speed (\texttt{io.max}) and the number of processes
-and threads (\texttt{pids.max}). Memory sizes are binary units. Network
-limits use the Linux network emulator \texttt{netem}. A busy neighbour
-is a program that loads the CPU, the memory or the disk from another
-cgroup on the same VM. For real tasks, the agent works in a Docker
-container whose cgroup sits inside the agent's cgroup.
+processes that the kernel limits and counts together
+(Figure~\ref{fig:overview}). A run sets a limit by writing one of the
+cgroup's control files~\cite{cgroupv2}. The CPU quota (\texttt{cpu.max})
+is the share of CPU time that the cgroup may use in each 100\,ms period,
+after which it stops until the next period~\cite{turner2010}. Above a
+soft memory limit (\texttt{memory.high}), the kernel takes memory back
+from the cgroup (reclaim) but never kills. At a hard memory limit
+(\texttt{memory.max}), the kernel kills a process when reclaim is not
+enough. Two more files limit the disk read speed (\texttt{io.max}) and
+the number of processes and threads (\texttt{pids.max}). Network limits
+use the Linux network emulator \texttt{netem}. A busy neighbour is a
+program that loads the CPU, the memory or the disk from another cgroup.
 
 \subsection{Tasks}
 \emph{Small tasks} make each limit act on a known piece of work. Two are
@@ -346,20 +355,17 @@ VM0 & t2--t8 & 7 experiments & \multicolumn{4}{r}{132} \\
 \end{tabular}}
 \end{table}
 
-Each run on M0, M1 and M2 keeps a kernel trace with every kernel event
-and system call (LTTng 2.15.1), the agent's event stream, and every
-cgroup counter, read 5 times per second. VM0 kept a smaller trace and
-only the CPU counter.
+Each run on M0, M1 and M2 keeps the three views of
+Figure~\ref{fig:overview} (LTTng 2.15.1 for the trace). VM0 kept a
+smaller trace and only the CPU counter.
 
 \subsection{Splitting a run}
 From the event stream we split the wall time of each run into parts. A
 \emph{model turn} starts when the agent hands work to the model and ends
-with the last block of the answer. A \emph{tool call} starts when the
-model asks for a tool and ends with the tool's result. The parts are
-\emph{start-up} (before the first model turn), \emph{model wait} (a
-model turn is open), \emph{tool time} (only a tool call is open), the
-agent's \emph{own work} (neither is open) and a short \emph{shut-down}.
-\emph{Local time} is the wall time minus the model wait.
+with the last block of the answer. The time before the first model turn
+is \emph{start-up}. While a model turn is open, the run is in
+\emph{model wait}. While only a tool call is open, it is in \emph{tool
+time}. \emph{Local time} is the wall time minus the model wait.
 
 Some work on the machine runs while a model answer is still open. It
 counts as model time, so local time is a lower bound. We measured this
