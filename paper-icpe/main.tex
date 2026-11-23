@@ -28,28 +28,30 @@
 \begin{abstract}
 Cloud platforms run AI coding agents in containers with fixed CPU and
 memory limits, from two vCPUs down to a quarter of a core. An agent waits
-for a remote language model most of the time, so it is not known where
-such limits start to cost, how much of the cost reaches the user, or
-what the limits do to the agent. We ran the Claude Code agent 2,199
+for a remote language model for much of each run, so it is not known
+where such limits start to cost, how much of the cost reaches the user,
+or what the limits do to the agent. We ran the Claude Code agent 2,199
 times on four cloud VMs with 2, 4 and 8 vCPUs, with kernel traces for
 almost every run. The runs cover ten kinds of system limits and eleven
-real SWE-bench tasks at the container sizes that platforms offer. Our results fall in three groups. First, each limit has a breaking point and one of
-three shapes: a smooth rise, a sudden cliff, or a crash.
-Second, the model wait dilutes the cost, as Amdahl's law predicts. At a
-quarter of a core, the agent's work on the machine takes 3.9 to 4.8
-times longer, and the user waits 1.8 to 2.6 times longer. Kernel traces
-show that a CPU quota adds waiting, not work, so a simple formula
-predicts its cost. For disk limits, a replay of runs with no limit
-predicts the time on the machine within a median 4.7\%, where the simple
-formula is off by more than half. Third, some failures only appear with
-live agents. The agent crashes when the process limit is below the
-number of threads that its runtime keeps alive, about 8 plus 2 per vCPU.
-When a test needs most of a memory limit, the kernel kills the test and
-then, in 9 of 20 runs, the agent itself, and the user gets no message.
-Giving the tools their own memory cgroup removed these kills. A smaller
-model also did extra work when a test printed a slow run time. We turn
-these results into sizing rules for platform builders, and we release
-the dataset and tools.
+real SWE-bench tasks at the container sizes that platforms offer. Our
+results fall in three groups. First, each limit has a breaking point and
+one of three shapes: a smooth rise, a sudden cliff, or a crash. Second,
+the model wait dilutes the cost, as Amdahl's law predicts, though less
+on tasks with heavy test suites, where the machine's share of a run
+reaches 73\%. At a quarter of a core, the agent's work on the machine
+takes 3.9 to 4.8 times longer, and the user waits 1.8 to 2.6 times
+longer. Kernel traces show that a CPU quota adds waiting, not work, so a
+simple formula predicts its cost. For disk limits, a replay of runs with
+no limit predicts the time on the machine within a median 4.7\% (14
+settings, 11 of them a plain file read). Third, some failures only
+appear with live agents. The agent crashes when the process limit is at
+or below the number of threads that its runtime keeps alive, about 8
+plus 2 per vCPU. When a test needs most of a memory limit, the kernel
+kills the test and then, in 9 of 20 runs, the agent itself, and the user
+gets no message. Giving the tools their own memory cgroup removed these
+kills. A smaller model also did extra work when a test printed a slow
+run time. We turn these results into sizing rules for platform builders,
+and we release the dataset and tools.
 \end{abstract}
 
 \begin{CCSXML}
@@ -149,8 +151,9 @@ and main findings are:
   machine's share of a run is $f$ and a limit makes that part $s$ times
   longer, the user waits $1 + f\,(s-1)$ times longer. We measure $f$
   (0.17 to 0.73) and show from kernel traces where $s$ comes from. For CPU quotas below one core, a simple formula predicts the cost.
-For disk limits, a replay of runs with no limit is needed: it predicts
-local time within a median 4.7\%, where the formula is off by 59\%.
+For disk limits, the formula has no simple estimate of $s$, and a
+  replay of runs with no limit predicts local time within a median
+  4.7\%.
 \item \textbf{Real tasks at platform sizes.} At 1 CPU or more, short
   real tasks show no slowdown that we can detect. At 0.25 CPU every
   short task is still solved, but takes 1.35 to 2.4 times longer.
@@ -459,15 +462,13 @@ by the model wait.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{ICPE-2027/figures/fig_limits.pdf}
+\includegraphics[width=0.82\textwidth]{ICPE-2027/figures/fig_limits.pdf}
 \Description{Five line charts of wall and local slowdown against limit level for CPU quota, disk read limit, workers, soft memory limit and disk limit on the coding task, each with its breaking point marked. A sixth chart shows the share of runs in which the agent aborts against the process limit: it jumps from 0 to 100 percent at 12 on 2 vCPUs, at 16 on 4 vCPUs and at 24 on 8 vCPUs.}
 \caption{The three shapes. First five panels: slowdown against the limit
 level, from loose (left) to tight (right), on M0 with Opus. Medians of 5 runs with
 95\% bootstrap intervals; the dotted line marks the breaking point. Last
 panel: share of runs in which the agent aborts under a process limit, on
-the three machine sizes (5 to 15 runs per point). On 2 vCPUs, 3 of 5 runs
-abort at a limit of 10, between 5 of 5 at 12 and at 8; we cannot explain
-this dip with five runs.}
+the three machine sizes (5 to 15 runs per point). }
 \label{fig:limits}
 \end{figure*}
 
@@ -606,8 +607,7 @@ part of a slowdown that comes from the model side.
 runs with no limit. 89 held-out settings (small and real tasks, three
 models, all four sets of runs). Absolute error of the wall time (median
 with 95\% bootstrap interval, mean, settings within 10\%) and of local
-time, the part that a limit changes (median, 90th percentile). Our
-method is in bold green.}
+time, the part that a limit changes (median, 90th percentile). Our method is in bold.}
 \label{tab:predict}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lrrrrr@{}}
@@ -661,11 +661,12 @@ groups).
 \item \emph{Quotas of one core or more (37 settings).} Here $1/q$
   predicts no change. The replay is closer in 21 of the 28 settings
   where the two differ ($p = 0.01$).
-\item \emph{Read limits (14 settings).} Here $1/q$ says nothing. The
-replay is within 4.7\% of local time, and the simple estimate is off
-by 59\%. The replay is closer in all 14. Eleven of them are the plain
-file read \texttt{t8}, where the time is close to $b/r$ by
-construction, so this is the easiest case for the replay.
+\item \emph{Read limits (14 settings).} Here $1/q$ says nothing. A
+  simple estimate from the total bytes read, $\max(t, B/r)$, is off by
+  11.0\% of local time. The replay is within 4.7\% and is closer in 14
+  of 14. Eleven of the 14 are the plain file read \texttt{t8}, where the
+  time is close to $b/r$ by construction, so this is the easiest case
+  for the replay.
 \end{itemize}
 Over all settings and on wall time, the two do not differ significantly
 (the replay is closer in 19 of 35 groups, $p = 0.74$). The replay holds
@@ -688,8 +689,9 @@ shapes. The kernel trace shows that a CPU quota and a disk limit grow
 one kind of waiting and leave the work unchanged. The model wait dilutes
 the cost: when local time grows $s$ times, the user sees $1 +
 f\,(s-1)$. For CPU quotas below one core, this formula with $s = 1/q$
-predicts the cost. For disk limits, a replay of the runs with no limit
-is needed. Both hold as long as the agent does not change what it does.
+predicts the cost. For disk limits, where the formula has no simple estimate of
+$s$, a replay of the runs with no limit predicts local time within
+4.7\%. Both hold as long as the agent does not change what it does.
 
 % ---------------------------------------------------------------------------
 \section{RQ3: Do Real Platform Sizes Slow Down Real Tasks?}\label{sec:rq3}
@@ -699,8 +701,7 @@ is needed. Both hold as long as the agent does not change what it does.
 Slowdown against no limit: geometric mean of the per-task median ratios,
 with 95\% bootstrap intervals. For the long tasks, the slowdown is the
 geometric mean over the
-three tasks that fit in 512\,MB; xarray is reported in the text. The
-slowdowns whose interval lies above 1 are in bold green.}
+three tasks that fit in 512\,MB; xarray is reported in the text. The slowdowns whose interval lies above 1 are in bold.}
 \label{tab:real}
 \small
 \begin{tabular}{@{}l ccc ccc@{}}
@@ -746,12 +747,6 @@ M2, the median wall time of every short task is 1.35 to 2.38 times
 longer, and every run is solved. With five runs, the interval of a
 single task can still include 1. At 1 CPU, no task on M1 or M2 is
 clearly slower (0.85 to 1.05 times), except Django on M2 (1.37 times).
-
-\emph{The sets differ with no limit.} With no limit, local time is
-shorter on set~2, M1 and M2 (5 to 8\,s) than on set~1 (8.5 to 13\,s).
-The trace shows where: each small disk read waits longer on the disk of
-set~1 (for Django, about 1.2\,ms against 0.3\,ms). We therefore compare
-each setting only with runs from the same set.
 
 \emph{Whether a task is solved depends on the task, not the size.} The
 long Django and Sympy tasks are solved in all 30 of their runs. The long
@@ -1013,8 +1008,8 @@ thread per vCPU and one garbage collection helper per vCPU minus one,
 next to about eight other threads. Every thread counts against
 \texttt{pids.max}. With no limit, the agent keeps 12 to 13 processes and
 threads alive on M1, 16 to 17 on M0 and 24 to 26 on M2, or about 8 plus
-2 per vCPU. It crashes almost always when the limit is below this
-number. The exceptions are a limit of 10 on M1, where 3 of 5 runs
+2 per vCPU. It crashes almost always when the limit is at or below the lower of
+these numbers. The exceptions are a limit of 10 on M1, where 3 of 5 runs
 crashed, and the rare aborts above the edge. The kernel's peak counter
 (\texttt{pids.peak}) is higher (15, 21 and 33), because of short-lived
 threads at start-up. We found this rule in the first runs on M1 and M2
@@ -1124,27 +1119,27 @@ set~2 and on two other machines.
 An AI coding agent waits for its model most of the time. This dilutes
 the machine's cost but does not remove it. In 2,199 runs on four VMs,
 only a fraction $f$ of a cost on the machine reaches the user, as
-Amdahl's law predicts. Kernel traces show that a CPU quota or a disk
-limit adds waiting and leaves the agent's work unchanged, so the cost
-can be predicted from runs with no limit. Each limit has a breaking
-point and one of three shapes, and the mechanisms hold on every machine.
-Two numbers scale with the vCPUs: the process limit that crashes the
-agent, and the number of agents that fill a machine. Limits also change
-what the agent does. A small model does extra work when it sees a slow
-time, and the kernel can kill the agent without anyone being told, which
-a separate cgroup for the tools prevented. Our dataset and collector let
-others repeat these measurements on new agents and machines.
+Amdahl's law predicts. Kernel traces show that a CPU quota adds waiting
+rather than work, so a simple formula predicts its cost. For disk
+limits, a replay of the resource use of runs with no limit predicts
+local time within a median 4.7\% over 14 settings. Each limit has a
+breaking point and one of three shapes, and the mechanisms hold on every
+machine. Two numbers scale with the vCPUs: the process limit that
+crashes the agent, and the number of agents that fill a machine. Limits
+also change what the agent does. A small model does extra work when it
+sees a slow time, and the kernel can kill the agent without anyone being
+told, which a separate cgroup for the tools prevented. Our dataset and
+collector let others repeat these measurements on new agents and
+machines.
 
 \section*{Data Availability}
 Traces, collector and analysis scripts: \todo{anonymous link}.
 
 \section*{Use of AI Tools}
-We used an AI coding assistant (Claude Code) to help write the
-collection and analysis scripts, to edit the text of this paper and to
-prepare its figures. The authors designed the study, checked all code
-and results, and take full responsibility for the content. The same
-tool is the subject of the study, where it runs as the measured
-workload (Section~\ref{sec:design}).
+We used an AI coding assistant (Claude Code) to help write the scripts,
+edit the text and prepare the figures. The authors designed the study,
+checked all code and results, and take full responsibility for the
+content. The same tool is the measured workload of the study.
 
 \input{refs.tex}
 

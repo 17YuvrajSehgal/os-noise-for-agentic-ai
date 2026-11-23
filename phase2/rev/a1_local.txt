@@ -44,4 +44,20 @@ by kind of limit
   disk wall           n= 14 median 0.075 mean 0.083 p90 0.153
   disk replay closer than s=1/q on local time in 14 of 14 (two-sided p=0.0001)
 
+read limits, local time, max(t, B/r): n=14 median 0.110 mean 0.165 max 0.527; replay closer in 14 of 14 (ties 0), two-sided p=0.0001
+  M0 first pass t8_ioread      r=  105 MB/s  obs   12.7  replay   12.2 ( 4.1%)  max(t,B/r)   10.8 (14.6%)  1/q    6.3
+  M0 first pass t8_ioread      r=  157 MB/s  obs    9.0  replay    8.8 ( 2.3%)  max(t,B/r)    7.2 (19.4%)  1/q    6.3
+  M0 first pass t8_ioread      r=  210 MB/s  obs    7.0  replay    7.1 ( 1.2%)  max(t,B/r)    6.3 (10.2%)  1/q    6.3
+  M0 first pass t8_ioread      r=   21 MB/s  obs   57.2  replay   54.7 ( 4.2%)  max(t,B/r)   54.2 ( 5.2%)  1/q    6.3
+  M0 first pass t8_ioread      r=   52 MB/s  obs   23.4  replay   22.6 ( 3.7%)  max(t,B/r)   21.7 ( 7.5%)  1/q    6.3
+  M0 first pass t3_implement   r=   21 MB/s  obs   10.2  replay    7.4 (27.2%)  max(t,B/r)    5.8 (43.3%)  1/q    5.8
+  M0 first pass t3_implement   r=   52 MB/s  obs    7.1  replay    5.9 (17.4%)  max(t,B/r)    5.8 (18.5%)  1/q    5.8
+  M0 first pass t3_implement   r=    5 MB/s  obs   29.3  replay   17.5 (40.3%)  max(t,B/r)   13.9 (52.7%)  1/q    5.8
+  M1            t8_ioread      r=  157 MB/s  obs    9.1  replay    8.7 ( 5.1%)  max(t,B/r)    7.6 (17.1%)  1/q    7.6
+  M1            t8_ioread      r=   21 MB/s  obs   58.5  replay   54.7 ( 6.5%)  max(t,B/r)   54.1 ( 7.5%)  1/q    7.6
+  M1            t8_ioread      r=   52 MB/s  obs   23.8  replay   22.5 ( 5.5%)  max(t,B/r)   21.7 ( 9.1%)  1/q    7.6
+  M2            t8_ioread      r=  157 MB/s  obs    8.8  replay    8.8 ( 0.1%)  max(t,B/r)    7.8 (11.9%)  1/q    7.8
+  M2            t8_ioread      r=   21 MB/s  obs   58.2  replay   55.0 ( 5.5%)  max(t,B/r)   54.4 ( 6.5%)  1/q    7.8
+  M2            t8_ioread      r=   52 MB/s  obs   23.4  replay   22.7 ( 3.0%)  max(t,B/r)   21.8 ( 6.9%)  1/q    7.8
+
 wall time, replay vs Eq. 1 with s=1/q: settings 49 of 83 (two-sided p=0.1239); groups 19 of 35 (two-sided p=0.7359)

@@ -147,6 +147,17 @@ for k in ('q<1', 'q>=1', 'disk'):
     d = [e(r['naive_l'], r['obs_l']) - e(r['rep_l'], r['obs_l']) for r in sel]
     k_, m_ = sum(x > 0 for x in d), sum(x != 0 for x in d)
     p(f'  {k:<5}replay closer than s=1/q on local time in {k_} of {m_} (two-sided p={sign_p(k_, m_):.4f})')
+# read limits only: the simple estimate from the total bytes read, max(t, B/r), which is the
+# whole-run rule (reviewer M., 2026-11-22). Also split by task: t8 is the plain file read.
+sel = [r for r in rows if kind(r) == 'disk']
+v = sorted(e(r['who_l'], r['obs_l']) for r in sel)
+d = [e(r['who_l'], r['obs_l']) - e(r['rep_l'], r['obs_l']) for r in sel]
+p(f"\nread limits, local time, max(t, B/r): n={len(v)} median {st.median(v):.3f} mean {st.mean(v):.3f} max {v[-1]:.3f}; "
+  f"replay closer in {sum(x > 0 for x in d)} of {len(d)} (ties {sum(x == 0 for x in d)}), "
+  f"two-sided p={sign_p(sum(x > 0 for x in d), sum(x != 0 for x in d)):.4f}")
+for r in sel:
+    p(f"  {r['group'][0]:<14}{r['group'][3]:<14} r={r['r'] / 1e6:>5.0f} MB/s  obs {r['obs_l']:>6.1f}  replay {r['rep_l']:>6.1f} ({100 * e(r['rep_l'], r['obs_l']):>4.1f}%)  "
+      f"max(t,B/r) {r['who_l']:>6.1f} ({100 * e(r['who_l'], r['obs_l']):>4.1f}%)  1/q {r['naive_l']:>6.1f}")
 d = [e(1 + (r['naive_l'] - r['bl']) / r['bw'], r['obs_w'] / r['bw']) - e(r['rep_w'], r['obs_w']) for r in rows]
 g = defaultdict(list)
 for r, x in zip(rows, d):
