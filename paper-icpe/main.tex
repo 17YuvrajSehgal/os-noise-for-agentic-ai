@@ -154,8 +154,8 @@ and main findings are:
   (0.17 to 0.73) and show from kernel traces where $s$ comes from. For
   CPU quotas below one core, $s$ is close to one over the quota. For
   disk limits there is no such simple estimate. A replay of runs with
-  no limit covers both cases, and predicts the wall time within a median
-  6.9\% on 89 held-out settings.
+  no limit covers both, within a median 6.9\% of the wall time on 89
+  held-out settings.
 \item \textbf{Real tasks at platform sizes.} At 1 CPU or more, short
   real tasks show no slowdown that we can detect. At 0.25 CPU every
   short task is still solved, but it takes 1.35 to 2.4 times longer.
@@ -695,7 +695,7 @@ the cost: when local time grows $s$ times, the user sees $1 +
 f\,(s-1)$. For CPU quotas below one core, this formula with $s = 1/q$
 predicts the cost. For disk limits, where the formula has no simple estimate of
 $s$, a replay of the runs with no limit predicts local time within
-4.7\%, on settings that are mostly a plain file read. Both assume that the agent does not change what it does.
+4.7\%, mostly on a plain file read. Both assume that the agent does not change what it does.
 
 % ---------------------------------------------------------------------------
 \section{RQ3: Do Real Platform Sizes Slow Down Real Tasks?}\label{sec:rq3}
@@ -857,7 +857,7 @@ one agent alone is 2.3 to 2.5 times the measured throughput.  A lighter task (Re
 task. All 1,067 agents in these experiments solved their task.
 
 \emph{Agents that arrive at random.} Agents that start at the same
-moment are a worst case. We therefore repeated the experiment on set~2
+moment are a worst case. We repeated the experiment on set~2
 of M0 with start times spread at random over 60\,s (300 agents, all
 solved). With 4 to 16 arrivals per minute, the agents hardly overlap,
 and each runs as if alone. With 32 arrivals per minute they pile up, and
@@ -927,8 +927,7 @@ kills in \texttt{t12}, the kernel picked the largest process. The first
 kill of a run always hits the test (about 615\,MB), while the agent
 holds about 150\,MB. In the 9 runs where the agent died, the cgroup
 reached its limit again within seconds. No large process was left, so
-the largest one was the agent. We are not sure why the cgroup was still
-at its limit.
+the largest one was the agent. We do not know why the cgroup was still at its limit.
 
 We tested two known fixes on the same setting, with 10 runs per model
 and fix. In the first, every shell that the agent starts for a tool
@@ -960,9 +959,7 @@ in which it was not killed itself.
 
 \emph{The agent does not adapt its tests to a slow machine.} On the
 short real tasks at 0.25 CPU, Opus runs the same number of tests as with
-no limit and never mentions slowness. In the long session, its tool
-time-out fired 1 to 5 times per run under the limits, and it then ran
-smaller sets of tests.
+no limit and never mentions slowness.
 
 \textbf{Answer to RQ5.} Yes, in two ways. First, a small model reacts to
 a slow printed time by doing extra work, which makes the run 2.1 to 2.6
