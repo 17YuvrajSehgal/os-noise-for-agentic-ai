@@ -431,6 +431,8 @@ class Collector:
                    f'--regid={os.getgid()} --init-groups -- ' + cmd)
         lines = ['#!/bin/bash', f'echo $$ > {shlex.quote(str(self.meta / "root.pid"))}',
                  '[ -f "$HOME/.codex-env" ] && { set -a; . "$HOME/.codex-env"; set +a; }',
+                 # codex exec takes an API key from CODEX_API_KEY when nobody is signed in
+                 '[ -n "$OPENAI_API_KEY" ] && export CODEX_API_KEY="${CODEX_API_KEY:-$OPENAI_API_KEY}"',
                  '[ -f "$HOME/.openhands-env" ] && { set -a; . "$HOME/.openhands-env"; set +a; }']
         if self.spec['runtime'] == 'docker':
             return self.docker_launcher(lines, cmd)

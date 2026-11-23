@@ -1,4 +1,4 @@
-OpenHands CLI, Haiku, t3_implement, M0. Runs with no limit: 5; local share f = 0.46
+r_oh_cpu: agent openhands, t3_implement, M0. Runs with no limit: 5; local share f = 0.46
  quota  n solved  wall s  model s  local s  startup turns tools  CPU s throttled s   wall x [95%]       local x [95%]      Eq.1 measured s  Eq.1 s=1/q
   none  5   5/5     53.8     29.1     24.7     11.0    13    13   12.7         0.0   1.00 [0.63-1.59]   1.00 [0.62-1.60]     1.00 (+0%)   1.00 (+0%)
   0.75  5   5/5     54.2     29.3     25.2     12.1    13    12   12.6         1.5   1.01 [0.64-1.17]   1.02 [0.64-1.20]     1.01 (+0%)   1.15 (+14%)

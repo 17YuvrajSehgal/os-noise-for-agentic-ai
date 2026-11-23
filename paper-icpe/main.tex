@@ -50,8 +50,8 @@ plus 2 per vCPU. When a test needs most of a memory limit, the kernel
 kills the test and then, in 9 of 20 runs, the agent itself, and the user
 gets no message. Giving the tools their own memory cgroup removed these
 kills. A smaller model also did extra work when a test printed a slow
-run time. A small check with a second agent, OpenHands, confirms the
-mechanism and the replay, but not the simple formula. We turn these results into sizing rules for platform builders,
+run time. A small check with two other agents, OpenHands and Codex, confirms
+the mechanism. Which prediction fits best depends on the agent. We turn these results into sizing rules for platform builders,
 and we release the dataset and tools.
 \end{abstract}
 
@@ -166,7 +166,7 @@ For disk limits, the formula has no simple estimate of $s$, and a
   growing at about 4 agents per vCPU, and CPU runs out before memory. An
   estimate from one agent alone is 2.3 to 2.5 times too high.
 \item \textbf{A public dataset} of 2,199 agent runs, almost all with
-  kernel traces, 20 more runs with a second agent, and the tool that
+  kernel traces, 40 more runs with two other agents, and the tool that
   collected them.
 \end{itemize}
 
@@ -359,7 +359,7 @@ Tracing cost & t3, Django & no trace, reduced, full & 45 & 50 & -- & -- \\
 Total & & & 963 & 623 & 230 & 251 \\
 \midrule
 VM0 & t2--t8 & 7 experiments & \multicolumn{4}{r}{132} \\
-OpenHands (not in the total) & t3 & CPU quota & \multicolumn{4}{r}{20} \\
+OpenHands, Codex (not in the total) & t3 & CPU quota & \multicolumn{4}{r}{40} \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -424,8 +424,7 @@ exact test, and for two predictions on the same settings a sign test.
 
 We call a result \emph{confirmatory} when the runs that test it were
 designed after the claim was made from other runs. Set~2, M1 and M2 test
-the claims of set~1. Results seen first in the new runs are exploratory,
-such as the kills of the agent in \texttt{t12} and the long session.
+the claims of set~1. Results seen first there are exploratory.
 
 \emph{Cost of tracing.} We ran \texttt{t3} ten times each with no trace
 and with the full trace. Wall time did not change, and the trace added
@@ -452,8 +451,7 @@ a fixed cost of 2.6\,s without a container and 3.8\,s in Docker.
 The largest source of spread between runs is the agent's own choices.
 The slowest short run with no limit took 85\,s, against 20 to 27\,s for
 the other runs of the same task, because the agent chose to run the
-project's whole test suite. Before we blame a limit for a change in tool
-time, we therefore compare the \emph{same} test command across settings.
+project's whole test suite.
 
 \textbf{Answer to RQ1.} With no limit, the agent waits for the model for
 65 to 78\% of a run on small tasks and 42 to 66\% on real tasks. The
@@ -465,7 +463,7 @@ by the model wait.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.82\textwidth]{ICPE-2027/figures/fig_limits.pdf}
+\includegraphics[width=0.76\textwidth]{ICPE-2027/figures/fig_limits.pdf}
 \Description{Five line charts of wall and local slowdown against limit level for CPU quota, disk read limit, workers, soft memory limit and disk limit on the coding task, each with its breaking point marked. A sixth chart shows the share of runs in which the agent aborts against the process limit: it jumps from 0 to 100 percent at 12 on 2 vCPUs, at 16 on 4 vCPUs and at 24 on 8 vCPUs.}
 \caption{The three shapes. First five panels: slowdown against the limit
 level, from loose (left) to tight (right), on M0 with Opus. Medians of 5 runs with
@@ -1013,30 +1011,47 @@ second number that scales is the point where agents fill the machine: 8,
 
 \emph{What depends on the machine's details.} The disk breaking point
 follows the disk's speed: 150\,MB/s on M0 and M1, and 50 to 150\,MB/s on
-M2. A 200\,MB/s limit had no effect on VM0, whose disk reads 205\,MB/s,
-but costs 1.1 times on the faster disk of set~1.
+M2.
 
-\emph{A second agent.} All results above are for Claude Code. As a small
-check, we ran the open-source OpenHands agent~\cite{wang2025} (CLI
-1.16.0, with Haiku through the API) on the coding task \texttt{t3} on
-M0, with no limit and at 0.75, 0.5 and 0.25 core, five runs each. We
-split each run from the timestamps in its own event log. All 20 runs
-solved the task.
+\emph{Two other agents.} All results above are for Claude Code. As a
+small check, we ran two other agents on the coding task \texttt{t3} on
+M0, with no limit and at 0.75, 0.5 and 0.25 core, five runs each: the
+open-source OpenHands~\cite{wang2025} (CLI 1.16.0, with Haiku) and Codex
+(CLI 0.167.0, with its default model \texttt{gpt-6.2-sol}). We split
+each run from the agent's own event log. All 40 runs solved the task
+(Table~\ref{tab:agents}).
 
-The mechanism is the same. The cgroup uses 12.5 to 12.9\,s of CPU time
-at every quota, and its throttled time grows from 0 to 1.5, 7.2 and
-30.4\,s. The quota adds waiting, not work. Equation~\ref{eq:hidden}
-with the measured $s$ is within 5\% of the wall slowdown at every step.
-The numbers differ. OpenHands spends more of a run on the machine ($f =
-0.46$, with 11\,s of start-up), and much of its local time is not CPU
-work. The cost therefore starts later: local time grows by 2\% at 0.75
-core, by 24\% at 0.5 core and 2.0 times at 0.25 core, where the wall
-time is 1.55 times longer. Only the last step has an interval above
-1.10. The simple estimate $s = 1/q$ fails here: it overstates local time
-by 31 to 98\%. The replay, used unchanged, predicts local time within
-3\% and wall time within 7.4\% at all three steps. The breaking point
-of 0.75 core thus belongs to Claude Code on this task, while the
-mechanism, the dilution and the replay carry over.
+\begin{table}[t]
+\caption{Three agents under a CPU quota on \texttt{t3} (M0, medians of 5
+runs; Claude Code from set~1). $f$: local share with no limit. CPU time
+and throttled time are from the cgroup counter.}
+\label{tab:agents}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+& & \multicolumn{3}{c}{Local slowdown at} & CPU time (s), & Throttled (s) \\
+\cmidrule(lr){3-5}
+Agent (model) & $f$ & 0.75 & 0.5 & 0.25 core & none $\to$ 0.25 & at 0.25 \\
+\midrule
+Claude Code (Opus) & 0.29 & 1.35 & 1.84 & 3.9 & 6.4 $\to$ 6.8 & 25.0 \\
+Codex (\texttt{gpt-6.2-sol}) & 0.24 & 1.50 & 2.11 & 4.3 & 5.1 $\to$ 5.8 & 17.2 \\
+OpenHands (Haiku) & 0.46 & 1.02 & 1.24 & 2.0 & 12.7 $\to$ 12.9 & 30.4 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+The mechanism is the same for all three agents: the CPU time changes
+little under the quota, and the throttled time grows.
+Equation~\ref{eq:hidden} with the measured $s$ is within 5\% of the wall
+slowdown for OpenHands and within 2 to 17\% for Codex, whose model
+answered about 3\,s faster at 0.75 and 0.5 core. The numbers depend on
+the agent. Codex behaves like Claude Code. Its local work is CPU work,
+its breaking point is 0.75 core, and $s = 1/q$ predicts its local time
+within 5 to 11\%, while the replay is too low by 18 to 24\%. OpenHands
+spends more of a run on the machine (11\,s of start-up), and much of its
+local time is not CPU work. Its cost becomes clear only at 0.25 core.
+For it, $s = 1/q$ overstates local time by 31 to 98\%, and the replay is
+within 3\%. Neither prediction is best for every agent.
 
 % ---------------------------------------------------------------------------
 \section{Implications}\label{sec:implications}
@@ -1053,9 +1068,10 @@ $f$, so the same limit costs them more.
 \emph{For platform builders.} The numbers hold for the machines and
 tasks we measured. Each comes with a way to find it for another setup.
 \begin{enumerate}
-\item \emph{Give each agent at least one CPU.} For another task or agent, replay a few runs with no limit. Equation~\ref{eq:hidden} with
-  $s = 1/q$ is a quick upper estimate for a CPU quota, and it is close
-  only when the local work is mostly CPU work. Autoscalers
+\item \emph{Give each agent at least one CPU.} For another task or agent, measure $f$ in a few runs with no
+  limit. Equation~\ref{eq:hidden} with $s = 1/q$ then gives a quick
+  estimate for a CPU quota. It is too high when the local work is not
+  mostly CPU work, so check it with one run under the limit. Autoscalers
   that set limits from past use~\cite{rzadca2020} can use such an
   estimate.
 \item \emph{Size memory from the project's test suite, not from the
@@ -1071,9 +1087,8 @@ tasks we measured. Each comes with a way to find it for another setup.
   with the machine full.}
 \end{enumerate}
 
-\emph{For agent builders.} Tell the model when a tool was killed. A
-child process that the kernel killed, or output that stops without an
-exit status, is something the agent program can see but the model
+\emph{For agent builders.} Tell the model when a tool was killed: the
+agent program can see a killed child process, but the model
 cannot~\cite{song2025}. Handle a failed thread start instead of
 aborting. Expect small models to act on numbers in tool output: one
 sentence in the prompt removed the extra work in our runs.
@@ -1108,8 +1123,7 @@ by the vCPUs it sees. Our CPU results on real tasks are therefore for a
 quota, not for a smaller machine.
 
 The workload is narrow in four ways. First, almost all runs use one closed-source agent (Claude Code) in
-three versions, and most use one model. The check with a second agent
-covers one task and one kind of limit. We expect the
+three versions, and most use one model. The check with two other agents covers one task and one kind of limit. We expect the
 mechanisms (quota, reclaim, kills) to carry over, because the kernel
 enforces them. The local share $f$, the breaking points and the process-limit rule
 depend on the agent and must be measured again. Second, the real tasks are eleven
@@ -1144,8 +1158,8 @@ machine. Two numbers scale with the vCPUs: the process limit that
 crashes the agent, and the number of agents that fill a machine. Limits
 also change what the agent does. A small model does extra work when it
 sees a slow time, and the kernel can kill the agent without anyone being
-told, which a separate cgroup for the tools prevented. In a small check with a second agent, the mechanism and the
-replay held, and the simple formula did not. Our dataset and collector
+told, which a separate cgroup for the tools prevented. In a small check with two other agents, the mechanism held, and
+the better prediction depended on the agent. Our dataset and collector
 let others repeat these measurements on new agents and machines.
 
 \section*{Data Availability}

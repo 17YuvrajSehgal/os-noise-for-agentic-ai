@@ -1,0 +1,22 @@
+{
+ "name": "r_cx_cpu",
+ "reps": 5,
+ "seed": 137,
+ "_note": "Third agent (Codex CLI with an API key, its default model): CPU quota on t3, 5 runs per step. Small check of the CPU breaking point and of the dilution with another agent.",
+ "base": {
+  "agent": "codex",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "limits.cpu_max": [
+   "max",
+   "75000 100000",
+   "50000 100000",
+   "25000 100000"
+  ]
+ }
+}

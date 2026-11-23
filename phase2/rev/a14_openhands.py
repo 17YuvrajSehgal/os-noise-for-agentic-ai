@@ -85,6 +85,43 @@ def split(run):
                 tool=tool, turns=turns, tools=tools, iv=iv, t0=t0, t1=t1)
 
 
+def split_codex(run):
+    """Codex CLI (--json): one event per line, written as it happens, so the arrival time that the
+    collector stamps is used. The model turn is open from turn.started (or from the end of a
+    command) until the next command starts or the turn completes. A command runs from its
+    item.started to its item.completed."""
+    an = [json.loads(l) for l in open(run / 'meta' / 'clock_anchors.jsonl')]
+    t0, t1 = an[0]['realtime'], an[-1]['realtime']
+    model = tool = 0.0
+    iv, turn_open, cmd_open, tools, first = [], None, None, 0, None
+    for line in open(run / 'a1' / 'events.jsonl', encoding='utf-8'):
+        x = json.loads(line)
+        try:
+            d = json.loads(x['line'])
+        except ValueError:
+            continue
+        t, typ = x['realtime'], d.get('type')
+        is_cmd = (d.get('item') or {}).get('type') == 'command_execution'
+        if typ == 'turn.started':
+            turn_open, first = t, first or t
+        elif typ == 'item.started' and is_cmd:
+            if turn_open is not None:
+                model += t - turn_open
+                iv.append((turn_open, t))
+                turn_open = None
+            cmd_open, tools = t, tools + 1
+        elif typ == 'item.completed' and is_cmd and cmd_open is not None:
+            tool += t - cmd_open
+            cmd_open, turn_open = None, t
+        elif typ in ('turn.completed', 'turn.failed') and turn_open is not None:
+            model += t - turn_open
+            iv.append((turn_open, t))
+            turn_open = None
+    wall = t1 - t0
+    return dict(wall=wall, model=model, local=wall - model, startup=(first - t0) if first else None,
+                tool=tool, turns=len(iv), tools=tools, iv=iv, t0=t0, t1=t1)
+
+
 def slices(run, r):
     """The run cut into the sampler's slices: (dt, cpu s, bytes read, inside a model turn), as predict.slices."""
     sm, sl = samples(run), []
@@ -112,7 +149,8 @@ for sp in sorted(ROOT.glob('*/spec.json')):
     res = json.loads((run / 'result.json').read_text())
     q = s['limits'].get('cpu_max')
     q = None if q in (None, 'max') else int(q.split()[0]) / int(q.split()[1])
-    r = split(run)
+    AGENT = s.get('agent')
+    r = split_codex(run) if AGENT == 'codex' else split(run)
     r['sl'] = slices(run, r)
     a, b = cpu_stat(run, 'before'), cpu_stat(run, 'after')
     r.update(ok=res['ok'], cpu=(b.get('usage_usec', 0) - a.get('usage_usec', 0)) / 1e6,
@@ -122,7 +160,7 @@ for sp in sorted(ROOT.glob('*/spec.json')):
 m = lambda rs, k: st.median(r[k] for r in rs)
 base = by[None]
 f = m(base, 'local') / m(base, 'wall')
-p(f'OpenHands CLI, Haiku, t3_implement, M0. Runs with no limit: {len(base)}; local share f = {f:.2f}')
+p(f'{ROOT.name}: agent {AGENT}, t3_implement, M0. Runs with no limit: {len(base)}; local share f = {f:.2f}')
 p(f"{'quota':>6} {'n':>2} {'solved':>6} {'wall s':>7} {'model s':>8} {'local s':>8} {'startup':>8} {'turns':>5} {'tools':>5} "
   f"{'CPU s':>6} {'throttled s':>11}   {'wall x [95%]':<18} {'local x [95%]':<18} {'Eq.1 measured s':>15} {'Eq.1 s=1/q':>11}")
 for q in sorted(by, key=lambda x: -(x or 9)):
@@ -149,4 +187,4 @@ for q in sorted(by, key=lambda x: -(x or 9)):
     for r in by[q]:
         p(f"  {q or 'none':>6} {r['run'][-12:]:<12} ok={r['ok']!s:<5} wall {r['wall']:>6.1f} model {r['model']:>6.1f} local {r['local']:>6.1f} "
           f"turns {r['turns']:>2} tools {r['tools']:>2} cpu {r['cpu']:>5.1f} thr {r['thr']:>6.1f}")
-(HERE / 'a14.txt').write_text('\n'.join(out) + '\n', encoding='utf-8')
+(HERE / ('a14.txt' if ROOT.name == 'r_oh_cpu' else f'a14_{ROOT.name}.txt')).write_text('\n'.join(out) + '\n', encoding='utf-8')
