@@ -556,8 +556,7 @@ them with one rule: a thread that is ready while a CPU is idle is held
 back by the quota, and a ready thread with no idle CPU waits for a busy
 core. In the 275 runs with more than 1\,s of throttling, the quota wait
 from the trace is 1.10 times the kernel's own counter of throttled time
-(median). It is above 1 because several threads can wait at the same
-moment. An operator can thus tell a quota that is too small from a
+(median).  An operator can thus tell a quota that is too small from a
 machine that is too full.
 
 \emph{Disk and memory limits grow disk waiting.} Under a read limit of
@@ -703,9 +702,8 @@ $s$, a replay of the runs with no limit predicts local time within
 \begin{table*}[t]
 \caption{Real SWE-bench Verified tasks in Docker at platform sizes.
 Slowdown against no limit: geometric mean of the per-task median ratios,
-with 95\% bootstrap intervals. For the long tasks, the slowdown is the
-geometric mean over the
-three tasks that fit in 512\,MB; xarray is reported in the text. The slowdowns whose interval lies above 1 are in bold.}
+with 95\% bootstrap intervals. The long-task slowdown covers the three
+tasks that fit in 512\,MB. The slowdowns whose interval lies above 1 are in bold.}
 \label{tab:real}
 \small
 \begin{tabular}{@{}l ccc ccc@{}}
@@ -756,9 +754,7 @@ clearly slower (0.85 to 1.05 times), except Django on M2 (1.37 times).
 long Django and Sympy tasks are solved in all 30 runs, the long pytest
 task in 4 of 15 with and without limits, and the long xarray task never.
 
-\emph{512\,MB is at the edge.} Five short tasks reach a peak memory of
-345 to 453\,MB. The Django tasks reach 512\,MB, and the kernel takes
-back memory without a kill. The tests of the long xarray task need about
+\emph{512\,MB is at the edge.} The short tasks peak at 345 to 512\,MB, and none is killed. The tests of the long xarray task need about
 810\,MB. Under 512\,MB, every one of its runs has 4 to 9 memory kills
 and takes 5.1 times longer at 1 CPU and 12 times longer at 0.25 CPU. The
 agent never learns why (Section~\ref{sec:rq5}).
