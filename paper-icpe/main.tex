@@ -401,8 +401,7 @@ analysis~\cite{giraldeau2016,ezzati2020}.
 A \emph{setting} is one combination of task, model and limit value, on
 one machine and set. The \emph{slowdown} is the median time in the
 setting divided by the median time with no limit in the same set.
-Medians are not pulled by the few very slow model
-answers~\cite{maricq2018,hoefler2015}. We give a 95\% bootstrap interval
+ We give a 95\% bootstrap interval
 for each slowdown (2,000 resamples). Going from loose to tight, the
 \emph{breaking point} is the first step whose whole interval for local
 slowdown lies above 1.10. We use local time because it is where a limit acts.
@@ -523,8 +522,7 @@ costs (2.76): while the run waits for one, it does not wait for the
 other. 
 Memory and disk interact most. A soft memory limit of 768\,MB
 slows \texttt{t6} from 15.5\,s to 34\,s, and to 117\,s with a 50\,MB/s
-disk limit added. The memory limit turns reads from memory into reads
-from disk, and the disk limit then slows these reads.
+disk limit added. 
 
 \subsection{What the kernel trace shows}
 
@@ -781,7 +779,7 @@ the quota sets the cost. The slowdown stays below $1/q = 4$ because the
 agent's tool time-out, 2 minutes by default, stops long test runs 1 to 5
 times per run, and the agent then runs smaller tests.
 Equation~\ref{eq:hidden} predicts the wall slowdown within 9\% and the
-replay within 14\%. With five runs, the intervals are wide.
+replay within 14\%. 
 
 \textbf{Answer to RQ3.} Platform sizes of 1 CPU or more show no slowdown
 that we can detect on the short tasks. The 0.25 CPU size slowed every
@@ -1005,9 +1003,7 @@ and then tested it with follow-up runs on both sides of the edge. The
 second number that scales is the point where agents fill the machine: 8,
 16 and 32 agents (Section~\ref{sec:rq4}).
 
-\emph{What depends on the machine's details.} The disk breaking point
-follows the disk's speed: 150\,MB/s on M0 and M1, and 50 to 150\,MB/s on
-M2.
+
 
 \emph{Two other agents.} All results above are for Claude Code. As a
 small check, we ran two other agents on the coding task \texttt{t3} on
