@@ -153,8 +153,9 @@ and main findings are:
   longer, the user waits $1 + f\,(s-1)$ times longer. We measure $f$
   (0.17 to 0.73) and show from kernel traces where $s$ comes from. For
   CPU quotas below one core, $s$ is close to one over the quota. For
-  disk limits there is no such simple estimate, and a replay of runs
-  with no limit predicts local time within a median 4.7\%.
+  disk limits there is no such simple estimate. A replay of runs with
+  no limit covers both cases, and predicts the wall time within a median
+  6.9\% on 89 held-out settings.
 \item \textbf{Real tasks at platform sizes.} At 1 CPU or more, short
   real tasks show no slowdown that we can detect. At 0.25 CPU every
   short task is still solved, but it takes 1.35 to 2.4 times longer.
@@ -694,7 +695,7 @@ the cost: when local time grows $s$ times, the user sees $1 +
 f\,(s-1)$. For CPU quotas below one core, this formula with $s = 1/q$
 predicts the cost. For disk limits, where the formula has no simple estimate of
 $s$, a replay of the runs with no limit predicts local time within
-4.7\%. Both assume that the agent does not change what it does.
+4.7\%, on settings that are mostly a plain file read. Both assume that the agent does not change what it does.
 
 % ---------------------------------------------------------------------------
 \section{RQ3: Do Real Platform Sizes Slow Down Real Tasks?}\label{sec:rq3}
@@ -1148,9 +1149,9 @@ An AI coding agent waits for its model most of the time. This dilutes
 the machine's cost but does not remove it. In 2,199 runs on four VMs,
 only a fraction $f$ of a cost on the machine reaches the user, as
 Amdahl's law predicts. Kernel traces show that a CPU quota adds waiting
-rather than work, so a simple formula predicts its cost. For disk
-limits, a replay of the resource use of runs with no limit predicts
-local time within a median 4.7\% over 14 settings. Each limit has a
+rather than work, so a simple formula predicts its cost. A replay of
+the resource use of runs with no limit also covers disk limits, and
+predicts the wall time within a median 6.9\% on 89 held-out settings. Each limit has a
 breaking point and one of three shapes, and the mechanisms are the same on every
 machine.  Limits
 also change what the agent does. A small model does extra work when it
