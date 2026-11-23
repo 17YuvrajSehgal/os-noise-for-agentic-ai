@@ -1,0 +1,23 @@
+{
+ "name": "r_oh_cpu",
+ "reps": 5,
+ "seed": 131,
+ "_note": "Second agent (OpenHands CLI, Haiku through the API): CPU quota on t3, 5 runs per step. Small check of the CPU breaking point and of the dilution with another agent.",
+ "base": {
+  "agent": "openhands",
+  "model": "anthropic/claude-haiku-5-5",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "limits.cpu_max": [
+   "max",
+   "75000 100000",
+   "50000 100000",
+   "25000 100000"
+  ]
+ }
+}

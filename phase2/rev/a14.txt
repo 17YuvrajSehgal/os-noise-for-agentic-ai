@@ -1,0 +1,33 @@
+OpenHands CLI, Haiku, t3_implement, M0. Runs with no limit: 5; local share f = 0.46
+ quota  n solved  wall s  model s  local s  startup turns tools  CPU s throttled s   wall x [95%]       local x [95%]      Eq.1 measured s  Eq.1 s=1/q
+  none  5   5/5     53.8     29.1     24.7     11.0    13    13   12.7         0.0   1.00 [0.63-1.59]   1.00 [0.62-1.60]     1.00 (+0%)   1.00 (+0%)
+  0.75  5   5/5     54.2     29.3     25.2     12.1    13    12   12.6         1.5   1.01 [0.64-1.17]   1.02 [0.64-1.20]     1.01 (+0%)   1.15 (+14%)
+   0.5  5   5/5     57.3     27.3     30.7     16.3    13    12   12.5         7.2   1.07 [0.67-1.42]   1.24 [0.78-1.89]     1.11 (+4%)   1.46 (+37%)
+  0.25  5   5/5     83.4     35.2     50.0     31.7    13    13   12.9        30.4   1.55 [0.98-1.92]   2.02 [1.26-2.72]     1.47 (-5%)   2.38 (+53%)
+
+replay of the runs with no limit (median over the 5 runs), against the measured medians
+   0.75: wall predicted 55.0 measured 54.2 (+1.4%); local predicted 25.9 measured 25.2 (+2.8%); s = 1/q gives local 32.9 (+30.5%)
+    0.5: wall predicted 59.8 measured 57.3 (+4.4%); local predicted 30.8 measured 30.7 (+0.1%); s = 1/q gives local 49.4 (+60.9%)
+   0.25: wall predicted 77.3 measured 83.4 (-7.4%); local predicted 49.1 measured 50.0 (-1.8%); s = 1/q gives local 98.8 (+97.7%)
+
+per run
+    none ement_max_r1 ok=True  wall   52.0 model   28.6 local   23.4 turns 12 tools 11 cpu  12.4 thr    0.0
+    none ement_max_r2 ok=True  wall   55.6 model   30.5 local   25.0 turns 13 tools 13 cpu  12.8 thr    0.0
+    none ement_max_r3 ok=True  wall   85.4 model   45.9 local   39.5 turns 13 tools 16 cpu  14.5 thr    0.0
+    none ement_max_r4 ok=True  wall   53.8 model   29.1 local   24.7 turns 14 tools 13 cpu  12.6 thr    0.0
+    none ement_max_r5 ok=True  wall   51.7 model   27.6 local   24.2 turns 14 tools 13 cpu  12.7 thr    0.0
+    0.75 ent_75000_r1 ok=True  wall   54.2 model   29.4 local   24.8 turns 13 tools 12 cpu  12.6 thr    1.5
+    0.75 ent_75000_r2 ok=True  wall   51.5 model   29.3 local   22.3 turns 12 tools 11 cpu  12.4 thr    1.5
+    0.75 ent_75000_r3 ok=True  wall   53.7 model   28.5 local   25.2 turns 13 tools 13 cpu  12.7 thr    1.6
+    0.75 ent_75000_r4 ok=True  wall   57.3 model   28.7 local   28.6 turns 11 tools 10 cpu  12.5 thr    1.5
+    0.75 ent_75000_r5 ok=True  wall   63.0 model   33.9 local   29.1 turns 13 tools 12 cpu  12.9 thr    1.5
+     0.5 ent_50000_r1 ok=True  wall   56.6 model   25.9 local   30.7 turns  9 tools 11 cpu  12.4 thr    7.2
+     0.5 ent_50000_r2 ok=True  wall   57.3 model   27.3 local   30.0 turns 13 tools 12 cpu  12.5 thr    7.0
+     0.5 ent_50000_r3 ok=True  wall   76.6 model   29.9 local   46.7 turns 15 tools 14 cpu  14.0 thr    7.5
+     0.5 ent_50000_r4 ok=True  wall   55.0 model   26.3 local   28.7 turns  9 tools 11 cpu  11.9 thr    6.9
+     0.5 ent_50000_r5 ok=True  wall   60.1 model   28.7 local   31.3 turns 13 tools 12 cpu  12.9 thr    7.3
+    0.25 ent_25000_r1 ok=True  wall   78.4 model   33.3 local   45.1 turns  8 tools 12 cpu  12.4 thr   29.2
+    0.25 ent_25000_r2 ok=True  wall   91.3 model   40.6 local   50.8 turns 14 tools 13 cpu  13.6 thr   30.4
+    0.25 ent_25000_r3 ok=True  wall   79.0 model   29.0 local   50.0 turns 10 tools 12 cpu  12.8 thr   30.4
+    0.25 ent_25000_r4 ok=True  wall  103.3 model   35.9 local   67.3 turns 13 tools 16 cpu  14.4 thr   30.7
+    0.25 ent_25000_r5 ok=True  wall   83.4 model   35.2 local   48.2 turns 15 tools 14 cpu  12.9 thr   29.2

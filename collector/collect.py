@@ -45,7 +45,7 @@ DOCKER_MOUNTS = [('.local/share/claude', 'ro'), ('.local/bin', 'ro'), ('.local/s
 
 SPEC_DEFAULTS = {
     'run': None,                 # run name (folder name). Required.
-    'agent': 'claude',           # claude | codex | fake
+    'agent': 'claude',           # claude | codex | openhands | fake
     'model': None,               # passed to the agent if set; else the agent's default
     'task': None,                # script in tasks/. Required.
     'task_arg': '',              # exported to the task script as TASK_ARG
@@ -411,6 +411,11 @@ class Collector:
             cmd = [self.agent_bin('codex'), 'exec', '--json', '--skip-git-repo-check',
                    '--dangerously-bypass-approvals-and-sandbox']
             return cmd + (['-m', model] if model else []) + [prompt]
+        if a == 'openhands':  # the CLI runs its tools as local child processes, so they stay in the
+            # agent's cgroup. Key and model come from ~/.openhands-env (LLM_API_KEY, LLM_MODEL).
+            oh = shutil.which('openhands') or str(Path.home() / '.local/bin/openhands')
+            cmd = ['env', 'OPENHANDS_SUPPRESS_BANNER=1'] + ([f'LLM_MODEL={model}'] if model else [])
+            return cmd + [oh, '--headless', '--json', '--override-with-envs', '-t', prompt]
         if a == 'fake':
             return ['bash', '-c', self.spec['fake_cmd']]
         raise ValueError(f'unknown agent {a}')
@@ -425,7 +430,8 @@ class Collector:
             cmd = (f'sudo -n -E ip netns exec {NETNS} setpriv --reuid={os.getuid()} '
                    f'--regid={os.getgid()} --init-groups -- ' + cmd)
         lines = ['#!/bin/bash', f'echo $$ > {shlex.quote(str(self.meta / "root.pid"))}',
-                 '[ -f "$HOME/.codex-env" ] && { set -a; . "$HOME/.codex-env"; set +a; }']
+                 '[ -f "$HOME/.codex-env" ] && { set -a; . "$HOME/.codex-env"; set +a; }',
+                 '[ -f "$HOME/.openhands-env" ] && { set -a; . "$HOME/.openhands-env"; set +a; }']
         if self.spec['runtime'] == 'docker':
             return self.docker_launcher(lines, cmd)
         if self.spec['tool_guard']:
@@ -644,8 +650,8 @@ def fill_spec(raw):
             raise ValueError(f'spec needs "{key}"')
     if not (HERE / 'tasks' / spec['task']).exists():
         raise ValueError(f'no such task: tasks/{spec["task"]}')
-    if spec['agent'] not in ('claude', 'codex', 'fake'):
-        raise ValueError(f'agent must be claude, codex or fake, not {spec["agent"]!r}')
+    if spec['agent'] not in ('claude', 'codex', 'openhands', 'fake'):
+        raise ValueError(f'agent must be claude, codex, openhands or fake, not {spec["agent"]!r}')
     if spec['trace'] not in ('full', 'core', 'none'):
         raise ValueError(f'trace must be full, core or none, not {spec["trace"]!r}')
     if spec['cache'] not in ('cold', 'warm'):

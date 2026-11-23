@@ -98,6 +98,8 @@ def model_answered(run_dir):
                 return False
             if ev.get('type') == 'assistant' or str(ev.get('type', '')).startswith('item'):
                 answered = True
+            if ev.get('source') == 'agent' and ev.get('kind') in ('ActionEvent', 'MessageEvent'):   # OpenHands
+                answered = True
     return answered
 
 
