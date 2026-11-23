@@ -27,32 +27,32 @@
 
 \begin{abstract}
 Cloud platforms run AI coding agents in containers with fixed CPU and
-memory limits, from two vCPUs down to a quarter of a core. An agent waits
-for a remote language model for much of each run, so it is not known
-where such limits start to cost, how much of the cost reaches the user,
-or what the limits do to the agent. We ran the Claude Code agent 2,199
-times on four cloud VMs with 2, 4 and 8 vCPUs, with kernel traces for
-almost every run. The runs cover ten kinds of system limits and eleven
-real SWE-bench tasks at the container sizes that platforms offer. Our
-results fall in three groups. First, each limit has a breaking point and
-one of three shapes: a smooth rise, a sudden cliff, or a crash. Second,
-the model wait dilutes the cost, as Amdahl's law predicts, though less
-on tasks with heavy test suites, where the machine's share of a run
-reaches 73\%. At a quarter of a core, the agent's work on the machine
-takes 3.9 to 4.8 times longer, and the user waits 1.8 to 2.6 times
-longer. Kernel traces show that a CPU quota adds waiting, not work, so a
-simple formula predicts its cost. For disk limits, a replay of runs with
-no limit predicts the time on the machine within a median 4.7\% (14
-settings, 11 of them a plain file read). Third, some failures only
-appear with live agents. The agent crashes when the process limit is at
-or below the number of threads that its runtime keeps alive, about 8
-plus 2 per vCPU. When a test needs most of a memory limit, the kernel
-kills the test and then, in 9 of 20 runs, the agent itself, and the user
-gets no message. Giving the tools their own memory cgroup removed these
-kills. A smaller model also did extra work when a test printed a slow
-run time. A small check with two other agents, OpenHands and Codex, confirms
-the mechanism. Which prediction fits best depends on the agent. We turn these results into sizing rules for platform builders,
-and we release the dataset and tools.
+memory limits, from two vCPUs down to a quarter of a core. An agent
+waits for a remote language model for much of each run. It is therefore
+not known where such limits start to cost, how much of the cost reaches
+the user, or what the limits do to the agent. We ran the Claude Code
+agent 2,199 times on four cloud VMs with 2, 4 and 8 vCPUs, and recorded
+kernel traces for almost every run. The runs cover ten kinds of system
+limits and eleven real SWE-bench tasks at the container sizes that
+platforms offer. We report three groups of results. First, each limit
+has a breaking point and one of three shapes: a smooth rise, a sudden
+cliff, or a crash. Second, the model wait dilutes the cost, as Amdahl's
+law predicts. At a quarter of a core, the agent's work on the machine
+takes 3.9 to 4.8 times longer, but the user waits only 1.8 to 2.6 times
+longer. The dilution is weaker on tasks with heavy test suites, where
+the machine's share of a run reaches 73\%. Kernel traces show that a CPU
+quota adds waiting, not work, so a simple formula estimates its cost.
+For disk limits, a replay of runs with no limit predicts the time on the
+machine within a median 4.7\%. Third, some failures appear only with
+live agents. The agent crashes when the process limit is at or below the
+number of threads that its runtime keeps alive. When a test needs most
+of a memory limit, the kernel kills the test and then, in 9 of 20 runs,
+the agent itself, and the user gets no message. Giving the tools their
+own memory cgroup removed these kills in our tests. A smaller model also
+did extra work when a test printed a slow run time. A small check with
+two other agents, OpenHands and Codex, shows the same mechanism, but the
+best prediction depends on the agent. We turn these results into sizing
+rules for platform builders, and we release the dataset and tools.
 \end{abstract}
 
 \begin{CCSXML}
@@ -108,8 +108,8 @@ agent's work on the machine takes 3.9 times longer, but the user waits
 only 1.8 times longer. Second, the model's answer time varies by several
 seconds from run to run. On our main coding task, two groups of five
 runs with no limit already differ by up to 13\% in median run time. A
-large cost is
-therefore visible but understated, and a moderate cost can be hidden.
+large cost is therefore visible but looks smaller than it is, and a
+moderate cost can be hidden.
 
 \begin{figure}[t]
 \centering
@@ -151,27 +151,31 @@ and main findings are:
 \item \textbf{A measurement of the dilution, and a prediction.} If the
   machine's share of a run is $f$ and a limit makes that part $s$ times
   longer, the user waits $1 + f\,(s-1)$ times longer. We measure $f$
-  (0.17 to 0.73) and show from kernel traces where $s$ comes from. For CPU quotas below one core, a simple formula predicts the cost.
-For disk limits, the formula has no simple estimate of $s$, and a
-  replay of runs with no limit predicts local time within a median
-  4.7\%.
+  (0.17 to 0.73) and show from kernel traces where $s$ comes from. For
+  CPU quotas below one core, $s$ is close to one over the quota. For
+  disk limits there is no such simple estimate, and a replay of runs
+  with no limit predicts local time within a median 4.7\%.
 \item \textbf{Real tasks at platform sizes.} At 1 CPU or more, short
   real tasks show no slowdown that we can detect. At 0.25 CPU every
-  short task is still solved, but takes 1.35 to 2.4 times longer.
+  short task is still solved, but it takes 1.35 to 2.4 times longer.
 \item \textbf{Failures that only live agents show.} The kernel can kill
-  the agent itself with no message to the user, and a child cgroup for
-  the tools prevents it. A smaller model does extra work when a test
-  prints a slow run time, and one sentence in the prompt prevents it.
+  the agent itself with no message to the user. A child cgroup for the
+  tools prevented this in our tests. A smaller model does extra work
+  when a test prints a slow run time, and one sentence in the prompt
+  removed that work.
 \item \textbf{A capacity rule for shared machines.} Throughput stops
   growing at about 4 agents per vCPU, and CPU runs out before memory. An
   estimate from one agent alone is 2.3 to 2.5 times too high.
 \item \textbf{A public dataset} of 2,199 agent runs, almost all with
-  kernel traces, 40 more runs with two other agents, and the tool that
+    kernel traces, 40 more runs with two other agents, and the tool that
   collected them.
 \end{itemize}
 
+
 % ---------------------------------------------------------------------------
 \section{Background and Related Work}
+
+Four lines of work are close to ours.
 
 \emph{Resource use of AI agents.} Agent benchmarks score whether a task
 is solved~\cite{jimenez2024,swebenchverified}, and agent platforms run
@@ -180,8 +184,9 @@ report the CPU, memory or time that the sandbox gets. Efficiency studies
 count turns, tokens and API cost~\cite{gao2026,lindenbauer2025,fan2025}.
 SWE-Effi~\cite{fan2025} also splits run time into model time and local
 work, and finds that the local share depends strongly on the agent
-design. None of these studies limits the machine. Three recent studies
-measure the system side. AgentCgroup~\cite{agentcgroup} ran Claude Code
+design. None of these studies limits the machine.
+
+Three recent studies measure the system side of agents. AgentCgroup~\cite{agentcgroup} ran Claude Code
 in containers with no limits. Tool calls took 20 to 35\% of the active
 time, and from the memory peak of single agents it estimated that
 memory, not CPU, limits how many agents fit on a machine. Yuan et
@@ -189,22 +194,21 @@ al.~\cite{yuan2026} ran Claude Code against open models on local GPUs,
 where the model took 71 to 98\% of the run time. Choi et
 al.~\cite{choi2026} replayed recorded model answers while they changed
 the CPU cores of the tool containers. Extra cores helped less when the
-model was slower. We differ in three ways. We run live agents, so the agent can react
-to a limit. We test CPU shares below one core and limits on memory,
-disk and processes. We predict the time under a limit from runs with no
-limit.
+model was slower. Our study differs in three ways. We run live agents, so the agent
+can react to a limit. We test CPU shares below one core, and limits on
+memory, disk and processes. We predict the time under a limit from runs
+with no limit.
 
 \emph{Agents and their environment.} An agent learns about the machine
-only through the output of its tools~\cite{yang2024}. Agents carry on
-with incomplete data when a tool returns only part of its output, and
-explicit reports of state changes reduce such
-failures~\cite{song2025}. Our RQ5 adds failures that come from
-operating-system limits.
+only through the output of its tools~\cite{yang2024}, and explicit
+reports of state changes reduce its failures~\cite{song2025}. Our RQ5
+adds failures that come from operating-system limits.
 
 \emph{Resource limits and isolation.} The cgroup CPU quota is built on
 the bandwidth control of the Linux scheduler~\cite{turner2010,cgroupv2},
 under which containers can receive less CPU than they
-reserve~\cite{liu2021}. For microservices, a CPU quota equal to the actual use of one service made the slowest requests five times
+reserve~\cite{liu2021}. For microservices, a CPU quota equal to the actual use of one
+service made the slowest requests five times
 slower~\cite{shetty2025}. We see no such sharp jump for an agent,
 because the model wait dilutes each stall. Containers run CPU-bound code
 at close to native speed~\cite{felter2015}. Sandboxes such as
@@ -219,7 +223,7 @@ takes the model wait into account.
 \emph{Performance variation and tracing.} OS noise slows large parallel
 programs because synchronization amplifies each short
 delay~\cite{petrini2003,tsafrir2005,ferreira2008,hoefler2010}. An agent
-shows the opposite: the model wait dilutes local delays. Cloud VMs of
+shows the opposite effect: the model wait dilutes local delays. Cloud VMs of
 one type differ from each other~\cite{leitner2016,uta2020}, and details
 of the setup or the isolation can flip a
 conclusion~\cite{mytkowicz2009,bulej2020,japke2025}. We follow the
@@ -248,6 +252,9 @@ inside this cgroup (\texttt{--cgroup-parent}), so the same limits
 apply.}
 \label{fig:overview}
 \end{figure*}
+
+Figure~\ref{fig:overview} gives an overview of the study. This section
+describes each step.
 
 \subsection{Machines, agent and limits}
 All runs use Google Cloud VMs in one zone, with Ubuntu 24.04 and no
@@ -417,24 +424,20 @@ all runs in 90\% of the draws. Every disagreement was a missed breaking
 point near the threshold, and none was a false one.
 
 To compare two groups of runs we use a one-sided exact rank-sum test
-with a Holm correction, and Cliff's $\delta$ as effect size: the share
-of pairs of runs in which the first group is slower, minus the share in
-which it is faster. For rates we give 95\% Wilson intervals and a Fisher
+with a Holm correction. For rates we give 95\% Wilson intervals and a Fisher
 exact test, and for two predictions on the same settings a sign test.
 
 We call a result \emph{confirmatory} when the runs that test it were
 designed after the claim was made from other runs. Set~2, M1 and M2 test
 the claims of set~1. Results seen first there are exploratory.
 
-\emph{Cost of tracing.} We ran \texttt{t3} ten times each with no trace
-and with the full trace. Wall time did not change, and the trace added
-about 7\% CPU time (0.4\,s). The same holds where resources are short.
-At 0.25 core, at a 192\,MB memory limit and with 8 agents at once, the
-ratio of wall times is 1.00 [0.94--1.07], 1.01 [0.88--1.11] and 1.08
-[0.93--1.25]. Every ratio we report compares two traced runs. The CPU
-time measured from the trace agrees with the kernel's counter within
-0.8\% in the median run (2.0\% at the 90th percentile, over the 1,952
-runs whose trace we analysed).
+\emph{Cost of tracing.} With the full trace, wall time did not change
+on \texttt{t3}, and CPU time grew by about 7\% (0.4\,s). The same holds
+where resources are short: at 0.25 core, at a 192\,MB memory limit and
+with 8 agents at once, the ratio of wall times with and without the
+trace is 1.00, 1.01 and 1.08, and each interval includes 1. The CPU time
+measured from the trace agrees with the kernel's counter within 0.8\% in
+the median run.
 
 % ---------------------------------------------------------------------------
 \section{RQ1: Where Does the Time Go?}\label{sec:rq1}
@@ -473,8 +476,8 @@ the three machine sizes (5 to 15 runs per point). }
 \label{fig:limits}
 \end{figure*}
 
-We now apply one limit at a time and tighten it step by step
-(Figure~\ref{fig:limits}). Tasks \texttt{t4} to \texttt{t8} are fixed
+We now apply one limit at a time and tighten it step by step.
+Figure~\ref{fig:limits} shows how the run time responds. Tasks \texttt{t4} to \texttt{t8} are fixed
 workloads, and their response to a limit is known kernel behaviour. We
 use them as calibration. The limits follow three shapes.
 
@@ -537,7 +540,8 @@ threads, so it can be longer than the wall time.}
 \label{fig:states}
 \end{figure}
 
-The slowdowns say how much each limit costs. The kernel trace says why.
+The slowdowns above say how much each limit costs. The kernel trace
+says why.
 Figure~\ref{fig:states} shows the time that the threads of the agent's
 cgroup ran, waited for a CPU, and waited for the disk.
 
@@ -604,11 +608,10 @@ Examples are slower answers under a network limit and extra model turns
 part of a slowdown that comes from the model side.
 
 \begin{table}[t]
-\caption{Predicting the time under a CPU quota or a read limit from the
-runs with no limit. 89 held-out settings (small and real tasks, three
-models, all four sets of runs). Absolute error of the wall time (median
-with 95\% bootstrap interval, mean, settings within 10\%) and of local
-time, the part that a limit changes (median, 90th percentile). Our method is in bold.}
+\caption{Predicting the time under a CPU quota or a read limit from
+runs with no limit, on 89 held-out settings. Absolute error of the wall
+time (median with 95\% interval, mean, settings within 10\%) and of
+local time (median, 90th percentile). Our method is in bold.}
 \label{tab:predict}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lrrrrr@{}}
@@ -630,7 +633,9 @@ Eq.~\ref{eq:hidden} with measured $s$ (not a prediction) & 4.3\% [3.1--5.8] & 6.
 
 \emph{A prediction from runs with no limit.} The formula alone does not
 predict a cost, because $s$ is known only after a run under the limit.
-To know the cost in advance, we replay a run that had no limit. We cut
+To estimate the cost in advance, we take a run that had no limit and
+work out how long each part of it would take under the limit. We call
+this a \emph{replay}. We cut
 the run into slices of 0.2\,s, the interval at which we read the cgroup
 counters. For each slice, the counters give the CPU seconds $d$ and the
 bytes read $b$. A slice inside a model answer keeps its length $\Delta
@@ -669,8 +674,9 @@ groups).
   time is close to $b/r$ by construction, so this is the easiest case
   for the replay.
 \end{itemize}
-Over all settings and on wall time, the two do not differ significantly
-(the replay is closer in 19 of 35 groups, $p = 0.74$). The replay holds
+Over all settings, the replay and the simple estimate do not differ
+significantly on wall time (the replay is closer in 19 of 35 groups,
+$p = 0.74$). The replay holds
 on each machine (4.9\% on set~2 of M0, 7.6\% on M1, 5.7\% on M2) and on
 real tasks (7.0\%). It also explains why a CPU quota and a disk limit
 together cost less than their sum: each slice waits only for the tighter
@@ -692,7 +698,7 @@ the cost: when local time grows $s$ times, the user sees $1 +
 f\,(s-1)$. For CPU quotas below one core, this formula with $s = 1/q$
 predicts the cost. For disk limits, where the formula has no simple estimate of
 $s$, a replay of the runs with no limit predicts local time within
-4.7\%. Both hold as long as the agent does not change what it does.
+4.7\%. Both assume that the agent does not change what it does.
 
 % ---------------------------------------------------------------------------
 \section{RQ3: Do Real Platform Sizes Slow Down Real Tasks?}\label{sec:rq3}
@@ -735,7 +741,7 @@ slowdown at 1 CPU is 1.11 and not 1.02, because of one Requests run that
 took 123\,s against 20 to 24\,s for the other four. The same test
 command takes the same time at 2 CPUs and 2 to 9\% longer at 1 CPU.
 
-\emph{0.25 CPU: every task is slower.} At the Fargate minimum, every
+\emph{0.25 CPU: a clear slowdown.} At the Fargate minimum, every
 short task is still solved. But its wall time is 1.74 times longer and
 its local time 2.51 times longer (1.67 and 2.41 with means). Of the 22
 extra seconds per run, 15 are in the tools and 3.5 in start-up. Model
@@ -780,16 +786,14 @@ the quota sets the cost. The slowdown stays below $1/q = 4$ because the
 agent's tool time-out, 2 minutes by default, stops long test runs 1 to 5
 times per run, and the agent then runs smaller tests.
 Equation~\ref{eq:hidden} predicts the wall slowdown within 9\% and the
-replay within 14\%. With five runs, the intervals are wide (1 CPU: 0.95
-to 3.7; 0.25 CPU: 1.2 to 5.2).
+replay within 14\%. With five runs, the intervals are wide.
 
 \textbf{Answer to RQ3.} Platform sizes of 1 CPU or more show no slowdown
-that we can detect on the short tasks. The 0.25 CPU size slows every
-task on every machine: 1.7 times for short tasks, about twice for long
+that we can detect on the short tasks. The 0.25 CPU size slowed every
+task that we ran, on every machine: 1.7 times for short tasks, about twice for long
 tasks, and 2.9 times in sessions of 14 to 24 minutes. The 512\,MB limit
 costs 2.3 to 12 times when a task needs more memory, which we saw in one
-task each. No size changes
-whether a task is solved.
+task each. In our runs, no size changed whether a task was solved.
 
 % ---------------------------------------------------------------------------
 \section{RQ4: How Many Agents Fit on One Machine?}\label{sec:rq4}
@@ -798,12 +802,10 @@ whether a task is solved.
 \centering
 \includegraphics[width=0.85\columnwidth]{ICPE-2027/figures/fig_density.pdf}
 \Description{Left: agents finished per minute per vCPU against agents per vCPU, for machines with 2, 4 and 8 vCPUs. The three curves fall on each other and level off at about 4 at four agents per vCPU, far below a dashed line at about 10, the estimate from one agent alone. Right: CPU seconds per agent rise from about 6 to 12 or 13 on all three machines.}
-\caption{Many agents started at once on one machine, on three machine
-sizes (\texttt{t3}; M0 from set~2). Both x-axes are agents per vCPU, so
-the machines fall on one curve. Left: throughput per vCPU stops growing
-at about four agents per vCPU. The dashed line is the CPU bound computed
-from one agent alone. Right: the CPU time that each agent needs doubles as
-the machine fills.}
+\caption{Many agents started at once, on three machine sizes
+(\texttt{t3}). Left: throughput per vCPU stops growing at about four
+agents per vCPU. The dashed line is the bound from one agent alone.
+Right: the CPU time per agent doubles as the machine fills.}
 \label{fig:density}
 \end{figure}
 
@@ -820,12 +822,12 @@ one (21 to 22\,s). At four agents, one per vCPU, local time grows by
 41\% but wall time only by 14\%. This is the dilution of RQ2 again.
 Throughput rises from 2.8 agents per minute with one agent to 16.3 with
 sixteen, and then stops: 32 agents finish at 16.5 per minute. The extra
-time is in the tools (4\,s alone, 71\,s at 32 agents) and in start-up
-(1.4\,s alone, 15\,s at 32), where the agents wait for a CPU. The API
+time is spent waiting for a CPU, in the tools and in start-up. The API
 cost per agent stays at \$0.14 to \$0.15. All agents solve their task.
-Crowding makes agents slow, not wrong.
+In these runs, crowding made agents slower but not less correct.
 
-\emph{A capacity bound, and why the simple version fails.} Operational
+\emph{A capacity bound, and why the simple version fails.} A common way
+to plan capacity is to measure one agent alone and divide. Operational
 analysis~\cite{denning1978} bounds the throughput of $N$ agents by
 $\min(N/R_1,\ C/D)$. Here $R_1$ is the time of one agent alone, $C$ the
 number of CPUs and $D$ the CPU seconds per agent. With the values of one
@@ -873,7 +875,7 @@ queue, not a steady state.
 \textbf{Answer to RQ4.} Up to one agent per vCPU costs the user little.
 Throughput stops growing at about four agents per vCPU on 2, 4 and 8
 vCPUs for this task, whether the agents start together or arrive at
-random. CPU is the limit, not memory. The CPU time per agent doubles on
+random. For this task, the CPU fills before memory. The CPU time per agent doubles on
 a full machine, so an estimate from one agent is 2.3 to 2.5 times too
 high.
 
@@ -881,7 +883,9 @@ high.
 \section{RQ5: Does the Agent Change Its Behaviour?}\label{sec:rq5}
 
 RQ1 to RQ4 treat the agent as a fixed workload that the system slows
-down. But an agent reads what the system shows it, and can act on it.
+down. But an agent reads what the system shows it, and can act on it. We
+looked at two kinds of reaction: extra work after a slow result, and
+what the agent reports when the system kills something.
 
 \emph{A printed slow time makes a small model work more.} The coding
 task \texttt{t3} prints its own run time, and \texttt{t9} does not. At
@@ -969,7 +973,8 @@ smaller sets of tests.
 
 \textbf{Answer to RQ5.} Yes, in two ways. First, a small model reacts to
 a slow printed time by doing extra work, which makes the run 2.1 to 2.6
-times longer. One sentence in the prompt prevents it. Second, the system
+times longer. One sentence in the prompt removed it in our runs. Second,
+the system
 can hide a failure. A memory kill or a process limit that hits the agent
 leaves the user with no message, and a kill inside a large test run can
 go unnoticed. A kill that the agent can see is explained correctly
@@ -977,18 +982,19 @@ almost every time (73 of 74 runs). A child cgroup for the tools kept the
 out-of-memory killer away from the agent.
 
 % ---------------------------------------------------------------------------
-\section{Results Across Machines}\label{sec:cross}
+\section{Results Across Machines and Agents}\label{sec:cross}
 
-To see which results depend on the machine, we repeated a core set of
-experiments on M1 (2 vCPUs) and M2 (8 vCPUs, AMD).
+The results so far come mostly from one machine and one agent. To see
+which of them depend on the machine, we repeated a core set of
+experiments on M1 (2 vCPUs) and M2 (8 vCPUs, AMD). To see which depend
+on the agent, we ran a small check with two other agents.
 
 \emph{What stays the same.} The CPU breaking point is 0.75 core on all
 three machines, because the quota limits the agent's cgroup and not the
 machine. At 0.25 core, local time is 4.8 times longer on M1, 3.9 to 4.0
 on M0 and 4.0 on M2, and wall time 2.6, 1.8 to 2.0 and 1.9 times. At
-this quota, Cliff's $\delta$ against no limit is 1.0 on all four sets of
-runs: every limited run took longer than every run with no limit. At 0.5
-core it is 0.84 to 1.0, and at 0.75 core 0.2 to 0.8. The memory cliffs
+this quota, every limited run took longer than every run with no limit,
+on all four sets of runs. The memory cliffs
 are set by the task and sit at the same sizes (1152\,MB and 640\,MB).
 Extra threads start to cost at two workers per vCPU everywhere.
 
@@ -1055,6 +1061,8 @@ within 3\%. Neither prediction is best for every agent.
 
 % ---------------------------------------------------------------------------
 \section{Implications}\label{sec:implications}
+
+Our results lead to advice for three groups of readers.
 
 \emph{For anyone who measures agents.} Report local time next to wall
 time, or run many more repetitions. A cost of 50\% on the machine
@@ -1153,7 +1161,7 @@ Amdahl's law predicts. Kernel traces show that a CPU quota adds waiting
 rather than work, so a simple formula predicts its cost. For disk
 limits, a replay of the resource use of runs with no limit predicts
 local time within a median 4.7\% over 14 settings. Each limit has a
-breaking point and one of three shapes, and the mechanisms hold on every
+breaking point and one of three shapes, and the mechanisms are the same on every
 machine. Two numbers scale with the vCPUs: the process limit that
 crashes the agent, and the number of agents that fill a machine. Limits
 also change what the agent does. A small model does extra work when it
