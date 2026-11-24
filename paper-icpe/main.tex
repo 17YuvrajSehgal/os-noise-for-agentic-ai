@@ -97,12 +97,12 @@ coding tasks and 42 to 66\% on short real tasks. A recent study of the
 same agent reports 71 to 98\%~\cite{yuan2026}. While the agent waits, it
 does not need the machine. A small container therefore slows the agent
 less than its size suggests. Two things are not known: how much less,
-and at which size the slowdown starts. Agent benchmarks do not answer
-this. They report whether a task is solved and how many tokens it
+and at which size the slowdown starts. Agent benchmarks report whether a
+task is solved and how many tokens it
 cost~\cite{jimenez2024,yang2024}, not what the system did. Recent system
-studies do not answer it either. One measured agents with no
-limits~\cite{agentcgroup}. Another replayed recorded model answers, so
-the agent could not react to a limit~\cite{choi2026}. What is missing is
+studies measured agents with no limits~\cite{agentcgroup}, or replayed
+recorded model answers, so the agent could not react to a
+limit~\cite{choi2026}. What is missing is
 a measurement of live agents under the limits that platforms apply.
 
 The model wait dilutes the machine's cost: the user sees only a part of
@@ -112,8 +112,7 @@ that part becomes much slower, the whole run becomes only somewhat
 slower. This is Amdahl's law~\cite{amdahl1967} applied to a slowdown.
 Figure~\ref{fig:timeline} shows an example. At a quarter of a CPU core,
 the agent's work on the machine takes 3.9 times longer, but the user
-waits only 1.8 times longer. Second, the model does not answer equally
-fast every time. Its answer time changes by several seconds from run to
+waits only 1.8 times longer. Second, the model's answer time changes by several seconds from run to
 run. On our main coding task, two groups of five runs with no limit
 already differ by up to 13\% in median run time. Because of these two
 effects, a large cost is visible but looks smaller than it is, and a
@@ -124,98 +123,70 @@ moderate cost can be hidden.
 \includegraphics[width=\columnwidth]{ICPE-2027/figures/fig_timeline.pdf}
 \Description{Two horizontal timelines of one run of the same coding task. With no limit the run takes 21 seconds: 15 seconds waiting for the model and 6 seconds of local work. At a quarter of a core it takes 39 seconds: the model wait is still 15 seconds, and the local work is 24 seconds.}
 \caption{One typical run of the same coding task with no limit and at a
-quarter of a CPU core (the runs with the median wall time). The work on the machine takes 3.9 times longer. The model wait
+quarter of a CPU core. The work on the machine takes 3.9 times longer. The model wait
 does not change, so the run takes only 1.8 times longer.}
 \label{fig:timeline}
 \end{figure}
 
 We measured this cost directly. We ran Claude Code 2,199 times on four
-cloud virtual machines (VMs). The VMs have 2, 4 and 8 virtual CPUs
-(vCPUs) and come from two CPU vendors. We tested ten kinds of limits:
-\begin{itemize}
-\item a CPU quota, which caps the CPU time that the agent may use;
-\item a soft and a hard memory limit;
-\item limits on disk speed and on network speed;
-\item a limit on the number of processes;
-\item more threads than the machine has CPUs;
-\item a busy neighbour, which is another program that loads the same
-  machine;
-\item two limits at the same time;
-\item up to 64 agents on one machine.
-\end{itemize}
-We also ran eleven real bug-fix tasks from SWE-bench
+cloud virtual machines (VMs) with 2, 4 and 8 virtual CPUs (vCPUs). We
+tested ten kinds of limits: a CPU quota, soft and hard memory limits,
+disk speed, network speed, a process limit, extra threads, a busy
+neighbour, two limits at once, and up to 64 agents on one machine. We
+also ran eleven real bug-fix tasks from SWE-bench
 Verified~\cite{jimenez2024,swebenchverified} at the platform sizes
-listed above.
+above. For almost every run we recorded a kernel trace with
+LTTng~\cite{desnoyers2006}, which is a log of what the operating system
+did for the agent.
 
-We recorded what happened in each run in three ways. For 2,159 runs we
-recorded a kernel trace with LTTng~\cite{desnoyers2006}. A kernel trace
-is a log of what the operating system did for the agent, such as when
-each thread ran and when it waited. For 2,067 runs we also recorded the
-cgroup counters, which are the kernel's own totals of the CPU, memory
-and disk that the agent used. For the same runs we recorded the agent's
-event log, which is the agent's own record of each model call and each
-tool call.
+We use two terms throughout. \emph{Wall time} is the total time of a
+run, which is what the user waits. \emph{Local time} is the wall time
+minus the time spent waiting for the model. It is the part of a run that
+the machine controls.
 
-We use two terms in the rest of the paper. \emph{Wall time} is the total
-time of a run, which is what the user waits. \emph{Local time} is the
-wall time minus the time spent waiting for the model. Local time is the
-part of a run that the machine controls.
-
-We answer five research questions (RQs):
-\begin{itemize}
-\item \textbf{RQ1}: Where does an agent's time go when nothing limits
-  it?
-\item \textbf{RQ2}: How does each limit change that picture?
-\item \textbf{RQ3}: Do real platform sizes slow down real tasks?
-\item \textbf{RQ4}: How many agents can share one machine?
-\item \textbf{RQ5}: Does the agent change what it does because of the
-  system?
-\end{itemize}
-
-Our contributions and main findings are:
+We answer five research questions. \textbf{RQ1}: where does an agent's
+time go when nothing limits it? \textbf{RQ2}: how does each limit change
+that picture? \textbf{RQ3}: do real platform sizes slow down real tasks?
+\textbf{RQ4}: how many agents can share one machine? \textbf{RQ5}: does
+the agent change what it does because of the system? Our contributions
+and main findings are:
 \begin{itemize}
 \item \textbf{A map of ten limits on three machine sizes.} For each
-  limit we find its \emph{breaking point}. This is the first setting at
-  which local time clearly grows. The limits behave in three ways. With
-  a CPU quota, a disk limit or extra threads, the run gets slower step
-  by step. With a memory limit, nothing happens until the run suddenly
-  becomes much slower. With a process limit, nothing happens until the
-  agent crashes. Some breaking points are the same on every machine, and
-  others grow with the size of the machine.
+  limit we find its \emph{breaking point}, the first setting at which
+  local time clearly grows. A CPU quota, a disk limit and extra threads
+  slow a run step by step. A memory limit does nothing until the run
+  suddenly becomes much slower. A process limit does nothing until the
+  agent crashes.
 \item \textbf{How much of the cost reaches the user.} Let $f$ be the
   share of a run that is spent on the machine. If a limit makes that
   part $s$ times longer, the user waits $1 + f\,(s-1)$ times longer. We
-  measured $f$ to be between 0.17 and 0.73. Kernel traces show where $s$
-  comes from: under a CPU quota, the agent does the same work and waits
-  longer for the CPU.
-\item \textbf{A way to predict the cost before applying a limit.} For a
-  CPU quota below one core, $s$ is close to one divided by the quota.
-  For disk limits there is no such simple rule. We therefore take a run
-  with no limit and compute how long each part of it would take under
-  the limit. We call this a \emph{replay}. On 89 settings that we did
-  not use to design it, the replay predicts the wall time within a
-  median 6.9\%.
+  measured $f$ to be between 0.17 and 0.73.
+\item \textbf{A way to predict the cost.} Kernel traces show that under
+  a CPU quota the agent does the same work and waits longer, so $s$ is
+  close to one divided by the quota. For other cases we take a run with
+  no limit and compute how long each part of it would take under the
+  limit. We call this a \emph{replay}. On 89 settings that we did not
+  use to design it, the replay predicts the wall time within a median
+  6.9\%.
 \item \textbf{Real tasks at platform sizes.} With 1 CPU or more, short
   real tasks show no slowdown that we can detect. With 0.25 CPU, every
   short task is still solved, but it takes 1.35 to 2.4 times longer.
 \item \textbf{Failures that appear only with live agents.} The kernel
   can kill the agent itself, and the user gets no message. Putting the
   tools in their own cgroup prevented this in our tests. A smaller model
-  also does extra work when a test prints a slow run time. One sentence
-  in the prompt removed that extra work.
+  also does extra work when a test prints a slow run time.
 \item \textbf{A capacity rule for shared machines.} The number of agents
-  that finish per minute stops growing at about 4 agents per vCPU. For
-  our task, the CPU fills before memory does. A capacity estimate based
-  on one agent alone is 2.3 to 2.5 times too high.
-\item \textbf{A public dataset.} We release 2,199 runs of Claude Code,
-  almost all with kernel traces, 40 runs with two other agents, and the
-  tool that collected them.
+  that finish per minute stops growing at about 4 agents per vCPU. An
+  estimate based on one agent alone is 2.3 to 2.5 times too high.
+\item \textbf{A public dataset} of 2,199 runs of Claude Code, almost all
+  with kernel traces, 40 runs with two other agents, and the tool that
+  collected them.
 \end{itemize}
 
 % ---------------------------------------------------------------------------
 \section{Background and Related Work}
 
-Four lines of work are close to ours.
+
 
 \emph{Resource use of AI agents.} Agent benchmarks score whether a task
 is solved~\cite{jimenez2024,swebenchverified}, and agent platforms run
@@ -251,12 +222,10 @@ reserve~\cite{liu2021}. For microservices, a CPU quota equal to the actual use o
 service made the slowest requests five times
 slower~\cite{shetty2025}. We see no such sharp jump for an agent,
 because the model wait dilutes each stall. Containers run CPU-bound code
-at close to native speed~\cite{felter2015}. Sandboxes such as
-Firecracker and gVisor differ in their memory, disk and network
-paths~\cite{anjali2020}, but Firecracker still relies on the host's
-scheduler and cgroups~\cite{agache2020}, the layer that we study.
-Autopilot sets limits from past use~\cite{rzadca2020}, and Sizeless
-predicts the run time of a serverless function at other memory
+at close to native speed~\cite{felter2015}, and sandboxes such as
+Firecracker~\cite{agache2020,anjali2020} still rely on the host's
+scheduler and cgroups, the layer that we study. Sizeless predicts the
+run time of a serverless function at other memory
 sizes~\cite{eismann2021}. Our estimate does the same for agents.
 
 \emph{Performance variation and tracing.} OS noise slows large parallel
@@ -266,10 +235,8 @@ shows the opposite effect: the model wait dilutes local delays. Cloud VMs of
 one type differ from each other~\cite{leitner2016,uta2020}, and details
 of the setup or the isolation can flip a
 conclusion~\cite{mytkowicz2009,bulej2020,japke2025}. We follow the
-common rules for this
-setting~\cite{maricq2018,hoefler2015,papadopoulos2021,laaber2019}:
-repeat runs, randomize their order, compare on the same machine, use
-non-parametric statistics, and report intervals. For the traces we use
+common rules for measuring in this
+setting~\cite{maricq2018,hoefler2015,papadopoulos2021,laaber2019}. For the traces we use
 LTTng~\cite{desnoyers2006} and kernel wait analysis, which uses the
 event that wakes a blocked thread to find why it
 waited~\cite{giraldeau2016,ezzati2018,ezzati2020}. It assigns waiting
@@ -292,18 +259,19 @@ apply.}
 \label{fig:overview}
 \end{figure*}
 
-Figure~\ref{fig:overview} gives an overview of the study. This section
-describes each step.
+
 
 \subsection{Machines, agent and limits}
 All runs use Google Cloud VMs with Ubuntu 24.04 and no swap
-(Table~\ref{tab:machines}). M0 is the main machine. M1 has half of its
-vCPUs and M2 has twice as many, with a CPU from another vendor. Both are
-copies of M0's disk. VM0 is an earlier VM of the same type as M0. On all
-four, each vCPU is a hardware thread, and two vCPUs share one core.
+(Table~\ref{tab:machines}). M0 is the main machine. M1 and M2 are copies
+of it with half and twice its vCPUs. On every machine, each vCPU is a
+hardware thread, and two vCPUs share one core. M0 holds two sets of
+runs, on two disks, and cloud VMs also differ from each other in disk
+speed~\cite{leitner2016,uta2020}. We therefore compare a run only with
+runs with no limit from the same machine and set.
 
 \begin{table}[t]
-\caption{The machines. M0 holds two sets of runs, on two disks. The Intel
+\caption{The machines. The Intel
 VMs are n2-standard types (Cascade Lake), and M2 is n2d-standard-8 (EPYC
 7B13). VM0 ran Linux 7.0.0-1011 and 1014, the others 7.0.0-1017.}
 \label{tab:machines}
@@ -321,10 +289,7 @@ VM0 & 4 & 15\,GB & Intel & 205\,MB/s & 132 \\
 \end{tabular}
 \end{table}
 
-M0 holds two sets of runs, set~1 and set~2. Between them we moved M0 to
-a slower disk. Cloud VMs also differ from each other, most of all in
-disk speed~\cite{leitner2016,uta2020}. We therefore compare a run only
-with runs with no limit from the same machine and set.
+
 
 The agent is Claude Code~\cite{claudecode}, in version 2.1.296 on VM0
 and versions 2.1.322 and 2.1.327 on the other machines. It uses the Opus
@@ -354,9 +319,11 @@ neighbour is a program that loads the CPU, the memory or the disk from
 another cgroup.
 
 \subsection{Tasks}
-We use two kinds of tasks. \emph{Small tasks} show what one limit does
-to a known piece of work. \emph{Real tasks} show whether the results
-hold on real software projects.
+\emph{Small tasks} show what one limit does to a known piece of work
+(Table~\ref{tab:tasks}). The coding task \texttt{t3} is our main task.
+In \texttt{t12}, the test script sends the output of the test through
+another program (\texttt{tee}). If the kernel kills the test, the output
+simply stops, and the script still reports success.
 
 \begin{table}[t]
 \caption{The small tasks. In \texttt{t4} to \texttt{t8} the agent only
@@ -377,48 +344,28 @@ Task & What the agent does & Used for \\
 \midrule
 \texttt{t9} & \texttt{t3}, but the test prints no run time & RQ5 \\
 \texttt{t10} & A second coding task, with and without a printed run time & RQ5 \\
-\texttt{t11} & \texttt{t3} with a changed test or prompt (see text) & RQ5 \\
+\texttt{t11} & \texttt{t3}, but the test prints a fixed fast or a fixed slow time, or the prompt says that run time is not a goal & RQ5 \\
 \texttt{t12} & A coding task whose test needs 700\,MB of memory & RQ5 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\emph{Small tasks.} Table~\ref{tab:tasks} lists them. The coding task
-\texttt{t3} is our main task, and most experiments use it. Tasks
-\texttt{t9} to \texttt{t12} are for RQ5, which asks how the agent
-reacts to what it sees. Task \texttt{t11} has three versions of
-\texttt{t3}. In the first, the test always prints the same fast run
-time. In the second, it always prints the same slow run time. In the
-third, the prompt tells the agent that run time is not a goal. In
-\texttt{t12}, the test script sends the output of the test through
-another program (\texttt{tee}). If the kernel kills the test, the output
-simply stops, and the script still reports success.
-
-\emph{Real tasks.} These are eleven issues from SWE-bench
+\emph{Real tasks} are eleven issues from SWE-bench
 Verified~\cite{jimenez2024,swebenchverified}, in six Python projects.
-SWE-bench rates how long each issue would take a person to fix. We use
-three groups:
-\begin{itemize}
-\item six \emph{short} tasks, rated under 15 minutes, one each from
-  Django, SymPy, xarray, pytest, Flask and Requests;
-\item four \emph{long} tasks, rated 1 hour or more, one each from
-  Django, SymPy, pytest and xarray;
-\item a fifth long task, a SymPy issue rated at more than 4 hours. A run
-  of this task lasts several minutes.
-\end{itemize}
-We keep a task only if its target tests fail before the fix and pass
-with the reference fix in our environment. A run solves a task when the
-target tests pass and all other tests still pass. Real tasks run in
-Docker, with no limit and at the four container sizes of the
-introduction.
+SWE-bench rates how long each issue would take a person to fix. Six
+tasks are \emph{short}, rated under 15 minutes (Django, SymPy, xarray,
+pytest, Flask and Requests). Four are \emph{long}, rated 1 hour or more
+(Django, SymPy, pytest and xarray). A fifth long task, a SymPy issue
+rated at more than 4 hours, gives runs of several minutes. We keep a
+task only if its target tests fail before the fix and pass with the
+reference fix in our environment. A run solves a task when the target
+tests pass and all other tests still pass. Real tasks run in Docker,
+with no limit and at the four container sizes of the introduction.
 
 \subsection{Protocol and records}
 Table~\ref{tab:data} lists the experiments. Each changes one setting
-step by step, from loose to tight. Set~1 has five runs per step. Set~2
-adds runs around the breaking points and for the main claims: 15 runs
-per CPU quota step, and 10 per process-limit step and per real-task
-setting. M1 and M2 repeat a core set of experiments with 5 to 10 runs
-per step. Before every run we restore the task's files and empty the
+step by step, from loose to tight. Set~1 has five runs per step. Set~2, M1 and M2 repeat the main
+experiments with 5 to 15 runs per step. Before every run we restore the task's files and empty the
 page cache, the kernel's in-memory copy of recently read files. Runs
 within an experiment are in random order, so that changes in the model's
 speed over the day cannot line up with one
@@ -459,9 +406,9 @@ OpenHands, Codex (not in the total) & t3 & CPU quota & \multicolumn{4}{r}{40} \\
 \end{tabular}}
 \end{table}
 
-Each run on M0, M1 and M2 keeps the three views of
-Figure~\ref{fig:overview} (LTTng 2.15.1 for the trace). VM0 kept a
-smaller trace and only the CPU counter.
+Each run on M0, M1 and M2 keeps the three records of
+Figure~\ref{fig:overview}. VM0 kept a smaller trace and only the CPU
+counter.
 
 \subsection{Splitting a run}
 From the event stream we split the wall time of each run into parts. A
@@ -473,12 +420,9 @@ time}. \emph{Local time} is the wall time minus the model wait.
 
 Some work on the machine runs while a model answer is still open. It
 counts as model time, so local time is a lower bound. We measured this
-hidden work from the trace, as the lifetime of the agent's child
-processes that falls inside an open model answer. We used the 1,836 runs on M0, M1 and M2 that have one agent, a trace
-and at least one model turn. In these runs, it is 0.25\% of local time in the median
-run (90th percentile 5\%), and it does not grow under limits. This
-count leaves out the agent process itself, which also uses some CPU
-while an answer streams in.
+hidden work from the trace, in the 1,836 runs that have one agent, a
+trace and at least one model turn. It is 0.25\% of local time in the
+median run (90th percentile 5\%), and it does not grow under limits.
 
 From the trace we also split each thread's time into running, waiting
 for a CPU, and sleeping (waiting for the disk, for memory reclaim, or
@@ -496,7 +440,7 @@ slowdown lies above 1.10. We use local time because it is where a limit acts.
 In wall time, the model wait dilutes the change and adds variation of
 its own. On \texttt{t3}, the medians of two random groups of five runs
 with no limit differ by up to 13\% in wall time and 9\% in local time
-(95th percentile over 4,000 draws). The 10\% threshold is close to the smallest slowdown that
+(95th percentile). The 10\% threshold is close to the smallest slowdown that
 careful cloud benchmark setups detect~\cite{laaber2019}.
 
 We checked this rule with the runs we have. At thresholds of 5\% and
@@ -507,8 +451,7 @@ instead of medians, 37 of the 42 are the same. In an A/A
 test~\cite{laaber2019} on random halves of the runs with no limit, the
 rule called one half slower in 0.1\% of the splits. When we drew five
 runs from settings with 10 to 15, the verdict agreed with the one from
-all runs in 90\% of the draws. Every disagreement was a missed breaking
-point near the threshold, and none was a false one.
+all runs in 90\% of the draws. No disagreement was a false breaking point.
 
 To compare two groups of runs we use a one-sided exact rank-sum test
 with a Holm correction. For rates we give 95\% Wilson intervals and a Fisher
@@ -518,13 +461,11 @@ We call a result \emph{confirmatory} when the runs that test it were
 designed after the claim was made from other runs. Set~2, M1 and M2 test
 the claims of set~1. Results seen first there are exploratory.
 
-\emph{Cost of tracing.} With the full trace, wall time did not change
-on \texttt{t3}, and CPU time grew by about 7\% (0.4\,s). The same holds
-where resources are short: at 0.25 core, at a 192\,MB memory limit and
-with 8 agents at once, the ratio of wall times with and without the
-trace is 1.00, 1.01 and 1.08, and each interval includes 1. The CPU time
-measured from the trace agrees with the kernel's counter within 0.8\% in
-the median run.
+\emph{Cost of tracing.} With the full trace, wall time did not change.
+This also holds at 0.25 core, at a 192\,MB memory limit and with 8
+agents at once (ratios of 1.00, 1.01 and 1.08, each interval includes
+1). CPU time grew by about 7\%. The CPU time measured from the trace
+agrees with the kernel's counter within 0.8\% in the median run.
 
 % ---------------------------------------------------------------------------
 \section{RQ1: Where Does the Time Go?}\label{sec:rq1}
