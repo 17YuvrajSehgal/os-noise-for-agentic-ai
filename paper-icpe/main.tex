@@ -354,36 +354,63 @@ neighbour is a program that loads the CPU, the memory or the disk from
 another cgroup.
 
 \subsection{Tasks}
-\emph{Small tasks} make each limit act on a known piece of work. Two are
-coding tasks: \texttt{t2} asks the agent to fix four bugs across three
-modules, and \texttt{t3} to implement functions until a test suite
-passes. Five ask it to run a fixed workload, so that the work does not
-change between runs. \texttt{t4} runs $W$ CPU-bound workers in parallel,
-and \texttt{t5} starts $N$ sub-agents with one worker each. \texttt{t6}
-reads a 1\,GB file several times (file memory), \texttt{t7} runs a tool
-that allocates 512\,MB (process memory), and \texttt{t8} reads a 1\,GB
-file once (disk).
+We use two kinds of tasks. \emph{Small tasks} show what one limit does
+to a known piece of work. \emph{Real tasks} show whether the results
+hold on real software projects.
 
-RQ5 uses four more tasks. The test of \texttt{t3} prints its own run
-time, and \texttt{t9} is \texttt{t3} without this line. \texttt{t10} is
-a second coding task, with and without a printed time. \texttt{t11} is
-\texttt{t3} in three variants: the test prints a fixed fast time, it
-prints a fixed slow time, or the prompt adds that run time is not a
-goal. In \texttt{t12}, the test builds a 700\,MB buffer, and the test
-script pipes its output through \texttt{tee}. If the kernel kills the
-test, the output simply stops and the script still exits with 0.
+\begin{table}[t]
+\caption{The small tasks. In \texttt{t4} to \texttt{t8} the agent only
+starts a fixed program, so the work is the same in every run.}
+\label{tab:tasks}
+\small
+\begin{tabular}{@{}lp{0.66\columnwidth}l@{}}
+\toprule
+Task & What the agent does & Used for \\
+\midrule
+\texttt{t2} & Fixes four bugs in three modules & coding \\
+\texttt{t3} & Writes functions until a test suite passes. The test prints its run time. & coding \\
+\texttt{t4} & Runs $W$ programs that only compute, at the same time & threads \\
+\texttt{t5} & Starts $N$ sub-agents with one such program each & threads \\
+\texttt{t6} & Reads a 1\,GB file several times & file memory \\
+\texttt{t7} & Runs a tool that needs 512\,MB of memory & tool memory \\
+\texttt{t8} & Reads a 1\,GB file once & disk \\
+\midrule
+\texttt{t9} & \texttt{t3}, but the test prints no run time & RQ5 \\
+\texttt{t10} & A second coding task, with and without a printed run time & RQ5 \\
+\texttt{t11} & \texttt{t3} with a changed test or prompt (see text) & RQ5 \\
+\texttt{t12} & A coding task whose test needs 700\,MB of memory & RQ5 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\emph{Real tasks} are eleven issues from SWE-bench
-Verified~\cite{jimenez2024,swebenchverified} in six Python projects.
-SWE-bench rates how long each fix would take a human. Six tasks are
-\emph{short}, rated under 15 minutes (Django, Sympy, xarray, pytest,
-Flask and Requests). Four are \emph{long}, rated 1 hour or more (other
-issues of Django, Sympy, pytest and xarray). A fifth long task, a Sympy
-issue rated at more than 4 hours, gives sessions of many minutes. We
-keep a task only if its target tests fail at the start and pass with the
-reference fix in our environment. A run solves a task when the target
-tests pass and the other tests still pass. Real tasks run in Docker with
-no limit and at the four platform sizes of the introduction.
+\emph{Small tasks.} Table~\ref{tab:tasks} lists them. The coding task
+\texttt{t3} is our main task, and most experiments use it. Tasks
+\texttt{t9} to \texttt{t12} are for RQ5, which asks how the agent
+reacts to what it sees. Task \texttt{t11} has three versions of
+\texttt{t3}. In the first, the test always prints the same fast run
+time. In the second, it always prints the same slow run time. In the
+third, the prompt tells the agent that run time is not a goal. In
+\texttt{t12}, the test script sends the output of the test through
+another program (\texttt{tee}). If the kernel kills the test, the output
+simply stops, and the script still reports success.
+
+\emph{Real tasks.} These are eleven issues from SWE-bench
+Verified~\cite{jimenez2024,swebenchverified}, in six Python projects.
+SWE-bench rates how long each issue would take a person to fix. We use
+three groups:
+\begin{itemize}
+\item six \emph{short} tasks, rated under 15 minutes, one each from
+  Django, SymPy, xarray, pytest, Flask and Requests;
+\item four \emph{long} tasks, rated 1 hour or more, one each from
+  Django, SymPy, pytest and xarray;
+\item a fifth long task, a SymPy issue rated at more than 4 hours. A run
+  of this task lasts several minutes.
+\end{itemize}
+We keep a task only if its target tests fail before the fix and pass
+with the reference fix in our environment. A run solves a task when the
+target tests pass and all other tests still pass. Real tasks run in
+Docker, with no limit and at the four container sizes of the
+introduction.
 
 \subsection{Protocol and records}
 Table~\ref{tab:data} lists the experiments. Each changes one setting
