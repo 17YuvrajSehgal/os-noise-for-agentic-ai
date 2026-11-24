@@ -127,18 +127,36 @@ does not change, so the run takes only 1.8 times longer.}
 \end{figure}
 
 We measured this cost directly. We ran Claude Code 2,199 times on four
-cloud virtual machines (VMs) with 2, 4 and 8 vCPUs and two CPU vendors.
-The experiments cover ten kinds of limits: a CPU quota, soft and hard
-memory limits, disk speed, network speed, a process limit, extra
-threads, a busy neighbour, two limits at once, and up to 64 agents on
-one machine. We also ran eleven real bug-fix tasks from SWE-bench
+cloud virtual machines (VMs). The VMs have 2, 4 and 8 virtual CPUs
+(vCPUs) and come from two CPU vendors. We tested ten kinds of limits:
+\begin{itemize}
+\item a CPU quota, which caps the CPU time that the agent may use;
+\item a soft and a hard memory limit;
+\item limits on disk speed and on network speed;
+\item a limit on the number of processes;
+\item more threads than the machine has CPUs;
+\item a busy neighbour, which is another program that loads the same
+  machine;
+\item two limits at the same time;
+\item up to 64 agents on one machine.
+\end{itemize}
+We also ran eleven real bug-fix tasks from SWE-bench
 Verified~\cite{jimenez2024,swebenchverified} at the platform sizes
-above. For 2,159 runs we recorded a kernel trace with
-LTTng~\cite{desnoyers2006}. For the 2,067 runs on the three newer VMs we
-also recorded all cgroup counters and the agent's event log, its own
-record of each model call and tool call. We call the total run time
-\emph{wall time}, and wall time minus the model wait \emph{local time}.
-Local time is the part of a run that the machine controls.
+listed above.
+
+We recorded what happened in each run in three ways. For 2,159 runs we
+recorded a kernel trace with LTTng~\cite{desnoyers2006}. A kernel trace
+is a log of what the operating system did for the agent, such as when
+each thread ran and when it waited. For 2,067 runs we also recorded the
+cgroup counters, which are the kernel's own totals of the CPU, memory
+and disk that the agent used. For the same runs we recorded the agent's
+event log, which is the agent's own record of each model call and each
+tool call.
+
+We use two terms in the rest of the paper. \emph{Wall time} is the total
+time of a run, which is what the user waits. \emph{Local time} is the
+wall time minus the time spent waiting for the model. Local time is the
+part of a run that the machine controls.
 
 We answer five research questions. \textbf{RQ1}: where does an agent's
 time go when nothing limits it? \textbf{RQ2}: how does each limit change
