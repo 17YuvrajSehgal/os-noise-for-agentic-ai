@@ -720,73 +720,68 @@ No limit & 30/30 & 1.00 & 1.00 & 11/20 & 1.00 & 1.00 \\
 \end{tabular}
 \end{table*}
 
-The small tasks of RQ2 show where each limit starts to hurt. We now ask
-whether the sizes that real platforms offer hurt real tasks
-(Table~\ref{tab:real}). We apply each size as a cgroup limit on our
-VMs, which is not the same as a VM of that size (see Threats to
-Validity). With no limit, a short task takes 26\,s and 4
-model turns (medians), and a long task 64\,s and 9 turns.
+RQ2 used small tasks to find where each limit starts to cost. We now ask
+whether the container sizes that real platforms offer slow down real
+tasks (Table~\ref{tab:real}). We apply each size as a cgroup limit on
+our VMs, which is not the same as a VM of that size (see Threats to
+Validity). With no limit, a short task takes 26\,s and 4 model turns,
+and a long task 64\,s and 9 turns (medians).
 
-\emph{1 CPU or more: no cost that we can detect.} At 1 CPU or more,
-every interval in Table~\ref{tab:real} includes 1. The intervals are
-wide, however. At 1 CPU the one for wall time reaches 1.38, so a cost
-below that size is possible. With means instead of medians, the wall
-slowdown at 1 CPU is 1.11 and not 1.02, because of one Requests run that
-took 123\,s against 20 to 24\,s for the other four. The same test
-command takes the same time at 2 CPUs and 2 to 9\% longer at 1 CPU.
+\emph{1 CPU or more: no slowdown that we can detect.} With 1 CPU or
+more, every interval in Table~\ref{tab:real} includes 1. The intervals
+are wide, however. At 1 CPU, the interval for wall time reaches 1.38, so
+a slowdown below that size is possible.
 
-\emph{0.25 CPU: a clear slowdown.} At the Fargate minimum, every
-short task is still solved. But its wall time is 1.74 times longer and
-its local time 2.51 times longer (1.67 and 2.41 with means). Of the 22
-extra seconds per run, 15 are in the tools and 3.5 in start-up. Model
-time does not change (15.2 against 15.4\,s). The long tasks spend more
-of their time on the machine, so more of the cost reaches the user:
-local time grows 4.7 times and wall time 2.1 times, with a wide
-interval. This matches the CPU breaking point of 0.75 core from RQ2. The
-result holds per task and per machine. On both sets of M0, on M1 and on
-M2, the median wall time of every short task is 1.35 to 2.38 times
-longer, and every run is solved. With five runs, the interval of a
-single task can still include 1. At 1 CPU, no task on M1 or M2 is
-clearly slower (0.85 to 1.05 times), except Django on M2 (1.37 times).
+\emph{0.25 CPU: a clear slowdown.} At the smallest Fargate size, every
+short task is still solved. But the user waits 1.74 times longer, and
+local time is 2.51 times longer. Model time does not change. Long tasks
+spend more of a run on the machine, so more of the cost reaches the
+user: their wall time is 2.1 times longer, with a wide interval. This
+agrees with the CPU breaking point of 0.75 core from RQ2. The slowdown
+appears for every short task on every machine: the median wall time is
+1.35 to 2.38 times longer. With five runs, the interval of a single
+task can still include 1.
 
-\emph{Whether a task is solved depends on the task, not the size.} The
-long Django and Sympy tasks are solved in all 30 runs, the long pytest
-task in 4 of 15 with and without limits, and the long xarray task never.
+\emph{The size does not change whether a task is solved.} The long
+Django and SymPy tasks are solved in all 30 runs. The long pytest task
+is solved in 4 of 15 runs, with and without limits. The long xarray
+task is never solved, also with no limit.
 
-\emph{512\,MB is at the edge.} The short tasks peak at 345 to 512\,MB, and none is killed. The tests of the long xarray task need about
-810\,MB. Under 512\,MB, every one of its runs has 4 to 9 memory kills
-and takes 5.1 times longer at 1 CPU and 12 times longer at 0.25 CPU. The
-agent never learns why (Section~\ref{sec:rq5}).
+\emph{512\,MB is enough for some tasks and not for others.} The short
+tasks use at most 345 to 512\,MB, and none is killed. The tests of the
+long xarray task need about 810\,MB. Under 512\,MB, the kernel kills its
+tests 4 to 9 times in every run. The run then takes 5.1 times longer at
+1 CPU and 12 times longer at 0.25 CPU, and the agent never learns why
+(Section~\ref{sec:rq5}).
 
-\emph{A long session.} To see whether the picture holds over many
-minutes, we ran the fifth long task five times at each of three sizes in
-set~2. Every run solved the task. With no limit, a run takes 300\,s (233
-to 718\,s) and 29 model turns, and its local share is $f = 0.73$. A task
-with a heavy test suite spends most of its time on the machine, so the
-dilution is small.
+\emph{A long session.} To see whether these results hold over many
+minutes, we ran the fifth long task five times at each of three sizes.
+Every run solved the task. With no limit, a run takes 300\,s and 29
+model turns. This task has a heavy test suite, so it spends most of its
+time on the machine ($f = 0.73$), and the model wait dilutes little.
 
-At 1 CPU and 512\,MB, the run takes 2.3 times longer (local time 2.5
-times), although the short tasks showed no cost at this size. The memory
-that the task actively uses is 510 to 660\,MB. The cgroup therefore hits
-the 512\,MB limit hundreds of times per run, and the kernel takes memory
-back each time. No process is killed, but the cgroup's CPU time grows
-from 234 to 568\,s. Both predictions of RQ2 miss this cost, because the
-memory limit and not the quota sets it. We did not run this task at 1
-CPU with more memory, so this reading rests on the counters.
+At 1 CPU and 512\,MB, the run takes 2.3 times longer, although the short
+tasks showed no slowdown at this size. The cause is memory, not CPU. The
+task actively uses 510 to 660\,MB. It therefore hits the 512\,MB limit
+hundreds of times per run, and the kernel takes memory back each time.
+No process is killed, but the CPU time grows from 234 to 568\,s. Both
+predictions of RQ2 miss this, because they only know about the CPU
+quota. We did not run this task at 1 CPU with more memory, so this
+explanation rests on the counters.
 
-At 0.25 CPU, the run takes 2.9 times longer (local time 3.4 times). Here
-the quota sets the cost. The slowdown stays below $1/q = 4$ because the
-agent's tool time-out, 2 minutes by default, stops long test runs 1 to 5
-times per run, and the agent then runs smaller tests.
-Equation~\ref{eq:hidden} predicts the wall slowdown within 9\% and the
-replay within 14\%. 
+At 0.25 CPU, the run takes 2.9 times longer. Here the quota sets the
+cost. Equation~\ref{eq:hidden} predicts the wall slowdown within 9\%,
+and the replay within 14\%. The slowdown is less than $1/q = 4$ because
+the agent's tools have a time-out of 2 minutes. It stops long test runs
+1 to 5 times per run, and the agent then runs smaller tests.
 
-\textbf{Answer to RQ3.} Platform sizes of 1 CPU or more show no slowdown
-that we can detect on the short tasks. The 0.25 CPU size slowed every
-task that we ran, on every machine: 1.7 times for short tasks, about twice for long
-tasks, and 2.9 times in sessions of 14 to 24 minutes. The 512\,MB limit
-costs 2.3 to 12 times when a task needs more memory, which we saw in one
-task each. In our runs, no size changed whether a task was solved.
+\textbf{Answer to RQ3.} With 1 CPU or more, we could not detect a
+slowdown on the short tasks. With 0.25 CPU, every task that we ran was
+slower, on every machine: 1.7 times for short tasks, about twice for
+long tasks, and 2.9 times in sessions of 14 to 24 minutes. The 512\,MB
+limit costs 2.3 to 12 times when a task needs more memory, which we saw
+in one task each. In our runs, no size changed whether a task was
+solved.
 
 % ---------------------------------------------------------------------------
 \section{RQ4: How Many Agents Fit on One Machine?}\label{sec:rq4}
