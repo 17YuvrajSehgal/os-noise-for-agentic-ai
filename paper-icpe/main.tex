@@ -798,73 +798,73 @@ Right: the CPU time per agent doubles as the machine fills.}
 \end{figure}
 
 RQ2 and RQ3 limit one agent at a time. A platform that runs many agents
-shares one machine among them instead, so each agent's neighbours become
-its limit. We started 1 to 32 agents at the same moment on M0, with no
-limits. Each agent worked on its own copy of the coding task
-\texttt{t3}. We call the agents that start together a \emph{group}.
-Throughput is the number of agents in a group divided by the time from
-the first start to the last finish.
+shares one machine among them. Then the other agents are the limit. We
+started 1 to 32 agents at the same moment on M0, with no limits. Each
+agent worked on its own copy of the coding task \texttt{t3}. We call the
+agents that start together a \emph{group}. \emph{Throughput} is the
+number of agents that finish per minute.
 
-\emph{When the machine fills up.} In set~1, two agents run as fast as
-one (21 to 22\,s). At four agents, one per vCPU, local time grows by
-41\% but wall time only by 14\%. This is the dilution of RQ2 again.
-Throughput rises from 2.8 agents per minute with one agent to 16.3 with
-sixteen, and then stops: 32 agents finish at 16.5 per minute. The extra
-time is spent waiting for a CPU, in the tools and in start-up.  All agents solve their task.
-In these runs, crowding made agents slower but not less correct.
+\emph{When the machine fills up.} Two agents run as fast as one. With
+four agents, one per vCPU, local time grows by 41\% but wall time only
+by 14\%. This is the dilution of RQ2 again. Throughput rises from 2.8
+agents per minute with one agent to 16.3 with sixteen. Then it stops: 32
+agents finish at 16.5 per minute. All agents solve their task. In these
+runs, a crowded machine made agents slower but not less correct.
 
-\emph{A capacity bound, and why the simple version fails.} A common way
-to plan capacity is to measure one agent alone and divide. Operational
-analysis~\cite{denning1978} bounds the throughput of $N$ agents by
-$\min(N/R_1,\ C/D)$. Here $R_1$ is the time of one agent alone, $C$ the
-number of CPUs and $D$ the CPU seconds per agent. With the values of one
-agent alone ($R_1 = 21$\,s, $D = 5.9$\,s), the CPU bound is about 40
-agents per minute. This is 2.5 times what we measured, because $D$ does
-not stay fixed. It is 8.3\,s with four agents and about 12\,s with
-sixteen or more. With $D$ measured at each load, the throughput reaches
-79 to 84\% of the bound. We do not know the cause. The neighbour trace of RQ2 shows that the
-extra time is spent running on a CPU, not waiting for one. One candidate
-is that each vCPU is a hardware thread that shares a core with another,
-so a full machine does less work per CPU second. The VMs give no access
-to hardware counters, and we did not run a VM with one thread per core,
-so we cannot confirm this. Tracing does not explain it: under load it
-adds 2 to 8\% of CPU time. 
+\emph{Why an estimate from one agent is too high.} A common way to plan
+capacity is to measure one agent alone. Operational
+analysis~\cite{denning1978} gives an upper limit for the throughput of
+$N$ agents: $\min(N/R_1,\ C/D)$. Here $R_1$ is the run time of one agent
+alone, $C$ is the number of CPUs, and $D$ is the CPU time that one agent
+needs. One agent alone needs $D = 5.9$\,s, which gives a limit of about
+40 agents per minute. We measured 2.5 times less. The reason is that $D$
+does not stay the same. Each agent needs 8.3\,s of CPU time when four
+run together, and about 12\,s when sixteen or more do. With the $D$
+measured on the full machine, the throughput reaches 79 to 84\% of the
+limit.
 
-\emph{CPU or memory?} Each extra agent adds about 150\,MB. On this
-15\,GB machine, memory would last to about 100 agents, but the CPU is
-full at 16. Memory fills first only for agents with much larger peaks,
-such as the 2 to 4\,GB reported for larger
-sandboxes~\cite{agentcgroup}.
+We do not know why an agent needs more CPU time on a full machine. The
+trace of the busy-neighbour runs in RQ2 shows that the extra time is
+spent running on a CPU, not waiting for one. One possible cause is that
+two vCPUs share one core, so a full machine does less work per CPU
+second. We could not test this: the VMs give no access to hardware
+counters, and we did not run a VM with one thread per core. Tracing is
+not the cause, because under load it adds only 2 to 8\% of CPU time.
+
+\emph{CPU or memory?} Each extra agent adds about 150\,MB of memory. On
+this 15\,GB machine, memory would be enough for about 100 agents, but
+the CPU is full at 16. So the CPU fills first. Memory fills first only
+for agents that use much more memory, such as the 2 to 4\,GB reported
+for larger sandboxes~\cite{agentcgroup}.
 
 \emph{Other machines and another task.} Figure~\ref{fig:density} shows
-the same experiment on M1 (1 to 16 agents), M2 (1 to 64) and set~2 of M0
-(1 to 32). Throughput stops growing at about four agents per vCPU on
-every machine. This number belongs to the task: it is close to
-$R_1/D = 3.6$, the load at which the two terms of the bound from one
-agent alone meet. M1 reaches 7.7 agents per minute at 8 agents and 7.5 at
-16. M0 reaches 14.5 at 16 agents, and 32 agents add 6\%. M2 reaches 32.4
-at 32 agents, and 64 agents add 5\%. On every machine, the CPU seconds
-per agent grow from about 6 alone to 12 or 13, and the CPU bound from
-one agent alone is 2.3 to 2.5 times the measured throughput.  A lighter task (Requests in Docker) still gains throughput at
-16 agents on M0, so the point where a machine is full depends on the
-task. All 1,067 agents in these experiments solved their task.
+the same experiment on M1 (2 vCPUs), M2 (8 vCPUs) and set~2 of M0. On
+every machine, throughput stops growing at about four agents per vCPU.
+At that point M1 reaches 7.7 agents per minute, M0 14.5 and M2 32.4, and
+twice as many agents add at most 6\%. On every machine, the CPU time per
+agent grows from about 6\,s alone to 12 or 13\,s, and the estimate from
+one agent alone is 2.3 to 2.5 times too high. The number four belongs to
+this task. It is close to $R_1/D = 3.6$, the point where the two parts
+of the limit above meet. A lighter task (Requests in Docker) still gains
+throughput at 16 agents on M0. All 1,067 agents in these experiments
+solved their task.
 
 \emph{Agents that arrive at random.} Agents that start at the same
-moment are a worst case. We repeated the experiment on set~2
-of M0 with start times spread at random over 60\,s (300 agents, all
-solved). With 4 to 16 arrivals per minute, the agents hardly overlap,
-and each runs as if alone. With 32 arrivals per minute they pile up, and
-each needs 11.6\,s of CPU against 6.2\,s alone. They finish at 16.9 per
-minute, 10\% above the groups of 32 that start together. The arrivals
-last only one minute, so this is the rate at which the machine drains a
-queue, not a steady state.
+moment are a worst case. We therefore repeated the experiment on M0 with
+start times spread at random over 60\,s. With 4 to 16 arrivals per
+minute, the agents hardly overlap, and each runs as if alone. With 32
+arrivals per minute they pile up, and each needs 11.6\,s of CPU time
+against 6.2\,s alone. They finish at 16.9 per minute, 10\% above the
+groups of 32 that start together. The arrivals last only one minute, so
+this is the rate at which the machine works off a queue, not a steady
+state.
 
 \textbf{Answer to RQ4.} Up to one agent per vCPU costs the user little.
-Throughput stops growing at about four agents per vCPU on 2, 4 and 8
-vCPUs for this task, whether the agents start together or arrive at
-random. For this task, the CPU fills before memory. The CPU time per agent doubles on
-a full machine, so an estimate from one agent is 2.3 to 2.5 times too
-high.
+For this task, throughput stops growing at about four agents per vCPU on
+2, 4 and 8 vCPUs, whether the agents start together or arrive at random.
+The CPU fills before memory. Each agent needs about twice the CPU time
+on a full machine, so an estimate from one agent alone is 2.3 to 2.5
+times too high.
 
 % ---------------------------------------------------------------------------
 \section{RQ5: Does the Agent Change Its Behaviour?}\label{sec:rq5}
