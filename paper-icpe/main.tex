@@ -296,44 +296,58 @@ Figure~\ref{fig:overview} gives an overview of the study. This section
 describes each step.
 
 \subsection{Machines, agent and limits}
-All runs use Google Cloud VMs in one zone, with Ubuntu 24.04 and no
-swap. We use four VMs. VM0 and M0 have 4 virtual CPUs (vCPUs) and
-15\,GB of memory (type n2-standard-4). Their 4 vCPUs are two Intel
-Cascade Lake cores with two hardware threads each. M1 has 2 vCPUs of
-the same CPU and 7\,GB (type n2-standard-2). M2 has 8 vCPUs from
-another vendor, AMD EPYC 7B13, and 31\,GB (type n2d-standard-8). VM0
-produced 132 runs on Linux 7.0.0-1011 and 7.0.0-1014. M0, M1 and M2 run
-Linux 7.0.0-1017, and M1 and M2 are copies of M0's disk.
+All runs use Google Cloud VMs with Ubuntu 24.04 and no swap
+(Table~\ref{tab:machines}). M0 is the main machine. M1 has half of its
+vCPUs and M2 has twice as many, with a CPU from another vendor. Both are
+copies of M0's disk. VM0 is an earlier VM of the same type as M0. On all
+four, each vCPU is a hardware thread, and two vCPUs share one core.
 
-M0 holds two sets of runs. Set~1 (963 runs) used a disk that reads
-287\,MB/s. For set~2 (623 runs) we moved M0 to a smaller disk that reads
-187\,MB/s. M1 (230 runs) and M2 (251 runs) use the same smaller disk.
-Each set has its own runs with no limit, and we compare runs only within
-one set. The reason is that cloud VMs of one type differ from each
-other, most of all in disk speed~\cite{leitner2016,uta2020}.
+\begin{table}[t]
+\caption{The machines. M0 holds two sets of runs, on two disks. The Intel
+VMs are n2-standard types (Cascade Lake), and M2 is n2d-standard-8 (EPYC
+7B13). VM0 ran Linux 7.0.0-1011 and 1014, the others 7.0.0-1017.}
+\label{tab:machines}
+\small
+\begin{tabular}{@{}lrrlrr@{}}
+\toprule
+Machine & vCPUs & Memory & CPU & Disk read & Runs \\
+\midrule
+M0, set 1 & 4 & 15\,GB & Intel & 287\,MB/s & 963 \\
+M0, set 2 & 4 & 15\,GB & Intel & 187\,MB/s & 623 \\
+M1 & 2 & 7\,GB & Intel & 187\,MB/s & 230 \\
+M2 & 8 & 31\,GB & AMD & 187\,MB/s & 251 \\
+VM0 & 4 & 15\,GB & Intel & 205\,MB/s & 132 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-The agent is Claude Code~\cite{claudecode}. VM0 ran version 2.1.296.
-Set~1 and 68 runs of set~2 ran version 2.1.322, and all other runs ran
-version 2.1.327. On M0, M1 and M2 the agent uses the Opus model
-(\texttt{claude-opus-5-5}) unless we name another one: Haiku
-(\texttt{claude-haiku-5-5}) or Fable (\texttt{claude-fable-5-1}). The
-agent runs without a user interface, with a fixed prompt and a fresh
-session.
+M0 holds two sets of runs, set~1 and set~2. Between them we moved M0 to
+a slower disk. Cloud VMs also differ from each other, most of all in
+disk speed~\cite{leitner2016,uta2020}. We therefore compare a run only
+with runs with no limit from the same machine and set.
 
-The agent and every process it starts run in a fresh cgroup
+The agent is Claude Code~\cite{claudecode}, in version 2.1.296 on VM0
+and versions 2.1.322 and 2.1.327 on the other machines. It uses the Opus
+model unless we name Haiku or Fable (model names
+	exttt{claude-opus-5-5}, 	exttt{claude-haiku-5-5} and
+	exttt{claude-fable-5-1}). It runs without a user interface,
+with a fixed prompt and a fresh session.
+
+The agent and every process it starts run in their own cgroup
 (Figure~\ref{fig:overview}). A cgroup is a group of processes that the
-kernel limits and counts together. A run sets a limit by writing one of
-the cgroup's control files~\cite{cgroupv2}:
+kernel limits and counts together. We set a limit by writing one of the
+cgroup's control files~\cite{cgroupv2}:
 \begin{itemize}
-\item \texttt{cpu.max} sets the CPU quota. This is the share of CPU time
-  that the cgroup may use in each 100\,ms period. When the share is used
-  up, the cgroup stops until the next period~\cite{turner2010}.
-\item \texttt{memory.high} sets a soft memory limit. Above it, the
+\item \emph{CPU quota} (\texttt{cpu.max}): the share of CPU time that
+  the cgroup may use in each 100\,ms period. When it is used up, the
+  cgroup stops until the next period~\cite{turner2010}.
+\item \emph{Soft memory limit} (\texttt{memory.high}): above it, the
   kernel takes memory back from the cgroup (reclaim) but never kills.
-\item \texttt{memory.max} sets a hard memory limit. When reclaim is not
-  enough, the kernel kills a process.
-\item \texttt{io.max} limits the disk read speed.
-\item \texttt{pids.max} limits the number of processes and threads.
+\item \emph{Hard memory limit} (\texttt{memory.max}): when reclaim
+  is not enough, the kernel kills a process.
+\item \emph{Disk limit} (\texttt{io.max}) and \emph{process limit}
+  (\texttt{pids.max}): the read speed of the disk, and the number of
+  processes and threads.
 \end{itemize}
 Network limits use the Linux network emulator \texttt{netem}. A busy
 neighbour is a program that loads the CPU, the memory or the disk from
