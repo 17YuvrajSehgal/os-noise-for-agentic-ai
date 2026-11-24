@@ -293,40 +293,51 @@ Figure~\ref{fig:overview} gives an overview of the study. This section
 describes each step.
 
 \subsection{Machines, agent and limits}
+\begingroup
+\emergencystretch=2em
 All runs use Google Cloud VMs in one zone, with Ubuntu 24.04 and no
-swap. VM0 and M0 are of type n2-standard-4, with 4 virtual CPUs (vCPUs)
-and 15\,GB of memory. The 4 vCPUs are two Intel Cascade Lake cores with
-two hardware threads each. M1 (n2-standard-2) has 2 vCPUs of the same
-CPU and 7\,GB. M2 (n2d-standard-8) has 8 vCPUs of another vendor (AMD
-EPYC 7B13) and 31\,GB. VM0, our first VM, produced 132 runs on Linux
-7.0.0-1011 and 7.0.0-1014. M0, M1 and M2 run Linux 7.0.0-1017, and M1
-and M2 are copies of M0's disk. M0 holds two sets of runs. Set~1 (963
-runs) used a disk that reads 287\,MB/s. For set~2 (623 runs) we moved M0
-to a smaller disk that reads 187\,MB/s, as on M1 (230 runs) and M2 (251
-runs). Each set has its own runs with no limit, and we compare runs only
-within one set, because cloud VMs of one type differ from each other,
-most of all in disk speed~\cite{leitner2016,uta2020}.
+swap. We use four VMs. VM0 and M0 have 4 virtual CPUs (vCPUs) and
+15\,GB of memory (type n2-standard-4). Their 4 vCPUs are two Intel
+Cascade Lake cores with two hardware threads each. M1 has 2 vCPUs of
+the same CPU and 7\,GB (type n2-standard-2). M2 has 8 vCPUs from
+another vendor, AMD EPYC 7B13, and 31\,GB (type n2d-standard-8). VM0
+produced 132 runs on Linux 7.0.0-1011 and 7.0.0-1014. M0, M1 and M2 run
+Linux 7.0.0-1017, and M1 and M2 are copies of M0's disk.
 
-The agent is Claude Code~\cite{claudecode}: version 2.1.296 on VM0,
-2.1.322 for set~1 and 68 runs of set~2, and 2.1.327 for all other runs.
-On M0, M1 and M2 it uses the Opus model (\texttt{claude-opus-5-5})
-unless we state Haiku (\texttt{claude-haiku-5-5}) or Fable
-(\texttt{claude-fable-5-1}). It runs without a user interface, with a
-fixed prompt and a fresh session.
+M0 holds two sets of runs. Set~1 (963 runs) used a disk that reads
+287\,MB/s. For set~2 (623 runs) we moved M0 to a smaller disk that reads
+187\,MB/s. M1 (230 runs) and M2 (251 runs) use the same smaller disk.
+Each set has its own runs with no limit, and we compare runs only within
+one set. The reason is that cloud VMs of one type differ from each
+other, most of all in disk speed~\cite{leitner2016,uta2020}.
 
-The agent and every process it starts run in a fresh cgroup, a group of
-processes that the kernel limits and counts together
-(Figure~\ref{fig:overview}). A run sets a limit by writing one of the
-cgroup's control files~\cite{cgroupv2}. The CPU quota (\texttt{cpu.max})
-is the share of CPU time that the cgroup may use in each 100\,ms period,
-after which it stops until the next period~\cite{turner2010}. Above a
-soft memory limit (\texttt{memory.high}), the kernel takes memory back
-from the cgroup (reclaim) but never kills. At a hard memory limit
-(\texttt{memory.max}), the kernel kills a process when reclaim is not
-enough. Two more files limit the disk read speed (\texttt{io.max}) and
-the number of processes and threads (\texttt{pids.max}). Network limits
-use the Linux network emulator \texttt{netem}. A busy neighbour is a
-program that loads the CPU, the memory or the disk from another cgroup.
+The agent is Claude Code~\cite{claudecode}. VM0 ran version 2.1.296.
+Set~1 and 68 runs of set~2 ran version 2.1.322, and all other runs ran
+version 2.1.327. On M0, M1 and M2 the agent uses the Opus model
+(\texttt{claude-opus-5-5}) unless we name another one: Haiku
+(\texttt{claude-haiku-5-5}) or Fable (\texttt{claude-fable-5-1}). The
+agent runs without a user interface, with a fixed prompt and a fresh
+session.
+
+The agent and every process it starts run in a fresh cgroup
+(Figure~\ref{fig:overview}). A cgroup is a group of processes that the
+kernel limits and counts together. A run sets a limit by writing one of
+the cgroup's control files~\cite{cgroupv2}:
+\begin{itemize}
+\item \texttt{cpu.max} sets the CPU quota. This is the share of CPU time
+  that the cgroup may use in each 100\,ms period. When the share is used
+  up, the cgroup stops until the next period~\cite{turner2010}.
+\item \texttt{memory.high} sets a soft memory limit. Above it, the
+  kernel takes memory back from the cgroup (reclaim) but never kills.
+\item \texttt{memory.max} sets a hard memory limit. When reclaim is not
+  enough, the kernel kills a process.
+\item \texttt{io.max} limits the disk read speed.
+\item \texttt{pids.max} limits the number of processes and threads.
+\end{itemize}
+Network limits use the Linux network emulator \texttt{netem}. A busy
+neighbour is a program that loads the CPU, the memory or the disk from
+another cgroup.
+\par\endgroup
 
 \subsection{Tasks}
 \emph{Small tasks} make each limit act on a known piece of work. Two are
