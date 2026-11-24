@@ -18,6 +18,9 @@
 \acmConference[ICPE '27]{ACM/SPEC International Conference on Performance Engineering}{2027}{}
 \settopmatter{printacmref=false}
 
+% Let TeX stretch a line a little more before a word sticks into the margin.
+\emergencystretch=2em
+
 \begin{document}
 
 \title{Diluted, Not Removed: How System Limits Slow Down AI Coding Agents}
@@ -293,8 +296,6 @@ Figure~\ref{fig:overview} gives an overview of the study. This section
 describes each step.
 
 \subsection{Machines, agent and limits}
-\begingroup
-\emergencystretch=2em
 All runs use Google Cloud VMs in one zone, with Ubuntu 24.04 and no
 swap. We use four VMs. VM0 and M0 have 4 virtual CPUs (vCPUs) and
 15\,GB of memory (type n2-standard-4). Their 4 vCPUs are two Intel
@@ -337,7 +338,6 @@ the cgroup's control files~\cite{cgroupv2}:
 Network limits use the Linux network emulator \texttt{netem}. A busy
 neighbour is a program that loads the CPU, the memory or the disk from
 another cgroup.
-\par\endgroup
 
 \subsection{Tasks}
 \emph{Small tasks} make each limit act on a known piece of work. Two are
