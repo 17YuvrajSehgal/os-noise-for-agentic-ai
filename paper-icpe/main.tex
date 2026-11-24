@@ -501,57 +501,48 @@ the three machine sizes (5 to 15 runs per point). }
 \label{fig:limits}
 \end{figure*}
 
-We now apply one limit at a time and tighten it step by step.
-Figure~\ref{fig:limits} shows how the run time responds. Tasks \texttt{t4} to \texttt{t8} are fixed
-workloads, and their response to a limit is known kernel behaviour. We
-use them as calibration. The limits follow three shapes.
+We now apply one limit at a time and make it tighter step by step.
+Figure~\ref{fig:limits} shows how the run time responds. The limits
+behave in three ways.
 
-\emph{Smooth.} A CPU quota, a disk limit and extra threads raise the
-cost step by step. At 0.75 core, the breaking point, the local time of
-the coding task \texttt{t3} grows by 35\%. At 0.5 core it grows by 84\%,
-and at 0.25 core it is 3.9 times longer. The extra time is in the tools
-(13\,s) and in start-up (3.6\,s). A disk read limit starts to cost at
-150\,MB/s, and at 20\,MB/s a file read is 9.2 times longer. On the
-coding task, a disk limit slows start-up instead (21\,s more at
-5\,MB/s), because the agent program itself is read from disk. Extra
-threads cost 24\% at 4 workers on 4 vCPUs, where the interval still
-touches 1.10, and 60\% at 8 workers, the breaking point. With 16
-workers, the threads wait 46\,s for a CPU.
+\emph{Smooth: slower step by step.} A CPU quota, a disk limit and extra
+threads slow a run a little more with each step. Under a CPU quota, the
+local time of the coding task \texttt{t3} grows by 35\% at 0.75 core,
+which is the breaking point. It grows by 84\% at 0.5 core and is 3.9
+times longer at 0.25 core. A disk read limit starts to cost at
+150\,MB/s, and at 20\,MB/s a file read takes 9.2 times longer. Extra
+threads cost 60\% at 8 workers on 4 vCPUs, the breaking point. At 4
+workers they cost 24\%, but the interval still touches 1.10.
 
-\emph{Cliff.} A memory limit has no effect while the data that a task
-needs still fits. Then the cost jumps in one step. The task \texttt{t6}
-runs at full speed down to a soft limit of 1344\,MB. At 1152\,MB it is
-3.4 times slower, because every pass reads the 1\,GB file from disk
-again. A hard limit gives the same cliff for file memory and never
-kills, because file data in memory is only a copy of the disk. A
-program's own memory has no such copy, so the kernel can only kill. The
-512\,MB tool of \texttt{t7} runs at 704\,MB and is killed at 640\,MB in
-all five runs. A limit on the whole agent costs 11\% at 192\,MB, and at
-128\,MB the run takes 15 times longer before it is killed.
+\emph{Cliff: suddenly much slower.} A memory limit does nothing while
+the data that a task needs still fits. Then the run becomes much slower
+in one step. Task \texttt{t6} reads a 1\,GB file several times. It runs
+at full speed down to a soft limit of 1344\,MB. At 1152\,MB it is 3.4
+times slower, because it must read the file from disk again in every
+pass. A program's own memory cannot be read back from disk, so the
+kernel kills the program when that memory does not fit. The tool of
+\texttt{t7} needs 512\,MB. It runs at 704\,MB and is killed at 640\,MB
+in all five runs.
 
-\emph{Crash.} A process limit has no cost until the agent crashes. On
-M0, all 10 runs of set~2 pass at a limit of 18. At 17, the shell retries
-failed attempts to start a process, and the run is 55\% slower. At 16,
-14 of 15 runs abort within about three seconds. Above this edge, aborts
-are rare: 3 of 55 runs in set~1 and 1 of 50 in set~2. The edge moves
-with the number of vCPUs (Section~\ref{sec:cross}).
+\emph{Crash.} A process limit costs nothing until the agent crashes. On
+M0, all runs pass at a limit of 18. At 16, 14 of 15 runs abort within
+about three seconds. Above 16, aborts are rare (4 of 105 runs). The
+limit at which the agent crashes moves with the number of vCPUs
+(Section~\ref{sec:cross}).
 
 \emph{Network and neighbour.} Network delay, packet loss and low
 bandwidth add up to 6\,s of model time and nothing clear on the machine.
-A busy neighbour raises the agent's local time by 86\% (CPU load) or
-62\% (memory load), although the agent itself has no limit. Amdahl's law
-then predicts 16 to 23\% more wall time. We measured only 2 to 10\%,
-because the model answered 2 to 3\,s faster in these runs.
+A busy neighbour slows the agent although the agent itself has no limit.
+Local time grows by 86\% next to a CPU load, and by 62\% next to a
+memory load.
 
-\emph{Two limits at once.} In set~2, where each pair has its own runs
-with no limit, a CPU quota of 0.5 core alone makes local time 1.92
-times longer, and a disk limit of 20\,MB/s alone 1.84 times.
-Together they make it 2.53 times longer, less than the sum of the two
-costs (2.76): while the run waits for one, it does not wait for the
-other. 
-Memory and disk interact most. A soft memory limit of 768\,MB
-slows \texttt{t6} from 15.5\,s to 34\,s, and to 117\,s with a 50\,MB/s
-disk limit added. 
+\emph{Two limits at once.} Two limits cost less than the sum of their
+costs when they act at different moments. A CPU quota of 0.5 core alone
+makes local time 1.92 times longer, and a disk limit of 20\,MB/s alone
+1.84 times. Together they make it 2.53 times longer, not 2.76. A memory
+limit and a disk limit make each other worse. A soft memory limit of
+768\,MB slows \texttt{t6} from 15.5\,s to 34\,s, and to 117\,s with a
+50\,MB/s disk limit added.
 
 \subsection{What the kernel trace shows}
 
@@ -565,71 +556,66 @@ threads, so it can be longer than the wall time.}
 \label{fig:states}
 \end{figure}
 
-The slowdowns above say how much each limit costs. The kernel trace
-says why.
-Figure~\ref{fig:states} shows the time that the threads of the agent's
-cgroup ran, waited for a CPU, and waited for the disk.
+The slowdowns say how much each limit costs. The kernel trace says why.
+Figure~\ref{fig:states} shows how long the agent's threads ran, waited
+for a CPU, and waited for the disk.
 
 \emph{A CPU quota adds waiting, not work.} On the coding task, the
 threads run for 6.3\,s with no limit and for 6.7\,s at 0.25 core. Their
-wait for the quota grows from 0.1\,s to 2.5\,s at 0.75 core, 7.1\,s at
-0.5 core and 26.4\,s at 0.25 core. The agent does the same work under
-the quota. This is why the work measured with no limit can predict the
-time under a quota.
+wait for the quota grows from 0.1\,s to 26.4\,s. The agent does the same
+work and only waits longer. This is why a run with no limit can predict
+the time under a quota.
 
 \emph{Too many threads look different.} With 16 workers on 4 vCPUs, the
-threads wait 45.9\,s for a busy core and 0.1\,s for the quota. Standard
-wait analysis reports both cases as ``waiting for a CPU''. We separate
-them with one rule: a thread that is ready while a CPU is idle is held
-back by the quota, and a ready thread with no idle CPU waits for a busy
-core. In the 275 runs with more than 1\,s of throttling, the quota wait
-from the trace is 1.10 times the kernel's own counter of throttled time
-(median).  An operator can thus tell a quota that is too small from a
-machine that is too full.
+threads wait 45.9\,s for a busy core and 0.1\,s for the quota. Common
+trace analysis reports both cases as ``waiting for a CPU''. We separate
+them with one rule. If a thread is ready while a CPU is idle, the quota
+holds it back. If no CPU is idle, it waits for a busy core. Our quota
+wait agrees with the kernel's own counter of throttled time (1.10 times
+the counter, median over 275 runs). An operator can thus tell a quota
+that is too small from a machine that is too full.
 
-\emph{Disk and memory limits grow disk waiting.} Under a read limit of
+\emph{Disk and memory limits add disk waiting.} Under a read limit of
 20\,MB/s, the file read waits 57\,s for the disk, against 4.5\,s with no
-limit. Under a soft memory limit of 1152\,MB, the same waiting grows to
-19.5\,s, because every pass reads the file again. The cliff of the
-memory limit is thus a disk cost.
+limit. Under the soft memory limit of 1152\,MB, the same waiting grows
+to 19.5\,s. The sudden slowdown under a memory limit is thus time spent
+on the disk.
 
-\emph{A busy neighbour raises the agent's CPU time.} With four CPU-bound
-programs next to the agent, its threads wait only 3.0\,s for a busy
-core, but they run for 10.4\,s instead of 6.2\,s to do the same work
-(Section~\ref{sec:rq4}).
+\emph{A busy neighbour makes the agent's own work slower.} With four
+computing programs next to the agent, its threads wait only 3.0\,s for a
+busy core. But they run for 10.4\,s instead of 6.2\,s to do the same
+work (Section~\ref{sec:rq4}).
 
 \subsection{How much reaches the user}
 
 In Figure~\ref{fig:limits}, the wall slowdown is much smaller than the
 local slowdown. Amdahl's law~\cite{amdahl1967} explains this. Let $f$ be
 the share of local time in a run with no limit. If a limit makes local
-time $s$ times longer and leaves the model's answer time unchanged, then
+time $s$ times longer and the model answers as fast as before, then
 \begin{equation}
 \text{wall slowdown} = 1 + f\,(s - 1).
 \label{eq:hidden}
 \end{equation}
 The formula is not new. Our contribution is to measure $f$ and $s$ for
-agents and to test where its assumption fails.
+agents and to test where the formula fails.
 
-In runs with no limit, $f$ is 0.20 to 0.30 on the small coding tasks and
-0.17 to 0.73 on the real tasks (medians per task, over all sets and
-machines; the shares in Section~\ref{sec:rq1} are means over set~1). Between a fifth and three quarters of a cost on the machine
-therefore reaches the user. A large cost stays visible: at
-0.25 core, a local slowdown of 3.9 gives a wall slowdown of 1.8 by
-Equation~\ref{eq:hidden}. We measured 1.8 in set~2 and 2.0 in set~1,
-where the model also answered 4.8\,s slower. A moderate
-cost may not. On the small tasks, a local slowdown of 1.5 becomes 1.10
-to 1.15, which is the size of the difference between two groups of
-five runs with no limit.
+With no limit, $f$ is 0.20 to 0.30 on the small coding tasks and 0.17 to
+0.73 on the real tasks (medians per task, over all sets and machines).
+So between a fifth and three quarters of a cost on the machine reaches
+the user. A large cost stays visible. At 0.25 core, a local slowdown of
+3.9 gives a wall slowdown of 1.8 by Equation~\ref{eq:hidden}. We
+measured 1.8 in set~2 and 2.0 in set~1, where the model also answered
+slower. A moderate cost may be hidden. On the small tasks, a local
+slowdown of 1.5 becomes 1.10 to 1.15, which is as large as the
+difference between two groups of five runs with no limit.
 
 We tested Equation~\ref{eq:hidden} with the measured $s$ on the 68
 limited settings of set~1. It is within 10\% of the measured wall
 slowdown in 52 of them, and in 44 of the 45 settings where the model
 time changed by less than 2\,s. Of the 16 misses, 15 are settings where
-the model time changed by 2\,s or more, in the direction of the miss.
-Examples are slower answers under a network limit and extra model turns
-(Section~\ref{sec:rq5}). The error of the formula therefore measures the
-part of a slowdown that comes from the model side.
+the model time changed by 2\,s or more. Examples are slower answers
+under a network limit and extra model turns (Section~\ref{sec:rq5}). The
+formula thus fails when a limit also changes the model side.
 
 \begin{table}[t]
 \caption{Predicting the time under a CPU quota or a read limit from
@@ -655,74 +641,59 @@ Eq.~\ref{eq:hidden} with measured $s$ (not a prediction) & 4.3\% [3.1--5.8] & 6.
 \end{tabular}}
 \end{table}
 
-\emph{A prediction from runs with no limit.} The formula alone does not
-predict a cost, because $s$ is known only after a run under the limit.
-To estimate the cost in advance, we take a run that had no limit and
-work out how long each part of it would take under the limit. We call
-this a \emph{replay}. We cut
-the run into slices of 0.2\,s, the interval at which we read the cgroup
-counters. For each slice, the counters give the CPU seconds $d$ and the
-bytes read $b$. A slice inside a model answer keeps its length $\Delta
-t$. A local slice cannot finish faster than its CPU work allows under a
-quota of $q$ cores, or than its reads allow under a read limit of $r$
-bytes per second. It therefore takes $\max(\Delta t, d/q, b/r)$. The
-predicted wall time is the sum of the slices, and nothing is fitted. A
-setting has 5 to 15 runs with no limit, and we take the median of their
-replays. Similar replays are used in noise simulation~\cite{hoefler2010}
-and capacity planning~\cite{gmach2007}. We designed the replay on the
-five CPU settings of \texttt{t3} in set~1 and tested it on the other 89
-settings with a CPU quota or a read limit: 44 on real tasks, 34 on the
-coding tasks and 11 on the file read \texttt{t8}.
+\emph{A prediction from runs with no limit.} The formula needs $s$,
+which is known only after a run under the limit. To estimate the cost in
+advance, we take a run that had no limit and compute how long each part
+of it would take under the limit. We call this a \emph{replay}. We cut
+the run into slices of 0.2\,s. For each slice, the counters give the CPU
+seconds $d$ that the agent used and the bytes $b$ that it read. A slice
+inside a model answer keeps its length $\Delta t$. A local slice cannot
+finish faster than its CPU work allows under a quota of $q$ cores, or
+than its reads allow under a read limit of $r$ bytes per second. So it
+takes $\max(\Delta t, d/q, b/r)$. The predicted wall time is the sum of
+all slices, and nothing is fitted. For a setting, we take the median
+over its runs with no limit. Similar replays are used in noise
+simulation~\cite{hoefler2010} and capacity planning~\cite{gmach2007}. We
+designed the replay on five CPU settings of \texttt{t3} and tested it on
+89 other settings with a CPU quota or a read limit.
 
-Table~\ref{tab:predict} compares the replay with simpler predictions
-that use the same inputs. The replay is within a median 6.9\% of the
-wall time, and within 7.1\% of local time, the part that it changes.
-Settings with different limits on the same task share their runs with no
-limit, so we also compare predictions per group of such settings (35
-groups).
+Table~\ref{tab:predict} compares the replay with simpler predictions.
+The replay is within a median 6.9\% of the wall time, and within 7.1\%
+of local time, the part that it changes. Four points stand out.
 \begin{itemize}
-\item \emph{The slices matter.} The same rule on the whole local part at
-  once is off by 11.8\% on local time. The replay is closer in 29 of the
-  35 groups ($p < 0.001$).
-\item \emph{CPU quotas below one core (38 settings).}
-  Equation~\ref{eq:hidden} with the simple estimate $s = 1/q$ is as good
-  or better: 7.6\% against 11.6\% on local time ($p = 0.07$). Under a
-  tight quota, almost all local work waits for the CPU.
-\item \emph{Quotas of one core or more (37 settings).} Here $1/q$
-  predicts no change. The replay is closer in 21 of the 28 settings
-  where the two differ ($p = 0.01$).
-\item \emph{Read limits (14 settings).} Here $1/q$ says nothing. A
-  simple estimate from the total bytes read, $\max(t, B/r)$, is off by
-  11.0\% of local time. The replay is within 4.7\% and is closer in 14
-  of 14. Eleven of the 14 are the plain file read \texttt{t8}, where the
-  time is close to $b/r$ by construction, so this is the easiest case
-  for the replay.
+\item \emph{The slices matter.} The same rule applied to the whole local
+  part at once is off by 11.8\% on local time.
+\item \emph{CPU quotas below one core.} The simple estimate $s = 1/q$ is
+  as good or better: 7.6\% against 11.6\% on local time. Under a tight
+  quota, almost all local work waits for the CPU.
+\item \emph{Quotas of one core or more.} Here $1/q$ predicts no change,
+  and the replay is closer in 21 of 28 settings.
+\item \emph{Read limits.} Here $1/q$ says nothing. An estimate from the
+  total bytes read, $\max(t, B/r)$, is off by 11.0\% of local time, and
+  the replay by 4.7\%. Eleven of these 14 settings are a plain file
+  read, which is the easiest case for the replay.
 \end{itemize}
 Over all settings, the replay and the simple estimate do not differ
-significantly on wall time (the replay is closer in 19 of 35 groups,
-$p = 0.74$). The replay holds
-on each machine (4.9\% on set~2 of M0, 7.6\% on M1, 5.7\% on M2) and on
-real tasks (7.0\%). It also explains why a CPU quota and a disk limit
-together cost less than their sum: each slice waits only for the tighter
-of the two.
+significantly on wall time (the replay is closer in 19 of 35 groups of
+settings that share their runs with no limit, $p = 0.74$). The replay
+works equally well on each machine (4.9 to 7.6\%) and on real tasks
+(7.0\%).
 
-The replay misses the wall time by more than 10\% in 28 settings. In 19
-of them the model time changed by 2\,s or more, which means the agent
-did something different. The others include the lowest read limits and
-Django under 512\,MB, where memory reclaim adds time that the replay
-cannot see. In the 58 settings where the model time stayed within 2\,s,
-the median error is 5.2\% and the 90th percentile 11.5\%. One run with
-no limit is enough to predict the slowdown: the typical single run is
-within 7.1\%, and the worst run of a setting within 10.6\%.
+The replay misses the wall time by more than 10\% in 28 of the 89
+settings. In 19 of them the model time changed by 2\,s or more, which
+means the agent did something different. The others include the lowest
+read limits and a task under 512\,MB, where memory reclaim adds time
+that the replay cannot see. One run with no limit is enough to predict
+the slowdown: a typical single run is within 7.1\%.
 
-\textbf{Answer to RQ2.} Each limit has a breaking point and one of three
-shapes. The kernel trace shows that a CPU quota and a disk limit grow
-one kind of waiting and leave the work unchanged. The model wait dilutes
-the cost: when local time grows $s$ times, the user sees $1 +
-f\,(s-1)$. For CPU quotas below one core, this formula with $s = 1/q$
-predicts the cost. For disk limits, where the formula has no simple estimate of
-$s$, a replay of the runs with no limit predicts local time within
-4.7\%, mostly on a plain file read. Both assume that the agent does not change what it does.
+\textbf{Answer to RQ2.} Each limit has a breaking point and behaves in
+one of three ways: slower step by step, suddenly much slower, or a
+crash. The kernel trace shows that a CPU quota and a disk limit add
+waiting and leave the work unchanged. The model wait dilutes the cost:
+when local time grows $s$ times, the user waits $1 + f\,(s-1)$ times
+longer. For CPU quotas below one core, $s = 1/q$ predicts the cost. For
+other cases, a replay of runs with no limit predicts it. Both assume
+that the agent does not change what it does.
 
 % ---------------------------------------------------------------------------
 \section{RQ3: Do Real Platform Sizes Slow Down Real Tasks?}\label{sec:rq3}
