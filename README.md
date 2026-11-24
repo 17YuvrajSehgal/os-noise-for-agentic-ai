@@ -1,140 +1,151 @@
-# OS Noise for Agentic AI
+<h1 align="center">Diluted, Not Removed</h1>
+<h3 align="center">How system limits slow down AI coding agents</h3>
 
-A kernel-trace study of how container resource limits slow down and break AI
-coding agents.
+<p align="center">
+  <a href="https://doi.org/10.5281/zenodo.24490509"><img alt="Dataset on Zenodo" src="https://img.shields.io/badge/dataset-10.5281%2Fzenodo.24490509-1f6feb"></a>
+  <a href="#paper"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-coming%20soon-b31b1b"></a>
+  <img alt="Runs" src="https://img.shields.io/badge/agent%20runs-2%2C199-2ea44f">
+  <img alt="Kernel traces" src="https://img.shields.io/badge/LTTng%20kernel%20traces-2%2C159-8250df">
+  <img alt="License" src="https://img.shields.io/badge/code-MIT-lightgrey">
+</p>
 
-Yuvraj Sehgal¹, Sneh Patel¹, Mahsa Panahandeh², Naser Ezzati-Jivan¹
+An AI coding agent spends most of its time waiting for a language model.
+So what happens when you put it in a small container?
 
-¹ Department of Computer Science, Brock University, St. Catharines, Ontario,
-Canada · ² School of Electrical Engineering and Computer Science, University
-of Ottawa, Ottawa, Ontario, Canada
+We ran **Claude Code 2,199 times** under ten kinds of Linux limits, recorded a
+**kernel trace of almost every run**, and measured three things: where each
+limit starts to cost, how much of that cost the user sees, and what the agent
+does about it.
 
-This repository is the **code and metadata artifact** for the paper. The full
-raw traces are released separately on Zenodo (see [`DATA.md`](DATA.md)).
+```
+                 ░ waiting for the model      ▓ work on the machine
+
+no limit    ▓░░░░░░▓░░░░▓▓▓░░░░░▓                              21 s
+0.25 core   ▓▓▓▓▓░░▓░░░░▓░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░▓          39 s
+
+      the machine part takes 3.9x longer, but the user waits only 1.8x longer
+```
+
+The model wait **dilutes** the cost of a slow machine. It does not **remove** it.
 
 ---
 
-## What this is
+## What we found
 
-When a coding agent feels slow, people blame the language model. But agents
-run inside containers, and containers come with resource limits — a
-fractional CPU, a memory ceiling, an I/O budget. This study measures how much
-of an agent's wall-clock time those limits silently take, using **kernel
-tracing (LTTng)** on two production agents, **Claude Code** and **Codex CLI**.
+| Question | Short answer |
+|---|---|
+| **Where does the time go?** | With no limit, the agent waits for the model for 65 to 78% of a run on small tasks, and 42 to 66% on short real tasks. |
+| **What does each limit do?** | Each limit has a breaking point and behaves in one of three ways: slower step by step (CPU quota, disk, threads), suddenly much slower (memory), or a crash (process limit). |
+| **How much reaches the user?** | If the machine's share of a run is `f` and a limit makes that part `s` times longer, the user waits `1 + f (s - 1)` times longer. We measured `f` between 0.17 and 0.73. |
+| **Can the cost be predicted?** | Kernel traces show that a CPU quota adds waiting, not work. A replay of runs with no limit predicts the run time within a median 6.9% on 89 held-out settings. |
+| **Do real container sizes hurt?** | With 1 CPU or more, no slowdown we could detect on short real tasks. With 0.25 CPU, every task is still solved but takes 1.35 to 2.4 times longer. |
+| **How many agents fit on a machine?** | Throughput stops growing at about 4 agents per vCPU. An estimate from one agent alone is 2.3 to 2.5 times too high. |
+| **Does the agent react?** | Yes. A small model does extra work when a test prints a slow run time. And the kernel can kill the agent itself, with no message to the user. |
 
-The method needs no change to the agent: put it in a cgroup, set one limit,
-record a kernel trace, and use the cgroup's own counters as ground truth.
+A small check with two other agents, **OpenHands** and **Codex**, shows the
+same mechanism. Which prediction fits best depends on the agent.
 
-## The experiments
+## How the study works
 
-Four mechanism studies plus one reality check. Each isolates a mechanism with
-a workload built to stress it; the end-to-end test then asks which a
-lightweight coding task actually trips.
-
-| # | folder | what it limits | headline result |
-|---|---|---|---|
-| 1 | `latency/1_svc_cpu_cap/agentic-os-noise` | CPU bandwidth (`cpu.max`) | +75% wall at 0.25 core; on-CPU demand flat, the cap turns it into throttle wait |
-| 2 | `latency/2_threads_vs_cores` | cores (over-subscription, no cgroup) | parallel phase +295% at 4×, matching the `(W−C)/W` queueing law |
-| 3 | `latency/3_memory_cap` | memory (`memory.high` / `memory.max`) | 4.7× slower on refaults; a sharp OOM cliff on unreclaimable memory |
-| 4 | `latency/4_io_cap` | disk read bandwidth (`io.max`) | 3.4× slower read phase at 50 MB/s |
-| E2E | `latency/1_svc_cpu_cap/.../runs_e2e_*` | all of the above, realistic task | a lightweight coding task trips **only** the CPU cap, and memory only below the agent's own footprint |
-
-Baseline finding: on a well-provisioned machine the agent is **≈84%
-LLM-bound**. Every effect reproduces across both agents and agrees with the
-cgroup counters.
-
-## Repository layout
-
-```
-.
-├── README.md            ← you are here
-├── REPRODUCE.md         ← step-by-step: set up a VM, collect, analyze
-├── DATA.md              ← what a run contains + how to get the traces (Zenodo)
-├── CITATION.cff         ← how to cite
-├── LICENSE              ← MIT (code); data is CC-BY-4.0 on Zenodo
-├── research-paper/      ← the paper (paper.tex), figures, and the scripts
-│   │                      that turn runs into every table/figure number
-│   ├── paper.tex
-│   ├── make_data.py  compare_agents.py  llm_wait.py  make_fig_*.py
-│   └── *-RESULT.md    ← prose write-up of each result
-├── provenance/          ← VM environment snapshot, campaign logs, manifests,
-│                          and the collection scripts exactly as executed
-└── latency/
-    ├── 1_svc_cpu_cap/agentic-os-noise/
-    │   ├── PLAN.md  RESULTS.md
-    │   ├── collection/   ← how one run is produced (see its README)
-    │   │   ├── collect_agent_run.sh   ← ★ the collector
-    │   │   ├── tasks/                 ← what the agent is told to do
-    │   │   └── run_campaign_*.sh      ← one loop per experiment
-    │   ├── analysis/     ← analyze_run.py (★ one run → time budget), aggregate.py
-    │   └── runs*/        ← per-run meta/ + agent.log (traces on Zenodo)
-    ├── 2_threads_vs_cores/   { PLAN, RESULTS, analysis/aggregate_t4.py, runs* }
-    ├── 3_memory_cap/         { PLAN, RESULTS, analysis/aggregate_mem.py, runs* }
-    └── 4_io_cap/             { PLAN, RESULTS, analysis/aggregate_io.py, runs* }
+```mermaid
+flowchart LR
+    A["<b>1. Run</b><br/>the agent, with or<br/>without a limit"] --> B["<b>2. Record</b><br/>kernel trace, event log,<br/>cgroup counters"]
+    B --> C["<b>3. Split</b><br/>model wait<br/>vs. local time"]
+    C --> D["<b>4. Report</b><br/>breaking point, slowdown,<br/>prediction, capacity, behaviour"]
 ```
 
-The two files worth reading closely are
-`latency/1_svc_cpu_cap/agentic-os-noise/collection/collect_agent_run.sh` (how
-a run is produced) and `.../analysis/analyze_run.py` (how a run becomes
-numbers). Each has a README next to it.
+- **The agent runs in its own cgroup.** We set one limit by writing one control
+  file: `cpu.max`, `memory.high`, `memory.max`, `io.max` or `pids.max`.
+- **Every run keeps three records:** an LTTng kernel trace, the agent's own
+  event log, and the cgroup counters, read 5 times per second.
+- **Local time** is the run time minus the time spent waiting for the model.
+  It is the part of a run that the machine controls.
 
-## What ships here vs. on Zenodo
+## What is in this repository
 
-| | here (this repo, ~12 MB) | Zenodo (2.6 GB download, 6.5 GB unpacked) |
-|---|---|---|
-| all code (collect + analyze + paper) | ✓ | — |
-| the paper and figures | ✓ | — |
-| per-run **metadata**: cgroup counters (`cpu.stat`, `memory.*`, `io.stat`), `ground_truth.json`, clock anchors, agent log | ✓ | — |
-| per-run **kernel traces** (raw CTF + decoded `trace.txt.gz`) | — | ✓ |
-| **provenance**: VM environment snapshot, campaign logs, manifests | ✓ | ✓ |
+| Folder | Content |
+|---|---|
+| [`collector/`](collector/) | The tool that runs one agent, or many, under limits and records the run. The campaign files of every experiment are in `collector/campaigns/`. |
+| [`phase2/`](phase2/) | The analysis scripts of the study, with their outputs (`*.txt`, `*.csv`, `RESULTS.md`) as used in the paper. |
+| [`paper-icpe/`](paper-icpe/) | The paper source, its figures, and the script that draws them. |
+| [`phase1/`](phase1/), [`latency/`](latency/), [`research-paper/`](research-paper/), [`provenance/`](provenance/) | An earlier pilot study on our first VM (see below). |
 
-So you can inspect every run's ground truth offline. Re-deriving the paper's
-table numbers (which parse the traces) needs the Zenodo data — see
-[`DATA.md`](DATA.md).
+## Quick start
 
-## Quickstart
+**Look at the results.** No setup is needed. Each analysis folder has its
+output next to the script, for example `phase2/rev/a1.txt` for the replay
+prediction and `phase2/rev/a14.txt` for the two other agents.
 
-Inspect one run's ground truth (ships in the repo, no download needed):
+**Rerun an analysis.** You need Python 3.10 or newer, and only the standard
+library. Download the run records from Zenodo (170 MB) and unpack them next
+to `phase2/`.
 
 ```bash
-cd latency/1_svc_cpu_cap/agentic-os-noise/runs/t3_implement_cap25_r1
-cat meta/ground_truth.json          # agent, limits, exit, kernel
-# throttle this run took, from the cgroup counter:
-python - <<'PY'
-b=dict(l.split() for l in open('meta/cpu.stat.before'))
-a=dict(l.split() for l in open('meta/cpu.stat.after'))
-print('throttled_s =', (int(a['throttled_usec'])-int(b['throttled_usec']))/1e6)
-PY
+tar -xzf os-noise-agents-data.tar.gz
+cd phase2
+python rev/a14_openhands.py ../data/other-agents/r_oh_cpu   # the OpenHands check
 ```
 
-To run the full pipeline (analyze traces → tables), fetch the traces from
-Zenodo and follow [`REPRODUCE.md`](REPRODUCE.md).
+The other scripts, such as `rev/a1_eval.py` (replay prediction) and
+`rev/a11_density.py` (agents per machine), read the data root from a path at
+the top of the script or of `rev/common.py`. The `README.md` in the Zenodo
+record says how its folders map to the names the scripts expect.
 
-## Requirements
+**Collect your own runs.** On an Ubuntu 24.04 VM with cgroup v2, LTTng and
+an agent installed:
 
-- **Collection** (Linux, root): LTTng 2.15, Babeltrace2, cgroup v2, Python 3,
-  and the agent CLIs (Claude Code and/or Codex). See `REPRODUCE.md`.
-- **Analysis** (any OS): Python 3.10+ (standard library only; matplotlib only
-  for the optional figures).
+```bash
+python3 collector/collect.py spec.json --out RUNS_DIR            # one run
+python3 collector/campaign.py collector/campaigns/r_cpu.json     # a whole experiment
+```
 
-## Citing
+See [`collector/README.md`](collector/README.md) for the run spec and the VM setup.
 
-See [`CITATION.cff`](CITATION.cff). The dataset has its own DOI:
+## Dataset
+
+The dataset is on Zenodo: **<https://zenodo.org/records/24490509>**
+(DOI [`10.5281/zenodo.24490509`](https://doi.org/10.5281/zenodo.24490509))
+
+| File | Size | Content |
+|---|---|---|
+| `os-noise-agents-code.tar.gz` | 1 MB | Collector, analysis scripts and their outputs |
+| `os-noise-agents-data.tar.gz` | 170 MB | Records of 2,107 runs: setting, result, event log, counter samples |
+| 60 `*.tar.zst` archives | 24.5 GB | Raw LTTng kernel traces, one archive per experiment (about 280 GB unpacked) |
+
+Open a trace in Trace Compass, or turn it into text:
+
+```bash
+zstd -dc --long=31 r_cpu.tar.zst | tar -xf -
+babeltrace2 --clock-gmt r_cpu/<run>/trace | gzip > trace.txt.gz
+```
+
+## Paper
+
+> **Diluted, Not Removed: How System Limits Slow Down AI Coding Agents**
+>
+> Preprint: `arXiv:XXXX.XXXXX` *(placeholder, the link will be added here)*
+>
+> Dataset: <https://doi.org/10.5281/zenodo.24490509>
 
 ```bibtex
-@dataset{sehgal_osnoise_traces_2026,
-  author    = {Sehgal, Yuvraj and Patel, Sneh and
-               Panahandeh, Mahsa and Ezzati-Jivan, Naser},
-  title     = {{OS Noise for Agentic AI: kernel traces of AI coding
-               agents under container resource limits}},
-  year      = {2026},
-  publisher = {Zenodo},
-  doi       = {10.5281/zenodo.23523441},
-  url       = {https://doi.org/10.5281/zenodo.23523441}
+@misc{diluted-not-removed,
+  title  = {Diluted, Not Removed: How System Limits Slow Down AI Coding Agents},
+  author = {TODO},
+  year   = {2026},
+  note   = {arXiv:XXXX.XXXXX (placeholder)},
+  doi    = {10.5281/zenodo.24490509}
 }
 ```
 
+## Earlier pilot study
+
+The folders `phase1/`, `latency/`, `research-paper/` and `provenance/` hold a
+smaller pilot study: 132 runs on one VM, with seven experiments. Its steps
+are in [`REPRODUCE.md`](REPRODUCE.md) and its data layout in
+[`DATA.md`](DATA.md). Its traces are a separate Zenodo record, DOI
+[`10.5281/zenodo.23523441`](https://doi.org/10.5281/zenodo.23523441).
+
 ## License
 
-Code: MIT ([`LICENSE`](LICENSE)). The dataset on Zenodo is released under
-CC-BY-4.0.
+Code is under the MIT license (see [`LICENSE`](LICENSE)). The datasets on
+Zenodo are under CC BY 4.0.
