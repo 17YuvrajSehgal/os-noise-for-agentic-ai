@@ -489,7 +489,7 @@ a fixed cost of 2.6\,s without a container and 3.8\,s in Docker.
 
 
 \answer{RQ1}{With no limit, the agent waits for the model for
-65 to 78\% of a run on small tasks and 42 to 66\% on real tasks. The
+65 to 78\% of a run on small tasks and 42 to 66\% on short real tasks. The
 machine works for the rest. Any cost on the machine is therefore diluted
 by the model wait.}
 
@@ -517,7 +517,10 @@ threads slow a run a little more with each step. Under a CPU quota, the
 local time of the coding task \texttt{t3} grows by 35\% at 0.75 core,
 which is the breaking point. It grows by 84\% at 0.5 core and is 3.9
 times longer at 0.25 core. A disk read limit starts to cost at
-150\,MB/s, and at 20\,MB/s a file read takes 9.2 times longer. Extra
+150\,MB/s, and at 20\,MB/s a file read takes 9.2 times longer. On the
+coding task, a disk limit slows start-up instead (21\,s more at
+5\,MB/s), because the agent program itself is read from disk. Its
+breaking point is 50\,MB/s. Extra
 threads cost 60\% at 8 workers on 4 vCPUs, the breaking point. At 4
 workers they cost 24\%, but the interval still touches 1.10.
 
@@ -532,8 +535,9 @@ kernel kills the program when that memory does not fit. The tool of
 in all five runs.
 
 \emph{Crash.} A process limit costs nothing until the agent crashes. On
-M0, all runs pass at a limit of 18. At 16, 14 of 15 runs abort within
-about three seconds. Above 16, aborts are rare (4 of 105 runs). The
+M0, all 10 runs of set~2 pass at a limit of 18. At 16, 14 of the 15
+runs of both sets abort within about three seconds. Above 16, aborts are
+rare: 4 of 105 runs, at limits of 17 to 19. The
 limit at which the agent crashes moves with the number of vCPUs
 (Section~\ref{sec:cross}).
 
@@ -786,7 +790,7 @@ slowdown on the short tasks. With 0.25 CPU, every task that we ran was
 slower, on every machine: 1.7 times for short tasks, about twice for
 long tasks, and 2.9 times in sessions of 14 to 24 minutes. The 512\,MB
 limit costs 2.3 to 12 times when a task needs more memory, which we saw
-in one task each. In our runs, no size changed whether a task was
+in two tasks. In our runs, no size changed whether a task was
 solved.}
 
 % ---------------------------------------------------------------------------
@@ -1067,8 +1071,9 @@ tasks we measured. Each comes with a way to find it for another setup.
   that set limits from past use~\cite{rzadca2020} can use such an
   estimate.
 \item \emph{Size memory from the project's test suite, not from the
-  agent.} The agent needs about 300\,MB, but one test suite needed
-  810\,MB.
+  agent.} A run of the small coding task peaks at about 300\,MB for the
+  whole cgroup, of which the agent process holds about 150\,MB. One
+  test suite alone needed 810\,MB.
 \item \emph{Set the process limit above the agent's peak number of
   processes and threads on the target machine.} One run with no limit
   measures it. A limit that is safe on 2 vCPUs (16) crashes the agent on
