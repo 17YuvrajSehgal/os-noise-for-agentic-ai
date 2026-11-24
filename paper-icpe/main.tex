@@ -413,7 +413,8 @@ Figure~\ref{fig:overview}. VM0 kept a smaller trace and only the CPU
 counter.
 
 \subsection{Splitting a run}
-From the event stream we split the wall time of each run into parts. A
+The agent's event log records each model call and each tool call with
+its time. From it we split the wall time of each run into parts. A
 \emph{model turn} starts when the agent hands work to the model and ends
 with the last block of the answer. The time before the first model turn
 is \emph{start-up}. While a model turn is open, the run is in
