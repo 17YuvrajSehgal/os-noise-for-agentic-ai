@@ -11,6 +11,8 @@
 \usepackage{xcolor}
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 \newcommand{\uu}[1]{\,\textsf{#1}}
+% the answer to a research question, in a box at the end of its subsection
+\newcommand{\answer}[2]{\par\smallskip\noindent\fbox{\parbox{0.95\linewidth}{\textbf{Answer to #1.} #2}}\par\smallskip}
 \definecolor{findgreen}{RGB}{255, 103, 31}
 \newcommand{\best}[1]{\textbf{\textcolor{findgreen}{#1}}}   % a main finding in a table
 
@@ -468,7 +470,12 @@ agents at once (ratios of 1.00, 1.01 and 1.08, each interval includes
 agrees with the kernel's counter within 0.8\% in the median run.
 
 % ---------------------------------------------------------------------------
-\section{RQ1: Where Does the Time Go?}\label{sec:rq1}
+\section{Results}\label{sec:results}
+
+We answer the five research questions in turn, and then compare the
+results across machines and agents.
+
+\subsection{RQ1: Where does an agent's time go when nothing limits it?}\label{sec:rq1}
 
 We first look at where an agent's time goes when nothing limits it, in
 the 83 runs of set~1 with no limit on the two coding tasks and the six
@@ -481,13 +488,13 @@ a fixed cost of 2.6\,s without a container and 3.8\,s in Docker.
 
 
 
-\textbf{Answer to RQ1.} With no limit, the agent waits for the model for
+\answer{RQ1}{With no limit, the agent waits for the model for
 65 to 78\% of a run on small tasks and 42 to 66\% on real tasks. The
 machine works for the rest. Any cost on the machine is therefore diluted
-by the model wait.
+by the model wait.}
 
 % ---------------------------------------------------------------------------
-\section{RQ2: How Does Each Limit Change the Picture?}\label{sec:rq2}
+\subsection{RQ2: How does each limit change that picture?}\label{sec:rq2}
 
 \begin{figure*}[t]
 \centering
@@ -544,7 +551,7 @@ limit and a disk limit make each other worse. A soft memory limit of
 768\,MB slows \texttt{t6} from 15.5\,s to 34\,s, and to 117\,s with a
 50\,MB/s disk limit added.
 
-\subsection{What the kernel trace shows}
+\subsubsection{What the kernel trace shows}
 
 \begin{figure}[t]
 \centering
@@ -586,7 +593,7 @@ computing programs next to the agent, its threads wait only 3.0\,s for a
 busy core. But they run for 10.4\,s instead of 6.2\,s to do the same
 work (Section~\ref{sec:rq4}).
 
-\subsection{How much reaches the user}
+\subsubsection{How much reaches the user}
 
 In Figure~\ref{fig:limits}, the wall slowdown is much smaller than the
 local slowdown. Amdahl's law~\cite{amdahl1967} explains this. Let $f$ be
@@ -686,17 +693,17 @@ read limits and a task under 512\,MB, where memory reclaim adds time
 that the replay cannot see. One run with no limit is enough to predict
 the slowdown: a typical single run is within 7.1\%.
 
-\textbf{Answer to RQ2.} Each limit has a breaking point and behaves in
+\answer{RQ2}{Each limit has a breaking point and behaves in
 one of three ways: slower step by step, suddenly much slower, or a
 crash. The kernel trace shows that a CPU quota and a disk limit add
 waiting and leave the work unchanged. The model wait dilutes the cost:
 when local time grows $s$ times, the user waits $1 + f\,(s-1)$ times
 longer. For CPU quotas below one core, $s = 1/q$ predicts the cost. For
 other cases, a replay of runs with no limit predicts it. Both assume
-that the agent does not change what it does.
+that the agent does not change what it does.}
 
 % ---------------------------------------------------------------------------
-\section{RQ3: Do Real Platform Sizes Slow Down Real Tasks?}\label{sec:rq3}
+\subsection{RQ3: Do real platform sizes slow down real tasks?}\label{sec:rq3}
 
 \begin{table*}[t]
 \caption{Real SWE-bench Verified tasks in Docker at platform sizes.
@@ -723,8 +730,7 @@ No limit & 30/30 & 1.00 & 1.00 & 11/20 & 1.00 & 1.00 \\
 RQ2 used small tasks to find where each limit starts to cost. We now ask
 whether the container sizes that real platforms offer slow down real
 tasks (Table~\ref{tab:real}). We apply each size as a cgroup limit on
-our VMs, which is not the same as a VM of that size (see Threats to
-Validity). With no limit, a short task takes 26\,s and 4 model turns,
+our VMs, which is not the same as a VM of that size (Section~\ref{sec:threats}). With no limit, a short task takes 26\,s and 4 model turns,
 and a long task 64\,s and 9 turns (medians).
 
 \emph{1 CPU or more: no slowdown that we can detect.} With 1 CPU or
@@ -775,16 +781,16 @@ and the replay within 14\%. The slowdown is less than $1/q = 4$ because
 the agent's tools have a time-out of 2 minutes. It stops long test runs
 1 to 5 times per run, and the agent then runs smaller tests.
 
-\textbf{Answer to RQ3.} With 1 CPU or more, we could not detect a
+\answer{RQ3}{With 1 CPU or more, we could not detect a
 slowdown on the short tasks. With 0.25 CPU, every task that we ran was
 slower, on every machine: 1.7 times for short tasks, about twice for
 long tasks, and 2.9 times in sessions of 14 to 24 minutes. The 512\,MB
 limit costs 2.3 to 12 times when a task needs more memory, which we saw
 in one task each. In our runs, no size changed whether a task was
-solved.
+solved.}
 
 % ---------------------------------------------------------------------------
-\section{RQ4: How Many Agents Fit on One Machine?}\label{sec:rq4}
+\subsection{RQ4: How many agents can share one machine?}\label{sec:rq4}
 
 \begin{figure}[t]
 \centering
@@ -859,15 +865,15 @@ groups of 32 that start together. The arrivals last only one minute, so
 this is the rate at which the machine works off a queue, not a steady
 state.
 
-\textbf{Answer to RQ4.} Up to one agent per vCPU costs the user little.
+\answer{RQ4}{Up to one agent per vCPU costs the user little.
 For this task, throughput stops growing at about four agents per vCPU on
 2, 4 and 8 vCPUs, whether the agents start together or arrive at random.
 The CPU fills before memory. Each agent needs about twice the CPU time
 on a full machine, so an estimate from one agent alone is 2.3 to 2.5
-times too high.
+times too high.}
 
 % ---------------------------------------------------------------------------
-\section{RQ5: Does the Agent Change Its Behaviour?}\label{sec:rq5}
+\subsection{RQ5: Does the agent change what it does because of the system?}\label{sec:rq5}
 
 RQ1 to RQ4 treat the agent as a fixed workload that the system slows
 down. But an agent reads what the system shows it and can react. We
@@ -950,17 +956,17 @@ reported the kill in all 11 runs in which it was not killed itself.
 short real tasks at 0.25 CPU, Opus runs the same number of tests as with
 no limit and never mentions that the machine is slow.
 
-\textbf{Answer to RQ5.} Yes, in two ways. First, a small model reacts to
+\answer{RQ5}{Yes, in two ways. First, a small model reacts to
 a slow printed time by doing extra work, which makes the run 2.1 to 2.6
 times longer. One sentence in the prompt removed this in our runs.
 Second, the system can hide a failure. When a memory kill or a process
 limit hits the agent, the user gets no message. A kill inside a large
 test run can go unnoticed. A kill that the agent can see is reported
 correctly almost every time (73 of 74 runs). A child cgroup for the
-tools kept the kernel from killing the agent.
+tools kept the kernel from killing the agent.}
 
 % ---------------------------------------------------------------------------
-\section{Results Across Machines and Agents}\label{sec:cross}
+\subsection{Results across machines and agents}\label{sec:cross}
 
 The results so far come mostly from one machine and one agent. To see
 which of them depend on the machine, we repeated a core set of
@@ -1036,7 +1042,9 @@ For it, $s = 1/q$ overstates local time by 31 to 98\%, and the replay is
 within 3\%. Neither prediction is best for every agent.
 
 % ---------------------------------------------------------------------------
-\section{Implications}\label{sec:implications}
+\section{Discussion}\label{sec:discussion}
+
+\subsection{Implications}\label{sec:implications}
 
 Our results lead to advice for three groups of readers.
 
@@ -1078,7 +1086,7 @@ aborting. Expect small models to act on numbers in tool output: one
 sentence in the prompt removed the extra work in our runs.
 
 % ---------------------------------------------------------------------------
-\section{Threats to Validity}
+\subsection{Limitations and Threats to Validity}\label{sec:threats}
 
 \emph{Construct validity.} Local time comes from the agent's event
 stream and is a lower bound, because work that runs while the model
@@ -1126,7 +1134,7 @@ in Section~\ref{sec:design} support them, and the main claims were tested again 
 set~2 and on two other machines.
 
 % ---------------------------------------------------------------------------
-\section{Conclusion}
+\section{Conclusion and Future Work}
 
 An AI coding agent waits for its model most of the time. This dilutes
 the machine's cost but does not remove it. In 2,199 runs on four VMs,
