@@ -870,99 +870,94 @@ times too high.
 \section{RQ5: Does the Agent Change Its Behaviour?}\label{sec:rq5}
 
 RQ1 to RQ4 treat the agent as a fixed workload that the system slows
-down. But an agent reads what the system shows it, and can act on it. We
-looked at two kinds of reaction: extra work after a slow result, and
-what the agent reports when the system kills something.
+down. But an agent reads what the system shows it and can react. We
+looked at two reactions: extra work after a slow result, and what the
+agent tells the user when the kernel kills something.
 
-\emph{A printed slow time makes a small model work more.} The coding
-task \texttt{t3} prints its own run time, and \texttt{t9} does not. At
-0.25 core, we ran each task 15 times with Haiku. When the time is
-printed, Haiku talks about speed in 15 of 15 runs and keeps trying to
-make the code faster after the tests already pass. It makes 5 tool calls
-after the tests first pass, against 0 when no time is printed. It takes
-11 model turns against 8, and 73\,s against 35\,s of wall time ($p \leq
-0.04$ after a Holm correction). With no limit, the printed time causes
-no extra work, and Opus does no extra work in any setting. On the second
-coding task \texttt{t10}, Haiku mentions speed but does not act on it,
-so the effect depends on the task.  The API
-cost of a Haiku run is 44\% higher when the time is printed.
+\emph{A slow printed time makes a small model do extra work.} The test
+of the coding task \texttt{t3} prints how long it ran, and the test of
+\texttt{t9} does not. We ran both 15 times with the smaller model Haiku
+at 0.25 core. When the time is printed, Haiku talks about speed in all
+15 runs. It keeps trying to make the code faster after the tests already
+pass: it makes 5 more tool calls, against 0 when no time is printed. The
+run takes 73\,s instead of 35\,s ($p \leq 0.04$ after a Holm
+correction), and its API cost is 44\% higher. With no limit, the printed
+time causes no extra work. Opus does no extra work in any setting. On
+the second coding task \texttt{t10}, Haiku mentions speed but does not
+act on it, so the effect depends on the task.
 
-We tested the cause in set~2 with the variants of \texttt{t11} (10 or 15
-runs per side, Holm correction over 18 tests). The effect repeats: Haiku
-makes 4 tool calls after the tests pass against 0, and takes 79\,s
-against 30\,s ($p_\text{Holm} = 0.02$ for the tool calls). A fixed fast
-time printed on the same slow machine removes it (0 calls, 33\,s). So
-does one sentence in the prompt saying that the run time is not a goal
-(0 calls, 31\,s). A fixed slow time on a machine with no limit does not
-cause it (0 calls, 17\,s). Fable shows the effect more weakly (1 extra
-tool call, 64\,s against 37\,s). The trigger is therefore neither the
-slow machine alone nor the slow number alone.
+We then tested what triggers the extra work, with the versions of
+\texttt{t11} in set~2 (10 or 15 runs per side). The effect appears
+again: 4 extra tool calls against 0, and 79\,s against 30\,s
+($p = 0.02$ after a Holm correction). It disappears when the test prints
+a fixed fast time on the same slow machine (33\,s). It also disappears
+when one sentence in the prompt says that run time is not a goal
+(31\,s). A fixed slow time on a machine with no limit does not cause it
+(17\,s). Fable shows a weaker effect (64\,s against 37\,s). So neither
+the slow machine alone nor the slow number alone is the trigger.
 
-\emph{The agent reports the errors it can see, and only those.} When a
-memory limit kills the tool, the agent sees the kill (exit code 137,
-which means the process was killed). It
-names the cause in its final message in 23 of 23 runs, and it does not
-retry in a loop. This agrees with work showing that explicit reports
-reduce failures of state awareness~\cite{song2025}. Three cases leave
-the user with no explanation.
+\emph{The agent reports the kills it can see, and only those.} When a
+memory limit kills a tool, the agent sees it: the tool ends with exit
+code 137, which means it was killed. The agent names the cause in its
+final message in 23 of 23 runs, and it does not retry in a loop. This
+agrees with work showing that explicit reports help an agent keep track
+of the state of its environment~\cite{song2025}. In three cases,
+however, the user gets no explanation.
 
-\emph{Case 1: the kernel kills the agent instead of the tool.} The
-kernel's out-of-memory killer picks one process in the cgroup, and the
-agent itself is a candidate. With the 512\,MB tool of \texttt{t7}, the
-agent was killed in 7 of 45 runs at limits of 640\,MB or less. With the
-700\,MB test of \texttt{t12} under a 768\,MB limit, it was killed in 9
-of 20 runs, and in none of the 20 runs with no limit. The run then ends
-without a message, although the agent's code was already correct in all
-9 runs.
+\emph{Case 1: the kernel kills the agent instead of the tool.} When a
+cgroup is out of memory, the kernel picks one of its processes and kills
+it. The agent itself can be picked. With the 512\,MB tool of
+\texttt{t7}, the agent was killed in 7 of 45 runs at limits of 640\,MB
+or less. With the 700\,MB test of \texttt{t12} under a 768\,MB limit, it
+was killed in 9 of 20 runs. The run then ends with no message, although
+the agent's code was already correct in all 9 runs.
 
 The kernel's own report, which the trace records, shows why. In all 60
 kills in \texttt{t12}, the kernel picked the largest process. The first
-kill of a run always hits the test (about 615\,MB), while the agent
+kill of a run always hits the test, which holds about 615\,MB. The agent
 holds about 150\,MB. In the 9 runs where the agent died, the cgroup
-reached its limit again within seconds. No large process was left, so
-the largest one was the agent. We do not know why the cgroup was still at its limit.
+reached its limit again within seconds. No large process was left then,
+so the largest one was the agent. We do not know why the cgroup was
+still at its limit.
 
-We tested two known fixes on the same setting, with 10 runs per model
-and fix. In the first, every shell that the agent starts for a tool
-raises its own \texttt{oom\_score\_adj}, a value that tells the killer
-which process to prefer. In the second, every tool shell moves into a
-child cgroup with its own memory limit, close to the one-cgroup-per-tool
-design of AgentCgroup~\cite{agentcgroup}. With either fix, the kernel
-killed the agent in 0 of 20 runs (95\% Wilson interval 0 to 16\%),
-against 9 of 20 with no fix (one-sided Fisher exact test, $p < 0.001$). Every run
-solved the task, and the agent's report named the kill of the test in 39
-of 40 runs. The first fix made runs slower (27 to 29\,s against 20 to
-24\,s). The second did not.
+We tested two known fixes, with 10 runs per model and fix. In the first,
+every tool tells the kernel to kill it first, by raising its
+\texttt{oom\_score\_adj} value. In the second, every tool runs in a
+child cgroup with its own memory limit, close to the design of
+AgentCgroup~\cite{agentcgroup}. With either fix, the agent was killed in
+0 of 20 runs (95\% Wilson interval 0 to 16\%), against 9 of 20 with no
+fix (one-sided Fisher exact test, $p < 0.001$). Every run solved the
+task, and the agent reported the kill of the test in 39 of 40 runs. The
+first fix made runs slower (27 to 29\,s against 20 to 24\,s). The second
+did not.
 
-\emph{Case 2: a process limit crashes the agent.} When the agent
-program cannot start a thread of its own, it aborts with no message
+\emph{Case 2: a process limit crashes the agent.} When the agent program
+cannot start a thread of its own, it aborts with no message
 (Section~\ref{sec:cross}).
 
-\emph{Case 3: memory kills inside a test run are silent.} In the xarray
-runs under 512\,MB, the kernel kills test workers. The tool output
-simply stops partway, with no error message and no exit code. In 6 of 10
-runs the agent saw no error at all, and in none did its final answer
-mention memory. Instead, it ran the tests again (10 or 11 turns against
-4). SWE-bench counts a test that reports no result as
-failed~\cite{jimenez2024}, so such a kill can lower the measured solve
-rate even when a fix is correct. The small test of \texttt{t12} shows
-the other outcome. In 16 of 20 runs the agent ran the test again without
-\texttt{tee} and saw the kill, and it reported the kill in all 11 runs
-in which it was not killed itself.
+\emph{Case 3: a kill inside a test run can go unnoticed.} In the xarray
+runs under 512\,MB, the kernel kills parts of the test run. The output
+of the tool simply stops, with no error message and no exit code. In 6
+of 10 runs the agent saw no error at all, and its final answer never
+mentions memory. It ran the tests again instead (10 or 11 model turns
+against 4). SWE-bench counts a test with no result as
+failed~\cite{jimenez2024}, so such a kill can make a correct fix look
+wrong. The small test of \texttt{t12} ended better. In 16 of 20 runs the
+agent ran the test again without \texttt{tee} and saw the kill. It
+reported the kill in all 11 runs in which it was not killed itself.
 
 \emph{The agent does not adapt its tests to a slow machine.} On the
 short real tasks at 0.25 CPU, Opus runs the same number of tests as with
-no limit and never mentions slowness.
+no limit and never mentions that the machine is slow.
 
 \textbf{Answer to RQ5.} Yes, in two ways. First, a small model reacts to
 a slow printed time by doing extra work, which makes the run 2.1 to 2.6
-times longer. One sentence in the prompt removed it in our runs. Second,
-the system
-can hide a failure. A memory kill or a process limit that hits the agent
-leaves the user with no message, and a kill inside a large test run can
-go unnoticed. A kill that the agent can see is explained correctly
-almost every time (73 of 74 runs). A child cgroup for the tools kept the
-out-of-memory killer away from the agent.
+times longer. One sentence in the prompt removed this in our runs.
+Second, the system can hide a failure. When a memory kill or a process
+limit hits the agent, the user gets no message. A kill inside a large
+test run can go unnoticed. A kill that the agent can see is reported
+correctly almost every time (73 of 74 runs). A child cgroup for the
+tools kept the kernel from killing the agent.
 
 % ---------------------------------------------------------------------------
 \section{Results Across Machines and Agents}\label{sec:cross}
