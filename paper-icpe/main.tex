@@ -1088,50 +1088,41 @@ sentence in the prompt removed the extra work in our runs.
 % ---------------------------------------------------------------------------
 \subsection{Limitations and Threats to Validity}\label{sec:threats}
 
-\emph{Construct validity.} Local time comes from the agent's event
-stream and is a lower bound, because work that runs while the model
-answers counts as model time. The trace shows that this work is 0.25\%
-of local time in the median run. 
+\textbf{One main agent.} Almost all runs use Claude Code, a
+closed-source agent, and most use one model. The check with two other
+agents covers one task and one kind of limit. The mechanisms (quota,
+reclaim, kills) should carry over, because the kernel enforces them. The
+local share $f$, the breaking points and the process-limit rule depend
+on the agent.
 
-\emph{Internal validity.} The speed of the model service changes over
-the day. We run the steps of an experiment in random order, and we
-report local time, which does not contain the model wait. The replay was
-designed on five settings and tested on 89 others. It treats the CPU
-quota as a smooth rate, while the kernel enforces it per 100\,ms
-period~\cite{turner2010}, and part of its error may come from this.
+\textbf{Narrow workload.} The real tasks are eleven Python issues from
+one public benchmark, which the models may have seen in training. Most
+runs are short, and the long session is one task only. The density
+experiment uses identical agents on one task.
 
-\emph{External validity.} We used four VMs of three types in one cloud.
-M2 differs from M0 in both the number of vCPUs and the CPU vendor. But
-the thread names tie the process-limit edge to thread pools sized by the
-vCPUs, and the Intel and AMD machines fall on the same density curve per
-vCPU. We did not test whether hardware threads or kernel
-locks~\cite{anjali2025} cause the extra CPU time per agent on a full
-machine.  We also set platform sizes as cgroup
-limits on VMs with 2 to 8 vCPUs. A platform that gives a VM with fewer
-vCPUs changes one more thing: the agent's runtime sizes its thread pools
-by the vCPUs it sees. Our CPU results on real tasks are therefore for a
-quota, not for a smaller machine.
+\textbf{Limits, not machine sizes.} We set platform sizes as cgroup
+limits on VMs with 2 to 8 vCPUs, in one cloud. A VM with fewer vCPUs
+also changes the thread pools of the agent's runtime. Our CPU results
+are therefore for a quota, not for a smaller machine.
 
-The workload is narrow in four ways. First, almost all runs use one closed-source agent (Claude Code) in
-three versions, and most use one model. The check with two other agents covers one task and one kind of limit. We expect the
-mechanisms (quota, reclaim, kills) to carry over, because the kernel
-enforces them. The local share $f$, the breaking points and the process-limit rule
-depend on the agent and must be measured again. Second, the real tasks are eleven
-Python issues from one public benchmark, which the models may have seen
-in training, and most runs are short. The long session is one task only.
-Third, the density experiment uses identical agents on one task. A
-lighter task fills the machine later, and mixed tasks may fit in larger
-numbers. Fourth, the extra work after a printed run time appeared on one
-of two small coding tasks, and its cause is not established. The two
-out-of-memory fixes were tested on one task.
+\textbf{Unexplained causes.} We did not test whether hardware threads or
+kernel locks~\cite{anjali2025} cause the extra CPU time per agent on a
+full machine. The cause of the extra work after a printed run time is
+also not established, and the two out-of-memory fixes were tested on one
+task.
 
-\emph{Conclusion validity.} Set~1 has five runs per setting. Five runs
-are too few for a non-parametric 95\% interval of the
-median~\cite{hoefler2015}, so our bootstrap interval may cover less than
-95\%. A breaking point also depends on the steps that we chose, and
-we did not correct the 42 breaking points for their number. Our checks
-in Section~\ref{sec:design} support them, and the main claims were tested again with 10 to 15 runs in
-set~2 and on two other machines.
+\textbf{Measurement and statistics.} Local time is a lower bound,
+because work that runs while the model answers counts as model time
+(0.25\% of local time in the median run). Set~1 has five runs per
+setting, which is too few for a non-parametric 95\% interval of the
+median~\cite{hoefler2015}, so our bootstrap intervals may cover less. A
+breaking point also depends on the steps that we chose, and we did not
+correct the 42 breaking points for their number. The main claims were
+tested again with 10 to 15 runs in set~2 and on two other machines.
+
+Despite these limits, the main result appears in every set of runs and
+for all three agents: a CPU quota adds waiting and not work, and the
+model wait dilutes its cost for the user.
 
 % ---------------------------------------------------------------------------
 \section{Conclusion and Future Work}
