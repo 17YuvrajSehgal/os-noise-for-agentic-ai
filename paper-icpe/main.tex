@@ -88,28 +88,32 @@ these sizes with control groups (cgroups)~\cite{cgroupv2}. An engineer
 who chooses a size, or who places many agents on one machine, needs to
 know what each choice costs.
 
-An agent spends much of its time waiting for the language model: 65 to
-78\% of a run on small coding tasks and 42 to 66\% on short real tasks
-in our measurements, and 71 to 98\% in a recent study of the same
-agent~\cite{yuan2026}. A small container therefore costs less than its
-size suggests. How much less is not known, and neither is the size at
-which the cost starts. Agent benchmarks report whether a task is solved
-and what it cost in tokens~\cite{jimenez2024,yang2024}, not what the
-system did. Recent system studies measured agents with no
-limits~\cite{agentcgroup}, or replayed recorded model answers, so the
-agent could not react~\cite{choi2026}. What is missing is a measurement
-of live agents under the limits that platforms apply.
+An agent spends much of each run waiting for the language model to
+answer. In our measurements, this wait is 65 to 78\% of a run on small
+coding tasks and 42 to 66\% on short real tasks. A recent study of the
+same agent reports 71 to 98\%~\cite{yuan2026}. While the agent waits, it
+does not need the machine. A small container therefore slows the agent
+less than its size suggests. Two things are not known: how much less,
+and at which size the slowdown starts. Agent benchmarks do not answer
+this. They report whether a task is solved and how many tokens it
+cost~\cite{jimenez2024,yang2024}, not what the system did. Recent system
+studies do not answer it either. One measured agents with no
+limits~\cite{agentcgroup}. Another replayed recorded model answers, so
+the agent could not react to a limit~\cite{choi2026}. What is missing is
+a measurement of live agents under the limits that platforms apply.
 
-The model wait dilutes the machine's cost, but it does not remove it.
-Two effects make the cost easy to misjudge. First, the time on the
-machine is only a part of each run, so a large change there is a smaller
-change in the total. This is Amdahl's law~\cite{amdahl1967} applied to a
-slowdown. In Figure~\ref{fig:timeline}, at a quarter of a CPU core, the
-agent's work on the machine takes 3.9 times longer, but the user waits
-only 1.8 times longer. Second, the model's answer time varies by several
-seconds from run to run. On our main coding task, two groups of five
-runs with no limit already differ by up to 13\% in median run time. A
-large cost is therefore visible but looks smaller than it is, and a
+The model wait dilutes the machine's cost: the user sees only a part of
+it. But it does not remove it. Two effects make this cost easy to
+misjudge. First, the time on the machine is only one part of a run. If
+that part becomes much slower, the whole run becomes only somewhat
+slower. This is Amdahl's law~\cite{amdahl1967} applied to a slowdown.
+Figure~\ref{fig:timeline} shows an example. At a quarter of a CPU core,
+the agent's work on the machine takes 3.9 times longer, but the user
+waits only 1.8 times longer. Second, the model does not answer equally
+fast every time. Its answer time changes by several seconds from run to
+run. On our main coding task, two groups of five runs with no limit
+already differ by up to 13\% in median run time. Because of these two
+effects, a large cost is visible but looks smaller than it is, and a
 moderate cost can be hidden.
 
 \begin{figure}[t]
