@@ -1171,15 +1171,25 @@ An AI coding agent waits for its model most of the time. This dilutes
 the machine's cost but does not remove it. In 2,199 runs on four VMs,
 only a fraction $f$ of a cost on the machine reaches the user, as
 Amdahl's law predicts. Kernel traces show that a CPU quota adds waiting
-rather than work, so a simple formula predicts its cost. A replay of
-the resource use of runs with no limit also covers disk limits, and
-predicts the wall time within a median 6.9\% on 89 held-out settings. Each limit has a
-breaking point and one of three shapes, and the mechanisms are the same on every
-machine.  Limits
-also change what the agent does. A small model does extra work when it
-sees a slow time, and the kernel can kill the agent without anyone being
-told, which a separate cgroup for the tools prevented. In a small check with two other agents, the mechanism held, and
-the better prediction depended on the agent. 
+rather than work, so a simple formula predicts its cost. A replay of the
+resource use of runs with no limit also covers disk limits, and predicts
+the wall time within a median 6.9\% on 89 held-out settings. Each limit
+has a breaking point and one of three shapes, and the mechanisms are the
+same on every machine. Limits also change what the agent does. A small
+model does extra work when it sees a slow time, and the kernel can kill
+the agent without anyone being told, which a separate cgroup for the
+tools prevented. In a small check with two other agents, the mechanism
+held, and the better prediction depended on the agent.
+
+\emph{Future work.} Three steps follow from the limits of this study.
+First, we will repeat all limits, not only the CPU quota, with other
+agents and with longer tasks in other languages. Second, we will look
+for the two causes that we could not explain: why each agent needs more
+CPU time on a full machine, and why the cgroup stays at its memory limit
+after a kill. A VM with one thread per core and a closer look at the
+kernel traces can answer these. Third, we will test whether the results
+hold in sandboxes such as Firecracker and gVisor, and with mixed tasks
+that arrive over a long time.
 
 \section*{Data Availability}
 Traces, collector and analysis scripts: \todo{anonymous link}.
