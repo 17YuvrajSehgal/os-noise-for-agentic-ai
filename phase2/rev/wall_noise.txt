@@ -1,0 +1,12 @@
+group                                                  n  wall p95  local p95
+swe claude-opus-5-5 django__django-15930              10       12%        36%
+swe claude-opus-5-5 pallets__flask-5014               10       21%        29%
+swe claude-opus-5-5 psf__requests-5414                10       21%         3%
+swe claude-opus-5-5 pydata__xarray-6461               10        6%        11%
+swe claude-opus-5-5 pytest-dev__pytest-10081          10       47%        36%
+swe claude-opus-5-5 sympy__sympy-24562                10        7%        16%
+t3_implement claude-haiku-5-5                         10       32%        51%
+t3_implement claude-opus-5-5                          33       13%         9%
+t5_subagents claude-opus-5-5 4                        10        4%         2%
+t5_subagents claude-opus-5-5 8                        10        8%        14%
+groups 10: wall p95 4 to 47%, local p95 2 to 51%

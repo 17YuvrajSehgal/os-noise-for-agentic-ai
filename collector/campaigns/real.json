@@ -1,0 +1,24 @@
+{
+ "name": "real",
+ "reps": 5,
+ "seed": 31,
+ "_note": "RQ3: six SWE-bench Verified tasks in a container, at four platform settings taken from official docs (2026-11-12): roomy = no limit (GitHub public runner is 4 vCPU / 16 GB, the whole VM); ci = 2 vCPU / 8 GB (GitHub private runner, GitLab small runner, Codespaces smallest); sandbox = 2 vCPU / 512 MiB (E2B default); pod = 1 vCPU / 512 MiB (Cloud Run default, Kubernetes LimitRange doc example). No platform documents a disk or process limit.",
+ "base": {
+  "agent": "claude",
+  "task": "swe.sh",
+  "runtime": "docker",
+  "trace": "full",
+  "cache": "cold",
+  "timeout_s": 1200
+ },
+ "grid": {
+  "task_arg": ["django__django-15930", "sympy__sympy-24562", "pydata__xarray-6461",
+               "pytest-dev__pytest-10081", "pallets__flask-5014", "psf__requests-5414"],
+  "limits": [
+   {},
+   {"cpu_max": "200000 100000", "memory_max": "8G"},
+   {"cpu_max": "200000 100000", "memory_max": "512M"},
+   {"cpu_max": "100000 100000", "memory_max": "512M"}
+  ]
+ }
+}

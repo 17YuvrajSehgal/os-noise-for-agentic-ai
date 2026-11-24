@@ -1,0 +1,24 @@
+{
+ "name": "r_mem",
+ "reps": 10,
+ "seed": 107,
+ "_note": "Process memory around the kill (t7, 512 MB), 10 runs per step.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t7_memhog.sh"
+  ],
+  "task_arg": [
+   512
+  ],
+  "limits.memory_max": [
+   "768M",
+   "704M",
+   "640M"
+  ]
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "name": "subagents",
+ "reps": 10,
+ "seed": 14,
+ "base": {
+  "task": "t5_subagents.sh",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "task_arg": [
+   4,
+   8
+  ]
+ }
+}

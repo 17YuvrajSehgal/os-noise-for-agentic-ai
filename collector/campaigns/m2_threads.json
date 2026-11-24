@@ -1,0 +1,22 @@
+{
+ "name": "m2_threads",
+ "reps": 5,
+ "seed": 302,
+ "_note": "W CPU-bound workers on 8 vCPUs: W = C/2, C, 2C, 4C.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t4_parallel.sh"
+  ],
+  "task_arg": [
+   4,
+   8,
+   16,
+   32
+  ]
+ }
+}

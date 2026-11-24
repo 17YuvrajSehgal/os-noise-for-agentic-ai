@@ -1,0 +1,91 @@
+{
+ "name": "two_limits",
+ "reps": 5,
+ "seed": 24,
+ "base": {
+  "trace": "full",
+  "cache": "cold"
+ },
+ "cells": [
+  {
+   "agent": "claude",
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "50000 100000",
+    "memory_max": "256M"
+   }
+  },
+  {
+   "agent": "claude",
+   "task": "t6_memtouch.sh",
+   "task_arg": 1024,
+   "limits": {
+    "cpu_max": "50000 100000",
+    "memory_high": "768M"
+   }
+  },
+  {
+   "agent": "claude",
+   "task": "t8_ioread.sh",
+   "task_arg": 1024,
+   "limits": {
+    "cpu_max": "50000 100000",
+    "io_max": {
+     "rbps": 52428800
+    }
+   }
+  },
+  {
+   "agent": "claude",
+   "task": "t6_memtouch.sh",
+   "task_arg": 1024,
+   "limits": {
+    "memory_high": "768M",
+    "io_max": {
+     "rbps": 52428800
+    }
+   }
+  },
+  {
+   "agent": "codex",
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "50000 100000",
+    "memory_max": "256M"
+   }
+  },
+  {
+   "agent": "codex",
+   "task": "t6_memtouch.sh",
+   "task_arg": 1024,
+   "limits": {
+    "cpu_max": "50000 100000",
+    "memory_high": "768M"
+   }
+  },
+  {
+   "agent": "codex",
+   "task": "t8_ioread.sh",
+   "task_arg": 1024,
+   "limits": {
+    "cpu_max": "50000 100000",
+    "io_max": {
+     "rbps": 52428800
+    }
+   }
+  },
+  {
+   "agent": "codex",
+   "task": "t6_memtouch.sh",
+   "task_arg": 1024,
+   "limits": {
+    "memory_high": "768M",
+    "io_max": {
+     "rbps": 52428800
+    }
+   }
+  }
+ ]
+}

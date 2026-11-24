@@ -1,0 +1,35 @@
+{
+ "name": "disk",
+ "reps": 5,
+ "seed": 18,
+ "base": {
+  "task": "t8_ioread.sh",
+  "task_arg": 1024,
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "limits.io_max": [
+   null,
+   {
+    "rbps": 209715200
+   },
+   {
+    "rbps": 157286400
+   },
+   {
+    "rbps": 104857600
+   },
+   {
+    "rbps": 52428800
+   },
+   {
+    "rbps": 20971520
+   }
+  ]
+ }
+}

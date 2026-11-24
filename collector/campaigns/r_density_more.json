@@ -1,0 +1,15 @@
+{
+ "name": "r_density_more",
+ "reps": 2,
+ "seed": 112,
+ "_note": "Review 2, point 7: two more simultaneous groups per level, so r_density + this = 5 groups per level on M0 set 2.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold",
+  "task": "t3_implement.sh"
+ },
+ "grid": {
+  "agents": [1, 4, 8, 16, 32]
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "name": "r_pids",
+ "reps": 10,
+ "seed": 106,
+ "_note": "Process limit around the crash, 10 runs per step (t3, Opus). Baseline: r_cpu max.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "limits.pids_max": [
+   24,
+   20,
+   19,
+   18,
+   17,
+   16
+  ]
+ }
+}

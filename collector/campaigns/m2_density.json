@@ -1,0 +1,25 @@
+{
+ "name": "m2_density",
+ "reps": 3,
+ "seed": 307,
+ "_note": "1 to 64 agents on t3, m2 (8 vCPUs).",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "agents": [
+   1,
+   2,
+   4,
+   8,
+   16,
+   32,
+   64
+  ]
+ }
+}

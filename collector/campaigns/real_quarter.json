@@ -1,0 +1,21 @@
+{
+ "name": "real_quarter",
+ "reps": 5,
+ "seed": 33,
+ "_note": "RQ3 extra cell: the six real tasks of real.json at 0.25 vCPU / 512 MiB, the AWS Fargate minimum task size (0.25 vCPU with 512 MiB). Below the 0.75-core breaking point found in RQ2; tests whether it holds on real tasks. Compare with the no-limit cell of real.json.",
+ "base": {
+  "agent": "claude",
+  "task": "swe.sh",
+  "runtime": "docker",
+  "trace": "full",
+  "cache": "cold",
+  "timeout_s": 1200
+ },
+ "grid": {
+  "task_arg": ["django__django-15930", "sympy__sympy-24562", "pydata__xarray-6461",
+               "pytest-dev__pytest-10081", "pallets__flask-5014", "psf__requests-5414"],
+  "limits": [
+   {"cpu_max": "25000 100000", "memory_max": "512M"}
+  ]
+ }
+}

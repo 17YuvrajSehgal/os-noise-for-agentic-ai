@@ -1,0 +1,45 @@
+experiment       model      task           part                      5%                    10%                    20%  same?
+CPU quota (t3, O M0 first pass                wall  {"cpu_max": "50000 100 {"cpu_max": "50000 100 {"cpu_max": "37500 100  moves 1 level
+CPU quota (t3, O M0 first pass                local {"cpu_max": "75000 100 {"cpu_max": "75000 100 {"cpu_max": "75000 100  same
+CPU quota (t3, O M0 revision                wall  {"cpu_max": "50000 100 {"cpu_max": "25000 100 {"cpu_max": "25000 100  moves 1 level
+CPU quota (t3, O M0 revision                local {"cpu_max": "75000 100 {"cpu_max": "75000 100 {"cpu_max": "50000 100  moves 1 level
+CPU quota (t3, O M1                        wall  {"cpu_max": "100000 10 {"cpu_max": "50000 100 {"cpu_max": "50000 100  moves 2 levels
+CPU quota (t3, O M1                        local {"cpu_max": "75000 100 {"cpu_max": "75000 100 {"cpu_max": "75000 100  same
+CPU quota (t3, O M2                        wall  {"cpu_max": "50000 100 {"cpu_max": "50000 100 {"cpu_max": "25000 100  moves 1 level
+CPU quota (t3, O M2                        local {"cpu_max": "75000 100 {"cpu_max": "75000 100 {"cpu_max": "75000 100  same
+Threads (t4, W w M0 first pass                wall  4 per vCPU (16 workers 4 per vCPU (16 workers                      -  moves 1 level
+Threads (t4, W w M0 first pass                local 1 per vCPU (4 workers) 2 per vCPU (8 workers) 2 per vCPU (8 workers)  moves 1 level
+Threads (t4, W w M1                        wall  2 per vCPU (4 workers) 2 per vCPU (4 workers) 4 per vCPU (8 workers)  moves 1 level
+Threads (t4, W w M1                        local 1 per vCPU (2 workers) 2 per vCPU (4 workers) 2 per vCPU (4 workers)  moves 1 level
+Threads (t4, W w M2                        wall  4 per vCPU (32 workers 4 per vCPU (32 workers                      -  moves 1 level
+Threads (t4, W w M2                        local 2 per vCPU (16 workers 2 per vCPU (16 workers 4 per vCPU (32 workers  moves 1 level
+Soft memory limi M0 first pass                wall  {"memory_high": "1152M {"memory_high": "1152M {"memory_high": "1152M  same
+Soft memory limi M0 first pass                local {"memory_high": "1152M {"memory_high": "1152M {"memory_high": "1152M  same
+Soft memory limi M1                        wall  {"memory_high": "1152M {"memory_high": "1152M {"memory_high": "1152M  same
+Soft memory limi M1                        local {"memory_high": "1152M {"memory_high": "1152M {"memory_high": "1152M  same
+Soft memory limi M2                        wall  {"memory_high": "1152M {"memory_high": "1152M {"memory_high": "1152M  same
+Soft memory limi M2                        local {"memory_high": "1152M {"memory_high": "1152M {"memory_high": "1152M  same
+Hard memory limi M0 first pass                wall  {"memory_max": "640M"} {"memory_max": "640M"} {"memory_max": "608M"}  moves 1 level
+Hard memory limi M0 first pass                local {"memory_max": "608M"}                      -                      -  moves 4 levels
+Hard memory limi M0 revision                wall                       -                      -                      -  same
+Hard memory limi M0 revision                local                      -                      -                      -  same
+Hard memory limi M1                        wall                       -                      -                      -  same
+Hard memory limi M1                        local                      -                      -                      -  same
+Hard memory limi M2                        wall                       -                      -                      -  same
+Hard memory limi M2                        local                      -                      -                      -  same
+Disk read rate ( M0 first pass                wall  {"io_max": {"rbps": 15 {"io_max": {"rbps": 15 {"io_max": {"rbps": 10  moves 1 level
+Disk read rate ( M0 first pass                local {"io_max": {"rbps": 15 {"io_max": {"rbps": 15 {"io_max": {"rbps": 15  same
+Disk read rate ( M1                        wall  {"io_max": {"rbps": 52 {"io_max": {"rbps": 52 {"io_max": {"rbps": 52  same
+Disk read rate ( M1                        local {"io_max": {"rbps": 15 {"io_max": {"rbps": 15 {"io_max": {"rbps": 52  moves 1 level
+Disk read rate ( M2                        wall  {"io_max": {"rbps": 15 {"io_max": {"rbps": 52 {"io_max": {"rbps": 52  moves 1 level
+Disk read rate ( M2                        local {"io_max": {"rbps": 15 {"io_max": {"rbps": 52 {"io_max": {"rbps": 52  moves 1 level
+Process limit (t M0 first pass                wall                       -                      -                      -  same
+Process limit (t M0 first pass                local       {"pids_max": 17}       {"pids_max": 17}       {"pids_max": 17}  same
+Process limit (t M0 revision                wall        {"pids_max": 17}                      -                      -  moves 2 levels
+Process limit (t M0 revision                local       {"pids_max": 17}       {"pids_max": 17}       {"pids_max": 17}  same
+Process limit (t M1                        wall                       -                      -                      -  same
+Process limit (t M1                        local       {"pids_max": 12}       {"pids_max": 12}       {"pids_max": 12}  same
+Process limit (t M2                        wall                       -                      -                      -  same
+Process limit (t M2                        local       {"pids_max": 24}       {"pids_max": 24}       {"pids_max": 24}  same
+
+24 of 42 breaking points are the same at 5%, 10% and 20%; 15 move by one level; 3 move by more.

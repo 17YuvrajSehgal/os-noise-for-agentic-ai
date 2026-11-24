@@ -1,0 +1,18 @@
+{
+ "name": "r_density_stagger",
+ "reps": 5,
+ "seed": 111,
+ "_note": "Review 2, point 7: is the 4-agents-per-vCPU limit only a worst case of identical agents started at the same moment? Agents 2..N start at a random moment within 60 s (collect.py stagger_s). t3 on M0, set 2. Compare with r_density (all at once, 3 groups per level); 2 more simultaneous groups per level make that 5.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold",
+  "task": "t3_implement.sh"
+ },
+ "cells": [
+  {"agents": 4, "stagger_s": 60},
+  {"agents": 8, "stagger_s": 60},
+  {"agents": 16, "stagger_s": 60},
+  {"agents": 32, "stagger_s": 60}
+ ]
+}

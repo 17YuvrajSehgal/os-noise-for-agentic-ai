@@ -1,0 +1,41 @@
+OOM victims in all t12 runs at 768M with no fix: {'python3': 51, 'claude': 9}
+
+runs where the agent was killed: 9
+  r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r10
+     killed python3 (614 MB anon); largest tasks then: python3 621 MB, claude 150 MB, bash 4 MB
+     killed python3 (612 MB anon); largest tasks then: python3 619 MB, claude 154 MB, bash 4 MB
+     killed claude (151 MB anon); largest tasks then: claude 154 MB, bash 4 MB, timeout 2 MB
+  r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r2
+     killed python3 (617 MB anon); largest tasks then: python3 623 MB, claude 148 MB, bash 4 MB
+     killed claude (146 MB anon); largest tasks then: claude 148 MB, bash 4 MB, run_tests.sh 3 MB
+  r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r4
+     killed python3 (620 MB anon); largest tasks then: python3 627 MB, claude 145 MB, bash 4 MB
+     killed python3 (617 MB anon); largest tasks then: python3 624 MB, claude 149 MB, bash 4 MB
+     killed claude (146 MB anon); largest tasks then: claude 149 MB, bash 4 MB, timeout 2 MB
+  r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r5
+     killed python3 (617 MB anon); largest tasks then: python3 623 MB, claude 148 MB, bash 4 MB
+     killed python3 (603 MB anon); largest tasks then: python3 609 MB, claude 163 MB, bash 4 MB
+     killed python3 (600 MB anon); largest tasks then: python3 606 MB, claude 167 MB, bash 4 MB
+     killed claude (164 MB anon); largest tasks then: claude 167 MB, bash 4 MB, timeout 2 MB
+  r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r6
+     killed python3 (612 MB anon); largest tasks then: python3 618 MB, claude 153 MB, bash 4 MB
+     killed python3 (604 MB anon); largest tasks then: python3 611 MB, claude 162 MB, bash 4 MB
+     killed python3 (597 MB anon); largest tasks then: python3 604 MB, claude 168 MB, bash 4 MB
+     killed claude (165 MB anon); largest tasks then: claude 168 MB, bash 4 MB, timeout 2 MB
+  r_cutout_t12_silent_kill_700_memory_max768M_claude-haiku-5-5_r8
+     killed python3 (615 MB anon); largest tasks then: python3 621 MB, claude 150 MB, bash 4 MB
+     killed python3 (604 MB anon); largest tasks then: python3 611 MB, claude 162 MB, bash 4 MB
+     killed python3 (603 MB anon); largest tasks then: python3 610 MB, claude 163 MB, bash 4 MB
+     killed python3 (602 MB anon); largest tasks then: python3 608 MB, claude 165 MB, bash 4 MB
+     killed python3 (602 MB anon); largest tasks then: python3 608 MB, claude 165 MB, bash 4 MB
+     killed python3 (600 MB anon); largest tasks then: python3 606 MB, claude 166 MB, bash 4 MB
+     killed claude (164 MB anon); largest tasks then: claude 166 MB, bash 4 MB, timeout 2 MB
+  r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r1
+     killed python3 (614 MB anon); largest tasks then: python3 621 MB, claude 152 MB, bash 4 MB
+     killed claude (149 MB anon); largest tasks then: claude 152 MB, bash 4 MB, run_tests.sh 3 MB
+  r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r3
+     killed python3 (617 MB anon); largest tasks then: python3 624 MB, claude 148 MB, bash 4 MB
+     killed claude (146 MB anon); largest tasks then: claude 148 MB, bash 4 MB, run_tests.sh 3 MB
+  r_cutout_t12_silent_kill_700_memory_max768M_claude-opus-5-5_r6
+     killed python3 (616 MB anon); largest tasks then: python3 622 MB, claude 149 MB, bash 4 MB
+     killed claude (146 MB anon); largest tasks then: claude 149 MB, bash 4 MB, run_tests.sh 3 MB

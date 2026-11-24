@@ -2,13 +2,15 @@
 """Full Claude-vs-Codex comparison across all four problems.
 Claude: original runs. Codex: runs_codex* under agentic-os-noise/.
 Prints per-cell medians for both agents side by side."""
-import csv, json, statistics, sys
+import csv, json, os, statistics, sys
 from pathlib import Path
 
-LAT = Path(__file__).resolve().parents[1] / 'latency'
-AON = LAT / '1_svc_cpu_cap/agentic-os-noise'
-sys.path.insert(0, str(AON / 'analysis'))
+CODE = Path(__file__).resolve().parents[1] / 'latency'
+sys.path.insert(0, str(CODE / '1_svc_cpu_cap/agentic-os-noise/analysis'))
 from analyze_run import analyze
+# runs root: see make_data.py (OSNOISE_RUNS)
+LAT = Path(os.environ.get('OSNOISE_RUNS', CODE))
+AON = LAT / '1_svc_cpu_cap/agentic-os-noise'
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import llm_wait as LW
 

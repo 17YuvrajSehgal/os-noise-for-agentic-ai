@@ -1,0 +1,38 @@
+== overhead
+none  n=10 solved=10 discarded events=0  wall 22.46  model 16.03  local 6.45  startup 2.33  tool 4.04  cpu 5.66
+core  n=10 solved=10 discarded events=0  wall 22.66  model 15.70  local 6.93  startup 2.25  tool 4.15  cpu 6.11
+full  n=10 solved=10 discarded events=0  wall 22.17  model 15.19  local 6.93  startup 2.21  tool 4.36  cpu 6.08
+core vs none:
+  wall     x1.009 [0.928-1.094]  +0.20 s  p=0.456
+  model    x0.979 [0.894-1.115]  -0.34 s  p=0.485
+  local    x1.074 [0.941-1.094]  +0.47 s  p=0.398
+  startup  x0.970 [0.936-0.987]  -0.07 s  p=0.999
+  tool     x1.027 [0.891-1.180]  +0.11 s  p=0.153
+  cpu      x1.080 [0.944-1.169]  +0.45 s  p=0.062
+full vs none:
+  wall     x0.987 [0.932-1.027]  -0.29 s  p=0.803
+  model    x0.947 [0.889-1.011]  -0.85 s  p=0.955
+  local    x1.074 [0.977-1.107]  +0.48 s  p=0.083
+  startup  x0.948 [0.936-0.970]  -0.12 s  p=1.000
+  tool     x1.081 [0.974-1.180]  +0.33 s  p=0.033
+  cpu      x1.074 [0.994-1.215]  +0.42 s  p=0.012
+
+== overhead_real
+none  n=5 solved=5 discarded events=0  wall 33.96  model 24.01  local 8.46  startup 3.38  tool 4.64  cpu 8.26
+core  n=5 solved=5 discarded events=0  wall 34.99  model 24.97  local 8.80  startup 3.37  tool 5.15  cpu 9.47
+full  n=5 solved=5 discarded events=0  wall 33.79  model 25.81  local 8.30  startup 3.33  tool 4.61  cpu 8.18
+core vs none:
+  wall     x1.030 [0.899-1.176]  +1.03 s  p=0.274
+  model    x1.040 [0.858-1.275]  +0.96 s  p=0.579
+  local    x1.040 [0.868-1.288]  +0.34 s  p=0.111
+  startup  x0.997 [0.979-1.033]  -0.01 s  p=0.373
+  tool     x1.110 [0.819-1.529]  +0.51 s  p=0.075
+  cpu      x1.146 [0.764-1.686]  +1.21 s  p=0.075
+full vs none:
+  wall     x0.995 [0.881-1.179]  -0.17 s  p=0.500
+  model    x1.075 [0.902-1.222]  +1.80 s  p=0.345
+  local    x0.981 [0.819-1.266]  -0.16 s  p=0.603
+  startup  x0.985 [0.973-1.003]  -0.05 s  p=0.940
+  tool     x0.994 [0.733-1.498]  -0.03 s  p=0.655
+  cpu      x0.990 [0.660-1.563]  -0.08 s  p=0.345
+

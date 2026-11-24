@@ -1,0 +1,204 @@
+{
+ "name": "feedback",
+ "reps": 5,
+ "seed": 27,
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "cells": [
+  {
+   "model": "claude-opus-5-5",
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "max"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "50000 100000"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t9_implement_quiet.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "max"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t9_implement_quiet.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "50000 100000"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t9_implement_quiet.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "timed",
+   "limits": {
+    "cpu_max": "max"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "timed",
+   "limits": {
+    "cpu_max": "50000 100000"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "timed",
+   "limits": {
+    "cpu_max": "25000 100000"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "quiet",
+   "limits": {
+    "cpu_max": "max"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "quiet",
+   "limits": {
+    "cpu_max": "50000 100000"
+   }
+  },
+  {
+   "model": "claude-opus-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "quiet",
+   "limits": {
+    "cpu_max": "25000 100000"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "max"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "50000 100000"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t9_implement_quiet.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "max"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t9_implement_quiet.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "50000 100000"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t9_implement_quiet.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "timed",
+   "limits": {
+    "cpu_max": "max"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "timed",
+   "limits": {
+    "cpu_max": "50000 100000"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "timed",
+   "limits": {
+    "cpu_max": "25000 100000"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "quiet",
+   "limits": {
+    "cpu_max": "max"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "quiet",
+   "limits": {
+    "cpu_max": "50000 100000"
+   }
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "task": "t10_expr.sh",
+   "task_arg": "quiet",
+   "limits": {
+    "cpu_max": "25000 100000"
+   }
+  }
+ ]
+}

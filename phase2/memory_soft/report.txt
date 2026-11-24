@@ -1,0 +1,10 @@
+== memory_soft: 25 runs
+trace CPU vs cpu.stat (a1 or group): median gap 2.31%, worst 4.5%
+model turns, trace minus agent report: {0: 25}
+model time, trace / agent API time: median 0.99, range 0.98-1.00
+setting  n  ok       wall    startup      model       tool agent_only     on_cpu  throttled  wait_idle  wait_busy       d_io     d_noio  reclaim_n  reclaim_s     psi_io    psi_mem   oom_kill  verdicts
+1152M   5   5      32.38       1.51       8.92      21.48       0.13       5.35       0.00       0.27       0.04      19.30       0.04    8468.00       0.21      14.73       0.16       0.00  {'memory': 5}
+1344M   5   5      16.09       1.51       9.09       4.92       0.06       3.12       0.00       0.09       0.02       4.49       0.04       0.00       0.00       3.81       0.00       0.00  {'nothing': 5}
+1536M   5   5      15.50       1.55       8.31       4.96       0.06       3.19       0.00       0.10       0.03       4.45       0.04       0.00       0.00       3.85       0.00       0.00  {'nothing': 5}
+768M    5   5      33.84       1.58      10.33      21.50       0.10       5.48       0.00       0.27       0.04      19.39       0.05    9214.00       0.22      14.50       0.17       0.00  {'memory': 5}
+max     5   5      15.52       1.50       8.61       4.94       0.08       3.17       0.00       0.10       0.03       4.50       0.04       0.00       0.00       3.76       0.00       0.00  {'nothing': 5}

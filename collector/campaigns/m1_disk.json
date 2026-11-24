@@ -1,0 +1,31 @@
+{
+ "name": "m1_disk",
+ "reps": 5,
+ "seed": 204,
+ "_note": "Disk read limit on t8, m1.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t8_ioread.sh"
+  ],
+  "task_arg": [
+   1024
+  ],
+  "limits.io_max": [
+   null,
+   {
+    "rbps": 157286400
+   },
+   {
+    "rbps": 52428800
+   },
+   {
+    "rbps": 20971520
+   }
+  ]
+ }
+}

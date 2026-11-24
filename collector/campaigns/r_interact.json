@@ -1,0 +1,55 @@
+{
+ "name": "r_interact",
+ "reps": 5,
+ "seed": 108,
+ "_note": "Limit interactions on t3 (Opus): each single limit and the pairs CPU + disk, memory + processes; and 4 agents at 1 core each (CPU quota + crowding). Baselines: r_cpu, r_pids, r_density.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "cells": [
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "io_max": {
+     "rbps": 20971520
+    }
+   }
+  },
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "memory_max": "192M"
+   }
+  },
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "50000 100000",
+    "io_max": {
+     "rbps": 20971520
+    }
+   }
+  },
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "memory_max": "192M",
+    "pids_max": 20
+   }
+  },
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "100000 100000"
+   },
+   "agents": 4
+  }
+ ]
+}

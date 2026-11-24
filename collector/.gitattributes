@@ -1,0 +1,6 @@
+# These files run on Linux. A Windows checkout must not give them CRLF line
+# endings: bash then fails with "set: pipefail: invalid option name".
+*.sh   text eol=lf
+*.py   text eol=lf
+*.json text eol=lf
+*.md   text eol=lf

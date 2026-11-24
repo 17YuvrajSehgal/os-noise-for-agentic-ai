@@ -1,0 +1,14 @@
+{
+ "name": "overhead",
+ "reps": 10,
+ "seed": 11,
+ "_note": "What the tracing itself costs: the coding task with no trace, the core profile and the full profile (the one every other campaign uses). 10 reps because the expected effect is small. Claude only (Codex not signed in).",
+ "base": {
+  "agent": "claude",
+  "task": "t3_implement.sh",
+  "cache": "cold"
+ },
+ "grid": {
+  "trace": ["none", "core", "full"]
+ }
+}

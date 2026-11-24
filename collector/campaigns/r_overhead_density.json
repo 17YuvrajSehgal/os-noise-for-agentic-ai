@@ -1,0 +1,23 @@
+{
+ "name": "r_overhead_density",
+ "reps": 5,
+ "seed": 112,
+ "_note": "Tracing cost with 8 agents at once: no trace against the full trace.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "agents": [
+   8
+  ],
+  "trace": [
+   "none",
+   "full"
+  ]
+ }
+}

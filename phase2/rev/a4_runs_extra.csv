@@ -1,0 +1,101 @@
+campaign,run,limits,wall,local,hidden_s,work_cpu_s,hidden_cpu_s
+cpu,cpu_claude_t3_implement_37500_r4,"{""cpu_max"": ""37500 100000""}",31.875,16.422,0.0,3.998,0.0
+cpu,cpu_claude_t2_medium_max_r4,{},25.349,5.252,0.017,2.992,0.01
+cpu,cpu_claude_t2_medium_50000_r2,"{""cpu_max"": ""50000 100000""}",30.841,9.572,0.326,3.019,0.152
+cpu,cpu_claude_t2_medium_50000_r1,"{""cpu_max"": ""50000 100000""}",28.664,9.485,0.352,2.944,0.149
+cpu,cpu_claude_t3_implement_25000_r5,"{""cpu_max"": ""25000 100000""}",41.434,21.928,0.012,3.461,0.004
+cpu,cpu_claude_t3_implement_25000_r2,"{""cpu_max"": ""25000 100000""}",35.78,22.817,0.002,3.778,0.0
+cpu,cpu_claude_t3_implement_37500_r3,"{""cpu_max"": ""37500 100000""}",31.631,14.794,0.018,3.596,0.003
+cpu,cpu_claude_t3_implement_37500_r1,"{""cpu_max"": ""37500 100000""}",41.277,16.496,0.001,3.941,0.0
+cpu,cpu_claude_t3_implement_25000_r3,"{""cpu_max"": ""25000 100000""}",39.401,21.042,0.022,3.334,0.0
+cpu,cpu_claude_t2_medium_25000_r4,"{""cpu_max"": ""25000 100000""}",39.047,20.215,0.007,3.005,0.002
+cpu,cpu_claude_t3_implement_25000_r1,"{""cpu_max"": ""25000 100000""}",62.036,40.437,0.011,7.806,0.003
+cpu,cpu_claude_t3_implement_25000_r4,"{""cpu_max"": ""25000 100000""}",63.531,39.579,0.006,7.729,0.001
+cpu,cpu_claude_t2_medium_max_r2,{},21.849,5.124,0.021,2.945,0.002
+cpu,cpu_claude_t2_medium_37500_r3,"{""cpu_max"": ""37500 100000""}",26.771,9.744,0.446,1.842,0.184
+cpu,cpu_claude_t2_medium_100000_r1,"{""cpu_max"": ""100000 100000""}",21.635,5.364,0.014,2.917,0.001
+cpu,cpu_claude_t3_implement_37500_r2,"{""cpu_max"": ""37500 100000""}",31.395,15.555,0.008,3.792,0.001
+cpu,cpu_claude_t3_implement_75000_r4,"{""cpu_max"": ""75000 100000""}",27.683,8.05,0.011,3.912,0.004
+cpu,cpu_claude_t2_medium_75000_r2,"{""cpu_max"": ""75000 100000""}",23.836,6.978,0.013,3.004,0.002
+cpu,cpu_claude_t3_implement_50000_r5,"{""cpu_max"": ""50000 100000""}",28.019,11.609,0.426,4.03,0.186
+cpu,cpu_claude_t2_medium_25000_r3,"{""cpu_max"": ""25000 100000""}",28.257,14.425,0.003,1.84,0.0
+cpu,cpu_claude_t2_medium_25000_r2,"{""cpu_max"": ""25000 100000""}",25.618,14.98,0.003,1.81,0.0
+cpu,cpu_claude_t3_implement_max_r5,{},21.374,6.558,0.012,4.387,0.005
+cpu,cpu_claude_t3_implement_max_r1,{},20.663,6.065,0.02,3.917,0.006
+cpu,cpu_claude_t3_implement_50000_r3,"{""cpu_max"": ""50000 100000""}",24.976,10.34,0.002,3.382,0.0
+cpu,cpu_claude_t3_implement_50000_r1,"{""cpu_max"": ""50000 100000""}",23.87,10.908,0.483,3.938,0.198
+cpu,cpu_claude_t3_implement_max_r3,{},20.612,5.668,0.015,3.573,0.007
+cpu,cpu_claude_t3_implement_max_r4,{},20.609,5.952,0.011,3.957,0.004
+cpu,cpu_claude_t2_medium_25000_r5,"{""cpu_max"": ""25000 100000""}",25.691,14.269,0.0,1.793,0.0
+cpu,cpu_claude_t3_implement_37500_r5,"{""cpu_max"": ""37500 100000""}",27.672,14.829,0.001,3.766,0.0
+cpu,cpu_claude_t2_medium_25000_r1,"{""cpu_max"": ""25000 100000""}",27.03,14.033,0.002,1.649,0.0
+cpu,cpu_claude_t3_implement_50000_r2,"{""cpu_max"": ""50000 100000""}",24.541,11.276,0.01,3.798,0.002
+cpu,cpu_claude_t2_medium_100000_r3,"{""cpu_max"": ""100000 100000""}",20.3,5.432,0.012,2.899,0.003
+cpu,cpu_claude_t2_medium_max_r1,{},18.393,3.507,0.266,1.835,0.264
+cpu,cpu_claude_t2_medium_37500_r2,"{""cpu_max"": ""37500 100000""}",24.281,10.41,0.004,1.933,0.0
+cpu,cpu_claude_t2_medium_37500_r4,"{""cpu_max"": ""37500 100000""}",22.195,9.833,0.0,1.887,0.0
+cpu,cpu_claude_t3_implement_50000_r4,"{""cpu_max"": ""50000 100000""}",26.33,10.032,0.004,3.168,0.001
+cpu,cpu_claude_t3_implement_100000_r2,"{""cpu_max"": ""100000 100000""}",18.076,6.329,0.011,3.953,0.002
+cpu,cpu_claude_t2_medium_100000_r5,"{""cpu_max"": ""100000 100000""}",18.455,4.271,0.019,1.816,0.012
+cpu,cpu_claude_t3_implement_100000_r4,"{""cpu_max"": ""100000 100000""}",18.031,5.851,0.289,3.886,0.195
+cpu,cpu_claude_t2_medium_37500_r5,"{""cpu_max"": ""37500 100000""}",20.739,9.884,0.0,1.794,0.0
+cpu,cpu_claude_t3_implement_max_r2,{},19.859,5.742,0.007,3.718,0.002
+cpu,cpu_claude_t2_medium_max_r3,{},15.77,3.758,0.298,1.883,0.296
+cpu,cpu_claude_t2_medium_100000_r4,"{""cpu_max"": ""100000 100000""}",19.457,4.09,0.004,1.815,0.002
+cpu,cpu_claude_t3_implement_75000_r3,"{""cpu_max"": ""75000 100000""}",22.598,8.178,0.007,3.946,0.0
+cpu,cpu_claude_t2_medium_37500_r1,"{""cpu_max"": ""37500 100000""}",19.876,10.09,0.003,1.845,0.0
+cpu,cpu_claude_t2_medium_50000_r5,"{""cpu_max"": ""50000 100000""}",20.498,7.312,0.004,1.675,0.0
+cpu,cpu_claude_t3_implement_100000_r1,"{""cpu_max"": ""100000 100000""}",20.849,5.536,0.004,3.114,0.002
+cpu,cpu_claude_t3_implement_75000_r2,"{""cpu_max"": ""75000 100000""}",21.2,8.338,0.003,4.231,0.0
+cpu,cpu_claude_t3_implement_75000_r1,"{""cpu_max"": ""75000 100000""}",20.485,7.677,0.004,3.791,0.001
+cpu,cpu_claude_t3_implement_100000_r3,"{""cpu_max"": ""100000 100000""}",16.735,5.624,0.006,3.235,0.0
+cpu,cpu_claude_t3_implement_100000_r5,"{""cpu_max"": ""100000 100000""}",18.528,6.086,0.003,3.823,0.0
+cpu,cpu_claude_t2_medium_100000_r2,"{""cpu_max"": ""100000 100000""}",16.002,4.41,0.012,1.826,0.006
+cpu,cpu_claude_t2_medium_75000_r5,"{""cpu_max"": ""75000 100000""}",16.343,5.079,0.001,1.814,0.0
+cpu,cpu_claude_t2_medium_75000_r3,"{""cpu_max"": ""75000 100000""}",16.998,5.669,0.002,1.959,0.0
+cpu,cpu_claude_t2_medium_75000_r4,"{""cpu_max"": ""75000 100000""}",15.001,5.083,0.002,1.794,0.001
+cpu,cpu_claude_t2_medium_75000_r1,"{""cpu_max"": ""75000 100000""}",16.71,4.95,0.005,1.829,0.002
+cpu,cpu_claude_t2_medium_50000_r4,"{""cpu_max"": ""50000 100000""}",18.612,6.864,0.0,1.78,0.0
+cpu,cpu_claude_t3_implement_75000_r5,"{""cpu_max"": ""75000 100000""}",19.795,7.913,0.008,3.828,0.002
+cpu,cpu_claude_t2_medium_max_r5,{},13.676,3.575,0.009,1.455,0.005
+cpu,cpu_claude_t2_medium_50000_r3,"{""cpu_max"": ""50000 100000""}",15.624,6.34,0.0,1.469,0.0
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r5,"{""memory_max"": ""768M""}",33.731,4.914,0.031,1.714,0.011
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r10,"{""memory_max"": ""768M""}",37.21,5.596,0.01,2.221,0.005
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r8,"{""memory_max"": ""768M""}",31.143,6.56,0.029,2.833,0.01
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r8,"{""memory_max"": ""768M""}",32.855,3.955,0.015,1.034,0.007
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r3,"{""memory_max"": ""768M""}",27.381,5.067,0.015,1.664,0.005
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r7,"{""memory_max"": ""768M""}",26.339,5.28,0.017,2.192,0.006
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r2,"{""memory_max"": ""768M""}",26.65,5.534,0.017,2.205,0.005
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r9,"{""memory_max"": ""768M""}",31.79,4.875,0.012,1.529,0.006
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r1,"{""memory_max"": ""768M""}",28.05,4.371,0.022,1.307,0.005
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r9,"{""memory_max"": ""768M""}",25.466,6.213,0.013,2.532,0.005
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r6,"{""memory_max"": ""768M""}",24.69,4.152,0.019,1.237,0.006
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r5,"{""memory_max"": ""768M""}",35.867,3.46,0.024,0.869,0.008
+r_oomfix,r_oomfix_claude-haiku-5-5_oom_adj_r4,"{""memory_max"": ""768M""}",23.662,4.427,0.034,1.596,0.01
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r4,"{""memory_max"": ""768M""}",18.016,2.427,0.045,0.546,0.024
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r1,"{""memory_max"": ""768M""}",31.381,3.589,0.023,0.877,0.007
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r7,"{""memory_max"": ""768M""}",22.832,3.52,0.012,0.839,0.004
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r3,"{""memory_max"": ""768M""}",28.196,3.466,0.017,0.82,0.005
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r4,"{""memory_max"": ""768M""}",28.756,3.484,0.007,0.811,0.005
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r6,"{""memory_max"": ""768M""}",27.852,3.599,0.013,0.86,0.008
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r2,"{""memory_max"": ""768M""}",25.781,3.525,0.02,0.803,0.013
+r_oomfix,r_oomfix_claude-opus-5-5_oom_adj_r10,"{""memory_max"": ""768M""}",25.875,3.48,0.016,0.822,0.007
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r8,"{""memory_max"": ""768M""}",20.769,2.735,0.027,0.772,0.008
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r6,"{""memory_max"": ""768M""}",20.533,2.88,0.03,0.78,0.005
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r10,"{""memory_max"": ""768M""}",19.829,2.817,0.077,0.8,0.046
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r6,"{""memory_max"": ""768M""}",24.262,2.455,0.023,0.583,0.009
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r1,"{""memory_max"": ""768M""}",19.892,2.595,0.028,0.756,0.012
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r3,"{""memory_max"": ""768M""}",18.604,3.17,0.027,1.027,0.007
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r5,"{""memory_max"": ""768M""}",19.31,3.045,0.021,0.978,0.009
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r3,"{""memory_max"": ""768M""}",23.103,2.5,0.024,0.571,0.009
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r7,"{""memory_max"": ""768M""}",22.894,2.433,0.027,0.586,0.011
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r8,"{""memory_max"": ""768M""}",21.855,2.419,0.019,0.59,0.007
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r4,"{""memory_max"": ""768M""}",21.591,2.543,0.014,0.581,0.005
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r9,"{""memory_max"": ""768M""}",17.593,2.501,0.027,0.569,0.013
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r10,"{""memory_max"": ""768M""}",19.462,2.576,0.017,0.591,0.006
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r2,"{""memory_max"": ""768M""}",20.292,2.257,0.031,0.376,0.017
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r9,"{""memory_max"": ""768M""}",20.275,2.377,0.009,0.566,0.004
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r2,"{""memory_max"": ""768M""}",15.181,2.428,0.023,0.532,0.013
+r_oomfix,r_oomfix_claude-haiku-5-5_cgroup_448M_r7,"{""memory_max"": ""768M""}",16.374,2.393,0.025,0.546,0.01
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r5,"{""memory_max"": ""768M""}",18.639,2.407,0.014,0.55,0.008
+r_oomfix,r_oomfix_claude-opus-5-5_cgroup_448M_r1,"{""memory_max"": ""768M""}",17.513,2.434,0.028,0.556,0.019

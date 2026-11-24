@@ -1,0 +1,37 @@
+{
+ "name": "r_feedback_ref",
+ "reps": 10,
+ "seed": 102,
+ "_note": "RQ5 reference cells on the new disk: Haiku t3 (time printed) with no limit and at 0.25 core, t9 (silent) at 0.25 core.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "cells": [
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "max"
+   },
+   "model": "claude-haiku-5-5"
+  },
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   },
+   "model": "claude-haiku-5-5"
+  },
+  {
+   "task": "t9_implement_quiet.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   },
+   "model": "claude-haiku-5-5"
+  }
+ ]
+}

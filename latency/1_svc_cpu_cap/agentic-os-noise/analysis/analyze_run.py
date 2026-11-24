@@ -17,13 +17,16 @@ Validation: summed on-CPU should ~= cpu.stat usage_usec; computed
 throttle/runnable-wait should be >= cpu.stat throttled_usec. Printed so a
 bad parse is obvious rather than silent.
 """
-import gzip, json, re, statistics, sys
+import functools, gzip, json, re, statistics, sys
 from collections import defaultdict
 from pathlib import Path
 
 TS = re.compile(r'^\[(\d\d):(\d\d):(\d\d)\.(\d{9})\]')
 CTX = re.compile(r'pid = (\d+), tid = (\d+), procname = "([^"]*)"')
-SW = re.compile(r'prev_tid = (\d+), prev_prio = \d+, prev_state = (\d+), '
+# prev_prio is negative for real-time threads (migration/N, multipathd). With
+# \d+ those switches did not match, so the thread they handed the CPU to was
+# never marked running and its on-CPU time was filed as waiting.
+SW = re.compile(r'prev_tid = (\d+), prev_prio = -?\d+, prev_state = (\d+), '
                 r'next_comm = "[^"]*", next_tid = (\d+)')
 WAKE = re.compile(r'\{ comm = "[^"]*", tid = (\d+),')
 FORK = re.compile(r'parent_pid = (\d+),.*child_pid = (\d+)')
@@ -75,6 +78,7 @@ def read_kv(p):
     return d
 
 
+@functools.lru_cache(maxsize=None)   # the paper scripts ask for the same run several times
 def analyze(run_dir):
     run = Path(run_dir)
     root_pid = int((run / 'meta/root.pid').read_text().split()[0])

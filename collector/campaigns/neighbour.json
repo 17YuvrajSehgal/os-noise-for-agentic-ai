@@ -1,0 +1,35 @@
+{
+ "name": "neighbour",
+ "reps": 5,
+ "seed": 25,
+ "base": {
+  "task": "t3_implement.sh",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "neighbour": [
+   null,
+   {
+    "kind": "cpu",
+    "workers": 4
+   },
+   {
+    "kind": "cpu",
+    "workers": 8
+   },
+   {
+    "kind": "io",
+    "workers": 2
+   },
+   {
+    "kind": "vm",
+    "workers": 2
+   }
+  ]
+ }
+}

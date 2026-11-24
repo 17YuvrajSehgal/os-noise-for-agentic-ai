@@ -1,0 +1,24 @@
+
+== M1, 2 vCPU (m1_cpu), 3 runs with no limit
+  m1_cpu_t3_implement_max_r1: most tasks alive at once in the trace 16, cgroup pids.peak 15
+     2.1.327 x4, mi-scavenger x2, fs.watch x1, HeapHelper x1, timeout x1, claude x1, JSCWarmUp x1, JITWorker x1, Bun Pool 0 x1, Bun Pool 1 x1, HTTP Client x1
+  m1_cpu_t3_implement_max_r10: most tasks alive at once in the trace 16, cgroup pids.peak 15
+     2.1.327 x4, mi-scavenger x2, fs.watch x1, HeapHelper x1, timeout x1, claude x1, JSCWarmUp x1, JITWorker x1, Bun Pool 0 x1, Bun Pool 1 x1, HTTP Client x1
+  m1_cpu_t3_implement_max_r2: most tasks alive at once in the trace 16, cgroup pids.peak 15
+     2.1.327 x4, mi-scavenger x2, timeout x1, claude x1, JSCWarmUp x1, JITWorker x1, Bun Pool 0 x1, Bun Pool 1 x1, HTTP Client x1, fs.watch x1, HeapHelper x1
+
+== M0 set 2, 4 vCPU (r_cpu), 3 runs with no limit
+  r_cpu_t3_implement_max_r1: most tasks alive at once in the trace 22, cgroup pids.peak 21
+     2.1.327 x6, HeapHelper x3, mi-scavenger x2, timeout x1, claude x1, JSCWarmUp x1, JITWorker x1, Bun Pool 0 x1, Bun Pool 1 x1, Bun Pool 2 x1, HTTP Client x1, Bun Pool 3 x1, fs.watch x1
+  r_cpu_t3_implement_max_r10: most tasks alive at once in the trace 22, cgroup pids.peak 21
+     2.1.327 x6, HeapHelper x3, mi-scavenger x2, timeout x1, claude x1, JSCWarmUp x1, JITWorker x1, Bun Pool 0 x1, Bun Pool 1 x1, Bun Pool 2 x1, HTTP Client x1, Bun Pool 3 x1, fs.watch x1
+  r_cpu_t3_implement_max_r11: most tasks alive at once in the trace 22, cgroup pids.peak 21
+     2.1.327 x6, HeapHelper x3, mi-scavenger x2, timeout x1, claude x1, JSCWarmUp x1, JITWorker x1, Bun Pool 0 x1, Bun Pool 1 x1, Bun Pool 2 x1, HTTP Client x1, Bun Pool 3 x1, fs.watch x1
+
+== M2, 8 vCPU (m2_cpu), 3 runs with no limit
+  m2_cpu_t3_implement_max_r1: most tasks alive at once in the trace 34, cgroup pids.peak 33
+     2.1.327 x10, HeapHelper x7, mi-scavenger x2, timeout x1, claude x1, JSCWarmUp x1, JITWorker x1, Bun Pool 0 x1, Bun Pool 1 x1, Bun Pool 2 x1, HTTP Client x1, Bun Pool 3 x1, Bun Pool 4 x1, Bun Pool 5 x1, Bun Pool 6 x1, Bun Pool 7 x1, fs.watch x1
+  m2_cpu_t3_implement_max_r10: most tasks alive at once in the trace 34, cgroup pids.peak 33
+     2.1.327 x10, HeapHelper x7, mi-scavenger x2, timeout x1, claude x1, JSCWarmUp x1, JITWorker x1, Bun Pool 0 x1, Bun Pool 1 x1, Bun Pool 2 x1, HTTP Client x1, Bun Pool 3 x1, Bun Pool 4 x1, Bun Pool 5 x1, Bun Pool 6 x1, Bun Pool 7 x1, fs.watch x1
+  m2_cpu_t3_implement_max_r2: most tasks alive at once in the trace 34, cgroup pids.peak 33
+     2.1.327 x10, HeapHelper x7, mi-scavenger x2, timeout x1, claude x1, JSCWarmUp x1, JITWorker x1, Bun Pool 0 x1, Bun Pool 1 x1, Bun Pool 2 x1, HTTP Client x1, Bun Pool 3 x1, Bun Pool 4 x1, Bun Pool 5 x1, Bun Pool 6 x1, Bun Pool 7 x1, fs.watch x1

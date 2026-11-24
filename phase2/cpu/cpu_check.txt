@@ -1,0 +1,27 @@
+trace CPU vs cpu.stat: median gap 0.74%, worst 1.1%
+ready-wait with idle CPU vs throttled time (capped runs): median ratio 1.08, range 1.03-1.17
+model turns, trace minus agent report: {-1: 8, 0: 51, 1: 1}
+model time, trace / agent API time: median 0.98, range 0.92-0.99
+
+wall-clock split per CPU setting (median s):
+task            cpu.max           n   wall  startup  model   tool throttled wait_idle
+t2_medium.sh    max               5  18.39     1.53   14.8   1.74       0.0      0.07
+t2_medium.sh    100000 100000     5  19.46     1.74  14.71    2.1      0.33      0.42
+t2_medium.sh    75000 100000      5  16.71     1.95  11.17   2.64      1.86      2.13
+t2_medium.sh    50000 100000      5   20.5     2.87  12.66   3.88      4.84      5.28
+t2_medium.sh    37500 100000      5  22.19     3.98  11.82   5.23      8.05      8.48
+t2_medium.sh    25000 100000      5  27.03     5.48  12.23    7.9     14.85     16.18
+t3_implement.sh max               5  20.61      1.5  14.57   4.12       0.0      0.07
+t3_implement.sh 100000 100000     5  18.08     1.67  12.02   3.82      0.24      0.32
+t3_implement.sh 75000 100000      5   21.2     1.98  12.66   5.52      2.31      2.53
+t3_implement.sh 50000 100000      5  24.98     2.75   14.1   7.94      6.59       7.1
+t3_implement.sh 37500 100000      5  31.63      4.1  15.41  10.92     11.68      12.6
+t3_implement.sh 25000 100000      5  41.43      5.3  18.56  16.52     24.99     26.39
+
+diagnosis from the trace alone (thresholds frozen from Phase 1):
+  max              {'nothing found': 10}
+  100000 100000    {'CPU quota': 8, 'nothing found': 2}
+  75000 100000     {'CPU quota': 10}
+  50000 100000     {'CPU quota': 10}
+  37500 100000     {'CPU quota': 10}
+  25000 100000     {'CPU quota': 10}

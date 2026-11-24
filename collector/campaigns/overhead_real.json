@@ -1,0 +1,17 @@
+{
+ "name": "overhead_real",
+ "reps": 5,
+ "seed": 13,
+ "_note": "Tracing cost on the heaviest real task (Django, many processes and system calls), in Docker with no limit as in real.json.",
+ "base": {
+  "agent": "claude",
+  "task": "swe.sh",
+  "task_arg": "django__django-15930",
+  "runtime": "docker",
+  "cache": "cold",
+  "timeout_s": 1200
+ },
+ "grid": {
+  "trace": ["none", "core", "full"]
+ }
+}

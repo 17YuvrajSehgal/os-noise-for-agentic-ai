@@ -1,0 +1,53 @@
+{
+ "name": "r_feedback",
+ "reps": 15,
+ "seed": 101,
+ "_note": "RQ5 controls, 0.25 core unless noted: a fixed fast time (time printed but not slow), a fixed slow time with no limit (slow number on a fast machine), an instruction that run time is not a goal (Haiku); printed vs silent with a second model (Fable).",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "cells": [
+  {
+   "task": "t11_implement_variants.sh",
+   "task_arg": "const_fast",
+   "limits": {
+    "cpu_max": "25000 100000"
+   },
+   "model": "claude-haiku-5-5"
+  },
+  {
+   "task": "t11_implement_variants.sh",
+   "task_arg": "const_slow",
+   "limits": {
+    "cpu_max": "max"
+   },
+   "model": "claude-haiku-5-5"
+  },
+  {
+   "task": "t11_implement_variants.sh",
+   "task_arg": "instruct",
+   "limits": {
+    "cpu_max": "25000 100000"
+   },
+   "model": "claude-haiku-5-5"
+  },
+  {
+   "task": "t3_implement.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   },
+   "model": "claude-fable-5-1"
+  },
+  {
+   "task": "t9_implement_quiet.sh",
+   "task_arg": "",
+   "limits": {
+    "cpu_max": "25000 100000"
+   },
+   "model": "claude-fable-5-1"
+  }
+ ]
+}

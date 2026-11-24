@@ -1,0 +1,28 @@
+{
+ "name": "memory_cliff",
+ "reps": 5,
+ "seed": 17,
+ "base": {
+  "task": "t7_memhog.sh",
+  "task_arg": 512,
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "limits.memory_max": [
+   "1024M",
+   "896M",
+   "768M",
+   "704M",
+   "640M",
+   "608M",
+   "576M",
+   "544M",
+   "512M"
+  ]
+ }
+}

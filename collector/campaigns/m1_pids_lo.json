@@ -1,0 +1,22 @@
+{
+ "name": "m1_pids_lo",
+ "reps": 5,
+ "seed": 208,
+ "_note": "Process limit below 16 on 2 vCPUs (t3, Opus): where does the agent crash?",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "limits.pids_max": [
+   14,
+   12,
+   10,
+   8
+  ]
+ }
+}

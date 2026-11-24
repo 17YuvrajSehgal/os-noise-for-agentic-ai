@@ -1,0 +1,28 @@
+{
+ "name": "e2e_disk",
+ "reps": 5,
+ "seed": 20,
+ "base": {
+  "task": "t3_implement.sh",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "agent": [
+   "claude",
+   "codex"
+  ],
+  "limits.io_max": [
+   null,
+   {
+    "rbps": 52428800
+   },
+   {
+    "rbps": 20971520
+   },
+   {
+    "rbps": 5242880
+   }
+  ]
+ }
+}

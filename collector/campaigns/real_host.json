@@ -1,0 +1,18 @@
+{
+ "name": "real_host",
+ "reps": 5,
+ "seed": 32,
+ "_note": "RQ3 control: the same six tasks with no limit and no container, to measure what the container itself costs (compare with the roomy cell of real.json).",
+ "base": {
+  "agent": "claude",
+  "task": "swe.sh",
+  "runtime": "host",
+  "trace": "full",
+  "cache": "cold",
+  "timeout_s": 1200
+ },
+ "grid": {
+  "task_arg": ["django__django-15930", "sympy__sympy-24562", "pydata__xarray-6461",
+               "pytest-dev__pytest-10081", "pallets__flask-5014", "psf__requests-5414"]
+ }
+}

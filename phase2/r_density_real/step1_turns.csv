@@ -1,0 +1,13 @@
+family,run,agent,turn,t_req,out_bytes,ttfb_s,stream_s,in_bytes,n_reads,gap_to_next_s
+r_density_real,r_density_real_psf__requests-5414_1_r1,claude,1,2.02,30290,1.942,0.905,3076,11,0.556
+r_density_real,r_density_real_psf__requests-5414_1_r1,claude,2,5.43,5790,1.706,3.557,5551,28,1.241
+r_density_real,r_density_real_psf__requests-5414_1_r1,claude,3,11.93,4070,1.732,1.191,3467,21,2.451
+r_density_real,r_density_real_psf__requests-5414_1_r1,claude,4,17.31,2929,1.853,3.659,4724,4,
+r_density_real,r_density_real_psf__requests-5414_1_r3,claude,1,2.01,30340,2.297,1.175,3034,12,0.13
+r_density_real,r_density_real_psf__requests-5414_1_r3,claude,2,5.62,6074,2.835,2.738,4675,12,1.513
+r_density_real,r_density_real_psf__requests-5414_1_r3,claude,3,12.7,3595,2.187,1.41,4313,15,0.888
+r_density_real,r_density_real_psf__requests-5414_1_r3,claude,4,17.19,2964,1.797,4.036,4906,4,
+r_density_real,r_density_real_psf__requests-5414_1_r2,claude,1,2.0,30276,2.487,0.666,2973,12,0.554
+r_density_real,r_density_real_psf__requests-5414_1_r2,claude,2,5.71,6110,1.745,4.09,5638,25,1.233
+r_density_real,r_density_real_psf__requests-5414_1_r2,claude,3,12.78,3488,2.058,0.679,3012,12,0.518
+r_density_real,r_density_real_psf__requests-5414_1_r2,claude,4,16.03,2839,1.686,3.804,4726,3,

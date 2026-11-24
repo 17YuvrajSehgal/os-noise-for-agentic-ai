@@ -1,0 +1,13 @@
+mean of 3 tasks that fit, 1 CPU / 512 MB     wall 1.11 [0.58-1.39]  local 1.25 [0.53-1.92]
+mean of 3 tasks that fit, 0.25 CPU / 512 MB  wall 2.12 [1.09-2.37]  local 4.72 [1.96-5.51]
+
+task          setting                 f      s   pred    obs    err
+django-15957  1 CPU / 512 MB       0.17   1.70   1.12   1.21  -7.4%
+django-15957  0.25 CPU / 512 MB    0.17   6.53   1.94   2.02  -4.0%
+pytest-10356  1 CPU / 512 MB       0.43   1.18   1.08   1.18  -8.4%
+pytest-10356  0.25 CPU / 512 MB    0.43   4.31   2.44   2.46  -1.1%
+sympy-14248   1 CPU / 512 MB       0.30   0.97   0.99   0.96  +3.0%
+sympy-14248   0.25 CPU / 512 MB    0.30   3.74   1.82   1.92  -5.3%
+xarray-6992   1 CPU / 512 MB       0.54   7.21   4.37   5.09 -14.1%
+xarray-6992   0.25 CPU / 512 MB    0.54  20.28  11.48  11.95  -4.0%
+within 10%: 7 of 8; median |err| 4.7%

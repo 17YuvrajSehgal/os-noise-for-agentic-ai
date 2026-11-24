@@ -1,0 +1,24 @@
+{
+ "name": "m2_cpu",
+ "reps": 10,
+ "seed": 301,
+ "_note": "CPU quota on t3 (Opus), m2.",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "limits.cpu_max": [
+   "max",
+   "200000 100000",
+   "100000 100000",
+   "75000 100000",
+   "50000 100000",
+   "25000 100000"
+  ]
+ }
+}

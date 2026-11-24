@@ -1,0 +1,23 @@
+{
+ "name": "m2_pids_hi",
+ "reps": 5,
+ "seed": 308,
+ "_note": "Process limit above 24 on 8 vCPUs (t3, Opus): where does the agent stop crashing?",
+ "base": {
+  "agent": "claude",
+  "trace": "full",
+  "cache": "cold"
+ },
+ "grid": {
+  "task": [
+   "t3_implement.sh"
+  ],
+  "limits.pids_max": [
+   64,
+   48,
+   40,
+   32,
+   28
+  ]
+ }
+}
