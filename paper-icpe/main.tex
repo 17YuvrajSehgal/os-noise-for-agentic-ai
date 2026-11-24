@@ -158,42 +158,56 @@ time of a run, which is what the user waits. \emph{Local time} is the
 wall time minus the time spent waiting for the model. Local time is the
 part of a run that the machine controls.
 
-We answer five research questions. \textbf{RQ1}: where does an agent's
-time go when nothing limits it? \textbf{RQ2}: how does each limit change
-that picture? \textbf{RQ3}: do real platform sizes slow down real tasks?
-\textbf{RQ4}: how many agents can share one machine? \textbf{RQ5}: does
-the agent change what it does because of the system? Our contributions
-and main findings are:
+We answer five research questions (RQs):
 \begin{itemize}
-\item \textbf{A map of ten limits on three machine sizes.} Each limit
-  has a breaking point, the first setting at which local time clearly
-  grows, and one of three shapes: a smooth rise (CPU quota, disk speed,
-  threads), a cliff (memory) or a crash (process limit). Some breaking
-  points are the same on every machine. Others grow with its size.
-\item \textbf{A measurement of the dilution, and a prediction.} If the
-  machine's share of a run is $f$ and a limit makes that part $s$ times
-  longer, the user waits $1 + f\,(s-1)$ times longer. We measure $f$
-  (0.17 to 0.73) and show from kernel traces where $s$ comes from. For
-  CPU quotas below one core, $s$ is close to one over the quota. For
-  disk limits there is no such simple estimate. A replay of runs with
-  no limit covers both, within a median 6.9\% of the wall time on 89
-  held-out settings.
-\item \textbf{Real tasks at platform sizes.} At 1 CPU or more, short
-  real tasks show no slowdown that we can detect. At 0.25 CPU every
-  short task is still solved, but it takes 1.35 to 2.4 times longer.
-\item \textbf{Failures that only live agents show.} The kernel can kill
-  the agent itself with no message to the user. A child cgroup for the
-  tools prevented this in our tests. A smaller model does extra work
-  when a test prints a slow run time, and one sentence in the prompt
-  removed that work.
-\item \textbf{A capacity rule for shared machines.} Throughput stops
-  growing at about 4 agents per vCPU, and CPU runs out before memory. An
-  estimate from one agent alone is 2.3 to 2.5 times too high.
-\item \textbf{A public dataset} of 2,199 agent runs, almost all with
-    kernel traces, 40 more runs with two other agents, and the tool that
-  collected them.
+\item \textbf{RQ1}: Where does an agent's time go when nothing limits
+  it?
+\item \textbf{RQ2}: How does each limit change that picture?
+\item \textbf{RQ3}: Do real platform sizes slow down real tasks?
+\item \textbf{RQ4}: How many agents can share one machine?
+\item \textbf{RQ5}: Does the agent change what it does because of the
+  system?
 \end{itemize}
 
+Our contributions and main findings are:
+\begin{itemize}
+\item \textbf{A map of ten limits on three machine sizes.} For each
+  limit we find its \emph{breaking point}. This is the first setting at
+  which local time clearly grows. The limits behave in three ways. With
+  a CPU quota, a disk limit or extra threads, the run gets slower step
+  by step. With a memory limit, nothing happens until the run suddenly
+  becomes much slower. With a process limit, nothing happens until the
+  agent crashes. Some breaking points are the same on every machine, and
+  others grow with the size of the machine.
+\item \textbf{How much of the cost reaches the user.} Let $f$ be the
+  share of a run that is spent on the machine. If a limit makes that
+  part $s$ times longer, the user waits $1 + f\,(s-1)$ times longer. We
+  measured $f$ to be between 0.17 and 0.73. Kernel traces show where $s$
+  comes from: under a CPU quota, the agent does the same work and waits
+  longer for the CPU.
+\item \textbf{A way to predict the cost before applying a limit.} For a
+  CPU quota below one core, $s$ is close to one divided by the quota.
+  For disk limits there is no such simple rule. We therefore take a run
+  with no limit and compute how long each part of it would take under
+  the limit. We call this a \emph{replay}. On 89 settings that we did
+  not use to design it, the replay predicts the wall time within a
+  median 6.9\%.
+\item \textbf{Real tasks at platform sizes.} With 1 CPU or more, short
+  real tasks show no slowdown that we can detect. With 0.25 CPU, every
+  short task is still solved, but it takes 1.35 to 2.4 times longer.
+\item \textbf{Failures that appear only with live agents.} The kernel
+  can kill the agent itself, and the user gets no message. Putting the
+  tools in their own cgroup prevented this in our tests. A smaller model
+  also does extra work when a test prints a slow run time. One sentence
+  in the prompt removed that extra work.
+\item \textbf{A capacity rule for shared machines.} The number of agents
+  that finish per minute stops growing at about 4 agents per vCPU. For
+  our task, the CPU fills before memory does. A capacity estimate based
+  on one agent alone is 2.3 to 2.5 times too high.
+\item \textbf{A public dataset.} We release 2,199 runs of Claude Code,
+  almost all with kernel traces, 40 runs with two other agents, and the
+  tool that collected them.
+\end{itemize}
 
 % ---------------------------------------------------------------------------
 \section{Background and Related Work}
